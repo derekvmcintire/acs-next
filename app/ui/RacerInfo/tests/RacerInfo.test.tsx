@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { render, screen } from '../../../../test-utils';
-import RacerInfoBlock, { RACER_INFO_BLOCK_TEST_ID } from '../components/Details';
-import { RACER_PROFILE_IMAGE_TEST_ID } from '../components/ProfileImage';
+import RacerInfoBlock from '../components/Details';
 import RacerInfoContainer from '../components/RacerInfoContainer';
 
 describe('RacerInfoBlock', () => {

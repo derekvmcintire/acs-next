@@ -3,10 +3,10 @@
 import { Flex, Text } from '@mantine/core';
 import { IRacerInfo } from '@/app/types';
 import { getCurrentTeam, getMockRiderInfo } from '../utils';
-import RacerInfoBlock, { RACER_INFO_BLOCK_TEST_ID } from './Details';
+import RacerInfoBlock from './Details';
 import InfoBlock from './InfoBlock';
 import { NameHeading } from './NameHeading';
-import RacerProfileImage, { RACER_PROFILE_IMAGE_TEST_ID } from './ProfileImage';
+import RacerProfileImage from './ProfileImage';
 import classes from '../styles/RacerInfo.module.css';
 
 export default function RacerInfoContainer() {
