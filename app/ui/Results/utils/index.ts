@@ -14,7 +14,8 @@ export async function sleep() {
   await new Promise(sleepTimeout);
 }
 
-export const  getData = async (history: IRaceYear[]): Promise<IRaceYear[]> =>
+export const getData = async (history: IRaceYear[]): Promise<IRaceYear[]> =>
   sleep().then(() => sortRacingData(history));
 
-export const getRaceYears = (raceHistory: IRaceYear[]): string[] => raceHistory.map((raceYear: IRaceYear) => String(raceYear.year));
+export const getRaceYears = (raceHistory: IRaceYear[]): string[] =>
+  raceHistory.map((raceYear: IRaceYear) => String(raceYear.year));

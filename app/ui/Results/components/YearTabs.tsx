@@ -23,9 +23,7 @@ export default function RaceTabs({ years, history }: RaceTabsProps) {
           <Tabs.List>
             {years.map((year) => (
               <Tabs.Tab key={year} value={year}>
-                <div data-testid={`raceTab${year}`}>
-                  {year}
-                </div>
+                <div data-testid={`raceTab${year}`}>{year}</div>
               </Tabs.Tab>
             ))}
           </Tabs.List>

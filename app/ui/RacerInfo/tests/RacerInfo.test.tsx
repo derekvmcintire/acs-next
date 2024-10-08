@@ -23,7 +23,6 @@ describe('RacerInfoContainer', () => {
     expect(screen.getByText(/Top Results/i)).toBeInTheDocument();
     expect(screen.getByText(/Upcoming Races/i)).toBeInTheDocument();
     expect(screen.getByText(/Some info/i)).toBeInTheDocument();
-    expect(screen.getByTestId("racerProfileImage")).toBeInTheDocument();
-
+    expect(screen.getByTestId('racerProfileImage')).toBeInTheDocument();
   });
 });
