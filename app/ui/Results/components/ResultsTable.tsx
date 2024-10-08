@@ -8,7 +8,7 @@ interface RaceTableProps {
   races: IRaceData[];
 }
 
-export default function RaceTable({ races }: RaceTableProps) {
+export default function ResultsTable({ races }: RaceTableProps) {
   const rows = races.map((race) => (
     <Table.Tr data-testid="custom-element" key={`${race.name}${race.category}`}>
       <Table.Td>{new Date(race.startDate).toDateString()}</Table.Td>
@@ -27,7 +27,7 @@ export default function RaceTable({ races }: RaceTableProps) {
           <Table.Th>Date</Table.Th>
           <Table.Th>Result</Table.Th>
           <Table.Th>Starters</Table.Th>
-          <Table.Th>Race</Table.Th>
+          <Table.Th>Race Name</Table.Th>
           <Table.Th>Category</Table.Th>
           <Table.Th>Points</Table.Th>
         </Table.Tr>

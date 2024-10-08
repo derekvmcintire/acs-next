@@ -9,7 +9,7 @@ interface IRiderTitleProps {
   team: string;
 }
 
-export const RacerTitle = ({ name, team }: IRiderTitleProps) => {
+export const NameHeading = ({ name, team }: IRiderTitleProps) => {
   const TEAM_PLACEHOLDER_TEXT = 'n/a';
   return (
     <Title ta="left" pr={40} pb={20} className={classes.riderTitle}>

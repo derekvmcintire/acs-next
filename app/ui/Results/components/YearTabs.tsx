@@ -2,7 +2,7 @@
 
 import { Group, Tabs } from '@mantine/core';
 import { IRaceData, IRaceYear } from '@/app/types';
-import RaceTable from './RaceTable';
+import RaceTable from './ResultsTable';
 import classes from '../styles/RaceTable.module.css';
 
 interface RaceTabsProps {
@@ -23,7 +23,9 @@ export default function RaceTabs({ years, history }: RaceTabsProps) {
           <Tabs.List>
             {years.map((year) => (
               <Tabs.Tab key={year} value={year}>
-                {year}
+                <div data-testid={`raceTab${year}`}>
+                  {year}
+                </div>
               </Tabs.Tab>
             ))}
           </Tabs.List>

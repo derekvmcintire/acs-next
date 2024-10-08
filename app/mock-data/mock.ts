@@ -1,5 +1,5 @@
-export const TEAM_B2C2_CONTES = "B2C2 Cycling p/b Conte's Bike Shop"
-export const TEAM_B2C2_JRA = "B2C2 Cycling p/b JRA"
+export const TEAM_B2C2_CONTES = "B2C2 Cycling p/b Conte's Bike Shop";
+export const TEAM_B2C2_JRA = 'B2C2 Cycling p/b JRA';
 
 export const mockRacer = {
   id: 1,
@@ -25,7 +25,7 @@ export const mockRacer = {
     {
       year: 2022,
       name: TEAM_B2C2_JRA,
-    }
+    },
   ],
   hometown: {
     country: 'USA',
