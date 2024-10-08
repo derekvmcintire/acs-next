@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { Flex, Text } from '@mantine/core';
 import { IRacerInfo } from '@/app/types';
 import { getCurrentTeam, getMockRiderInfo } from '../utils';
@@ -10,11 +11,14 @@ import RacerProfileImage from './ProfileImage';
 import classes from '../styles/RacerInfo.module.css';
 
 export default function RacerInfoContainer() {
-  const racerInfo: IRacerInfo = getMockRiderInfo();
+  const racerInfo: IRacerInfo = useMemo(getMockRiderInfo, []);
+  const currentTeam = useMemo(() => getCurrentTeam(racerInfo.teams), [racerInfo.teams]);
+
+  const { name } = racerInfo;
 
   return (
     <>
-      <NameHeading name={racerInfo.name} team={getCurrentTeam(racerInfo.teams)} />
+      <NameHeading name={name} team={currentTeam} />
       <Flex className={classes.infoGrid}>
         <RacerProfileImage />
         <RacerInfoBlock />
