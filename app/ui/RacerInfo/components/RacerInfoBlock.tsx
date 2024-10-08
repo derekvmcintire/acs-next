@@ -1,11 +1,11 @@
-import classes from './RacerInfo.module.css';
+import InfoBlock from './InfoBlock';
 
 export default function RacerInfoBlock() {
   return (
-    <div className={classes.infoBlock}>
+    <InfoBlock>
       <p>Some info</p>
       <p>Some more info</p>
       <p>A different piece of info</p>
-    </div>
+    </InfoBlock>
   );
 }

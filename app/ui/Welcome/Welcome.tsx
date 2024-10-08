@@ -14,11 +14,11 @@ export default function Welcome() {
         <Text>Statistics</Text>
         <Divider size="sm" orientation="vertical" />
         <Text>Results</Text>
-        <Divider size="md" orientation="vertical" />
+        <Divider size="sm" orientation="vertical" />
         <Text>Calendar</Text>
-        <Divider size="lg" orientation="vertical" />
+        <Divider size="sm" orientation="vertical" />
         <Text>Series</Text>
-        <Divider size="xl" orientation="vertical" />
+        <Divider size="sm" orientation="vertical" />
         <Text>Rankings</Text>
       </Group>
       <TextInput leftSectionPointerEvents="none" leftSection={icon} placeholder="search" />

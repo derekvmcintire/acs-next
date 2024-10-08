@@ -2,7 +2,7 @@
 
 import { Table } from '@mantine/core';
 import { IRaceData } from '@/app/types';
-import classes from './RaceTable.module.css';
+import classes from '../styles/RaceTable.module.css';
 
 interface RaceTableProps {
   races: IRaceData[];

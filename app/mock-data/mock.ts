@@ -1,3 +1,6 @@
+export const TEAM_B2C2_CONTES = "B2C2 Cycling p/b Conte's Bike Shop"
+export const TEAM_B2C2_JRA = "B2C2 Cycling p/b JRA"
+
 export const mockRacer = {
   id: 1,
   name: {
@@ -13,12 +16,16 @@ export const mockRacer = {
   teams: [
     {
       year: 2024,
-      name: "B2C2 Cycling p/b Conte's Bike Shop",
+      name: TEAM_B2C2_CONTES,
     },
     {
       year: 2023,
-      name: "B2C2 Cycling p/b Conte's Bike Shop",
+      name: TEAM_B2C2_CONTES,
     },
+    {
+      year: 2022,
+      name: TEAM_B2C2_JRA,
+    }
   ],
   hometown: {
     country: 'USA',
@@ -151,7 +158,7 @@ export const mockRacingHistory = {
           type: 'crit',
           startDate: '2022-04-24T00:00:00.000-05:00',
           endDate: null,
-          category: 'Men Open B',
+          category: 'Men Cat 4/Novice Master 40+',
           place: 6,
           racers: 10,
           points: 451.76,

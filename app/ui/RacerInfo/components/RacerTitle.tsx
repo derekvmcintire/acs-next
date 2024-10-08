@@ -2,7 +2,7 @@
 
 import { Text, Title } from '@mantine/core';
 import { IRiderName } from '@/app/types';
-import classes from './RacerInfo.module.css';
+import classes from '../styles/RacerInfo.module.css';
 
 interface IRiderTitleProps {
   name: IRiderName;

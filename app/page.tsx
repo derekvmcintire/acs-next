@@ -1,18 +1,19 @@
 import { Group } from '@mantine/core';
-import { ColorSchemeToggle } from './components/ColorSchemeToggle/ColorSchemeToggle';
-import RacerInfoContainer from './components/RacerInfo/RacerInfoContainer';
-import RaceTableContainer from './components/RaceTable/RaceTableContainer';
-import Welcome from './components/Welcome/Welcome';
+import { ColorSchemeToggle } from './ui/ColorSchemeToggle/ColorSchemeToggle';
+import RacerInfoContainer from './ui/RacerInfo/components/RacerInfoContainer';
+import RaceTableContainer from './ui/RaceTable/components/RaceTableContainer';
+import Welcome from './ui/Welcome/Welcome';
+import classes from './page.module.css';
 
 export default function HomePage() {
   return (
-    <>
+    <div className={classes.page}>
       <Welcome />
       <RacerInfoContainer />
-      <Group justify="right" mt="md" pb="50px">
+      <Group pb="50px">
         <RaceTableContainer />
       </Group>
       <ColorSchemeToggle />
-    </>
+    </div>
   );
 }
