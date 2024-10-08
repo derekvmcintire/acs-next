@@ -5,7 +5,7 @@ import classes from './Welcome.module.css';
 export default function Welcome() {
   return (
     <>
-      <Title className={classes.title} ta="right" mt={25} mr={25}>
+      <Title className={classes.title} ta="right" mt={25} mr={40}>
         <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>
           ACS
         </Text>

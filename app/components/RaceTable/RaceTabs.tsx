@@ -1,5 +1,5 @@
 'use client';
-import { Tabs } from '@mantine/core';
+import { Group, Tabs } from '@mantine/core';
 import { IRaceData, IRaceYear } from '@/app/types';
 import RaceTable from './RaceTable';
 import classes from './RaceTable.module.css';
@@ -16,7 +16,7 @@ export default function RaceTabs({ years, history }: RaceTabsProps) {
   };
 
   return (
-    <div className={classes.raceTable}>
+    <Group justify="center" mt="xl" className={classes.raceTable}>
       <Tabs defaultValue={years[0]}>
         <Tabs.List>
           {years.map((year) => (
@@ -27,12 +27,10 @@ export default function RaceTabs({ years, history }: RaceTabsProps) {
         </Tabs.List>
         {years.map((year) => (
           <Tabs.Panel key={year} value={year}>
-            <div className={classes.raceTableContainer}>
-              <RaceTable races={getRaceDataForYear(Number(year)) || []} />
-            </div>
+            <RaceTable races={getRaceDataForYear(Number(year)) || []} />
           </Tabs.Panel>
         ))}
       </Tabs>
-    </div>
+    </Group>
   );
 }

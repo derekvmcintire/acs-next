@@ -247,6 +247,72 @@ export const mockRacingHistory = {
   ],
 };
 
+
+
+
+// export const MOCK_API = {
+//   '/history': mockRacingHistory,
+//   '/racer': mockRacer
+// }
+
+// interface IParsedURL {
+//   path: string;
+//   params: Object;
+// }
+
+// function parseUrl(url: any): IParsedURL {
+//   const [path, queryString] = url.split('?');
+//   const params: any = {};
+
+//   if (queryString) {
+//       queryString.split('&').forEach((param: string) => {
+//           const [key, value] = param.split('=');
+//           params[decodeURIComponent(key)] = decodeURIComponent(value || '');
+//       });
+//   }
+
+//   return {
+//       path: path,
+//       params: params
+//   };
+// }
+
+// const _parseHistoryUrl = (url: string): {path: string, year: number} => {
+//   const [path, queryString] = url.split('?');
+//   let year: number = 0;
+
+//   if (queryString) {
+//       queryString.split('&').forEach((param: string) => {
+//           const [key, value] = param.split('=');
+//           const decodedKey = decodeURIComponent(key);
+//           if (decodedKey === 'year') {
+//             year = Number(decodeURIComponent(value)) || 0;
+//           }
+//       });
+//   }
+
+//   return {
+//       path: path,
+//       year: year,
+//   };
+// }
+
+
+// export const fetchHistoryFromMockAPI = (url: string) => {
+//   // fetchHistoryFromMockAPI('/history?year=2024')
+//   const parsed: {path: string, year: number} = _parseHistoryUrl(url);
+//   const res = MOCK_API['/history'].history.filter(h => h.year === parsed.year);
+//   return res;
+// }
+
+
+
+/******************************************************************** */ 
+
+
+
+
+
 export const mockRacingData = {
   name: {
     first: 'Derek',
