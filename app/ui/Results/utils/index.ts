@@ -17,5 +17,5 @@ export async function sleep() {
 export const getData = async (history: IRaceYear[]): Promise<IRaceYear[]> =>
   sleep().then(() => sortRacingData(history));
 
-export const getRaceYears = (raceHistory: IRaceYear[]): string[] =>
-  raceHistory.map((raceYear: IRaceYear) => String(raceYear.year));
+export const getRaceYears = (raceHistory: IRaceYear[]): number[] =>
+  raceHistory.map((raceYear: IRaceYear) => raceYear.year);
