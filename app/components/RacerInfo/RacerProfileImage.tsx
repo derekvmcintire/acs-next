@@ -8,7 +8,7 @@ const PROFILE_IMAGE_URL = 'https://upload.wikimedia.org/wikipedia/commons/7/7c/P
 export default function RacerProfileImage() {
   return (
     <div className={classes.profileImage}>
-            <img src={PROFILE_IMAGE_URL} width={String(PROFILE_IMAGE_WIDTH)}/>
+            <img src={PROFILE_IMAGE_URL} width='100%'/>
     </div>
   );
 }

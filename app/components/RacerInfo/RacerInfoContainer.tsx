@@ -1,5 +1,5 @@
 'use client';
-import { Grid } from '@mantine/core';
+import { Divider, Flex, Grid, Text } from '@mantine/core';
 import { mockRacer } from '@/app/mock-data/mock';
 import { IRacerInfo } from '@/app/types';
 import RacerProfileImage from './RacerProfileImage';
@@ -15,18 +15,22 @@ export default function RacerInfoContainer() {
         <span>{`${racerInfo?.name?.first || ''} ${racerInfo?.name?.last || ''} - `}</span>
         <span>{racerInfo.teams[racerInfo.teams.length - 1]?.name || 'n/a'}</span>
       </h2>
-      <Grid>
+      <Grid className={classes.infoGrid}>
         <Grid.Col span={4}>
-          <Grid>
-            <Grid.Col span={6}>
-              <RacerProfileImage />
-            </Grid.Col>
-            <Grid.Col span={6}>
-              <RacerInfoBlock />
-            </Grid.Col>
-        </Grid>
+          <Flex>
+          <RacerProfileImage />
+          <RacerInfoBlock />
+          </Flex>
         </Grid.Col>
-        <Grid.Col span={4}>2</Grid.Col>
+        <Grid.Col span={4}>
+          <Flex className={classes.blockTwo} justify="left">
+          <div>
+          <Divider size="sm" orientation="vertical" className={classes.divider}/>
+          </div>
+          <div className={classes.blockTwoText}><Text>Some information here</Text></div>
+          
+          </Flex>
+          </Grid.Col>
         <Grid.Col span={4}>3</Grid.Col>
     </Grid>
       

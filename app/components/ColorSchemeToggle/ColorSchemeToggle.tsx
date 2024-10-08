@@ -7,7 +7,7 @@ export function ColorSchemeToggle() {
 
   return (
     <div className={classes.colorScheme}>
-    <Group justify="center" mt="xl">
+    <Group justify="center">
       <Button size="compact-sm" variant="transparent" color="pink" onClick={() => setColorScheme('light')}>Light Theme</Button>
       <Button size="compact-sm" variant="transparent" color="pink" onClick={() => setColorScheme('dark')}>Dark Theme</Button>
     </Group>
