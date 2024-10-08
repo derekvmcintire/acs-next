@@ -1,6 +1,8 @@
 'use client';
+
 import { Table } from '@mantine/core';
 import { IRaceData } from '@/app/types';
+import classes from './RaceTable.module.css';
 
 interface RaceTableProps {
   races: IRaceData[];
@@ -10,7 +12,7 @@ export default function RaceTable({ races }: RaceTableProps) {
   const rows = races.map((race) => (
     <Table.Tr data-testid="custom-element" key={`${race.name}${race.category}`}>
       <Table.Td>{new Date(race.startDate).toDateString()}</Table.Td>
-      <Table.Td>{race.place}</Table.Td>
+      <Table.Td className={classes.result}>{race.place}</Table.Td>
       <Table.Td>{race.racers}</Table.Td>
       <Table.Td>{`${race.type} - ${race.name}`}</Table.Td>
       <Table.Td>{race.category}</Table.Td>
@@ -19,7 +21,7 @@ export default function RaceTable({ races }: RaceTableProps) {
   ));
 
   return (
-    <Table>
+    <Table className={classes.raceTable}>
       <Table.Thead>
         <Table.Tr>
           <Table.Th>Date</Table.Th>

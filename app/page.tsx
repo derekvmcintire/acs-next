@@ -9,7 +9,7 @@ export default function HomePage() {
     <>
       <Welcome />
       <RacerInfoContainer />
-      <Group justify="center" mt="xl" pb="50px">
+      <Group justify="right" mt="md" pb="50px">
         <RaceTableContainer />
       </Group>
       <ColorSchemeToggle />

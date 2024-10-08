@@ -247,9 +247,6 @@ export const mockRacingHistory = {
   ],
 };
 
-
-
-
 // export const MOCK_API = {
 //   '/history': mockRacingHistory,
 //   '/racer': mockRacer
@@ -297,7 +294,6 @@ export const mockRacingHistory = {
 //   };
 // }
 
-
 // export const fetchHistoryFromMockAPI = (url: string) => {
 //   // fetchHistoryFromMockAPI('/history?year=2024')
 //   const parsed: {path: string, year: number} = _parseHistoryUrl(url);
@@ -305,13 +301,7 @@ export const mockRacingHistory = {
 //   return res;
 // }
 
-
-
-/******************************************************************** */ 
-
-
-
-
+/******************************************************************** */
 
 export const mockRacingData = {
   name: {

@@ -1,4 +1,5 @@
 'use client';
+
 import { Group, Tabs } from '@mantine/core';
 import { IRaceData, IRaceYear } from '@/app/types';
 import RaceTable from './RaceTable';
@@ -16,7 +17,7 @@ export default function RaceTabs({ years, history }: RaceTabsProps) {
   };
 
   return (
-    <Group justify="center" mt="xl" className={classes.raceTable}>
+    <Group justify="center" mt="xl" className={classes.raceTabs}>
       <Tabs defaultValue={years[0]}>
         <Tabs.List>
           {years.map((year) => (
