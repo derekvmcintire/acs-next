@@ -19,7 +19,7 @@ export default function RacerInfoContainer() {
         <RacerProfileImage />
         <RacerInfoBlock />
         <InfoBlock>
-          <Text>Top Results</Text>
+          <Text>Top Resultz</Text>
         </InfoBlock>
         <InfoBlock>
           <Text>Upcoming Races</Text>
