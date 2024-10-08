@@ -1,3 +1,4 @@
+'use client';
 import { Tabs } from '@mantine/core';
 import { IRaceData, IRaceYear } from '@/app/types';
 import RaceTable from './RaceTable';

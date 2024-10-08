@@ -1,5 +1,5 @@
+'use client';
 import '@mantine/core';
-
 import { mockRacingData } from '@/app/mock-data/mock';
 import RaceTabs from './RaceTabs';
 

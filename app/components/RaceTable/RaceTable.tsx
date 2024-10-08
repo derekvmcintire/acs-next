@@ -1,3 +1,4 @@
+'use client';
 import { Table } from '@mantine/core';
 import { IRaceData } from '@/app/types';
 

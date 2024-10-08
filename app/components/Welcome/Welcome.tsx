@@ -1,3 +1,4 @@
+'use client';
 import { Text, Title } from '@mantine/core';
 import classes from './Welcome.module.css';
 

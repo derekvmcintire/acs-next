@@ -1,3 +1,4 @@
+'use client';
 import { mockRacer } from '@/app/mock-data/mock';
 import { IRacerInfo } from '@/app/types';
 import classes from './RacerInfo.module.css';
