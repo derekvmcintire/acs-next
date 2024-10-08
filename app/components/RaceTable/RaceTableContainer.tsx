@@ -1,17 +1,24 @@
-'use client';
-import '@mantine/core';
-import { mockRacingData } from '@/app/mock-data/mock';
+import { mockRacingHistory } from '@/app/mock-data/mock';
 import RaceTabs from './RaceTabs';
+import { IRaceYear } from '@/app/types';
 
-export default function RaceTableContainer() {
-  const sortRaceHistory = (history: any[]) => {
-    const sorted = [...history];
-    sorted.sort((a, b) => b.year - a.year);
-    return sorted;
-  };
+const sortRacingData = (history: IRaceYear[]): IRaceYear[] => {
+  const sorted = [...history];
+  sorted.sort((a, b) => b.year - a.year);
+  return sorted;
+}
 
-  const racerInfo: any = mockRacingData;
-  const raceHistory: any = sortRaceHistory(racerInfo.history);
+const sleep = (ms: number) => new Promise(
+  resolve => setTimeout(resolve, ms)
+)
+
+const getData = async (history: IRaceYear[]): Promise<IRaceYear[]> => {
+  // simulate a 300ms server side network request
+  return sleep(300).then(() => sortRacingData(history))
+}
+
+export default async function RaceTableContainer() {
+  const raceHistory: any = await getData(mockRacingHistory.history);
 
   return (
     <>
