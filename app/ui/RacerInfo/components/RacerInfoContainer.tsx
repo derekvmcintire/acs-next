@@ -6,7 +6,7 @@ import { IRacerInfo } from '@/app/types';
 import { getCurrentTeam, getMockRiderInfo } from '../utils';
 import Details from './Details';
 import { NameHeading } from './NameHeading';
-import RacerProfileImage from './ProfileImage';
+import ProfileImage from './ProfileImage';
 import TopResults from './TopResults';
 import UpcomingRaces from './UpcomingRaces';
 
@@ -22,7 +22,7 @@ export default function RacerInfoContainer() {
       <Grid>
         <Grid.Col span={4}>
           <Flex>
-            <RacerProfileImage />
+            <ProfileImage />
             <Details socials={socials} dob={dob} categories={categories} hometown={hometown} />
           </Flex>
         </Grid.Col>

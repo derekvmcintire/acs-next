@@ -18,4 +18,4 @@ export const getData = async (history: IRaceYear[]): Promise<IRaceYear[]> =>
   sleep().then(() => sortRacingData(history));
 
 export const getRaceYears = (raceHistory: IRaceYear[]): number[] =>
-  raceHistory.map((raceYear: IRaceYear) => raceYear.year);
+  raceHistory.length < 0 ? [] : raceHistory.map((raceYear: IRaceYear) => raceYear.year);

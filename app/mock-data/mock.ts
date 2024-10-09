@@ -49,6 +49,11 @@ export const mockRacer = {
     'https://dgtzuqphqg23d.cloudfront.net/xpqTav-4hWRXpvJoODOMmpeI_jUOONmJZ6KnCrG7ncc-2048x1536.jpg',
 };
 
+export const mockRacingHistoryEmpty = {
+  racerId: 2,
+  history: [],
+};
+
 export const mockRacingHistory = {
   racerId: 1,
   history: [
@@ -88,6 +93,7 @@ export const mockRacingHistory = {
               racers: 85,
               points: 361.67,
               upgPoints: 0,
+              noPlaceCode: null,
             },
             {
               name: 'Randolph Circuit Race',
@@ -98,6 +104,7 @@ export const mockRacingHistory = {
               racers: 77,
               points: 389.92,
               upgPoints: 0,
+              noPlaceCode: null,
             },
             {
               name: 'Mad River Road Race',
@@ -108,6 +115,7 @@ export const mockRacingHistory = {
               racers: 74,
               points: 334.64,
               upgPoints: 0,
+              noPlaceCode: null,
             },
             {
               name: 'Burlington Criterium',
@@ -118,6 +126,7 @@ export const mockRacingHistory = {
               racers: 67,
               points: 353.75,
               upgPoints: 0,
+              noPlaceCode: null,
             },
           ],
           noPlaceCode: null,
@@ -266,60 +275,6 @@ export const mockRacingHistory = {
     },
   ],
 };
-
-// export const MOCK_API = {
-//   '/history': mockRacingHistory,
-//   '/racer': mockRacer
-// }
-
-// interface IParsedURL {
-//   path: string;
-//   params: Object;
-// }
-
-// function parseUrl(url: any): IParsedURL {
-//   const [path, queryString] = url.split('?');
-//   const params: any = {};
-
-//   if (queryString) {
-//       queryString.split('&').forEach((param: string) => {
-//           const [key, value] = param.split('=');
-//           params[decodeURIComponent(key)] = decodeURIComponent(value || '');
-//       });
-//   }
-
-//   return {
-//       path: path,
-//       params: params
-//   };
-// }
-
-// const _parseHistoryUrl = (url: string): {path: string, year: number} => {
-//   const [path, queryString] = url.split('?');
-//   let year: number = 0;
-
-//   if (queryString) {
-//       queryString.split('&').forEach((param: string) => {
-//           const [key, value] = param.split('=');
-//           const decodedKey = decodeURIComponent(key);
-//           if (decodedKey === 'year') {
-//             year = Number(decodeURIComponent(value)) || 0;
-//           }
-//       });
-//   }
-
-//   return {
-//       path: path,
-//       year: year,
-//   };
-// }
-
-// export const fetchHistoryFromMockAPI = (url: string) => {
-//   // fetchHistoryFromMockAPI('/history?year=2024')
-//   const parsed: {path: string, year: number} = _parseHistoryUrl(url);
-//   const res = MOCK_API['/history'].history.filter(h => h.year === parsed.year);
-//   return res;
-// }
 
 /******************************************************************** */
 

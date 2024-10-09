@@ -7,7 +7,6 @@ import { ICategory, IHometown, ISocials } from '../../../types';
 import InfoBlock from './InfoBlock';
 import classes from '../styles/RacerInfo.module.css';
 
-export const RACER_INFO_BLOCK_TEST_ID = 'racerInfoBlock';
 const STRAVA_BASE_URL = 'http://strava.com/athletes/';
 
 interface IDetailsProps {
@@ -24,20 +23,21 @@ const mapCategories = (categories: ICategory[]): React.ReactNode => {
 };
 
 export default function Details({ socials, dob, categories, hometown }: IDetailsProps) {
-  const getStravaUrl = (stravaId: string = '') => (stravaId ? `${STRAVA_BASE_URL}${stravaId}` : '');
-
   const { country, city, state } = hometown;
+  const fullHometown = `Hometown: ${city || ''}, ${state || ''}`;
+
   const { strava } = socials;
+  const stravaUrl = strava ? `${STRAVA_BASE_URL}${strava}` : '';
 
   return (
     <section className={classes.details}>
       <InfoBlock>
         <Text>{`Date of Birth: ${dob}`}</Text>
         <Text>{`Nationality: ${country}`}</Text>
-        <Text>{`Hometown: ${city || ''}, ${state || ''}`}</Text>
+        <Text>{fullHometown}</Text>
         <Text>Categories:</Text>
         {mapCategories(categories)}
-        <Anchor href={getStravaUrl(strava)} aria-label={`Strava profile of ${strava}`}>
+        <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>
           <FaStrava />
         </Anchor>
       </InfoBlock>

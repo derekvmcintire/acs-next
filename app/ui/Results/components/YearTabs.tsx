@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Group, Tabs } from '@mantine/core';
+import { Group, Tabs, Text } from '@mantine/core';
 import { IRaceData, IRaceYear } from '@/app/types';
 import RaceTable from './ResultsTable';
 import classes from '../styles/RaceTable.module.css';
@@ -23,8 +23,10 @@ export default function RaceTabs({ years, history }: RaceTabsProps) {
     );
   }, [years, history]);
 
-  return (
-    <div className={classes.raceTabs}>
+  const getTabs = () => {
+    return years.length < 1 ? (
+      <Text>No Race Data Available</Text>
+    ) : (
       <Group mt="xl">
         <Tabs defaultValue={years[0].toString()}>
           <Tabs.List>
@@ -41,6 +43,8 @@ export default function RaceTabs({ years, history }: RaceTabsProps) {
           ))}
         </Tabs>
       </Group>
-    </div>
-  );
+    );
+  };
+
+  return <div className={classes.raceTabs}>{getTabs()}</div>;
 }
