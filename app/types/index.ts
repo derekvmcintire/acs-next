@@ -13,7 +13,7 @@ export interface IStageData extends IBaseRaceData {
   stageNumber: number;
 }
 
-export interface IRaceData extends IBaseRaceData{
+export interface IRaceData extends IBaseRaceData {
   endDate: string | null;
   category: string;
   stages: IStageData[] | null;
