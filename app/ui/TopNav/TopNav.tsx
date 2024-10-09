@@ -2,9 +2,9 @@
 
 import { GoSearch } from 'react-icons/go';
 import { Divider, Flex, Group, Text, TextInput, Title } from '@mantine/core';
-import classes from './Welcome.module.css';
+import classes from './TopNav.module.css';
 
-export default function Welcome() {
+export default function TopNav() {
   const icon = <GoSearch />;
   return (
     <Flex justify="right" align="center" pt={10}>
