@@ -19,7 +19,7 @@ interface IDetailsProps {
 
 export default function Details({ socials, dob, categories, hometown }: IDetailsProps) {
   const mapCategories = (): React.ReactNode => {
-    return categories.map((c: ICategory) => <Text>{`${c.discipline}: ${c.category}`}</Text>);
+    return categories.map((c: ICategory) => <Text key={c.discipline}>{`${c.discipline}: ${c.category}`}</Text>);
   };
 
   const getStravaUrl = (stravaId: string = '') => (stravaId ? `${STRAVA_BASE_URL}${stravaId}` : '');
