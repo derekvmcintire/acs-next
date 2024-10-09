@@ -15,7 +15,7 @@ export const NameHeading = ({ name, team }: IRiderTitleProps) => {
 
   return (
     <Title ta="left" pr={40} pb={20} className={classes.riderTitle}>
-      <Text inherit c="orange" component="span" >
+      <Text inherit c="orange" component="span">
         {`${first || ''} ${last || ''}`}
       </Text>
       <Text className={classes.riderTeam} component="span">
