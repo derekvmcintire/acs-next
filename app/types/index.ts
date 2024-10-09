@@ -1,27 +1,22 @@
-export interface IStageData {
+interface IBaseRaceData {
   name: string;
-  stageNumber: number;
   type: string;
   startDate: string;
-  place?: number;
+  place: number;
   racers: number;
   points: number;
   upgPoints: number;
-  noPlaceCode?: 'DNF' | 'DSQ' | 'DNS';
+  noPlaceCode: 'DNF' | 'DSQ' | 'DNS' | null;
 }
 
-export interface IRaceData {
-  name: string;
-  type: string;
-  startDate: string;
+export interface IStageData extends IBaseRaceData {
+  stageNumber: number;
+}
+
+export interface IRaceData extends IBaseRaceData{
   endDate: string | null;
   category: string;
-  place: number | null;
-  racers: number;
-  points: number;
-  upgPoints: number;
   stages: IStageData[] | null;
-  noPlaceCode: 'DNF' | 'DSQ' | 'DNS' | null;
 }
 
 export interface IRaceYear {
