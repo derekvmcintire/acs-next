@@ -12,12 +12,20 @@ export const mockRacer = {
     insta: 'horizonsoblivious',
   },
   dob: '1981-10-16T00:00:00.000-05:00',
-  categories: {
-    road: 3,
-    cx: 3,
-    xc: 2,
-    track: null,
-  },
+  categories: [
+    {
+      discipline: 'road',
+      category: 3,
+    },
+    {
+      discipline: 'cx',
+      category: 3,
+    },
+    {
+      discipline: 'xc',
+      category: 2,
+    },
+  ],
   teams: [
     {
       year: 2024,
