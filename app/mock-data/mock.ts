@@ -9,10 +9,15 @@ export const mockRacer = {
   },
   socials: {
     strava: '1139466',
-    'insta:': 'horizonsoblivious',
+    insta: 'horizonsoblivious',
   },
-  racingAge: 44,
-  category: 4,
+  dob: '1981-10-16T00:00:00.000-05:00',
+  categories: {
+    road: 3,
+    cx: 3,
+    xc: 2,
+    track: null,
+  },
   teams: [
     {
       year: 2024,
