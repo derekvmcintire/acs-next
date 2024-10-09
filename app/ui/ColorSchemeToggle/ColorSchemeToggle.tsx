@@ -12,7 +12,7 @@ export function ColorSchemeToggle() {
         <Button
           size="compact-sm"
           variant="transparent"
-          color="pink"
+          color="orange"
           onClick={() => setColorScheme('light')}
         >
           Light Theme
@@ -20,7 +20,7 @@ export function ColorSchemeToggle() {
         <Button
           size="compact-sm"
           variant="transparent"
-          color="pink"
+          color="orange"
           onClick={() => setColorScheme('dark')}
         >
           Dark Theme
