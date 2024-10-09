@@ -23,7 +23,7 @@ export default function Welcome() {
       </Group>
       <TextInput leftSectionPointerEvents="none" leftSection={icon} placeholder="search" />
       <Title className={classes.title} ta="right" pl={20} pr={40}>
-        <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>
+        <Text inherit variant="gradient" component="span" gradient={{ from: 'blue', to: 'orange' }}>
           ACS
         </Text>
       </Title>

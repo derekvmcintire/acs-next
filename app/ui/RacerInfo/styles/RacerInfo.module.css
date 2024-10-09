@@ -2,6 +2,11 @@
     padding-left: 40px;
 }
 
+.infoGrid {
+    width: 100%;
+
+}
+
 .profileImage {
     width: 100%;
     max-width: 128px;
@@ -9,11 +14,15 @@
 }
 
 .infoBlock {
-    width: 100%;
     height: 100%;
     padding-left: 10px;
+    padding-right: 10px;
     font-size: rem(12px);
     font-weight: 600;
+}
+
+.topResults {
+    height: 100%;
 }
 
 .blockTwo {
