@@ -10,7 +10,7 @@ interface RaceTableProps {
 
 export default function ResultsTable({ races }: RaceTableProps) {
   const rows = races.map(({ name, category, startDate, place, racers, type, points }) => (
-    <Table.Tr data-testid="custom-element" key={name + category}>
+    <Table.Tr key={name + category}>
       <Table.Td>{new Date(startDate).toDateString()}</Table.Td>
       <Table.Td className={classes.result}>{place}</Table.Td>
       <Table.Td>{racers}</Table.Td>
@@ -38,7 +38,7 @@ export default function ResultsTable({ races }: RaceTableProps) {
         ) : (
           <Table.Tr>
             <Table.Td colSpan={6} style={{ textAlign: 'center' }}>
-              No races available
+              No results available
             </Table.Td>
           </Table.Tr>
         )}

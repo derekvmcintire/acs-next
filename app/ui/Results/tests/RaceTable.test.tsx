@@ -1,4 +1,4 @@
-import { mockRacingHistory } from '@/app/mockData/mockRacer';
+import { mockRacingHistory } from '@/app/mockData/mockRaceHistory';
 import { render, screen } from '../../../../test-utils';
 import ResultsTable from '../components/ResultsTable';
 import RaceTabs from '../components/YearTabs';

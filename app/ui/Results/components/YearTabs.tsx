@@ -25,7 +25,7 @@ export default function RaceTabs({ years, history }: RaceTabsProps) {
 
   const getTabs = () => {
     return years.length < 1 ? (
-      <Text>No Race Data Available</Text>
+      <Text>No Results Available</Text>
     ) : (
       <Group mt="xl">
         <Tabs defaultValue={years[0].toString()}>

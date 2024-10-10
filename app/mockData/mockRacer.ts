@@ -1,7 +1,9 @@
+import { IRacerInfo } from '../types';
+
 export const TEAM_B2C2_CONTES = "B2C2 Cycling p/b Conte's Bike Shop";
 export const TEAM_B2C2_JRA = 'B2C2 Cycling p/b JRA';
 
-export const mockRacer = {
+export const mockRacer: IRacerInfo = {
   id: 1,
   name: {
     first: 'Derek',

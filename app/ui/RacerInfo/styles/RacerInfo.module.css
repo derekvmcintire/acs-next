@@ -53,3 +53,8 @@
     font-weight: 700;
     letter-spacing: rem(-1px);
 }
+
+.riderTitle {
+    padding-right: 40px;
+    padding-bottom: 20px;
+}
