@@ -16,22 +16,19 @@ export default function InfoGrid({ racerInfo }: InfoGridProps) {
   const { teams, socials, dob, categories, hometown } = racerInfo;
 
   return (
-    <>
-      <Grid>
-        <Grid.Col span={6}>
-          <Flex>
-            <ProfileImage />
-            <Details socials={socials} dob={dob} categories={categories} hometown={hometown} />
-          </Flex>
-        </Grid.Col>
-        <Grid.Col span={3}>
-          <TopResults />
-        </Grid.Col>
-        <Grid.Col span={3}>
-          <UpcomingRaces />
-        </Grid.Col>
-      </Grid>
-      {teams && teams.map((team) => <p>{`${team.year}: ${team.name}`}</p>)}
-    </>
-  );
+    <Grid>
+      <Grid.Col span={6}>
+        <Flex>
+          <ProfileImage />
+          <Details socials={socials} dob={dob} categories={categories} hometown={hometown} />
+        </Flex>
+      </Grid.Col>
+      <Grid.Col span={3}>
+        <TopResults />
+      </Grid.Col>
+      <Grid.Col span={3}>
+        <UpcomingRaces />
+      </Grid.Col>
+    </Grid>
+);
 }
