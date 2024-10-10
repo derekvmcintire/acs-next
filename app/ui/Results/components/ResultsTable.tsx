@@ -34,10 +34,9 @@ export default function ResultsTable({ races }: RaceTableProps) {
 
   return (
     <>
-      
-      {(races && races.length > 0) && (
+      {races && races.length > 0 && (
         <Flex justify="right">
-        <Text fs="italic" fw={700} pr={12} pt={8}>{`${races.length} races`}</Text>
+          <Text fs="italic" fw={700} pr={12} pt={8}>{`${races.length} races`}</Text>
         </Flex>
       )}
       <Table className={classes.raceTable}>
