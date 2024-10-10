@@ -22,7 +22,7 @@ export default function ResultsTable({ races }: RaceTableProps) {
     const mappedRows = races.map(({ name, category, startDate, place, racers, type, points }) => (
       <Table.Tr key={name + category}>
         <Table.Td>{getFormattedDateString(new Date(startDate))}</Table.Td>
-        <Table.Td className={classes.result}>{place}</Table.Td>
+        <Table.Td className={classes.result}>{place ? place : 'DNF'}</Table.Td>
         <Table.Td>{racers}</Table.Td>
         <Table.Td>{`${type} - ${name}`}</Table.Td>
         <Table.Td>{category}</Table.Td>

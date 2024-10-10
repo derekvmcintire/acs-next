@@ -66,7 +66,7 @@ export const buildMockRace = (raceType: RaceType = 'road'): IRaceData => {
     type: raceType,
     startDate,
     endDate,
-    category: generateRandomString(7),
+    category: `Cat ${generateRandomNumber(4) + 1}`,
     place: shouldDnf ? 0 : generateRandomNumber(racers),
     racers,
     points: generateRandomNumber(800),
@@ -84,11 +84,12 @@ export const buildMockRace = (raceType: RaceType = 'road'): IRaceData => {
 
 export const buildMockRacesForSingleYear = () => {
   const raceTypes: RaceType[] = ['hill', 'road', 'cx', 'xc', 'stage'];
-  const randomRaceType: RaceType = raceTypes[generateRandomNumber(raceTypes.length - 1)];
+  
   const randomNumberOfRaces = generateRandomNumber(40);
 
   const races = [];
   for (let i = 0; i < randomNumberOfRaces; i++) {
+    const randomRaceType: RaceType = raceTypes[generateRandomNumber(raceTypes.length - 1)];
     races.push(buildMockRace(randomRaceType));
   }
 

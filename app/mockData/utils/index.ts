@@ -1,7 +1,7 @@
 export const generateRandomNumber = (max: number = 1000) => Math.floor(Math.random() * max);
 
 export const generateRandomString = (maxLength: number = 15) => {
-  const characters = 'abcdefghijklmnopqrstuvwxyz1234567890';
+  const characters = 'abcdefghijklmnopqrstuvwxyz';
 
   const length = Math.floor(Math.random() * maxLength) + 1;
   const randomIndex = () => Math.floor(Math.random() * characters.length);
