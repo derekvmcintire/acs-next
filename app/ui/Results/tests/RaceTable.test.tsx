@@ -17,17 +17,7 @@ const getSortedHistory = (racingHistory: IRacerHistory) => {
 };
 
 describe('YearTab Component', () => {
-  it('renders three year tabs', () => {
-    const { years, history } = getSortedHistory(mockRacingHistory);
-
-    render(<RaceTabs years={years} history={history} />);
-
-    expect(screen.getByTestId('raceTab2024')).toBeInTheDocument();
-    expect(screen.getByTestId('raceTab2023')).toBeInTheDocument();
-    expect(screen.getByTestId('raceTab2022')).toBeInTheDocument();
-  });
-
-  it('renders all years provided, even with empty history', () => {
+  it('renders all years provided, even with no races in that year', () => {
     const { years, history } = getSortedHistory(mockRacingHistoryEmptyYear);
 
     render(<RaceTabs years={years} history={history} />);
@@ -37,7 +27,7 @@ describe('YearTab Component', () => {
     expect(screen.getByTestId('raceTab2022')).toBeInTheDocument();
   });
 
-  it('renders only years provided', () => {
+  it('renders years provided, even when year is missing', () => {
     const { years, history } = getSortedHistory(mockRacingHistoryMissingYear);
 
     render(<RaceTabs years={years} history={history} />);
