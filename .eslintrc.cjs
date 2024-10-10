@@ -14,5 +14,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'import/extensions': 'off',
     "arrow-body-style": "off",
+    "no-plusplus": "off"
   },
 };

@@ -1,5 +1,3 @@
-'use client';
-
 import { Text, Title } from '@mantine/core';
 import { IRiderName } from '@/app/types';
 import classes from '../styles/RacerInfo.module.css';

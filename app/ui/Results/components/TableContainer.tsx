@@ -1,6 +1,6 @@
 import { IconInfoCircle } from '@tabler/icons-react';
 import { Alert } from '@mantine/core';
-import { mockRacingHistory } from '@/app/mock-data/mock';
+import { buildMockRacingHistory } from '@/app/mockData/generators/results';
 import { IRaceYear } from '@/app/types';
 import { getData, getRaceYears } from '../utils';
 import YearTabs from './YearTabs';
@@ -10,7 +10,7 @@ export default async function TableContainer() {
   const icon = <IconInfoCircle />;
 
   try {
-    const raceHistory: IRaceYear[] = await getData(mockRacingHistory.history);
+    const raceHistory: IRaceYear[] = await getData(buildMockRacingHistory());
     const years = getRaceYears(raceHistory);
 
     return (

@@ -1,7 +1,7 @@
 // RacerInfoBlock.test.js
 
 import React from 'react';
-import { mockRacer } from '@/app/mock-data/mock';
+import { mockRacer } from '@/app/mockData/mockRacer';
 import { render, screen } from '../../../../test-utils';
 import Details from '../components/Details';
 import { RACER_PROFILE_IMAGE_TEST_ID } from '../components/ProfileImage';

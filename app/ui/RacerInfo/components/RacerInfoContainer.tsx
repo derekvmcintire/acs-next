@@ -1,38 +1,22 @@
-'use client';
+import React from 'react';
 
-import { useMemo } from 'react';
-import { Flex, Grid } from '@mantine/core';
+import { buildMockRacerInfo } from '@/app/mockData/generators/racer';
 import { IRacerInfo } from '@/app/types';
-import { getCurrentTeam, getMockRiderInfo } from '../utils';
-import Details from './Details';
+import { getCurrentTeam } from '../utils';
+import InfoGrid from './InfoGrid';
 import { NameHeading } from './NameHeading';
-import ProfileImage from './ProfileImage';
-import TopResults from './TopResults';
-import UpcomingRaces from './UpcomingRaces';
+
 
 export default function RacerInfoContainer() {
-  const racerInfo: IRacerInfo = useMemo(getMockRiderInfo, []);
-  const currentTeam = useMemo(() => getCurrentTeam(racerInfo.teams), [racerInfo.teams]);
+  const racerInfo: IRacerInfo = buildMockRacerInfo();
+  const currentTeam = getCurrentTeam(racerInfo.teams);
 
-  const { name, socials, dob, categories, hometown } = racerInfo;
+  const { name } = racerInfo;
 
   return (
     <>
       <NameHeading name={name} team={currentTeam} />
-      <Grid>
-        <Grid.Col span={4}>
-          <Flex>
-            <ProfileImage />
-            <Details socials={socials} dob={dob} categories={categories} hometown={hometown} />
-          </Flex>
-        </Grid.Col>
-        <Grid.Col span={4}>
-          <TopResults />
-        </Grid.Col>
-        <Grid.Col span={4}>
-          <UpcomingRaces />
-        </Grid.Col>
-      </Grid>
+      <InfoGrid racerInfo={racerInfo} />
     </>
   );
 }

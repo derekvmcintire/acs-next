@@ -51,10 +51,12 @@ export interface IHometown {
 }
 
 export interface IRacerInfo {
+  id: number;
   name: IRiderName;
   teams: ITeams[];
   socials: ISocials;
   categories: ICategory[];
   hometown: IHometown;
   dob: string;
+  photo: string;
 }

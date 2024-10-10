@@ -1,5 +1,3 @@
-'use client';
-
 import { Image } from '@mantine/core';
 import classes from '../styles/RacerInfo.module.css';
 

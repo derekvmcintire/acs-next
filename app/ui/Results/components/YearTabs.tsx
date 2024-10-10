@@ -21,7 +21,7 @@ export default function RaceTabs({ years, history }: RaceTabsProps) {
       },
       {} as Record<number, IRaceData[]>
     );
-  }, [years, history]);
+  }, []);
 
   const getTabs = () => {
     return years.length < 1 ? (
