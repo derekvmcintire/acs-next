@@ -10,8 +10,13 @@ export default async function TableContainer() {
   const icon = <IconInfoCircle />;
 
   try {
+<<<<<<< HEAD
     const history: IRaceYear[] = await getData(buildMockRacingHistory());
     const years = getRaceYears(history);
+=======
+    const raceHistory: IRaceYear[] = await getData(buildMockRacingHistory());
+    const years = getRaceYears(raceHistory);
+>>>>>>> origin/master
 
     return (
       <div className={classes.raceTableContainer}>

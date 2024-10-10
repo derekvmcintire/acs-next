@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   mockRacingHistory,
   mockRacingHistoryEmpty,
@@ -5,6 +6,9 @@ import {
   mockRacingHistoryMissingYear,
 } from '@/app/mockData/mockRaceHistory';
 import { IRacerHistory } from '@/app/types';
+=======
+import { mockRacingHistory } from '@/app/mockData/mockRaceHistory';
+>>>>>>> origin/master
 import { render, screen } from '../../../../test-utils';
 import ResultsTable from '../components/ResultsTable';
 import RaceTabs from '../components/YearTabs';
