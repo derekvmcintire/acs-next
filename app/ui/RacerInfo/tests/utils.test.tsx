@@ -1,4 +1,4 @@
-import { TEAM_B2C2_CONTES } from '@/app/mock-data/mock';
+import { TEAM_B2C2_CONTES } from '@/app/mockData/mockRacer';
 import { getCurrentTeam, getMockRiderInfo } from '../utils';
 
 describe('getCurrentTeam', () => {

@@ -3,11 +3,12 @@ import { IRaceYear } from '@/app/types';
 export const sortRacingData = (history: IRaceYear[]): IRaceYear[] => {
   const sorted = [...history];
   sorted.sort((a, b) => b.year - a.year);
+  console.log('sorted');
   return sorted;
 };
 
 export async function sleepTimeout(resolve: Function) {
-  setTimeout(resolve, 300);
+  setTimeout(resolve, 15);
 }
 
 export async function sleep() {

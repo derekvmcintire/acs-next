@@ -1,3 +1,5 @@
+'use client';
+
 import { PropsWithChildren } from 'react';
 import { Divider, Flex } from '@mantine/core';
 import classes from '../styles/RacerInfo.module.css';
