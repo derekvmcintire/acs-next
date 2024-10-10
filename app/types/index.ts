@@ -24,6 +24,11 @@ export interface IRaceYear {
   races: IRaceData[];
 }
 
+export interface IRacerHistory {
+  racerId: number;
+  history: IRaceYear[];
+}
+
 export interface IRiderName {
   first: string;
   last: string;
