@@ -27,7 +27,7 @@ export const buildMockRacerInfo = (racerInfo: IOptionalRacerInfo = {}): IRacerIn
       last: LAST_NAMES[generateRandomNumber(LAST_NAMES.length - 1)],
     },
     socials: socials || {
-      strava: generateRandomString(),
+      strava: String(generateRandomNumber(10000000)),
       insta: generateRandomString(),
     },
     dob: dob || generateRandomDateTimestamp(),
