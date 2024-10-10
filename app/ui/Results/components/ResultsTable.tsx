@@ -39,7 +39,7 @@ export default function ResultsTable({ races }: RaceTableProps) {
         </Table.Tr>
       </Table.Thead>
       <Table.Tbody>
-        {rows.length > 0 ? (
+        {races.length > 0 ? (
           rows
         ) : (
           <Table.Tr>
