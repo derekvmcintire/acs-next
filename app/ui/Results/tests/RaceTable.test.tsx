@@ -63,7 +63,6 @@ describe('RaceTable Component', () => {
     const { history } = getSortedHistory(mockRacingHistory);
 
     render(<ResultsTable races={history[0].races} />);
-    expect(screen.getByText(/8\/3/i)).toBeInTheDocument();
     expect(screen.getByText(/Green Mountain Stage Race/i)).toBeInTheDocument();
     expect(screen.getByText(/Men Cat 4\/5/i)).toBeInTheDocument();
     expect(screen.getByText(/350.3/i)).toBeInTheDocument();

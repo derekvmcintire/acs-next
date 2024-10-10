@@ -84,7 +84,7 @@ export const buildMockRace = (raceType: RaceType = 'road'): IRaceData => {
 
 export const buildMockRacesForSingleYear = () => {
   const raceTypes: RaceType[] = ['hill', 'road', 'cx', 'xc', 'stage'];
-  
+
   const randomNumberOfRaces = generateRandomNumber(40);
 
   const races = [];
