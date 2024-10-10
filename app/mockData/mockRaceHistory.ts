@@ -1,22 +1,12 @@
-<<<<<<< HEAD
 import { IRacerHistory } from '../types';
 import { buildMockRacesForSingleYear } from './generators/results';
 
 export const mockRacingHistoryEmpty: IRacerHistory = {
-=======
-import { buildMockRacesForSingleYear } from './generators/results';
-
-export const mockRacingHistoryEmpty = {
->>>>>>> origin/master
   racerId: 2,
   history: [],
 };
 
-<<<<<<< HEAD
 export const mockRacingHistoryEmptyYear: IRacerHistory = {
-=======
-export const mockRacingHistoryMissingYear = {
->>>>>>> origin/master
   racerId: 2,
   history: [
     {
@@ -25,7 +15,6 @@ export const mockRacingHistoryMissingYear = {
     },
     {
       year: 2023,
-<<<<<<< HEAD
       races: [],
     },
     {
@@ -40,8 +29,6 @@ export const mockRacingHistoryMissingYear: IRacerHistory = {
   history: [
     {
       year: 2024,
-=======
->>>>>>> origin/master
       races: buildMockRacesForSingleYear(),
     },
     {
@@ -52,21 +39,10 @@ export const mockRacingHistoryMissingYear: IRacerHistory = {
       year: 2021,
       races: buildMockRacesForSingleYear(),
     },
-<<<<<<< HEAD
   ],
 };
 
 export const mockRacingHistory: IRacerHistory = {
-=======
-    {
-      year: 2019,
-      races: buildMockRacesForSingleYear(),
-    },
-  ],
-};
-
-export const mockRacingHistory = {
->>>>>>> origin/master
   racerId: 1,
   history: [
     {
