@@ -36,9 +36,9 @@ export default function Details({ socials, dob, categories, hometown }: IDetails
         <Text>Categories:</Text>
         {mapCategories(categories)}
         <div>
-        <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>
-          <FaStrava color="orange"/>
-        </Anchor>
+          <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>
+            <FaStrava color="orange" />
+          </Anchor>
         </div>
       </InfoBlock>
     </section>
