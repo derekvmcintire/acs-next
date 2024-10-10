@@ -10,12 +10,12 @@ export default async function TableContainer() {
   const icon = <IconInfoCircle />;
 
   try {
-    const raceHistory: IRaceYear[] = await getData(buildMockRacingHistory());
-    const years = getRaceYears(raceHistory);
+    const history: IRaceYear[] = await getData(buildMockRacingHistory());
+    const years = getRaceYears(history);
 
     return (
       <div className={classes.raceTableContainer}>
-        <YearTabs years={years} history={raceHistory} />
+        <YearTabs years={years} history={history} />
       </div>
     );
   } catch (error) {

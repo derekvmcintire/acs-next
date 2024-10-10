@@ -1,11 +1,12 @@
+import { IRacerHistory } from '../types';
 import { buildMockRacesForSingleYear } from './generators/results';
 
-export const mockRacingHistoryEmpty = {
+export const mockRacingHistoryEmpty: IRacerHistory = {
   racerId: 2,
   history: [],
 };
 
-export const mockRacingHistoryMissingYear = {
+export const mockRacingHistoryEmptyYear: IRacerHistory = {
   racerId: 2,
   history: [
     {
@@ -14,6 +15,20 @@ export const mockRacingHistoryMissingYear = {
     },
     {
       year: 2023,
+      races: [],
+    },
+    {
+      year: 2022,
+      races: buildMockRacesForSingleYear(),
+    },
+  ],
+};
+
+export const mockRacingHistoryMissingYear: IRacerHistory = {
+  racerId: 2,
+  history: [
+    {
+      year: 2024,
       races: buildMockRacesForSingleYear(),
     },
     {
@@ -24,14 +39,10 @@ export const mockRacingHistoryMissingYear = {
       year: 2021,
       races: buildMockRacesForSingleYear(),
     },
-    {
-      year: 2019,
-      races: buildMockRacesForSingleYear(),
-    },
   ],
 };
 
-export const mockRacingHistory = {
+export const mockRacingHistory: IRacerHistory = {
   racerId: 1,
   history: [
     {
