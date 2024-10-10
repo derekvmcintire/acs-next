@@ -9,13 +9,19 @@ interface RaceTableProps {
   races: IRaceData[];
 }
 
+const getFormattedDateString = (date: Date) => {
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return `${month}/${day}`;
+};
+
 export default function ResultsTable({ races }: RaceTableProps) {
   const [rows, setRows] = useState<ReactNode>(<></>);
 
   useEffect(() => {
     const mappedRows = races.map(({ name, category, startDate, place, racers, type, points }) => (
       <Table.Tr key={name + category}>
-        <Table.Td>{new Date(startDate).toDateString()}</Table.Td>
+        <Table.Td>{getFormattedDateString(new Date(startDate))}</Table.Td>
         <Table.Td className={classes.result}>{place}</Table.Td>
         <Table.Td>{racers}</Table.Td>
         <Table.Td>{`${type} - ${name}`}</Table.Td>

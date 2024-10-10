@@ -3,13 +3,23 @@ import {
   generateRandomDateTimestamp,
   generateRandomNumber,
   generateRandomString,
+  getFutureDateTimestamp,
   getListOfPastYears,
 } from '../utils';
 
 type StageType = 'hill' | 'road' | 'cx' | 'xc';
 
-const buildMockStage = (stageType: StageType = 'road', stageNumber: number = 1): IStageData => {
-  const startDate = generateRandomDateTimestamp();
+const buildMockStage = (
+  raceData: IRaceData,
+  stageType: StageType = 'road',
+  stageNumber: number = 1
+): IStageData => {
+  const stages: IStageData[] = raceData?.stages !== null ? raceData.stages : [];
+
+  const startDate =
+    stages.length > 0
+      ? getFutureDateTimestamp(new Date(stages[stages.length - 1].startDate), 1)
+      : raceData.startDate;
   const racers = generateRandomNumber(85);
   const place = generateRandomNumber(racers);
   const upgradePoints = place > racers * 0.9 ? generateRandomNumber(10) : 0;
@@ -19,7 +29,7 @@ const buildMockStage = (stageType: StageType = 'road', stageNumber: number = 1):
     name: generateRandomString(),
     stageNumber,
     type: stageType,
-    startDate,
+    startDate: String(startDate),
     place: shouldDnf ? 0 : generateRandomNumber(racers),
     racers,
     points: generateRandomNumber(800),
@@ -28,13 +38,13 @@ const buildMockStage = (stageType: StageType = 'road', stageNumber: number = 1):
   };
 };
 
-export const buildMockStagesForStageRace = (n: number): IStageData[] => {
+export const buildMockStagesForStageRace = (raceData: IRaceData, n: number): IStageData[] => {
   const stageTypes: StageType[] = ['road', 'hill', 'xc', 'cx'];
   const randomStageType: StageType = stageTypes[generateRandomNumber(stageTypes.length - 1)];
 
   const stages = [];
   for (let i = 0; i < n; i++) {
-    stages.push(buildMockStage(randomStageType, stages.length + 1));
+    stages.push(buildMockStage(raceData, randomStageType, stages.length + 1));
   }
 
   return stages;
@@ -44,13 +54,14 @@ type RaceType = 'hill' | 'road' | 'cx' | 'xc' | 'stage';
 
 export const buildMockRace = (raceType: RaceType = 'road'): IRaceData => {
   const startDate = generateRandomDateTimestamp();
-  const endDate = raceType === 'stage' ? generateRandomDateTimestamp(startDate) : null;
+  const endDate =
+    raceType === 'stage' ? String(getFutureDateTimestamp(new Date(startDate), 3)) : null;
   const racers = generateRandomNumber(85);
   const place = generateRandomNumber(racers);
   const upgradePoints = place > racers * 0.9 ? generateRandomNumber(10) : 0;
   const shouldDnf = generateRandomNumber(75) > 75 * 0.9;
 
-  return {
+  const race: IRaceData = {
     name: generateRandomString(),
     type: raceType,
     startDate,
@@ -60,9 +71,15 @@ export const buildMockRace = (raceType: RaceType = 'road'): IRaceData => {
     racers,
     points: generateRandomNumber(800),
     upgPoints: upgradePoints,
-    stages: raceType === 'stage' ? buildMockStagesForStageRace(3) : null,
+    stages: null,
     noPlaceCode: shouldDnf ? 'DNF' : null,
   };
+
+  if (raceType === 'stage') {
+    race.stages = buildMockStagesForStageRace(race, 3);
+  }
+
+  return race;
 };
 
 export const buildMockRacesForSingleYear = () => {
