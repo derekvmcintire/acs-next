@@ -13,7 +13,7 @@ interface InfoGridProps {
 }
 
 export default function InfoGrid({ racerInfo }: InfoGridProps) {
-  const { teams, socials, dob, categories, hometown } = racerInfo;
+  const { socials, dob, categories, hometown } = racerInfo;
 
   return (
     <Grid>
@@ -30,5 +30,5 @@ export default function InfoGrid({ racerInfo }: InfoGridProps) {
         <UpcomingRaces />
       </Grid.Col>
     </Grid>
-);
+  );
 }
