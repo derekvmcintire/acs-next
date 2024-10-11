@@ -8,11 +8,14 @@ import TopNav from './ui/TopNav/TopNav';
 import classes from './page.module.css';
 
 export default function HomePage() {
+  const racerIds = [1, 2, 3];
+  const randomRacerId = racerIds[Math.floor(Math.random() * racerIds.length)];
+
   return (
     <div className={classes.page}>
       <TopNav />
       <Suspense fallback={<Loader />}>
-        <RacerInfoContainer />
+        <RacerInfoContainer id={randomRacerId} />
       </Suspense>
       <Group pb="50px">
         <Suspense fallback={<Loader />}>
