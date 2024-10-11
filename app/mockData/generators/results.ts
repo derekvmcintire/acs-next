@@ -39,7 +39,7 @@ export const buildMockStagesForStageRace = (raceData: IRaceData, n: number): ISt
 
   const stages = [];
   for (let i = 0; i < n; i++) {
-    stages.push(buildMockStage(raceData, randomStageType, stages.length + 1));
+    stages.push(buildMockStage(raceData, randomStageType));
   }
 
   return stages;
