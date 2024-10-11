@@ -1,4 +1,4 @@
-export const generateRandomNumber = (max: number = 1000) => Math.floor(Math.random() * max);
+export const generateRandomNumber = (max: number = 1000) => Math.floor(Math.random() * max) + 1;
 
 export const generateRandomString = (maxLength: number = 15) => {
   const characters = 'abcdefghijklmnopqrstuvwxyz';
