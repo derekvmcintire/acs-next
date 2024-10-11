@@ -21,7 +21,7 @@ const buildMockStage = (raceData: IRaceData, stageType: StageType = 'road'): ISt
       : raceData.startDate;
 
   return {
-          name: generateRandomString(),
+    name: generateRandomString(),
     stageNumber: stages.length,
     type: stageType,
     startDate: String(startDate),
