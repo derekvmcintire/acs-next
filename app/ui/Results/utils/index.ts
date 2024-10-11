@@ -14,7 +14,7 @@ export const sortRacingDataByYear = (history: IRaceYear[]): IRaceYear[] => {
 };
 
 export async function sleepTimeout(resolve: Function) {
-  setTimeout(resolve, 15);
+  setTimeout(resolve, 0);
 }
 
 export async function sleep() {
