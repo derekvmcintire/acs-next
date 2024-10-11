@@ -10,17 +10,11 @@ export default async function TableContainer() {
   const icon = <IconInfoCircle />;
 
   try {
-    // fetch to random API just to add some async waiting time
-    // displaying result in hidden div for now
-    const response = await fetch('https://restcountries.com/v3.1/all');
-    const countries = await response.json();
-
     const history: IRaceYear[] = await getData(buildMockRacingHistory());
     const years = getRaceYears(history);
 
     return (
       <div className={classes.raceTableContainer}>
-        <div className={classes.hidden}>{JSON.stringify(countries)}</div>
         <YearTabs years={years} history={history} />
       </div>
     );
