@@ -7,12 +7,13 @@ import {
   getListOfPastYears,
 } from '../utils';
 
+const calculateMockUpgradePoints = (place: number, racers: number) => place > racers * 0.9 ? generateRandomNumber(10) : 0;
+
 type StageType = 'hill' | 'road' | 'cx' | 'xc';
 
 const buildMockStage = (
   raceData: IRaceData,
   stageType: StageType = 'road',
-  stageNumber: number = 1
 ): IStageData => {
   const stages: IStageData[] = raceData?.stages !== null ? raceData.stages : [];
 
@@ -20,21 +21,17 @@ const buildMockStage = (
     stages.length > 0
       ? getFutureDateTimestamp(new Date(stages[stages.length - 1].startDate), 1)
       : raceData.startDate;
-  const racers = generateRandomNumber(85);
-  const place = generateRandomNumber(racers);
-  const upgradePoints = place > racers * 0.9 ? generateRandomNumber(10) : 0;
-  const shouldDnf = generateRandomNumber(75) > 75 * 0.9;
 
   return {
     name: generateRandomString(),
-    stageNumber,
+    stageNumber: stages.length,
     type: stageType,
     startDate: String(startDate),
-    place: shouldDnf ? 0 : generateRandomNumber(racers),
-    racers,
+    place: generateRandomNumber(raceData.racers),
+    racers: raceData.racers,
     points: generateRandomNumber(800),
-    upgPoints: upgradePoints,
-    noPlaceCode: shouldDnf ? 'DNF' : null,
+    upgPoints: calculateMockUpgradePoints(raceData.place, raceData.racers),
+    noPlaceCode: raceData.place ? null : 'DNF',
   };
 };
 
