@@ -18,9 +18,7 @@ export default function HomePage() {
         <RacerInfoContainer id={randomRacerId} />
       </Suspense>
       <Group pb="50px">
-        <Suspense fallback={<Loader />}>
-          <RaceTableContainer />
-        </Suspense>
+        <RaceTableContainer />
       </Group>
       <ColorSchemeToggle />
     </div>
