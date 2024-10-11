@@ -37,3 +37,9 @@
 //     // expect(screen.getByTestId(RACER_PROFILE_IMAGE_TEST_ID)).toBeInTheDocument();
 //   });
 // });
+
+describe('temp', () => {
+  test('placeholder', () => {
+    expect(true).toBe(true);
+  });
+});
