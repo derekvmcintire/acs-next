@@ -13,7 +13,7 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     'import/extensions': 'off',
-    "arrow-body-style": "off",
-    "no-plusplus": "off"
+    'arrow-body-style': 'off',
+    'no-plusplus': 'off',
   },
 };

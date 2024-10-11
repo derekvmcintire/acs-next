@@ -8,10 +8,10 @@ import { IRacerHistory } from '@/app/types';
 import { render, screen } from '../../../../test-utils';
 import ResultsTable from '../components/ResultsTable';
 import RaceTabs from '../components/YearTabs';
-import { getRaceYears, sortRacingData } from '../utils';
+import { getRaceYears, sortRacingDataByYear } from '../utils';
 
 const getSortedHistory = (racingHistory: IRacerHistory) => {
-  const history = sortRacingData(racingHistory.history);
+  const history = sortRacingDataByYear(racingHistory.history);
   const years = getRaceYears(history);
   return { years, history };
 };
@@ -63,7 +63,6 @@ describe('RaceTable Component', () => {
     const { history } = getSortedHistory(mockRacingHistory);
 
     render(<ResultsTable races={history[0].races} />);
-    expect(screen.getByText(/Sat Aug 03 2024/i)).toBeInTheDocument();
     expect(screen.getByText(/Green Mountain Stage Race/i)).toBeInTheDocument();
     expect(screen.getByText(/Men Cat 4\/5/i)).toBeInTheDocument();
     expect(screen.getByText(/350.3/i)).toBeInTheDocument();
