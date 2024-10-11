@@ -10,7 +10,7 @@ import {
 const calculateMockUpgradePoints = (place: number, racers: number) =>
   place > racers * 0.9 ? generateRandomNumber(10) : 0;
 
-type StageType = 'hill' | 'road' | 'cx' | 'xc';
+type StageType = 'hill' | 'road' | 'cx' | 'xc' | 'gravity';
 
 const buildMockStage = (raceData: IRaceData, stageType: StageType = 'road'): IStageData => {
   const stages: IStageData[] = raceData?.stages !== null ? raceData.stages : [];
@@ -21,11 +21,11 @@ const buildMockStage = (raceData: IRaceData, stageType: StageType = 'road'): ISt
       : raceData.startDate;
 
   return {
-    name: generateRandomString(),
+          name: generateRandomString(),
     stageNumber: stages.length,
     type: stageType,
     startDate: String(startDate),
-     place: generateRandomNumber(raceData.racers),
+    place: generateRandomNumber(raceData.racers),
     racers: raceData.racers,
     points: generateRandomNumber(800),
     upgPoints: calculateMockUpgradePoints(raceData.place, raceData.racers),
