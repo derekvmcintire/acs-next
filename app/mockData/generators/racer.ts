@@ -6,7 +6,7 @@ import { generateRandomDateTimestamp, generateRandomNumber, generateRandomString
 interface IOptionalRacerInfo extends Partial<IRacerInfo> {}
 
 const generateRandomTeam = (n: number) => {
-  const randomNumber = generateRandomNumber(n) + 2;
+  const randomNumber = generateRandomNumber(n);
 
   let team = '';
   for (let i = 0; i < randomNumber; i++) {
@@ -34,15 +34,15 @@ export const buildMockRacerInfo = (racerInfo: IOptionalRacerInfo = {}): IRacerIn
     categories: categories || [
       {
         discipline: 'road',
-        category: generateRandomNumber(5),
+        category: generateRandomNumber(4),
       },
       {
         discipline: 'cx',
-        category: generateRandomNumber(5),
+        category: generateRandomNumber(4),
       },
       {
         discipline: 'xc',
-        category: generateRandomNumber(3),
+        category: generateRandomNumber(2),
       },
     ],
     teams: teams || [
@@ -52,11 +52,11 @@ export const buildMockRacerInfo = (racerInfo: IOptionalRacerInfo = {}): IRacerIn
       },
       {
         year: 2023,
-        name: generateRandomTeam(3),
+        name: generateRandomTeam(4),
       },
       {
         year: 2022,
-        name: generateRandomTeam(6),
+        name: generateRandomTeam(5),
       },
     ],
     hometown: hometown || {

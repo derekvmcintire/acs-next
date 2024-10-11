@@ -3,6 +3,7 @@ import '@mantine/core/styles.css';
 import React from 'react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { theme } from '../theme';
+import { WebVitals } from './webVitals';
 
 export const metadata = {
   title: 'ACS',
@@ -21,7 +22,10 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <>
+          <WebVitals />
+          <MantineProvider theme={theme}>{children}</MantineProvider>
+        </>
       </body>
     </html>
   );
