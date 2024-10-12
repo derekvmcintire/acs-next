@@ -2,7 +2,7 @@
 
 ## To start the server:
 
-`json-server --watch app/mockAPI/racers.json --port 8000`
+`json-server --watch app/mockAPI/endpoints.json --port 8000`
 
 ## Endpoints
 
@@ -13,4 +13,4 @@
 
 ## Developing
 
-To add a new endpoint, create a new `.json` file in the `mockAPI` folder with JSON data you wish to return.
+To add a new endpoint, add a new field to the endpoints.json object

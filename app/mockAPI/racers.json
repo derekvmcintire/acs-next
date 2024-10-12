@@ -46,7 +46,7 @@
             },
             "photo":
                 "https://dgtzuqphqg23d.cloudfront.net/xpqTav-4hWRXpvJoODOMmpeI_jUOONmJZ6KnCrG7ncc-2048x1536.jpg"
-      },
+        },
         {
             "id": 2,
             "name": {
@@ -93,53 +93,53 @@
             },
             "photo":
                 "https://dgtzuqphqg23d.cloudfront.net/xpqTav-4hWRXpvJoODOMmpeI_jUOONmJZ6KnCrG7ncc-2048x1536.jpg"
-      },
-      {
-        "id": 3,
-        "name": {
-            "first": "Fem",
-            "last": "Van Der Hoorn"
-            },
-        "socials": {
-            "strava": "8469753",
-            "insta": "vanderhorny"
         },
-        "dob": "2001-03-19T00:00:00.000-05:00",
-        "categories": [
-            {
-                "discipline": "road",
-                "category": 1
+        {
+            "id": 3,
+            "name": {
+                "first": "Fem",
+                "last": "Van Der Hoorn"
+                },
+            "socials": {
+                "strava": "8469753",
+                "insta": "vanderhorny"
             },
-            {
-                "discipline": "cx",
-                "category": 5
+            "dob": "2001-03-19T00:00:00.000-05:00",
+            "categories": [
+                {
+                    "discipline": "road",
+                    "category": 1
+                },
+                {
+                    "discipline": "cx",
+                    "category": 5
+                },
+                {
+                    "discipline": "xc",
+                    "category": 3
+                }
+            ]   ,
+            "teams": [
+                {
+                    "year": 2024,
+                    "name": "EF Victorious Vampires"
+                },
+                {
+                    "year": 2023,
+                    "name": "Q36.5 Bingo Dstny"
+                },
+                {
+                    "year": 2022,
+                    "name": "Jayco Astana"
+                }
+            ],
+            "hometown": {
+                "country": "NL",
+                "state": "",
+                "city": "Rotterdam"
             },
-            {
-                "discipline": "xc",
-                "category": 3
-            }
-        ]   ,
-        "teams": [
-            {
-                "year": 2024,
-                "name": "EF Victorious Vampires"
-            },
-            {
-                "year": 2023,
-                "name": "Q36.5 Bingo Dstny"
-            },
-            {
-                "year": 2022,
-                "name": "Jayco Astana"
-            }
-        ],
-        "hometown": {
-            "country": "NL",
-            "state": "",
-            "city": "Rotterdam"
-        },
-        "photo":
-            "https://dgtzuqphqg23d.cloudfront.net/xpqTav-4hWRXpvJoODOMmpeI_jUOONmJZ6KnCrG7ncc-2048x1536.jpg"
-    }
+            "photo":
+                "https://dgtzuqphqg23d.cloudfront.net/xpqTav-4hWRXpvJoODOMmpeI_jUOONmJZ6KnCrG7ncc-2048x1536.jpg"
+        }
     ]
-  }
+}
