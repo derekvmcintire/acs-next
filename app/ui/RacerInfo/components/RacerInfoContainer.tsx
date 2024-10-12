@@ -1,20 +1,29 @@
 import React from 'react';
-import { buildMockRacerInfo } from '@/app/mockData/generators/racer';
-import { IRacerInfo } from '@/app/types';
+import { BASE_URL, RACERS_PATH } from '@/app/mockAPI/constants';
+import { IRacerInfo } from '../../../types';
 import { getCurrentTeam } from '../utils';
 import InfoGrid from './InfoGrid';
 import { NameHeading } from './NameHeading';
 
-export default function RacerInfoContainer() {
-  const racerInfo: IRacerInfo = buildMockRacerInfo();
-  const currentTeam = getCurrentTeam(racerInfo.teams);
+interface IRacerInfoContainerProps {
+  id: number;
+}
 
-  const { name } = racerInfo;
+export default async function RacerInfoContainer({ id }: IRacerInfoContainerProps) {
+  try {
+    const response = await fetch(`${BASE_URL}${RACERS_PATH}/${id}`);
+    const racerInfo: IRacerInfo = await response.json();
 
-  return (
-    <>
-      <NameHeading name={name} team={currentTeam} />
-      <InfoGrid racerInfo={racerInfo} />
-    </>
-  );
+    const { name } = racerInfo;
+    const currentTeam = getCurrentTeam(racerInfo.teams);
+
+    return (
+      <>
+        <NameHeading name={name} team={currentTeam} />
+        <InfoGrid racerInfo={racerInfo} />
+      </>
+    );
+  } catch {
+    return <div>Did not work</div>;
+  }
 }

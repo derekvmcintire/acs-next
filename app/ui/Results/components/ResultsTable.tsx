@@ -20,16 +20,18 @@ export default function ResultsTable({ races }: ResultsTableProps) {
 
   useEffect(() => {
     if (races && races?.length > 0) {
-      const mappedRows = races.map(({ name, category, startDate, place, racers, type, points }) => (
-        <Table.Tr key={name + category}>
-          <Table.Td>{getFormattedDateString(new Date(startDate))}</Table.Td>
-          <Table.Td className={classes.result}>{place || 'DNF'}</Table.Td>
-          <Table.Td>{racers}</Table.Td>
-          <Table.Td>{`${type} - ${name}`}</Table.Td>
-          <Table.Td>{category}</Table.Td>
-          <Table.Td>{points}</Table.Td>
-        </Table.Tr>
-      ));
+      const mappedRows = races.map(
+        ({ name, category, startDate, place, racers, type, points }, i) => (
+          <Table.Tr key={i + category}>
+            <Table.Td>{getFormattedDateString(new Date(startDate))}</Table.Td>
+            <Table.Td className={classes.result}>{place || 'DNF'}</Table.Td>
+            <Table.Td>{racers}</Table.Td>
+            <Table.Td>{`${type} - ${name}`}</Table.Td>
+            <Table.Td>{category}</Table.Td>
+            <Table.Td>{points}</Table.Td>
+          </Table.Tr>
+        )
+      );
       setRows(mappedRows);
     }
   }, []);
