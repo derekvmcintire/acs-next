@@ -1,0 +1,379 @@
+ {
+        "racerId": 1,
+        "history": [
+            {
+                "year": 2024,
+                "races": [
+                    {
+                        "name": "Buzz the Tower",
+                        "type": "road",
+                        "startDate": "2024-03-30T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Men Cat 3/4",
+                        "place": 5,
+                        "racers": 42,
+                        "points": 336.14,
+                        "upgPoints": 3,
+                        "stages": null,
+                        "noPlaceCode": null
+                    },
+                    {
+                        "name": "Devens Grand Prix",
+                        "type": "road",
+                        "startDate": "2024-07-27T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Men Cat 3/4",
+                        "place": 34,
+                        "racers": 44,
+                        "points": 415.35,
+                        "upgPoints": 3,
+                        "stages": null,
+                        "noPlaceCode": null
+                    },
+                    {
+                        "name": "Sunshine Criterium",
+                        "type": "road",
+                        "startDate": "2024-05-11T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Men Cat 1/2/3",
+                        "place": 0,
+                        "racers": 55,
+                        "points": 402.28,
+                        "upgPoints": 3,
+                        "stages": null,
+                        "noPlaceCode": "DNF"
+                    },
+                    {
+                        "name": "Ascutney Hillclimb",
+                        "type": "hill",
+                        "startDate": "2024-08-03T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Overall Men",
+                        "place": 9,
+                        "racers": 65,
+                        "points": 399.38,
+                        "upgPoints": 0,
+                        "stages": null,
+                        "noPlaceCode": null
+                    }
+                ]
+            },
+            {
+                "year": 2023,
+                "races": [
+                    {
+                        "name": "Buzz the Tower",
+                        "type": "road",
+                        "startDate": "2023-03-30T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Men Cat 3/4",
+                        "place": 5,
+                        "racers": 42,
+                        "points": 336.14,
+                        "upgPoints": 3,
+                        "stages": null,
+                        "noPlaceCode": null
+                    },
+                    {
+                        "name": "Tour de Whatever",
+                        "type": "road",
+                        "startDate": "2023-03-35T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Men Cat 3/4",
+                        "place": 5,
+                        "racers": 42,
+                        "points": 336.14,
+                        "upgPoints": 3,
+                        "stages": null,
+                        "noPlaceCode": null
+                    },
+                    {
+                        "name": "Sunshine Criterium",
+                        "type": "road",
+                        "startDate": "2023-05-16T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Men Cat 1/2/3",
+                        "place": 0,
+                        "racers": 55,
+                        "points": 402.28,
+                        "upgPoints": 3,
+                        "stages": null,
+                        "noPlaceCode": "DNF"
+                    },
+                    {
+                        "name": "Ascutney Hillclimb",
+                        "type": "hill",
+                        "startDate": "2023-08-08T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Overall Men",
+                        "place": 9,
+                        "racers": 65,
+                        "points": 399.38,
+                        "upgPoints": 0,
+                        "stages": null,
+                        "noPlaceCode": null
+                    },
+                    {
+                        "name": "Sunshine Criterium",
+                        "type": "road",
+                        "startDate": "2023-04-11T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Men Cat 1/2/3",
+                        "place": 0,
+                        "racers": 55,
+                        "points": 402.28,
+                        "upgPoints": 3,
+                        "stages": null,
+                        "noPlaceCode": "DNF"
+                    },
+                    {
+                        "name": "Ascutney Hilldescent",
+                        "type": "hill",
+                        "startDate": "2023-08-19T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Overall Men",
+                        "place": 9,
+                        "racers": 65,
+                        "points": 399.38,
+                        "upgPoints": 0,
+                        "stages": null,
+                        "noPlaceCode": null
+                    }
+                ]
+            },
+            {
+                "year": 2019,
+                "races": [
+                    {
+                        "name": "feasdf the eefa",
+                        "type": "road",
+                        "startDate": "2019-03-30T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Men Cat 3/4",
+                        "place": 5,
+                        "racers": 42,
+                        "points": 336.14,
+                        "upgPoints": 3,
+                        "stages": null,
+                        "noPlaceCode": null
+                    },
+                    {
+                        "name": "Sunshine Critefea",
+                        "type": "road",
+                        "startDate": "2019-05-11T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Men Cat 1/2/3",
+                        "place": 0,
+                        "racers": 55,
+                        "points": 402.28,
+                        "upgPoints": 3,
+                        "stages": null,
+                        "noPlaceCode": "DNF"
+                    },
+                    {
+                        "name": "Edfstney Hasdfasmb",
+                        "type": "hill",
+                        "startDate": "2019-08-03T00:00:00.000-05:00",
+                        "endDate": null,
+                        "category": "Overall Men",
+                        "place": 9,
+                        "racers": 65,
+                        "points": 399.38,
+                        "upgPoints": 0,
+                        "stages": null,
+                        "noPlaceCode": null
+                    }
+                ]
+            },
+            {
+                "racerId": 2,
+                "history": [
+                    {
+                        "year": 2024,
+                        "races": [
+                            {
+                                "name": "Rasputitsa",
+                                "type": "road",
+                                "startDate": "2024-03-30T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Men Cat 3/4",
+                                "place": 5,
+                                "racers": 42,
+                                "points": 336.14,
+                                "upgPoints": 3,
+                                "stages": null,
+                                "noPlaceCode": null
+                            },
+                            {
+                                "name": "Tour de Langkawi",
+                                "type": "road",
+                                "startDate": "2024-07-27T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Men Cat 3/4",
+                                "place": 34,
+                                "racers": 44,
+                                "points": 415.35,
+                                "upgPoints": 3,
+                                "stages": null,
+                                "noPlaceCode": null
+                            },
+                            {
+                                "name": "Tour of Dorchester",
+                                "type": "road",
+                                "startDate": "2024-05-11T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Men Cat 1/2/3",
+                                "place": 0,
+                                "racers": 55,
+                                "points": 402.28,
+                                "upgPoints": 3,
+                                "stages": null,
+                                "noPlaceCode": "DNF"
+                            },
+                            {
+                                "name": "Blue Hill Criterium",
+                                "type": "hill",
+                                "startDate": "2024-08-03T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Overall Men",
+                                "place": 9,
+                                "racers": 65,
+                                "points": 399.38,
+                                "upgPoints": 0,
+                                "stages": null,
+                                "noPlaceCode": null
+                            }
+                        ]
+                    },
+                    {
+                        "year": 2023,
+                        "races": [
+                            {
+                                "name": "Dover TT",
+                                "type": "tt",
+                                "startDate": "2023-03-30T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Men Cat 3/4",
+                                "place": 5,
+                                "racers": 42,
+                                "points": 336.14,
+                                "upgPoints": 3,
+                                "stages": null,
+                                "noPlaceCode": null
+                            },
+                            {
+                                "name": "Pancake Breakfast",
+                                "type": "road",
+                                "startDate": "2023-03-35T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Men Cat 3/4",
+                                "place": 5,
+                                "racers": 42,
+                                "points": 336.14,
+                                "upgPoints": 3,
+                                "stages": null,
+                                "noPlaceCode": null
+                            },
+                            {
+                                "name": "Rollin Thunder",
+                                "type": "road",
+                                "startDate": "2023-05-16T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Men Cat 1/2/3",
+                                "place": 0,
+                                "racers": 55,
+                                "points": 402.28,
+                                "upgPoints": 3,
+                                "stages": null,
+                                "noPlaceCode": "DNF"
+                            },
+                            {
+                                "name": "Plunk Pond Hillclimb",
+                                "type": "hill",
+                                "startDate": "2023-08-08T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Overall Men",
+                                "place": 9,
+                                "racers": 65,
+                                "points": 399.38,
+                                "upgPoints": 0,
+                                "stages": null,
+                                "noPlaceCode": null
+                            },
+                            {
+                                "name": "Gravel Eater",
+                                "type": "road",
+                                "startDate": "2023-04-11T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Men Cat 1/2/3",
+                                "place": 0,
+                                "racers": 55,
+                                "points": 402.28,
+                                "upgPoints": 3,
+                                "stages": null,
+                                "noPlaceCode": "DNF"
+                            },
+                            {
+                                "name": "Magnificent Seven",
+                                "type": "hill",
+                                "startDate": "2023-08-19T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Overall Men",
+                                "place": 9,
+                                "racers": 65,
+                                "points": 399.38,
+                                "upgPoints": 0,
+                                "stages": null,
+                                "noPlaceCode": null
+                            }
+                        ]
+                    },
+                    {
+                        "year": 2019,
+                        "races": [
+                            {
+                                "name": "Born 2 Rip",
+                                "type": "road",
+                                "startDate": "2019-03-30T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Men Cat 3/4",
+                                "place": 5,
+                                "racers": 42,
+                                "points": 336.14,
+                                "upgPoints": 3,
+                                "stages": null,
+                                "noPlaceCode": null
+                            },
+                            {
+                                "name": "Alfalfa Square Downtown Extravaganza",
+                                "type": "road",
+                                "startDate": "2019-05-11T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Men Cat 1/2/3",
+                                "place": 0,
+                                "racers": 55,
+                                "points": 402.28,
+                                "upgPoints": 3,
+                                "stages": null,
+                                "noPlaceCode": "DNF"
+                            },
+                            {
+                                "name": "TDF Champs Elysees",
+                                "type": "hill",
+                                "startDate": "2019-08-03T00:00:00.000-05:00",
+                                "endDate": null,
+                                "category": "Overall Men",
+                                "place": 9,
+                                "racers": 65,
+                                "points": 399.38,
+                                "upgPoints": 0,
+                                "stages": null,
+                                "noPlaceCode": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+  
