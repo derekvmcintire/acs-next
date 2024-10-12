@@ -45,7 +45,7 @@ export const buildMockStagesForStageRace = (raceData: IRaceData, n: number): ISt
   return stages;
 };
 
-type RaceType = 'hill' | 'road' | 'cx' | 'xc' | 'stage';
+type RaceType = 'hill' | 'road' | 'cx' | 'xc' | 'tt' | 'stage';
 
 export const buildMockRace = (raceType: RaceType = 'road'): IRaceData => {
   const startDate = generateRandomDateTimestamp();

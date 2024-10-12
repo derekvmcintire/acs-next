@@ -8,6 +8,8 @@
 
 - http://localhost:8000/racers
 - http://localhost:8000/racers?id=1
+- http://localhost:8000/history
+- http://localhost:8000/history?racerId=1
 
 ## Developing
 
