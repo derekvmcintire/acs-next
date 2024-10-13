@@ -50,7 +50,7 @@ describe('RaceTable Component', () => {
   it('has the right columns', () => {
     const { history } = getSortedHistory(mockRacingHistory);
 
-    render(<ResultsTable races={history[0].races} />);
+    render(<ResultsTable results={history[0].races} />);
     expect(screen.getByText(/Date/i)).toBeInTheDocument();
     expect(screen.getByText(/Result/i)).toBeInTheDocument();
     expect(screen.getByText(/Starters/i)).toBeInTheDocument();
@@ -62,7 +62,7 @@ describe('RaceTable Component', () => {
   it('renders the mock races', () => {
     const { history } = getSortedHistory(mockRacingHistory);
 
-    render(<ResultsTable races={history[0].races} />);
+    render(<ResultsTable results={history[0].races} />);
     expect(screen.getByText(/Green Mountain Stage Race/i)).toBeInTheDocument();
     expect(screen.getByText(/Men Cat 4\/5/i)).toBeInTheDocument();
     expect(screen.getByText(/350.3/i)).toBeInTheDocument();
