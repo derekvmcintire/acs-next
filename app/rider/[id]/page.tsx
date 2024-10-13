@@ -15,13 +15,13 @@ interface RiderPageProps {
 }
 
 export default function RiderPage({ params }: RiderPageProps) {
-  const racerId = params.id;
+  const { id } = params;
 
   return (
     <div className={classes.riderPage}>
       <TopNav />
       <Suspense fallback={<Loader />}>
-        <RacerInfoContainer id={racerId} />
+        <RacerInfoContainer id={id} />
       </Suspense>
       <Group pb="50px">
         <TableContainer />
