@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaStrava } from 'react-icons/fa';
 import { Anchor, Text } from '@mantine/core';
+import InfoBlock from '../../_ui/InfoBlock';
 import { ICategory, IHometown, ISocials } from '../../../_types';
-import InfoBlock from '../../../_ui/InfoBlock';
 import classes from '../styles/rider.module.css';
 
 const STRAVA_BASE_URL = 'http://strava.com/athletes/';
