@@ -79,6 +79,7 @@ export type RaceType =
   | typeof RACE_TYPES.XC
   | typeof RACE_TYPES.TT
   | typeof RACE_TYPES.STAGE;
+
 export type StageType =
   | typeof RACE_TYPES.HILL
   | typeof RACE_TYPES.ROAD
