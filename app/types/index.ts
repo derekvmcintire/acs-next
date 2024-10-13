@@ -1,3 +1,5 @@
+import { NO_PLACE_CODE, RACE_TYPES } from './constants';
+
 interface IBaseRaceData {
   name: string;
   type: string;
@@ -6,7 +8,11 @@ interface IBaseRaceData {
   racers: number;
   points: number;
   upgPoints: number;
-  noPlaceCode: 'DNF' | 'DSQ' | 'DNS' | null;
+  noPlaceCode:
+    | typeof NO_PLACE_CODE.DNF
+    | typeof NO_PLACE_CODE.DSQ
+    | typeof NO_PLACE_CODE.DNS
+    | null;
 }
 
 export interface IStageData extends IBaseRaceData {
@@ -65,3 +71,18 @@ export interface IRacerInfo {
   dob: string;
   photo: string;
 }
+
+export type RaceType =
+  | typeof RACE_TYPES.HILL
+  | typeof RACE_TYPES.ROAD
+  | typeof RACE_TYPES.CX
+  | typeof RACE_TYPES.XC
+  | typeof RACE_TYPES.TT
+  | typeof RACE_TYPES.STAGE;
+
+export type StageType =
+  | typeof RACE_TYPES.HILL
+  | typeof RACE_TYPES.ROAD
+  | typeof RACE_TYPES.CX
+  | typeof RACE_TYPES.XC
+  | typeof RACE_TYPES.TT;

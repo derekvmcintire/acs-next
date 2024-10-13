@@ -11,8 +11,9 @@ interface IRacerInfoContainerProps {
 
 export default async function RacerInfoContainer({ id }: IRacerInfoContainerProps) {
   try {
-    const response = await fetch(`${BASE_URL}${RACERS_PATH}/${id}`);
-    const racerInfo: IRacerInfo = await response.json();
+    const response = await fetch(`${BASE_URL}${RACERS_PATH}?id=${id}`);
+    const parsedResponse: IRacerInfo[] = await response.json();
+    const racerInfo = parsedResponse[0];
 
     const { name } = racerInfo;
     const currentTeam = getCurrentTeam(racerInfo.teams);

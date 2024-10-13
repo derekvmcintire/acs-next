@@ -14,7 +14,7 @@ afterEach(() => {
 beforeEach(() => {
   global.fetch = jest.fn(() =>
     Promise.resolve({
-      json: () => Promise.resolve(mockRacer),
+      json: () => Promise.resolve([mockRacer]),
     })
   ) as jest.Mock;
 });
