@@ -1,0 +1,50 @@
+.racerInfo {
+  padding-left: 40px;
+}
+
+.infoGrid {
+  width: 100%;
+}
+
+.profileImage {
+  width: 100%;
+  max-width: 128px;
+  min-width: 64px;
+}
+
+.topResults {
+  height: 100%;
+}
+
+.blockTwo {
+  height: 100%;
+  padding: 8px;
+}
+
+.infoBlockText {
+  padding-left: 8px;
+}
+
+.divider {
+  height: 100%;
+  width: 100%;
+}
+
+.riderName {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-size: rem(30px);
+  font-weight: 900;
+  letter-spacing: rem(-2px);
+}
+
+.riderTeam {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-size: rem(20px);
+  font-weight: 700;
+  letter-spacing: rem(-1px);
+}
+
+.riderTitle {
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
