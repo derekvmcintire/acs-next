@@ -9,7 +9,6 @@ interface ResultsTableServerProps {
 }
 
 export default async function ResultsTableServer({ id }: ResultsTableServerProps) {
-  console.log('lookin for ID: ', id);
   const history: IRaceYear[] = await fetchRacerHistory(id);
   const years: number[] = history?.length > 0 ? getRaceYears(history) : [];
 
