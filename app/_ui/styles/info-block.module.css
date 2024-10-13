@@ -1,0 +1,7 @@
+.infoBlock {
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: rem(12px);
+    font-weight: 600;
+  }

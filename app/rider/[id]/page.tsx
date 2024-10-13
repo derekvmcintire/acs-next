@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 import { Group, Loader } from '@mantine/core';
-import { ColorSchemeToggle } from '../../ui/ColorSchemeToggle/ColorSchemeToggle';
-import TopNav from '../../ui/TopNav/TopNav';
-import RacerInfoContainer from '../ui/RacerInfo/components/RacerInfoContainer';
-import TableContainer from '../ui/Results/components/TableContainer';
-import classes from '../styles/riderpage.module.css';
+import { ColorSchemeToggle } from '../../_components/ColorSchemeToggle/ColorSchemeToggle';
+import ResultsTableServer from '../../_components/Results/ResultsTableServer';
+import RiderInfo from '../../_components/Rider/RiderInfo';
+import TopNav from '../../_components/TopNav/TopNav';
+import classes from './riderpage.module.css';
 
 interface RiderPageParams {
   id: number;
@@ -21,10 +21,10 @@ export default function RiderPage({ params }: RiderPageProps) {
     <div className={classes.riderPage}>
       <TopNav />
       <Suspense fallback={<Loader />}>
-        <RacerInfoContainer id={id} />
+        <RiderInfo id={id} />
       </Suspense>
       <Group pb="50px">
-        <TableContainer />
+        <ResultsTableServer />
       </Group>
       <ColorSchemeToggle />
     </div>
