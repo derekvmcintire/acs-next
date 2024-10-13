@@ -1,4 +1,4 @@
-import { IRacerHistory } from '../types';
+import { IRacerHistory } from '../../app/types';
 import { buildMockRacesForSingleYear } from './generators/results/build-results-history';
 
 export const mockRacingHistoryEmpty: IRacerHistory = {

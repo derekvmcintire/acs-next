@@ -1,6 +1,6 @@
 import { IconInfoCircle } from '@tabler/icons-react';
 import { Alert } from '@mantine/core';
-import { buildMockRacingHistory } from '@/app/mockData/generators/results/build-results-history';
+import { buildMockRacingHistory } from '@/db/mock-data/generators/results/build-results-history';
 import { IRaceYear } from '@/app/types';
 import { getData, getRaceYears } from '../utils';
 import YearTabs from './YearTabs';

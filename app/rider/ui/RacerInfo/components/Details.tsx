@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaStrava } from 'react-icons/fa';
 import { Anchor, Text } from '@mantine/core';
-import { ICategory, IHometown, ISocials } from '../../../types';
+import { ICategory, IHometown, ISocials } from '../../../../types';
 import InfoBlock from './InfoBlock';
 import classes from '../styles/RacerInfo.module.css';
 

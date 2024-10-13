@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
 
-import { render, screen } from '../../../../test-utils';
-import { mockRacer, TEAM_B2C2_CONTES } from '../../../mockData/mockRacer';
+import { render, screen } from '../../../../../test-utils';
+import { mockRacer, TEAM_B2C2_CONTES } from '../../../../../db/mock-data/mock-racer';
 import Details from '../components/Details';
 import { RACER_PROFILE_IMAGE_TEST_ID } from '../components/ProfileImage';
 import RacerInfoContainer from '../components/RacerInfoContainer';

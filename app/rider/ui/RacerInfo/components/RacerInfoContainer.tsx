@@ -1,6 +1,6 @@
 import React from 'react';
-import { BASE_URL, RACERS_PATH } from '@/app/mockAPI/constants';
-import { IRacerInfo } from '../../../types';
+import { BASE_URL, RACERS_PATH } from '@/db/mock-api/constants';
+import { IRacerInfo } from '../../../../types';
 import { getCurrentTeam } from '../utils';
 import InfoGrid from './InfoGrid';
 import { NameHeading } from './NameHeading';
