@@ -1,30 +1,43 @@
 import React from 'react';
-import { BASE_URL, RACERS_PATH } from '@/src/_db/mock-api/constants';
-import { IRacerInfo } from '../../../_types';
+import { fetchRacer } from '@/src/_server-utilities/fetchers';
+import { IRacerInfo } from '@/src/_types';
 import InfoGrid from '../client/InfoGrid';
 import { getCurrentTeam } from '../utils';
 import { NameHeadingServer } from './NameHeadingServer';
 
-interface IRiderInfoServerProps {
+const DEFAULT_RIDER_NOT_FOUND: IRacerInfo = {
+  id: 0,
+  name: {
+    first: 'Rider',
+    last: 'Not Found',
+  },
+  teams: [{ year: 2024, name: 'No Team Available' }],
+  socials: {},
+  categories: [],
+  hometown: { country: 'NO', city: 'Nowhere' },
+  dob: '1854-01-01T00:00:00.000-05:00',
+  photo:
+    'https://dgtzuqphqg23d.cloudfront.net/xpqTav-4hWRXpvJoODOMmpeI_jUOONmJZ6KnCrG7ncc-2048x1536.jpg',
+};
+
+interface RiderInfoServerProps {
   id: number;
 }
 
-export default async function RiderInfoServer({ id }: IRiderInfoServerProps) {
-  try {
-    const response = await fetch(`${BASE_URL}${RACERS_PATH}?id=${id}`);
-    const parsedResponse: IRacerInfo[] = await response.json();
-    const racerInfo = parsedResponse[0];
+export default async function RiderInfoServer({ id }: RiderInfoServerProps) {
+  const racerInfo: IRacerInfo = (await fetchRacer(id)) || DEFAULT_RIDER_NOT_FOUND;
 
-    const { name } = racerInfo;
-    const currentTeam = getCurrentTeam(racerInfo.teams);
-
-    return (
-      <>
-        <NameHeadingServer name={name} team={currentTeam} />
-        <InfoGrid racerInfo={racerInfo} />
-      </>
-    );
-  } catch {
+  if (!racerInfo) {
     return <div>Did not work</div>;
   }
+
+  const { name } = racerInfo;
+  const currentTeam = getCurrentTeam(racerInfo.teams);
+
+  return (
+    <>
+      <NameHeadingServer name={name} team={currentTeam} />
+      <InfoGrid racerInfo={racerInfo} />
+    </>
+  );
 }

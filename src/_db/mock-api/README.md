@@ -8,7 +8,7 @@ JSON-server documentation can be found here: https://www.npmjs.com/package/json-
 
 ## To start the server:
 
-`json-server --watch app/mockAPI/endpoints.json --port 8000`
+`json-server --watch src/_db/mock-api/endpoints.json --port 8000`
 
 ## Existing Endpoints
 
