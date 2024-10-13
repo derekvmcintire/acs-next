@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Group, Tabs, Text } from '@mantine/core';
-import { IRaceYear } from '@/app/_types';
+import { IRaceYear } from '@/app/_src/_types';
 import RaceTable from './ResultsTable';
 import classes from './styles/results.module.css';
 

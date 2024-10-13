@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import { Group, Loader } from '@mantine/core';
-import { ColorSchemeToggle } from '../../_components/ColorSchemeToggle/ColorSchemeToggle';
-import ResultsTableServer from '../../_components/Results/ResultsTableServer';
-import RiderInfo from '../../_components/Rider/RiderInfo';
-import TopNav from '../../_components/TopNav/TopNav';
+import { ColorSchemeToggle } from '../../_src/_components/ColorSchemeToggle/ColorSchemeToggle';
+import ResultsTableServer from '../../_src/_components/Results/ResultsTableServer';
+import RiderInfo from '../../_src/_components/Rider/RiderInfo';
+import TopNav from '../../_src/_components/TopNav/TopNav';
 import classes from './riderpage.module.css';
 
 interface RiderPageParams {

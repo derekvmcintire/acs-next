@@ -2,7 +2,7 @@ import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
 
 import { mockRacer, TEAM_B2C2_CONTES } from '../../../_db/mock-data/mock-racer';
-import { render, screen } from '../../../../test-utils';
+import { render, screen } from '../../../../../test-utils';
 import Details from '../Details';
 import { RACER_PROFILE_IMAGE_TEST_ID } from '../ProfileImage';
 import RacerInfoContainer from '../RiderInfo';

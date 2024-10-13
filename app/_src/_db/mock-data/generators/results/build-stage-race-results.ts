@@ -1,4 +1,4 @@
-import { IRaceData, IStageData, StageType } from '@/app/_types';
+import { IRaceData, IStageData, StageType } from '@/app/_src/_types';
 import { generateRandomNumber, generateRandomString, getFutureDateTimestamp } from '../../utils';
 import { calculateMockUpgradePoints } from './helper-functions';
 

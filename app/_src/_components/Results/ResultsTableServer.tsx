@@ -1,7 +1,7 @@
 import { IconInfoCircle } from '@tabler/icons-react';
 import { Alert } from '@mantine/core';
-import { buildMockRacingHistory } from '@/app/_db/mock-data/generators/results/build-results-history';
-import { IRaceYear } from '@/app/_types';
+import { buildMockRacingHistory } from '@/app/_src/_db/mock-data/generators/results/build-results-history';
+import { IRaceYear } from '@/app/_src/_types';
 import ResultsTableTabs from './ResultsTableTabs';
 import { getData, getRaceYears } from './utils';
 import classes from './styles/results.module.css';

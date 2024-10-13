@@ -1,6 +1,6 @@
 import { MdArrowForwardIos } from 'react-icons/md';
 import { Text, Title } from '@mantine/core';
-import { IRiderName } from '@/app/_types';
+import { IRiderName } from '@/app/_src/_types';
 import classes from './styles/rider.module.css';
 
 interface IRiderTitleProps {

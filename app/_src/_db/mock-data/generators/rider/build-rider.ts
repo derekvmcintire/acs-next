@@ -1,4 +1,4 @@
-import { IRacerInfo } from '@/app/_types';
+import { IRacerInfo } from '@/app/_src/_types';
 import { FIRST_NAMES, LAST_NAMES } from '../../constants/names';
 import {
   generateRandomDateTimestamp,

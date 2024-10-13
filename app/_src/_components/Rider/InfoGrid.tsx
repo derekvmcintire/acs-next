@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Flex, Grid } from '@mantine/core';
-import { IRacerInfo } from '@/app/_types';
+import { IRacerInfo } from '@/app/_src/_types';
 import Details from './Details';
 import ProfileImage from './ProfileImage';
 import TopResults from './TopResults';

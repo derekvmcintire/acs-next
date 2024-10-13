@@ -1,4 +1,4 @@
-import { IRaceData, RaceType } from '@/app/_types';
+import { IRaceData, RaceType } from '@/app/_src/_types';
 import {
   generateRandomDateTimestamp,
   generateRandomNumber,

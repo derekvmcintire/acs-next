@@ -1,4 +1,4 @@
-import { IRaceData, IRaceYear } from '@/app/_types';
+import { IRaceData, IRaceYear } from '@/app/_src/_types';
 
 // Private functions
 const _sortRacesByYear = (races: IRaceData[]) =>

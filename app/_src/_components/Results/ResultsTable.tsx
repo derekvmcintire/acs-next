@@ -2,7 +2,7 @@
 
 import React, { ReactNode, useEffect, useState } from 'react';
 import { Flex, Table, Text } from '@mantine/core';
-import { IRaceData } from '@/app/_types';
+import { IRaceData } from '@/app/_src/_types';
 import classes from './styles/results.module.css';
 
 interface ResultsTableProps {

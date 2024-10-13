@@ -3,7 +3,7 @@ import '@mantine/core/styles.css';
 import React from 'react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { theme } from '../theme';
-import { WebVitals } from './web-vitals';
+import { WebVitals } from './_metrics/web-vitals';
 
 export const metadata = {
   title: 'ACS',
