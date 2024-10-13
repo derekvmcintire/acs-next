@@ -1,28 +1,20 @@
-import { IconInfoCircle } from '@tabler/icons-react';
-import { Alert } from '@mantine/core';
-import { buildMockRacingHistory } from '@/src/_db/mock-data/generators/results/build-results-history';
+import { fetchRacerHistory } from '@/src/_server-utilities/fetchers';
 import { IRaceYear } from '@/src/_types';
 import ResultsTableTabs from '../client/ResultsTableTabs';
-import { getData, getRaceYears } from '../utils';
+import { getRaceYears } from '../utils';
 import classes from '../styles/results.module.css';
 
-export default async function ResultsTableServer() {
-  const icon = <IconInfoCircle />;
+interface ResultsTableServerProps {
+  id: number;
+}
 
-  try {
-    const history: IRaceYear[] = await getData(buildMockRacingHistory());
-    const years = getRaceYears(history);
+export default async function ResultsTableServer({ id }: ResultsTableServerProps) {
+  const history: IRaceYear[] = await fetchRacerHistory(id);
+  const years: number[] = history?.length > 0 ? getRaceYears(history) : [];
 
-    return (
-      <div className={classes.raceTableContainer}>
-        <ResultsTableTabs years={years} history={history} />
-      </div>
-    );
-  } catch (error) {
-    return (
-      <Alert variant="light" color="red" title="Alert title" icon={icon}>
-        {`Failed to Load Race History: ${error}`}
-      </Alert>
-    );
-  }
+  return (
+    <div className={classes.raceTableContainer}>
+      <ResultsTableTabs years={years} history={history} />
+    </div>
+  );
 }

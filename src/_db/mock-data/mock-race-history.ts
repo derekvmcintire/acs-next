@@ -3,12 +3,12 @@ import { buildMockRacesForSingleYear } from './generators/results/build-results-
 
 export const mockRacingHistoryEmpty: IRacerHistory = {
   racerId: 2,
-  history: [],
+  results: [],
 };
 
 export const mockRacingHistoryEmptyYear: IRacerHistory = {
   racerId: 2,
-  history: [
+  results: [
     {
       year: 2024,
       races: buildMockRacesForSingleYear(),
@@ -26,7 +26,7 @@ export const mockRacingHistoryEmptyYear: IRacerHistory = {
 
 export const mockRacingHistoryMissingYear: IRacerHistory = {
   racerId: 2,
-  history: [
+  results: [
     {
       year: 2024,
       races: buildMockRacesForSingleYear(),
@@ -44,7 +44,7 @@ export const mockRacingHistoryMissingYear: IRacerHistory = {
 
 export const mockRacingHistory: IRacerHistory = {
   racerId: 1,
-  history: [
+  results: [
     {
       year: 2024,
       races: [

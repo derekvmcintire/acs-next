@@ -32,7 +32,7 @@ export interface IRaceYear {
 
 export interface IRacerHistory {
   racerId: number;
-  history: IRaceYear[];
+  results: IRaceYear[];
 }
 
 export interface IRiderName {
@@ -46,8 +46,8 @@ export interface ITeams {
 }
 
 export interface ISocials {
-  strava: string;
-  insta: string;
+  strava?: string;
+  insta?: string;
 }
 
 export interface ICategory {
@@ -57,7 +57,7 @@ export interface ICategory {
 
 export interface IHometown {
   country: string | null;
-  state: string | null;
+  state?: string | null;
   city: string | null;
 }
 

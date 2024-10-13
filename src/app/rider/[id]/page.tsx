@@ -24,7 +24,7 @@ export default function RiderPage({ params }: RiderPageProps) {
         <RiderInfoServer id={id} />
       </Suspense>
       <Group pb="50px">
-        <ResultsTableServer />
+        <ResultsTableServer id={id} />
       </Group>
       <ColorSchemeToggle />
     </div>
