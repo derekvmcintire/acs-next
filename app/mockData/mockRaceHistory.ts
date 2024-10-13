@@ -1,5 +1,5 @@
 import { IRacerHistory } from '../types';
-import { buildMockRacesForSingleYear } from './generators/results';
+import { buildMockRacesForSingleYear } from './generators/results/build-results-history';
 
 export const mockRacingHistoryEmpty: IRacerHistory = {
   racerId: 2,

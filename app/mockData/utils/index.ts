@@ -1,4 +1,8 @@
+/******************************/
+
 export const generateRandomNumber = (max: number = 1000) => Math.floor(Math.random() * max) + 1;
+
+/******************************/
 
 export const generateRandomString = (maxLength: number = 15) => {
   const characters = 'abcdefghijklmnopqrstuvwxyz';
@@ -9,9 +13,13 @@ export const generateRandomString = (maxLength: number = 15) => {
   return Array.from({ length }, () => characters[randomIndex()]).join('');
 };
 
+/******************************/
+
 export const getFutureDateTimestamp = (startDate: Date, days: number) => {
   return new Date(startDate.setDate(startDate.getDate() + days)).getTime();
 };
+
+/******************************/
 
 export const generateRandomDateTimestamp = (year: number = new Date().getFullYear()) => {
   const startTimestamp = new Date(year, 0, 1).getTime();
@@ -23,6 +31,8 @@ export const generateRandomDateTimestamp = (year: number = new Date().getFullYea
   return new Date(randomTimestamp).toDateString();
 };
 
+/******************************/
+
 export const getRandomPastYear = (n: number): number => {
   const currentYear = new Date().getFullYear();
   const startYear = currentYear - n;
@@ -30,6 +40,8 @@ export const getRandomPastYear = (n: number): number => {
 
   return randomYear;
 };
+
+/******************************/
 
 export const getListOfPastYears = (n: number): number[] => {
   const startingYear: number = getRandomPastYear(5);

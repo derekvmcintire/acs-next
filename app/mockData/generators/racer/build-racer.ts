@@ -1,21 +1,13 @@
-import { IRacerInfo } from '../../types';
-import { FIRST_NAMES, LAST_NAMES } from '../constants/names';
-import { SPONSORS } from '../constants/teams';
-import { generateRandomDateTimestamp, generateRandomNumber, generateRandomString } from '../utils';
+import { IRacerInfo } from '@/app/types';
+import { FIRST_NAMES, LAST_NAMES } from '../../constants/names';
+import {
+  generateRandomDateTimestamp,
+  generateRandomNumber,
+  generateRandomString,
+} from '../../utils';
+import { generateRandomTeam } from './helper-functions';
 
 interface IOptionalRacerInfo extends Partial<IRacerInfo> {}
-
-const generateRandomTeam = (n: number) => {
-  const randomNumber = generateRandomNumber(n);
-
-  let team = '';
-  for (let i = 0; i < randomNumber; i++) {
-    const word = SPONSORS[generateRandomNumber(SPONSORS.length - 1)];
-    team = `${team} ${word}`;
-  }
-
-  return team;
-};
 
 export const buildMockRacerInfo = (racerInfo: IOptionalRacerInfo = {}): IRacerInfo => {
   const { id, name, socials, dob, categories, teams, hometown, photo } = racerInfo;
