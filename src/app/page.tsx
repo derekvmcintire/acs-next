@@ -5,7 +5,7 @@ import RaceTableContainer from '../_components/Results/server/ResultsTableServer
 import RacerInfoContainer from '../_components/Rider/server/RiderInfoServer';
 import TopNav from '../_components/TopNav/TopNav';
 import Loader from './loading';
-import classes from './page.module.css';
+import classes from '../_styles/page.module.css';
 
 export default function HomePage() {
   const racerIds = [1, 2, 3];
