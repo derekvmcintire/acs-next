@@ -2,8 +2,8 @@ import React from 'react';
 import { BASE_URL, RACERS_PATH } from '@/src/_db/mock-api/constants';
 import { IRacerInfo } from '../../../_types';
 import InfoGrid from '../client/InfoGrid';
-import { NameHeadingServer } from './NameHeadingServer';
 import { getCurrentTeam } from '../utils';
+import { NameHeadingServer } from './NameHeadingServer';
 
 interface IRiderInfoServerProps {
   id: number;

@@ -2,8 +2,8 @@ import '@mantine/core/styles.css';
 
 import React from 'react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-import { theme } from '../../theme';
 import { WebVitals } from '../_metrics/web-vitals';
+import { theme } from '../../theme';
 
 export const metadata = {
   title: 'ACS',
