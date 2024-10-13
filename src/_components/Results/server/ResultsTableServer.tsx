@@ -1,4 +1,6 @@
+import { Suspense } from 'react';
 import { IRaceYear } from '@/src/_types';
+import Loader from '@/src/app/loading';
 import { getRiderResults } from '../api/get-rider-results';
 import ResultsTableTabs from '../client/ResultsTableTabs';
 import { getRaceYears } from '../utils';
@@ -14,7 +16,9 @@ export default async function ResultsTableServer({ id }: ResultsTableServerProps
 
   return (
     <div className={classes.raceTableContainer}>
-      <ResultsTableTabs years={years} history={history} />
+      <Suspense fallback={<Loader />}>
+        <ResultsTableTabs years={years} history={history} />
+      </Suspense>
     </div>
   );
 }
