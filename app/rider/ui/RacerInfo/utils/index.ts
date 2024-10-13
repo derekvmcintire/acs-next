@@ -1,5 +1,5 @@
-import { mockRacer } from '@/db/mock-data/mock-racer';
 import { ITeams } from '@/app/types';
+import { mockRacer } from '@/db/mock-data/mock-racer';
 
 export const getMockRiderInfo = () => mockRacer;
 

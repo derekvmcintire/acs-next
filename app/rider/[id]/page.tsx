@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import { Group, Loader } from '@mantine/core';
 import { ColorSchemeToggle } from '../../ui/ColorSchemeToggle/ColorSchemeToggle';
+import TopNav from '../../ui/TopNav/TopNav';
 import RacerInfoContainer from '../ui/RacerInfo/components/RacerInfoContainer';
 import TableContainer from '../ui/Results/components/TableContainer';
-import TopNav from '../../ui/TopNav/TopNav';
 import classes from '../styles/riderpage.module.css';
 
 interface RiderPageParams {

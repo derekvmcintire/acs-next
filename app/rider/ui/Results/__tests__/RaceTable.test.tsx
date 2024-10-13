@@ -1,10 +1,10 @@
+import { IRacerHistory } from '@/app/types';
 import {
   mockRacingHistory,
   mockRacingHistoryEmpty,
   mockRacingHistoryEmptyYear,
   mockRacingHistoryMissingYear,
 } from '@/db/mock-data/mock-race-history';
-import { IRacerHistory } from '@/app/types';
 import { render, screen } from '../../../../../test-utils';
 import ResultsTable from '../components/ResultsTable';
 import RaceTabs from '../components/YearTabs';
