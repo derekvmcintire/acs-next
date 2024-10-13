@@ -11,7 +11,7 @@ import RaceTabs from '../client/ResultsTableTabs';
 import { getRaceYears, sortRacingDataByYear } from '../utils';
 
 const getSortedHistory = (racingHistory: IRacerHistory) => {
-  const history = sortRacingDataByYear(racingHistory.history);
+  const history = sortRacingDataByYear(racingHistory.results);
   const years = getRaceYears(history);
   return { years, history };
 };
