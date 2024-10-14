@@ -31,7 +31,7 @@ export default function ResultsTableTabs({ years, history }: ResultsTableTabsPro
           </Tabs.List>
           {years.map((year) => (
             <Tabs.Panel key={year} value={year.toString()}>
-              <RaceTable races={getResultsForSingleYear(year)} />
+              <RaceTable results={getResultsForSingleYear(year)} />
             </Tabs.Panel>
           ))}
         </Tabs>
