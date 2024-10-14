@@ -15,16 +15,5 @@ export const sortRacingDataByYear = (history: IRaceYear[]): IRaceYear[] => {
   }));
 };
 
-export async function sleepTimeout(resolve: Function) {
-  setTimeout(resolve, 0);
-}
-
-export async function sleep() {
-  await new Promise(sleepTimeout);
-}
-
-export const getData = async (history: IRaceYear[]): Promise<IRaceYear[]> =>
-  sleep().then(() => sortRacingDataByYear(history));
-
 export const getRaceYears = (raceHistory: IRaceYear[]): number[] =>
   raceHistory.length < 1 ? [] : raceHistory.map((raceYear: IRaceYear) => raceYear.year);

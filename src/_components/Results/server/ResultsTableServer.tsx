@@ -3,7 +3,7 @@ import { IRaceYear } from '@/src/_types';
 import Loader from '@/src/app/loading';
 import { getRiderResults } from '../api/get-rider-results';
 import ResultsTableTabs from '../client/ResultsTableTabs';
-import { getRaceYears } from '../utils';
+import { getRaceYears, sortRacingDataByYear } from '../utils';
 import classes from '../styles/results.module.css';
 
 interface ResultsTableServerProps {
@@ -17,7 +17,7 @@ export default async function ResultsTableServer({ id }: ResultsTableServerProps
   return (
     <div className={classes.raceTableContainer}>
       <Suspense fallback={<Loader />}>
-        <ResultsTableTabs years={years} history={history} />
+        <ResultsTableTabs years={years} history={sortRacingDataByYear(history)} />
       </Suspense>
     </div>
   );
