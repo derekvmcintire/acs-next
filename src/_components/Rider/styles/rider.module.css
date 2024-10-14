@@ -25,11 +25,6 @@
   padding-left: 8px;
 }
 
-.divider {
-  height: 100%;
-  width: 100%;
-}
-
 .riderName {
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
   font-size: rem(30px);

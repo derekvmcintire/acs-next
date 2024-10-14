@@ -13,7 +13,10 @@ export const RACER_PROFILE_IMAGE_TEST_ID = 'racerProfileTestId';
 export default function ProfileImageServer({ img = PLACEHOLDER_IMG }: ProfileImageServerProps) {
   return (
     <div className={classes.profileImage} data-testid={RACER_PROFILE_IMAGE_TEST_ID}>
-      <Image src={img} alt="solid grey silhouette of a person on a white background" />
+      <Image
+        src={img || PLACEHOLDER_IMG}
+        alt="solid grey silhouette of a person on a white background"
+      />
     </div>
   );
 }

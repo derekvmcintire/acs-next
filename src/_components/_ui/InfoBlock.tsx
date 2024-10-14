@@ -17,7 +17,7 @@ export default function InfoBlock({
   return (
     <Flex className={`${classes.infoBlock} ${className}`} justify={justify}>
       <div>
-        <Divider size="sm" orientation="vertical" className={classes.divider} />
+        <Divider size="sm" orientation="vertical" className={classes.divider} mr="8" />
       </div>
       <section className={classes.infoBlockText}>{children}</section>
     </Flex>

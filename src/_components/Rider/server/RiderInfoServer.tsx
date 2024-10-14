@@ -2,7 +2,6 @@ import React from 'react';
 import { IRacerInfo } from '@/src/_types';
 import { getRiderInfo } from '../api/get-rider-info';
 import InfoGrid from '../client/InfoGrid';
-import { getCurrentTeam } from '../utils';
 import { NameHeadingServer } from './NameHeadingServer';
 
 const DEFAULT_RIDER_NOT_FOUND: IRacerInfo = {
@@ -25,19 +24,16 @@ interface RiderInfoServerProps {
 }
 
 export default async function RiderInfoServer({ id }: RiderInfoServerProps) {
-  const racerInfo: IRacerInfo = (await getRiderInfo(id)) || DEFAULT_RIDER_NOT_FOUND;
+  const riderInfo: IRacerInfo = (await getRiderInfo(id)) || DEFAULT_RIDER_NOT_FOUND;
 
-  if (!racerInfo) {
+  if (!riderInfo) {
     return <div>Did not work</div>;
   }
 
-  const { name } = racerInfo;
-  const currentTeam = getCurrentTeam(racerInfo.teams);
-
   return (
     <>
-      <NameHeadingServer name={name} team={currentTeam} />
-      <InfoGrid racerInfo={racerInfo} />
+      <NameHeadingServer riderInfo={riderInfo} />
+      <InfoGrid riderInfo={riderInfo} />
     </>
   );
 }
