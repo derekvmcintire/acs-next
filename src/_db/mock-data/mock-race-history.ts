@@ -1,6 +1,9 @@
 import { IRacerHistory } from '../../_types';
 import { buildMockRacesForSingleYear } from './generators/results/build-results-history';
 
+export const FIRST_NAME_OUT_OF_ORDER = 'Ascutney Hillclimb';
+export const FIRST_NAME_IN_ORDER = 'BOSSCROSS';
+
 export const mockRacingHistoryEmpty: IRacerHistory = {
   racerId: 2,
   results: [],
@@ -49,7 +52,7 @@ export const mockRacingHistory: IRacerHistory = {
       year: 2024,
       races: [
         {
-          name: 'Ascutney Hillclimb',
+          name: FIRST_NAME_OUT_OF_ORDER,
           type: 'hill',
           startDate: '2024-08-03T00:00:00.000-05:00',
           endDate: null,
@@ -146,7 +149,7 @@ export const mockRacingHistory: IRacerHistory = {
           noPlaceCode: null,
         },
         {
-          name: 'BOSSCROSS',
+          name: FIRST_NAME_IN_ORDER,
           type: 'cx',
           startDate: '2024-10-05T00:00:00.000-05:00',
           endDate: null,
