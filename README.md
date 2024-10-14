@@ -15,23 +15,50 @@ This template comes with the following features:
 
 ## npm scripts
 
-### Build and dev scripts
+### Dev scripts o run application dev environment
 
-- `dev` – start dev server
-- `build` – bundle application for production
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
+- `npm run dev` – start dev server
+- `npm run api` - start mock api server
+
+### Build scripts
+
+- `npm run build` – bundle application for production
+- `npm run analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
 
 ### Testing scripts
 
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
+- `npm run typecheck` – checks TypeScript types
+- `npm run lint` – runs ESLint
+- `npm run prettier:check` – checks files with Prettier
+- `npm run jest` – runs jest tests
+- `npm run jest:watch` – starts jest watch
+- `npm run test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
 
 ### Other scripts
 
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+- `npm run storybook` – starts storybook dev server
+- `npm run storybook:build` – build production storybook bundle to `storybook-static`
+- `npm run prettier:write` – formats all files with Prettier
+
+## JSON-Server Mock API
+
+### JSON-Server Documentation
+
+This mock API was created with `json-server`. It allows you to define a JSON object inside a `.json` file, and will automatically create endpoints based on the shape of the data. Once you create your file and add your JSON object, you run the command below and will be able to call the endpoints as if they were a normal API. You can add multiple resources to a single file to have them available at the same time on the same local host.
+
+JSON-server documentation can be found here: https://www.npmjs.com/package/json-server[https://www.npmjs.com/package/json-server]
+
+### To start the server:
+
+`json-server --watch src/_db/mock-api/endpoints.json --port 8000`
+
+### Existing Endpoints
+
+- http://localhost:8000/racers
+- http://localhost:8000/racers?id=1
+- http://localhost:8000/history
+- http://localhost:8000/history?racerId=1
+
+### Developing
+
+To add a new endpoint, add a new field to the endpoints.json object
