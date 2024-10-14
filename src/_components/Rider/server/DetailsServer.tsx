@@ -18,8 +18,8 @@ interface IDetailsProps {
 export default function DetailsServer({ socials, dob, hometown }: IDetailsProps) {
   const { country, city, state } = hometown;
 
-  const birthDay: Date = new Date(dob);
-  const age = calculateAge(birthDay);
+  const birthDate: Date = new Date(dob);
+  const age = calculateAge(birthDate);
 
   const { strava } = socials;
   const stravaUrl = strava ? `${STRAVA_BASE_URL}${strava}` : '';
@@ -28,7 +28,7 @@ export default function DetailsServer({ socials, dob, hometown }: IDetailsProps)
     <section className={classes.details}>
       <InfoBlock>
         <div>
-          <LabeledText label="Birthday" text={birthDay.toDateString()} />
+          <LabeledText label="Birthday" text={birthDate.toDateString()} />
         </div>
         <div>
           <LabeledText label="Age" text={age.toString()} />

@@ -1,12 +1,14 @@
 import { mockRacer } from '../../../_db/mock-data/mock-racer';
 import { render, screen } from '../../../../test-utils';
 import DetailsServer from '../server/DetailsServer';
+import { calculateAge } from '../utils';
 
-const firstCategory = `${mockRacer.categories[0].discipline}: ${mockRacer.categories[0].category}`;
+const country = new RegExp(`${mockRacer.hometown.country?.toUpperCase()}`, 'i');
 
-const country = new RegExp(`${mockRacer.hometown.country}`, 'i');
-const dob = new RegExp(`${mockRacer.dob}`, 'i');
-const category = new RegExp(`${firstCategory}`, 'i');
+const birthDate: Date = new Date(mockRacer.dob);
+const age = calculateAge(birthDate);
+const dob = new RegExp(`${birthDate.toDateString()}`, 'i');
+const displayedAge = new RegExp(`${age}`, 'i');
 
 describe('RacerInfoBlock', () => {
   test('renders the racer details component as expected', () => {
@@ -14,6 +16,6 @@ describe('RacerInfoBlock', () => {
 
     expect(screen.getByText(country)).toBeInTheDocument();
     expect(screen.getByText(dob)).toBeInTheDocument();
-    expect(screen.getByText(category)).toBeInTheDocument();
+    expect(screen.getByText(displayedAge)).toBeInTheDocument();
   });
 });

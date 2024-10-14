@@ -18,7 +18,7 @@ beforeEach(() => {
   ) as jest.Mock;
 });
 
-const firstCategory = `${mockRacer.categories[0].discipline}: ${mockRacer.categories[0].category}`;
+const firstCategory = `${mockRacer.categories[0].discipline}: cat ${mockRacer.categories[0].category}`;
 
 const category = new RegExp(`${firstCategory}`, 'i');
 const firstName = new RegExp(`${mockRacer.name.first}`, 'i');
@@ -39,7 +39,7 @@ describe('RacerInfoServer', () => {
     render(component);
 
     expect(screen.getByText(/Top Results/i)).toBeInTheDocument();
-    expect(screen.getByText(/Upcoming Races/i)).toBeInTheDocument();
+    expect(screen.getByText(/Suggested Riders/i)).toBeInTheDocument();
     expect(screen.getByTestId(RACER_PROFILE_IMAGE_TEST_ID)).toBeInTheDocument();
   });
 });
