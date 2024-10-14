@@ -4,11 +4,11 @@ import { Text } from '@mantine/core';
 import InfoBlock from '../../_ui/InfoBlock';
 import classes from '../styles/rider.module.css';
 
-export default function UpcomingRaces() {
+export default function SuggestedRiders() {
   return (
     <section className={classes.topResults}>
       <InfoBlock>
-        <Text>Upcoming Races</Text>
+        <Text fw={900}>Suggested Riders</Text>
       </InfoBlock>
     </section>
   );

@@ -86,3 +86,9 @@ export type StageType =
   | typeof RACE_TYPES.CX
   | typeof RACE_TYPES.XC
   | typeof RACE_TYPES.TT;
+
+export interface IAgeGroup {
+  start: number;
+  end: number;
+  text: string;
+}

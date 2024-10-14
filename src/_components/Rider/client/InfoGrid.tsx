@@ -5,21 +5,21 @@ import { Flex, Grid } from '@mantine/core';
 import { IRacerInfo } from '@/src/_types';
 import DetailsServer from '../server/DetailsServer';
 import ProfileImage from '../server/ProfileImageServer';
+import SuggestedRiders from './SuggestedRiders';
 import TopResults from './TopResults';
-import UpcomingRaces from './UpcomingRaces';
 
 interface InfoGridProps {
-  racerInfo: IRacerInfo;
+  riderInfo: IRacerInfo;
 }
 
-export default function InfoGrid({ racerInfo }: InfoGridProps) {
-  const { socials, dob, categories, hometown } = racerInfo;
+export default function InfoGrid({ riderInfo }: InfoGridProps) {
+  const { socials, dob, categories, hometown, photo } = riderInfo;
 
   return (
     <Grid>
       <Grid.Col span={6}>
         <Flex>
-          <ProfileImage />
+          <ProfileImage img={photo} />
           <DetailsServer socials={socials} dob={dob} categories={categories} hometown={hometown} />
         </Flex>
       </Grid.Col>
@@ -27,7 +27,7 @@ export default function InfoGrid({ racerInfo }: InfoGridProps) {
         <TopResults />
       </Grid.Col>
       <Grid.Col span={3}>
-        <UpcomingRaces />
+        <SuggestedRiders />
       </Grid.Col>
     </Grid>
   );

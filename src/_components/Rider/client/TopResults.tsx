@@ -8,7 +8,7 @@ export default function TopResults() {
   return (
     <section className={classes.topResults}>
       <InfoBlock>
-        <Text>Top Results</Text>
+        <Text fw={900}>Top Results</Text>
       </InfoBlock>
     </section>
   );
