@@ -1,8 +1,8 @@
-import { mockRacer } from '@/src/_db/mock-data/mock-racer';
+import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import { IAgeGroup, ITeams } from '@/src/_types';
 import { GF_AGE_GROUPS } from '@/src/global-constants';
 
-export const getMockRiderInfo = () => mockRacer;
+export const getMockRiderInfo = () => mockRider;
 
 export const getCurrentTeam = (teams: ITeams[]): string => {
   if (teams?.length < 1) {
@@ -32,4 +32,10 @@ export const getGFAgeGroup = (age: number): IAgeGroup => {
     }
     return acc;
   }, GF_AGE_GROUPS[0]);
+};
+
+export const calculateAgeGroupFromDob = (dob: string): IAgeGroup => {
+  const birthDate = new Date(dob);
+  const age = calculateAge(birthDate);
+  return getGFAgeGroup(age);
 };
