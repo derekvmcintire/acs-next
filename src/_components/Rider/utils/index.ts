@@ -24,7 +24,7 @@ export const calculateAge = (dob: Date) => {
   return age;
 };
 
-export const getGFAgeGroup = (age: number) => {
+export const getGFAgeGroup = (age: number): IAgeGroup => {
   return GF_AGE_GROUPS.reduce((acc: IAgeGroup, group: IAgeGroup) => {
     const { start, end } = group;
     if (age >= start && age <= end) {

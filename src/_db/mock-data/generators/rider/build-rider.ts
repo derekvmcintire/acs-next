@@ -1,4 +1,4 @@
-import { IRacerInfo } from '@/src/_types';
+import { IRiderInfo } from '@/src/_types';
 import { FIRST_NAMES, LAST_NAMES } from '../../constants/names';
 import {
   generateRandomDateTimestamp,
@@ -7,9 +7,9 @@ import {
 } from '../../utils';
 import { generateRandomTeam } from './helper-functions';
 
-interface IOptionalRacerInfo extends Partial<IRacerInfo> {}
+interface IOptionalRacerInfo extends Partial<IRiderInfo> {}
 
-export const buildMockRacerInfo = (racerInfo: IOptionalRacerInfo = {}): IRacerInfo => {
+export const buildMockRacerInfo = (racerInfo: IOptionalRacerInfo = {}): IRiderInfo => {
   const { id, name, socials, dob, categories, teams, hometown, photo } = racerInfo;
 
   return {

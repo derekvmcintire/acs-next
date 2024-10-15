@@ -1,31 +1,16 @@
 import { MdArrowForwardIos } from 'react-icons/md';
 import { Text, Title } from '@mantine/core';
-import { IAgeGroup, ICategory, IRacerInfo } from '@/src/_types';
-import CategoryBadge from '../../_ui/CategoryBadge';
-import { calculateAge, getCurrentTeam, getGFAgeGroup } from '../utils';
+import { IRiderInfo } from '@/src/_types';
+import { getCurrentTeam } from '../utils';
+import CategoryBadges from './CategoryBadges';
 import classes from '../styles/rider.module.css';
 
-const mapCategories = (categories: ICategory[]): React.ReactNode => {
-  return categories.map((c: ICategory) => (
-    <span key={c.discipline}>
-      <CategoryBadge>{`${c.discipline}: cat ${c.category}`}</CategoryBadge>
-    </span>
-  ));
-};
+const TEAM_PLACEHOLDER_TEXT = 'n/a';
 
-interface NameHeadingServerProps {
-  riderInfo: IRacerInfo;
-}
+type NameHeadingProps = IRiderInfo;
 
-export const NameHeadingServer = ({ riderInfo }: NameHeadingServerProps) => {
-  const { name, dob, teams, categories } = riderInfo;
-
+export const NameHeadingServer = ({ name, dob, teams, categories }: NameHeadingProps) => {
   const team = getCurrentTeam(teams);
-  const birthDay = new Date(dob);
-  const age = calculateAge(birthDay);
-  const gfAgeCategory: IAgeGroup = getGFAgeGroup(age);
-
-  const TEAM_PLACEHOLDER_TEXT = 'n/a';
 
   return (
     <div className={classes.riderTitle}>
@@ -40,8 +25,7 @@ export const NameHeadingServer = ({ riderInfo }: NameHeadingServerProps) => {
           {` ${team || TEAM_PLACEHOLDER_TEXT}`}
         </Text>
       </Title>
-      {mapCategories(categories)}
-      <CategoryBadge>{`GF: ${gfAgeCategory.text}`}</CategoryBadge>
+      <CategoryBadges categories={categories} dob={dob} />
     </div>
   );
 };

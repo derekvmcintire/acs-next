@@ -11,11 +11,10 @@ interface ResultsTableTabsProps {
   history: IRaceYear[];
 }
 
-export default function ResultsTableTabs({ years, history }: ResultsTableTabsProps) {
-  const getResultsForSingleYear = React.useMemo(() => {
-    return (year: number) => history.find((raceYear) => raceYear.year === year)?.races || [];
-  }, []);
+const getResultsForSingleYear = (year: number, history: IRaceYear[]) =>
+  history.find((raceYear) => raceYear.year === year)?.races || [];
 
+export default function ResultsTableTabs({ years, history }: ResultsTableTabsProps) {
   const getTabs = () => {
     return years.length < 1 ? (
       <Text>No Results Available</Text>
@@ -31,7 +30,7 @@ export default function ResultsTableTabs({ years, history }: ResultsTableTabsPro
           </Tabs.List>
           {years.map((year) => (
             <Tabs.Panel key={year} value={year.toString()}>
-              <RaceTable results={getResultsForSingleYear(year)} />
+              <RaceTable results={getResultsForSingleYear(year, history)} />
             </Tabs.Panel>
           ))}
         </Tabs>

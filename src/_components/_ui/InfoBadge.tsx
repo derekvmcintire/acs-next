@@ -3,7 +3,7 @@
 import React, { PropsWithChildren } from 'react';
 import { Badge } from '@mantine/core';
 
-export default function CategoryBadge({ children }: PropsWithChildren) {
+export default function InfoBadge({ children }: PropsWithChildren) {
   return (
     <Badge size="sm" variant="light" m="6">
       {children}
