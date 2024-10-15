@@ -27,7 +27,7 @@ export default function CategoryBadges({ categories, dob }: CategoryBadgesType) 
   return (
     <>
       {mapCategories(categories)}
-      <InfoBadge>{`GF: ${calculateAgeGroup(dob)}`}</InfoBadge>
+      <InfoBadge>{`GF: ${calculateAgeGroup(dob).text}`}</InfoBadge>
     </>
   );
 }

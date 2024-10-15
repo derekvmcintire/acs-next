@@ -47,6 +47,5 @@ export const mockRacer: IRiderInfo = {
     state: 'Massachusetts',
     city: 'Boston',
   },
-  photo:
-    'https://dgtzuqphqg23d.cloudfront.net/xpqTav-4hWRXpvJoODOMmpeI_jUOONmJZ6KnCrG7ncc-2048x1536.jpg',
+  photo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png',
 };

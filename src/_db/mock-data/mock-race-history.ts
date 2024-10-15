@@ -1,5 +1,5 @@
 import { IRacerHistory } from '../../_types';
-import { buildMockRacesForSingleYear } from './generators/results/build-results-history';
+import { buildMockRacesForSingleYear } from './generators/results/build-results-history.mjs';
 
 export const FIRST_NAME_OUT_OF_ORDER = 'Ascutney Hillclimb';
 export const FIRST_NAME_IN_ORDER = 'BOSSCROSS';

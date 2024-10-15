@@ -59,6 +59,12 @@ JSON-server documentation can be found here: https://www.npmjs.com/package/json-
 - http://localhost:8000/history
 - http://localhost:8000/history?racerId=1
 
+## Generate New Data
+
+`npm run api:generate`
+
+This command will run the script in `src/_db/mock-api/generate-endpoints.mjs` and will build new data to populate the JSON-Server endpoints.
+
 ### Developing
 
-To add a new endpoint, add a new field to the endpoints.json object
+- Build a data generator, or hardcode a javascript object and add it to the `endpoints` object in `src/_db/mock-api/generate-endpoints.mjs`

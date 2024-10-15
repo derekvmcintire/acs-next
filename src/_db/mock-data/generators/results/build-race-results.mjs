@@ -1,13 +1,7 @@
-import { IRaceData, RaceType } from '@/src/_types';
-import {
-  generateRandomDateTimestamp,
-  generateRandomNumber,
-  generateRandomString,
-  getFutureDateTimestamp,
-} from '../../utils';
-import { buildMockStagesForStageRace } from './build-stage-race-results';
+import { buildMockStagesForStageRace } from './build-stage-race-results.mjs';
+import { generateRandomNumber, generateRandomString, getFutureDateTimestamp, generateRandomDateTimestamp } from '../helper-functions.mjs';
 
-export const buildMockRace = (raceType: RaceType = 'road'): IRaceData => {
+export const buildMockRace = (raceType = 'road') => {
   const startDate = generateRandomDateTimestamp();
   const endDate =
     raceType === 'stage' ? String(getFutureDateTimestamp(new Date(startDate), 3)) : null;
@@ -16,7 +10,7 @@ export const buildMockRace = (raceType: RaceType = 'road'): IRaceData => {
   const upgradePoints = place > racers * 0.9 ? generateRandomNumber(10) : 0;
   const shouldDnf = generateRandomNumber(75) > 75 * 0.9;
 
-  const race: IRaceData = {
+  const race = {
     name: generateRandomString(),
     type: raceType,
     startDate,
