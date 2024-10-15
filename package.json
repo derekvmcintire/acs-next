@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "api": "json-server --watch src/_db/mock-api/endpoints.json --port 8000",
+    "api:generate": "node src/_db/mock-api/generate-endpoints.mjs > src/_db/mock-api/endpoints.json",
     "build": "next build",
     "analyze": "ANALYZE=true next build",
     "start": "next start",

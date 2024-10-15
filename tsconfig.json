@@ -20,6 +20,6 @@
     },
     "plugins": [{ "name": "next" }]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/_db/mock-api/generate-endpoints.mjs", "src/_db/mock-api/generate-endpoints.mjs", "src/_db/mock-data/generators/rider/helper-functions.mjs", "src/_db/mock-data/generators/rider/build-rider.mjs", "src/_db/mock-data/generators/results/build-race-results.mjs", "src/_db/mock-data/generators/results/build-results-history.mjs", "src/_db/mock-data/generators/results/build-stage-race-results.mjs", "src/_db/mock-data/generators/results/helper-functions.mjs", "src/_db/mock-data/constants/names.mjs", "src/_db/mock-data/constants/teams.mjs"],
   "exclude": ["node_modules"]
 }

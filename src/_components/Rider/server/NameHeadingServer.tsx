@@ -1,8 +1,8 @@
 import { MdArrowForwardIos } from 'react-icons/md';
 import { Text, Title } from '@mantine/core';
 import { IRiderInfo } from '@/src/_types';
+import CategoryBadges from '../client/CategoryBadges';
 import { getCurrentTeam } from '../utils';
-import CategoryBadges from './CategoryBadges';
 import classes from '../styles/rider.module.css';
 
 const TEAM_PLACEHOLDER_TEXT = 'n/a';

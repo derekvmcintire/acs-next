@@ -1,19 +1,12 @@
-import { IRiderInfo } from '@/src/_types';
-import { FIRST_NAMES, LAST_NAMES } from '../../constants/names';
-import {
-  generateRandomDateTimestamp,
-  generateRandomNumber,
-  generateRandomString,
-} from '../../utils';
-import { generateRandomTeam } from './helper-functions';
+import { FIRST_NAMES, LAST_NAMES } from '../../constants/names.mjs';
+import { IMG_URLS } from '../../constants/photos.mjs';
+import { generateRandomTeam, generateRandomNumber, generateRandomString, getRandomBirthday } from '../helper-functions.mjs';
 
-interface IOptionalRacerInfo extends Partial<IRiderInfo> {}
-
-export const buildMockRacerInfo = (racerInfo: IOptionalRacerInfo = {}): IRiderInfo => {
+export const buildMockRacerInfo = (racerInfo = {}) => {
   const { id, name, socials, dob, categories, teams, hometown, photo } = racerInfo;
 
   return {
-    id: id || generateRandomNumber(),
+    id: id,
     name: name || {
       first: FIRST_NAMES[generateRandomNumber(FIRST_NAMES.length - 1)],
       last: LAST_NAMES[generateRandomNumber(LAST_NAMES.length - 1)],
@@ -22,7 +15,7 @@ export const buildMockRacerInfo = (racerInfo: IOptionalRacerInfo = {}): IRiderIn
       strava: String(generateRandomNumber(10000000)),
       insta: generateRandomString(),
     },
-    dob: dob || generateRandomDateTimestamp(),
+    dob: dob || getRandomBirthday(),
     categories: categories || [
       {
         discipline: 'road',
@@ -52,12 +45,10 @@ export const buildMockRacerInfo = (racerInfo: IOptionalRacerInfo = {}): IRiderIn
       },
     ],
     hometown: hometown || {
-      country: generateRandomString(3),
-      state: generateRandomString(2),
+      country: generateRandomString(1000).substring(0, 2),
+      state: generateRandomString(1000).substring(0, 2),
       city: generateRandomString(),
     },
-    photo:
-      photo ||
-      'https://dgtzuqphqg23d.cloudfront.net/xpqTav-4hWRXpvJoODOMmpeI_jUOONmJZ6KnCrG7ncc-2048x1536.jpg',
+    photo: photo || IMG_URLS[generateRandomNumber(IMG_URLS.length - 1)],
   };
 };

@@ -15,8 +15,7 @@ const DEFAULT_RIDER_NOT_FOUND: IRiderInfo = {
   categories: [],
   hometown: { country: 'NO', city: 'Nowhere' },
   dob: '1854-01-01T00:00:00.000-05:00',
-  photo:
-    'https://dgtzuqphqg23d.cloudfront.net/xpqTav-4hWRXpvJoODOMmpeI_jUOONmJZ6KnCrG7ncc-2048x1536.jpg',
+  photo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png',
 };
 
 interface RiderInfoServerProps {
@@ -37,3 +36,6 @@ export default async function RiderInfoServer({ id }: RiderInfoServerProps) {
     </>
   );
 }
+
+// data was not refreshing, so eliminating next.js automatic cache
+export const revalidate = 0;

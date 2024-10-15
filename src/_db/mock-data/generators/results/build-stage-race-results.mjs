@@ -1,9 +1,7 @@
-import { IRaceData, IStageData, StageType } from '@/src/_types';
-import { generateRandomNumber, generateRandomString, getFutureDateTimestamp } from '../../utils';
-import { calculateMockUpgradePoints } from './helper-functions';
+import { generateRandomNumber, generateRandomString, getFutureDateTimestamp, calculateMockUpgradePoints } from '../helper-functions.mjs';
 
-const buildMockStage = (raceData: IRaceData, stageType: StageType = 'road'): IStageData => {
-  const stages: IStageData[] = raceData?.stages !== null ? raceData.stages : [];
+const buildMockStage = (raceData, stageType = 'road') => {
+  const stages = raceData?.stages !== null ? raceData.stages : [];
 
   const startDate =
     stages.length > 0
@@ -23,9 +21,9 @@ const buildMockStage = (raceData: IRaceData, stageType: StageType = 'road'): ISt
   };
 };
 
-export const buildMockStagesForStageRace = (raceData: IRaceData, n: number): IStageData[] => {
-  const stageTypes: StageType[] = ['road', 'hill', 'xc', 'cx'];
-  const randomStageType: StageType = stageTypes[generateRandomNumber(stageTypes.length - 1)];
+export const buildMockStagesForStageRace = (raceData, n) => {
+  const stageTypes = ['road', 'hill', 'xc', 'cx'];
+  const randomStageType = stageTypes[generateRandomNumber(stageTypes.length - 1)];
 
   const stages = [];
   for (let i = 0; i < n; i++) {
