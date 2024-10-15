@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { FaStrava } from 'react-icons/fa';
 import { Anchor } from '@mantine/core';

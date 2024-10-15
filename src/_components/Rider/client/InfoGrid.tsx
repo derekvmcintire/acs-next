@@ -3,24 +3,20 @@
 import React from 'react';
 import { Flex, Grid } from '@mantine/core';
 import { IRacerInfo } from '@/src/_types';
-import DetailsServer from '../server/DetailsServer';
 import ProfileImage from '../server/ProfileImageServer';
+import Details from './Details';
 import SuggestedRiders from './SuggestedRiders';
 import TopResults from './TopResults';
 
-interface InfoGridProps {
-  riderInfo: IRacerInfo;
-}
+type InfoGridProps = IRacerInfo;
 
-export default function InfoGrid({ riderInfo }: InfoGridProps) {
-  const { socials, dob, categories, hometown, photo } = riderInfo;
-
+export default function InfoGrid({ socials, dob, categories, hometown, photo }: InfoGridProps) {
   return (
     <Grid>
       <Grid.Col span={6}>
         <Flex>
           <ProfileImage img={photo} />
-          <DetailsServer socials={socials} dob={dob} categories={categories} hometown={hometown} />
+          <Details socials={socials} dob={dob} categories={categories} hometown={hometown} />
         </Flex>
       </Grid.Col>
       <Grid.Col span={3}>

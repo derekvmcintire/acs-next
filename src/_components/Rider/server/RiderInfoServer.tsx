@@ -32,8 +32,8 @@ export default async function RiderInfoServer({ id }: RiderInfoServerProps) {
 
   return (
     <>
-      <NameHeadingServer riderInfo={riderInfo} />
-      <InfoGrid riderInfo={riderInfo} />
+      <NameHeadingServer {...riderInfo} />
+      <InfoGrid {...riderInfo} />
     </>
   );
 }
