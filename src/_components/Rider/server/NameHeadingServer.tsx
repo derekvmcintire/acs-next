@@ -1,13 +1,13 @@
 import { MdArrowForwardIos } from 'react-icons/md';
 import { Text, Title } from '@mantine/core';
-import { IRacerInfo } from '@/src/_types';
+import { IRiderInfo } from '@/src/_types';
 import { getCurrentTeam } from '../utils';
 import CategoryBadges from './CategoryBadges';
 import classes from '../styles/rider.module.css';
 
 const TEAM_PLACEHOLDER_TEXT = 'n/a';
 
-type NameHeadingProps = IRacerInfo;
+type NameHeadingProps = IRiderInfo;
 
 export const NameHeadingServer = ({ name, dob, teams, categories }: NameHeadingProps) => {
   const team = getCurrentTeam(teams);

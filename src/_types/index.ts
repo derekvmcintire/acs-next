@@ -61,7 +61,7 @@ export interface IHometown {
   city: string | null;
 }
 
-export interface IRacerInfo {
+export interface IRiderInfo {
   id: number;
   name: IRiderName;
   teams: ITeams[];

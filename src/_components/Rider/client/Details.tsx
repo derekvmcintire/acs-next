@@ -6,18 +6,13 @@ import { Anchor } from '@mantine/core';
 import { STRAVA_BASE_URL } from '@/src/global-constants';
 import InfoBlock from '../../_ui/InfoBlock';
 import LabeledText from '../../_ui/LabeledText';
-import { ICategory, IHometown, ISocials } from '../../../_types';
+import { IRiderInfo } from '../../../_types';
 import { calculateAge } from '../utils';
 import classes from '../styles/rider.module.css';
 
-interface IDetailsProps {
-  socials: ISocials;
-  dob: string;
-  categories: ICategory[];
-  hometown: IHometown;
-}
+type DetailsProps = IRiderInfo;
 
-export default function DetailsServer({ socials, dob, hometown }: IDetailsProps) {
+export default function Details({ socials, dob, hometown }: DetailsProps) {
   const { country, city, state } = hometown;
 
   const birthDate: Date = new Date(dob);

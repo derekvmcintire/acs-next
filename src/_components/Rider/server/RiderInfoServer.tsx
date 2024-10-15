@@ -1,10 +1,10 @@
 import React from 'react';
-import { IRacerInfo } from '@/src/_types';
+import { IRiderInfo } from '@/src/_types';
 import { getRiderInfo } from '../api/get-rider-info';
 import InfoGrid from '../client/InfoGrid';
 import { NameHeadingServer } from './NameHeadingServer';
 
-const DEFAULT_RIDER_NOT_FOUND: IRacerInfo = {
+const DEFAULT_RIDER_NOT_FOUND: IRiderInfo = {
   id: 0,
   name: {
     first: 'Rider',
@@ -24,7 +24,7 @@ interface RiderInfoServerProps {
 }
 
 export default async function RiderInfoServer({ id }: RiderInfoServerProps) {
-  const riderInfo: IRacerInfo = (await getRiderInfo(id)) || DEFAULT_RIDER_NOT_FOUND;
+  const riderInfo: IRiderInfo = (await getRiderInfo(id)) || DEFAULT_RIDER_NOT_FOUND;
 
   if (!riderInfo) {
     return <div>Did not work</div>;
