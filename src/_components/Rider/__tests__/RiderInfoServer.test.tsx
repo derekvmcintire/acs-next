@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
 
-import { mockRacer } from '../../../_db/mock-data/mock-racer';
+import { mockRider } from '../../../_db/mock-data/mock-racer';
 import { render, screen } from '../../../../test-utils';
 import { RACER_PROFILE_IMAGE_TEST_ID } from '../server/ProfileImageServer';
 import RacerInfoServer from '../server/RiderInfoServer';
@@ -13,16 +13,16 @@ afterEach(() => {
 beforeEach(() => {
   global.fetch = jest.fn(() =>
     Promise.resolve({
-      json: () => Promise.resolve([mockRacer]),
+      json: () => Promise.resolve([mockRider]),
     })
   ) as jest.Mock;
 });
 
-const firstCategory = `${mockRacer.categories[0].discipline}: cat ${mockRacer.categories[0].category}`;
+const firstCategory = `${mockRider.categories[0].discipline}: cat ${mockRider.categories[0].category}`;
 
 const category = new RegExp(`${firstCategory}`, 'i');
-const firstName = new RegExp(`${mockRacer.name.first}`, 'i');
-const currentTeam = new RegExp(`${mockRacer.teams[0].name}`, 'i');
+const firstName = new RegExp(`${mockRider.name.first}`, 'i');
+const currentTeam = new RegExp(`${mockRider.teams[0].name}`, 'i');
 
 describe('RacerInfoServer', () => {
   test('renders with mockRiderInfo when fetch is mocked', async () => {

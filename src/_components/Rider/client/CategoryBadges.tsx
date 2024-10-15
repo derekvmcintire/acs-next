@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { IAgeGroup, ICategory } from '@/src/_types';
+import { ICategory } from '@/src/_types';
 import InfoBadge from '../../_ui/InfoBadge';
-import { calculateAge, getGFAgeGroup } from '../utils';
+import { calculateAgeGroupFromDob } from '../utils';
 
 const mapCategories = (categories: ICategory[]): React.ReactNode => {
   return categories.map((c: ICategory) => (
@@ -11,12 +11,6 @@ const mapCategories = (categories: ICategory[]): React.ReactNode => {
       <InfoBadge>{`${c.discipline}: cat ${c.category}`}</InfoBadge>
     </span>
   ));
-};
-
-const calculateAgeGroup = (dob: string): IAgeGroup => {
-  const birthDate = new Date(dob);
-  const age = calculateAge(birthDate);
-  return getGFAgeGroup(age);
 };
 
 interface CategoryBadgesType {
@@ -27,7 +21,7 @@ export default function CategoryBadges({ categories, dob }: CategoryBadgesType) 
   return (
     <>
       {mapCategories(categories)}
-      <InfoBadge>{`GF: ${calculateAgeGroup(dob).text}`}</InfoBadge>
+      <InfoBadge>{`GF: ${calculateAgeGroupFromDob(dob).text}`}</InfoBadge>
     </>
   );
 }
