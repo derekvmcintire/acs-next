@@ -37,22 +37,17 @@ export const generateRandomDateTimestamp = (year = new Date().getFullYear()) => 
 
 export const getRandomBirthday = () => {
   const today = new Date();
-  const maxAge = 40; // Maximum age
-  const minAge = 17; // Minimum age
+  const maxAge = 40;
+  const minAge = 17;
 
-  // Calculate the range of birth years
   const maxBirthYear = today.getFullYear() - minAge;
   const minBirthYear = today.getFullYear() - maxAge;
 
-  // Generate a random birth year between min and max
   const randomYear = Math.floor(Math.random() * (maxBirthYear - minBirthYear + 1)) + minBirthYear;
-
-  // Generate a random month (0-11) and day (1-31) - ensuring valid days for the month
   const randomMonth = Math.floor(Math.random() * 12);
   const daysInMonth = new Date(randomYear, randomMonth + 1, 0).getDate();
   const randomDay = Math.floor(Math.random() * daysInMonth) + 1;
 
-  // Create and return the date object for the random birthday
   return new Date(randomYear, randomMonth, randomDay).toDateString();
 }
 
