@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Text, useMantineColorScheme } from '@mantine/core';
-import { getRiderResults } from '@/src/_api/get-rider-results';
+import { getRiderHistory } from '@/src/_api/get-history';
 import { IRaceData } from '@/src/_types';
 import { getFormattedYearString } from '@/src/_utility/date-helpers';
 import InfoBlock from '../../_ui/InfoBlock';
@@ -22,7 +22,7 @@ export default function TopResults({ id }: TopResultsProps) {
 
   useEffect(() => {
     const fetchRiderResults = async () => {
-      await getRiderResults(id).then((data) => {
+      await getRiderHistory(id).then((data) => {
         setCareerWins(getCareerWins(data));
         setTopResults(getTopTenResults(data));
       });

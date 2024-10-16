@@ -1,6 +1,6 @@
 import React from 'react';
+import { getSingleRider } from '@/src/_api/get-rider';
 import { IRiderInfo } from '@/src/_types';
-import { getRiderInfo } from '../../../_api/get-rider-info';
 import InfoGrid from '../client/InfoGrid';
 import { NameHeadingServer } from './NameHeadingServer';
 
@@ -23,7 +23,7 @@ interface RiderInfoServerProps {
 }
 
 export default async function RiderInfoServer({ id }: RiderInfoServerProps) {
-  const riderInfo: IRiderInfo = (await getRiderInfo(id)) || DEFAULT_RIDER_NOT_FOUND;
+  const riderInfo: IRiderInfo = (await getSingleRider(id)) || DEFAULT_RIDER_NOT_FOUND;
 
   if (!riderInfo) {
     return <div>Did not work</div>;
