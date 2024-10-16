@@ -84,7 +84,7 @@ export const generateRandomTeam = (n) => {
     team = `${team} ${word}`;
   }
 
-  return team;
+  return team.trim();
 };
 
 /******************************/
