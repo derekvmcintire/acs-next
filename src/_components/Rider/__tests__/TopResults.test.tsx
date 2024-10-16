@@ -19,7 +19,7 @@ beforeEach(() => {
 
 describe('TopResults', () => {
   it('renders the top results', async () => {
-    render(<TopResults />);
+    render(<TopResults id={1} />);
 
     expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
 

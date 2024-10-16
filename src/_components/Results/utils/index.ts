@@ -29,16 +29,24 @@ export const getOrdinal = (n: number) => {
 };
 
 /********************** */
-export const getTopTenResults = (history: IRaceYear[] = []) => {
+export const consolidateResults = (history: IRaceYear[]): IRaceData[] => {
   if (history.length < 1) {
     return [];
   }
-  const reducedResults: IRaceData[] = history.reduce((acc: IRaceData[], year: IRaceYear) => {
+  return history.reduce((acc: IRaceData[], year: IRaceYear) => {
     const racesWithPlaces = year.races.filter((race) => race.place > 0);
     return [...acc, ...racesWithPlaces];
   }, []);
+};
 
-  const sortedReducedResults = reducedResults.sort((a, b) => a.place - b.place);
+/********************** */
+export const getTopTenResults = (history: IRaceYear[] = []) => {
+  const reducedResults: IRaceData[] = consolidateResults(history);
+  return reducedResults.sort((a, b) => a.place - b.place).slice(0, 8);
+};
 
-  return sortedReducedResults.slice(0, 8);
+/********************** */
+export const getCareerWins = (history: IRaceYear[] = []) => {
+  const reducedResults: IRaceData[] = consolidateResults(history);
+  return reducedResults.filter((r: IRaceData) => r.place === 1).length;
 };
