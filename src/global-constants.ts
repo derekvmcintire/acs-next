@@ -19,3 +19,6 @@ export const GF_AGE_GROUPS: IAgeGroup[] = [
 ];
 
 export const STRAVA_BASE_URL = 'http://strava.com/athletes/';
+
+export const APP_BASE_URL = 'http://localhost:3000';
+export const APP_RIDER_PATH = '/rider';

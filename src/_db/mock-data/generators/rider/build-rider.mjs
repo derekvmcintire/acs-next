@@ -5,8 +5,11 @@ import { generateRandomTeam, generateRandomNumber, generateRandomString, getRand
 export const buildMockRacerInfo = (racerInfo = {}, teamName) => {
   const { id, name, socials, dob, categories, teams, hometown, photo } = racerInfo;
 
+  const currentTeam = teamName || generateRandomTeam(4);
+
   return {
     id: id,
+    currentTeam,
     name: name || {
       first: FIRST_NAMES[generateRandomNumber(FIRST_NAMES.length - 1)],
       last: LAST_NAMES[generateRandomNumber(LAST_NAMES.length - 1)],
@@ -33,7 +36,7 @@ export const buildMockRacerInfo = (racerInfo = {}, teamName) => {
     teams: teams || [
       {
         year: 2024,
-        name: teamName || generateRandomTeam(4),
+        name: currentTeam,
       },
       {
         year: 2023,

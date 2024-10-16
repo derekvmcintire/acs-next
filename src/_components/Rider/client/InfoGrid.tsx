@@ -7,12 +7,13 @@ import ProfileImage from '../server/ProfileImageServer';
 import Details from './Details';
 import SuggestedRiders from './SuggestedRiders';
 import TopResults from './TopResults';
+import classes from '../styles/rider.module.css';
 
 type InfoGridProps = IRiderInfo;
 
 export default function InfoGrid(riderInfo: InfoGridProps) {
   return (
-    <Grid>
+    <Grid className={classes.infoGrid}>
       <Grid.Col span={5}>
         <Flex>
           <ProfileImage img={riderInfo.photo} />
@@ -23,7 +24,7 @@ export default function InfoGrid(riderInfo: InfoGridProps) {
         <TopResults id={riderInfo.id} />
       </Grid.Col>
       <Grid.Col span={4}>
-        <SuggestedRiders />
+        <SuggestedRiders team={riderInfo.teams[0].name} />
       </Grid.Col>
     </Grid>
   );

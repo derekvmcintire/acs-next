@@ -19,7 +19,7 @@ export default function ResultsTableTabs({ years, history }: ResultsTableTabsPro
     return years.length < 1 ? (
       <Text>No Results Available</Text>
     ) : (
-      <Group mt="xl">
+      <Group>
         <Tabs defaultValue={years[0].toString()}>
           <Tabs.List>
             {years.map((year) => (
