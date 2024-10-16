@@ -1,3 +1,5 @@
+import Sample from '@/src/_components/Sample/Sample';
+
 export default function SamplePage() {
-  return <div>Hello World!</div>;
+  return <Sample />;
 }
