@@ -7,16 +7,23 @@ import { IRaceData } from '@/src/_types';
 import { getFormattedYearString } from '@/src/_utility/date-helpers';
 import InfoBlock from '../../_ui/InfoBlock';
 import LabeledText from '../../_ui/LabeledText';
-import { getOrdinal, getTopTenResults } from '../../Results/utils';
+import { getCareerWins, getOrdinal, getTopTenResults } from '../../Results/utils';
 import classes from '../styles/rider.module.css';
 
-export default function TopResults() {
+interface TopResultsProps {
+  id: number;
+}
+
+export default function TopResults({ id }: TopResultsProps) {
   const [topResults, setTopResults] = useState<IRaceData[]>([]);
+  const [careerWins, setCareerWins] = useState<number>(0);
+
   const { colorScheme } = useMantineColorScheme();
 
   useEffect(() => {
     const fetchRiderResults = async () => {
-      await getRiderResults(2).then((data) => {
+      await getRiderResults(id).then((data) => {
+        setCareerWins(getCareerWins(data));
         setTopResults(getTopTenResults(data));
       });
     };
@@ -41,20 +48,23 @@ export default function TopResults() {
     <section className={classes.topResults} data-testid="top-results">
       {topResults.length > 0 ? (
         <InfoBlock>
-          <Text mb="8" fw={900}>
-            Top Results
-          </Text>
-          {topResults.map((result) => (
-            <div key={`${result.startDate}${result.points}`}>
-              <LabeledText
-                size="xs"
-                color={getTopResultPlaceColor(result.place)}
-                label={`${getOrdinal(result.place)}`}
-                text={`at ${result.name} (${getFormattedYearString(new Date(result.startDate))})`}
-                noColon
-              />
-            </div>
-          ))}
+          <Text fw={900}>Top Results</Text>
+          {careerWins > 0 && (
+            <Text size="xs" c="orange" fw={700}>{`${careerWins} Career Wins`}</Text>
+          )}
+          <div className={classes.topResultsList}>
+            {topResults.map((result) => (
+              <div key={`${result.startDate}${result.points}`}>
+                <LabeledText
+                  size="xs"
+                  color={getTopResultPlaceColor(result.place)}
+                  label={`${getOrdinal(result.place)}`}
+                  text={`at ${result.name} (${getFormattedYearString(new Date(result.startDate))})`}
+                  noColon
+                />
+              </div>
+            ))}
+          </div>
         </InfoBlock>
       ) : (
         <Text>Loading...</Text>
