@@ -2,7 +2,7 @@ import { FIRST_NAMES, LAST_NAMES } from '../../constants/names.mjs';
 import { IMG_URLS } from '../../constants/photos.mjs';
 import { generateRandomTeam, generateRandomNumber, generateRandomString, getRandomBirthday } from '../helper-functions.mjs';
 
-export const buildMockRacerInfo = (racerInfo = {}) => {
+export const buildMockRacerInfo = (racerInfo = {}, teamName) => {
   const { id, name, socials, dob, categories, teams, hometown, photo } = racerInfo;
 
   return {
@@ -33,7 +33,7 @@ export const buildMockRacerInfo = (racerInfo = {}) => {
     teams: teams || [
       {
         year: 2024,
-        name: generateRandomTeam(4),
+        name: teamName || generateRandomTeam(4),
       },
       {
         year: 2023,
