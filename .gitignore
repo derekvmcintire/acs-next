@@ -24,6 +24,9 @@ coverage
 .coverage
 *.lcov
 
+# Mock API generated JSON
+endpoints.json
+
 # nyc test coverage
 .nyc_output
 
