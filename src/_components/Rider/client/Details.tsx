@@ -25,16 +25,17 @@ export default function Details({ socials, dob, hometown }: DetailsProps) {
     <section className={classes.details}>
       <InfoBlock>
         <div>
-          <LabeledText label="Birthday" text={birthDate.toDateString()} />
+          <LabeledText size="sm" label="Birthday" text={birthDate.toDateString()} />
         </div>
         <div>
-          <LabeledText label="Age" text={age.toString()} />
+          <LabeledText size="sm" label="Age" text={age.toString()} />
         </div>
         <div>
-          <LabeledText label="Nationality" text={country?.toUpperCase() || ''} />
+          <LabeledText size="sm" label="Nationality" text={country?.toUpperCase() || ''} />
         </div>
         <div>
           <LabeledText
+            size="sm"
             label="Hometown"
             text={`${city || ''}${state ? `, ${state.toUpperCase()}` : ''}`}
           />
