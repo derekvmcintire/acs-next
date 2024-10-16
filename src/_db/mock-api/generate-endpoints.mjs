@@ -3,7 +3,7 @@ import { buildMockRacerInfo } from "../mock-data/generators/rider/build-rider.mj
 
 const racers = [];
 const history = [];
-for (let i=1; i < 5; i++) {
+for (let i=1; i < 100; i++) {
     const newRider = buildMockRacerInfo({id: i});
     racers.push(newRider);
     const newHistory = {racerId: i, results: buildMockRacingHistory()}
