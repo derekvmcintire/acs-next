@@ -3,7 +3,7 @@ import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { render, screen } from '@/test-utils';
 import TopResults from '../client/TopResults';
 
-const mockResponse = mockRacingHistory;
+const mockResponse = [mockRacingHistory];
 
 afterEach(() => {
   jest.restoreAllMocks();
@@ -12,7 +12,7 @@ afterEach(() => {
 beforeEach(() => {
   global.fetch = jest.fn(() =>
     Promise.resolve({
-      json: () => Promise.resolve([mockResponse]),
+      json: () => Promise.resolve(mockResponse),
     })
   ) as jest.Mock;
 });
