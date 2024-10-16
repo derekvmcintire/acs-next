@@ -4,15 +4,15 @@ import { Flex, Table, Text } from '@mantine/core';
 import { IRaceData } from '@/src/_types';
 import classes from '../styles/results.module.css';
 
-interface ResultsTableProps {
-  results: IRaceData[];
-}
-
 const getFormattedDateString = (date: Date) => {
   const month = date.getMonth() + 1;
   const day = date.getDate();
   return `${month}/${day}`;
 };
+
+interface ResultsTableProps {
+  results: IRaceData[];
+}
 
 export default function ResultsTable({ results }: ResultsTableProps) {
   const hasResults = results && results?.length > 0;

@@ -29,7 +29,10 @@ export const getOrdinal = (n: number) => {
 };
 
 /********************** */
-export const getTopTenResults = (history: IRaceYear[]) => {
+export const getTopTenResults = (history: IRaceYear[] = []) => {
+  if (history.length < 1) {
+    return [];
+  }
   const reducedResults: IRaceData[] = history.reduce((acc: IRaceData[], year: IRaceYear) => {
     const racesWithPlaces = year.races.filter((race) => race.place > 0);
     return [...acc, ...racesWithPlaces];

@@ -31,7 +31,7 @@ export default async function RiderInfoServer({ id }: RiderInfoServerProps) {
 
   return (
     <>
-      <NameHeadingServer {...riderInfo} />
+      <NameHeadingServer data-testid="name-heading" {...riderInfo} />
       <InfoGrid {...riderInfo} />
     </>
   );

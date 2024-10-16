@@ -3,7 +3,7 @@ import {
   FIRST_NAME_OUT_OF_ORDER,
   mockRacingHistory,
 } from '@/src/_db/mock-data/mock-race-history';
-import { getTopTenResults, sortRacingDataByYear } from '../utils';
+import { sortRacingDataByYear } from '../utils';
 
 const raceYears = mockRacingHistory.results;
 
@@ -22,12 +22,5 @@ describe('Results Utilities', () => {
     expect(sortedYears[1].year).toBe(2023);
     expect(sortedYears[2].year).toBe(2022);
     expect(raceYears[0].races[0].name).toBe(FIRST_NAME_IN_ORDER);
-  });
-
-  it('getTopTenResults should get the top ten results', () => {
-    const topTen = getTopTenResults(raceYears);
-    console.log(topTen);
-
-    expect(true).toBe(true);
   });
 });

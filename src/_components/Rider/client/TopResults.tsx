@@ -1,19 +1,20 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, useMantineColorScheme } from '@mantine/core';
 import { getRiderResults } from '@/src/_api/get-rider-results';
 import { IRaceData } from '@/src/_types';
+import { getFormattedYearString } from '@/src/_utility/date-helpers';
 import InfoBlock from '../../_ui/InfoBlock';
 import LabeledText from '../../_ui/LabeledText';
 import { getOrdinal, getTopTenResults } from '../../Results/utils';
 import classes from '../styles/rider.module.css';
 
 export default function TopResults() {
-  const [topResults, setTopResults] = React.useState<IRaceData[]>([]);
+  const [topResults, setTopResults] = useState<IRaceData[]>([]);
   const { colorScheme } = useMantineColorScheme();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchRiderResults = async () => {
       await getRiderResults(2).then((data) => {
         setTopResults(getTopTenResults(data));
@@ -23,7 +24,7 @@ export default function TopResults() {
     fetchRiderResults();
   }, []);
 
-  const getColor = (place: number) => {
+  const getTopResultPlaceColor = (place: number) => {
     switch (place) {
       case 1:
         return colorScheme === 'light' ? '#B59410' : '#FFD700';
@@ -44,12 +45,12 @@ export default function TopResults() {
             Top Results
           </Text>
           {topResults.map((result) => (
-            <div>
+            <div key={`${result.startDate}${result.points}`}>
               <LabeledText
                 size="xs"
-                color={getColor(result.place)}
+                color={getTopResultPlaceColor(result.place)}
                 label={`${getOrdinal(result.place)}`}
-                text={`at ${result.name}`}
+                text={`at ${result.name} (${getFormattedYearString(new Date(result.startDate))})`}
                 noColon
               />
             </div>
