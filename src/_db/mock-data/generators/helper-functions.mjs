@@ -2,14 +2,24 @@ import { SPONSORS } from '../constants/teams.mjs';
 
 /******************************/
 
-export const generateRandomNumber = (max = 1000) => Math.floor(Math.random() * max) + 1;
+export const floorMap = (decimalValue, maxValue) => {
+  if (decimalValue < 0 || decimalValue > 1) {
+    return 0;
+  }
+  return Math.floor(decimalValue * maxValue) + 1;
+}
+
+/******************************/
+
+export const generateRandomNumber = (max = 1000) => floorMap(Math.random() * max);
 
 /******************************/
 
 export const generateRandomString = (maxLength = 15) => {
   const characters = 'abcdefghijklmnopqrstuvwxyz';
 
-  const length = Math.floor(Math.random() * maxLength) + 1;
+  // const length = Math.floor(Math.random() * maxLength) + 1;
+  const length = floorMap(Math.random(), maxLength);
   const randomIndex = () => Math.floor(Math.random() * characters.length);
 
   return Array.from({ length }, () => characters[randomIndex()]).join('');
@@ -46,7 +56,7 @@ export const getRandomBirthday = () => {
   const randomYear = Math.floor(Math.random() * (maxBirthYear - minBirthYear + 1)) + minBirthYear;
   const randomMonth = Math.floor(Math.random() * 12);
   const daysInMonth = new Date(randomYear, randomMonth + 1, 0).getDate();
-  const randomDay = Math.floor(Math.random() * daysInMonth) + 1;
+  const randomDay = floorMap(Math.random(), daysInMonth)
 
   return new Date(randomYear, randomMonth, randomDay).toDateString();
 }
