@@ -6,7 +6,6 @@ const racers = [];
 const history = [];
 const teams = [];
 
-
 const buildTeams = () => {
     for (let i=0; i < 10; i++) {
         const newTeam = {
@@ -51,5 +50,3 @@ const endpoints = {
 console.log(JSON.stringify(endpoints));
 
 // node src/_db/mock-api/generate-endpoints.mjs > src/_db/mock-api/endpoints.json
-
-

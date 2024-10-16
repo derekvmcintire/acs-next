@@ -13,16 +13,16 @@ type InfoGridProps = IRiderInfo;
 export default function InfoGrid(riderInfo: InfoGridProps) {
   return (
     <Grid>
-      <Grid.Col span={6}>
+      <Grid.Col span={5}>
         <Flex>
           <ProfileImage img={riderInfo.photo} />
           <Details {...riderInfo} />
         </Flex>
       </Grid.Col>
       <Grid.Col span={3}>
-        <TopResults />
+        <TopResults id={riderInfo.id} />
       </Grid.Col>
-      <Grid.Col span={3}>
+      <Grid.Col span={4}>
         <SuggestedRiders />
       </Grid.Col>
     </Grid>
