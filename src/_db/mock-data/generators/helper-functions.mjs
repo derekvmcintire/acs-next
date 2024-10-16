@@ -76,10 +76,13 @@ export const getListOfPastYears = (n) => {
 /******************************/
 
 export const generateRandomTeam = (n) => {
+  const min = 2;
   const randomNumber = generateRandomNumber(n);
+  const numberOfWords = randomNumber < min ? min : randomNumber;
+
 
   let team = '';
-  for (let i = 0; i < randomNumber; i++) {
+  for (let i = 0; i < numberOfWords; i++) {
     const word = SPONSORS[generateRandomNumber(SPONSORS.length - 1)];
     team = `${team} ${word}`;
   }

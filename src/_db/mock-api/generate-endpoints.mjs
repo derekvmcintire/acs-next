@@ -9,7 +9,7 @@ const teams = [];
 const buildTeams = () => {
     for (let i=0; i < 10; i++) {
         const newTeam = {
-            name: generateRandomTeam(3),
+            name: generateRandomTeam(4),
             riders: 0
         }
         teams.push(newTeam);
@@ -21,7 +21,7 @@ const getTeamForRider = () => {
     const availableTeams = teams.filter(team => team.riders < 10);
 
     if (!availableTeams) {
-        return generateRandomTeam(3);
+        return generateRandomTeam(4);
     }
 
     const randomIndex = Math.floor(Math.random() * availableTeams.length)

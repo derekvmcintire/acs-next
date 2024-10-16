@@ -31,3 +31,5 @@ export default function RiderPage({ params }: RiderPageProps) {
     </div>
   );
 }
+
+export const revalidate = 0;
