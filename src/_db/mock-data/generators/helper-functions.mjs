@@ -11,7 +11,7 @@ export const floorMap = (decimalValue, maxValue) => {
 
 /******************************/
 
-export const generateRandomNumber = (max = 1000) => floorMap(Math.random() * max);
+export const generateRandomNumber = (max = 1000) => floorMap(Math.random(), max);
 
 /******************************/
 
