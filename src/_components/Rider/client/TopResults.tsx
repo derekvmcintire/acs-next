@@ -38,7 +38,7 @@ export default function TopResults() {
   };
 
   return (
-    <section className={classes.topResults}>
+    <section className={classes.topResults} data-testid="top-results">
       {topResults.length > 0 ? (
         <InfoBlock>
           <Text mb="8" fw={900}>

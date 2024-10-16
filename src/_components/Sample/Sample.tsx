@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Text } from '@mantine/core';
-import { getRiderResults } from '../Results/api/get-rider-results';
+import { getRiderResults } from '@/src/_api/get-rider-results';
 
 export default function Sample() {
   const [thing, setThing] = React.useState<any>(null);
