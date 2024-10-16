@@ -32,7 +32,9 @@ export const NameHeadingServer = ({ name, dob, teams, categories, id }: NameHead
       </Text>
       <Text component="span">{' --- '}</Text>
       <Text component="span">
-        <Anchor href={`http://localhost:3000/rider/${id ? id + 1 : 1}`}>{' Next Rider'}</Anchor>
+        <Anchor href={`http://localhost:3000/rider/${id ? Number(id) + 1 : 1}`}>
+          {' Next Rider'}
+        </Anchor>
         <MdArrowForwardIos />
       </Text>
     </div>

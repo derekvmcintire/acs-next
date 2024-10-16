@@ -1,17 +1,11 @@
 import { buildMockStagesForStageRace } from './build-stage-race-results.mjs';
 import { generateRandomNumber, generateRandomString, getFutureDateTimestamp, generateRandomDateTimestamp } from '../helper-functions.mjs';
+import { floorMap } from '../helper-functions.mjs';
 
 export const getRacePlace = (n) => {
-  // Generate a random number between 0 and 1
-  const randomValue = Math.random();
-
-  // Scale it using a quadratic function to give higher weights to higher numbers
-  const scaledValue = Math.sqrt(randomValue); // Adjust this as needed for different skew
-
-  // Map the scaled value to the range 1 to n
-  const randomNumber = Math.floor(scaledValue * n) + 1;
-
-  return randomNumber;
+  // Random number is scaled using a quadractic function to make it more likely to get a higher scaledValue
+  const scaledValue = Math.sqrt(Math.random());
+  return floorMap(scaledValue, n);
 }
 
 export const buildMockRace = (raceType = 'road') => {
