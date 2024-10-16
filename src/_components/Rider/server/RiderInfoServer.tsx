@@ -1,6 +1,6 @@
 import React from 'react';
 import { IRiderInfo } from '@/src/_types';
-import { getRiderInfo } from '../api/get-rider-info';
+import { getRiderInfo } from '../../../_api/get-rider-info';
 import InfoGrid from '../client/InfoGrid';
 import { NameHeadingServer } from './NameHeadingServer';
 
@@ -31,7 +31,7 @@ export default async function RiderInfoServer({ id }: RiderInfoServerProps) {
 
   return (
     <>
-      <NameHeadingServer {...riderInfo} />
+      <NameHeadingServer data-testid="name-heading" {...riderInfo} />
       <InfoGrid {...riderInfo} />
     </>
   );

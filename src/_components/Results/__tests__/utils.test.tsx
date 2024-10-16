@@ -8,12 +8,14 @@ import { sortRacingDataByYear } from '../utils';
 const raceYears = mockRacingHistory.results;
 
 describe('Results Utilities', () => {
-  it('sortRacingDataByYear sorts racing data in descending order', () => {
+  it('race years should start out of order', () => {
     expect(raceYears[0].year).toEqual(2024);
     expect(raceYears[1].year).toBe(2022);
     expect(raceYears[2].year).toBe(2023);
     expect(raceYears[0].races[0].name).toBe(FIRST_NAME_OUT_OF_ORDER);
+  });
 
+  it('sortRacingDataByYear, sorts years in descending order', () => {
     const sortedYears = sortRacingDataByYear(raceYears);
 
     expect(sortedYears[0].year).toBe(2024);
