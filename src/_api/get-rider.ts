@@ -2,9 +2,11 @@ import { BASE_URL, RACERS_PATH } from '@/src/_db/mock-api/constants';
 import { IRiderInfo } from '@/src/_types';
 import { DEFAULT_RIDER_NOT_FOUND } from '../global-constants';
 
+export const getSingleRiderRequestUrl = (id: number) => `${BASE_URL}${RACERS_PATH}?id=${id}`;
+
 export const getSingleRider = async (id: number): Promise<IRiderInfo | null> => {
   try {
-    const response = await fetch(`${BASE_URL}${RACERS_PATH}?id=${id}`);
+    const response = await fetch(getSingleRiderRequestUrl(id));
     const parsedResponse: IRiderInfo[] = await response.json();
     return parsedResponse[0];
   } catch (error) {

@@ -1,13 +1,15 @@
+import { getRiderHistoryRequestUrl } from '@/src/_api/get-history';
+import { getSingleRiderRequestUrl } from '@/src/_api/get-rider';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import { mockMultiGlobalFetch } from '@/src/test-helpers';
 import { render, screen } from '@/test-utils';
 import Sample from '../Sample';
 
-const firstExpectedURL = 'http://localhost:8000/history?racerId=1';
+const firstExpectedURL = getRiderHistoryRequestUrl(1);
 const firstMockResponse = [mockRacingHistory];
 
-const secondExpectedURL = 'http://localhost:8000/racers?id=1';
+const secondExpectedURL = getSingleRiderRequestUrl(1);
 const secondMockResponse = [mockRider];
 
 afterEach(() => {
