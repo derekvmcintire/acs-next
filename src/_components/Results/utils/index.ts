@@ -40,13 +40,13 @@ export const consolidateResults = (history: IRaceYear[]): IRaceData[] => {
 };
 
 /********************** */
-export const getTopTenResults = (history: IRaceYear[] = []) => {
+export const getTopTenResults = (history: IRaceYear[] = []): IRaceData[] => {
   const reducedResults: IRaceData[] = consolidateResults(history);
   return reducedResults.sort((a, b) => a.place - b.place).slice(0, 8);
 };
 
 /********************** */
-export const getCareerWins = (history: IRaceYear[] = []) => {
+export const getCareerWins = (history: IRaceYear[] = []): number => {
   const reducedResults: IRaceData[] = consolidateResults(history);
   return reducedResults.filter((r: IRaceData) => r.place === 1).length;
 };

@@ -21,7 +21,7 @@ export default function InfoGrid(riderInfo: InfoGridProps) {
         </Flex>
       </Grid.Col>
       <Grid.Col span={3}>
-        <TopResults id={riderInfo.id} />
+        <TopResults {...riderInfo} />
       </Grid.Col>
       <Grid.Col span={4}>
         <RiderInfoTeam team={riderInfo.teams[0].name} />

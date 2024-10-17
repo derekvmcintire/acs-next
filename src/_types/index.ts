@@ -71,6 +71,8 @@ export interface IRiderInfo {
   hometown: IHometown;
   dob: string;
   photo: string;
+  wins?: number;
+  topResults?: IRaceData[];
 }
 
 export type RaceType =
