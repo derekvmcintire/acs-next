@@ -8,11 +8,11 @@ import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import InfoBlock from '../../_ui/InfoBlock';
 import classes from '../styles/rider.module.css';
 
-interface SuggestedRidersProps {
+interface RiderInfoTeamProps {
   team: string;
 }
 
-export default function RiderInfoTeam({ team }: SuggestedRidersProps) {
+export default function RiderInfoTeam({ team }: RiderInfoTeamProps) {
   const [teamMembers, setTeamMembers] = useState<IRiderInfo[]>([]);
 
   useEffect(() => {

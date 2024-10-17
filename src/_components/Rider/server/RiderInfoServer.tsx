@@ -15,12 +15,8 @@ export default async function RiderInfoServer({ riderInfo }: RiderInfoServerProp
 
   return (
     <div className={classes.riderInfoServer}>
-      <div className={classes.nameHeadingServerWrap}>
-        <NameHeadingServer data-testid="name-heading" {...riderInfo} />
-      </div>
-      <div className={classes.infoGridWrap}>
-        <InfoGrid {...riderInfo} />
-      </div>
+      <NameHeadingServer data-testid="name-heading" {...riderInfo} />
+      <InfoGrid {...riderInfo} />
     </div>
   );
 }
