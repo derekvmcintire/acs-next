@@ -6,19 +6,23 @@ export const mockMultiGlobalFetch = (expectedUrls: string[], mockResponses: any[
     const index = expectedUrls.indexOf(
       expectedUrls.find((url: string) => url === String(input)) || ''
     );
+
     if (index < 0) {
       console.log(
         "Uh oh, couldn't find the expected url, make sure you have passed a URL for each expected fetch request!"
       );
     }
+
     const mockResponse = mockResponses[index];
-    if (mockResponse.length < index + 1) {
+
+    if (!mockResponse) {
       console.log(
         "Uh oh, couldn't find the expected mock response, make sure you have passed a mock response for each expected fetch request!"
       );
     }
+
     return Promise.resolve({
-      json: () => Promise.resolve(mockResponses[index]),
+      json: () => Promise.resolve(mockResponse),
     });
   }) as jest.Mock;
 };
