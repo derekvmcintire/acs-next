@@ -4,6 +4,7 @@
 
 .infoGrid {
   width: 100%;
+  min-height: 215px;
 }
 
 .profileImage {

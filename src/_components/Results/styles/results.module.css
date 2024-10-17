@@ -1,20 +1,18 @@
 .raceTabs {
   padding: 20px;
-  width: 100%;
 }
 
 .result {
   font-weight: 700;
 }
 
-.raceTable {
-  width: 100%;
-}
-
 .raceTableContainer {
-  width: 80%;
+  margin-right: 10%;
+  align-content: center;
+  display: flex;
+  width: 100%;
 }
 
-.raceTableContainerGroup {
-  width: 100%;
+.riderInfoTeam {
+  margin-top: 32px;
 }

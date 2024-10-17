@@ -33,7 +33,7 @@ export default function ResultsTable({ results }: ResultsTableProps) {
   ));
 
   return (
-    <>
+    <div className={classes.tableWrap}>
       <Flex justify="right">
         <Text fs="italic" fw={700} pr={12} pt={8}>{`${results.length} races`}</Text>
       </Flex>
@@ -50,6 +50,6 @@ export default function ResultsTable({ results }: ResultsTableProps) {
         </Table.Thead>
         <Table.Tbody>{rows}</Table.Tbody>
       </Table>
-    </>
+    </div>
   );
 }

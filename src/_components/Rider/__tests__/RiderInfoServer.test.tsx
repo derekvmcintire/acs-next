@@ -21,7 +21,7 @@ beforeEach(() => {
 // Having trouble mocking child components
 describe('RacerInfoServer', () => {
   test('renders with mockRiderInfo when fetch is mocked', async () => {
-    const component = await RacerInfoServer({ id: 2 });
+    const component = await RacerInfoServer({ riderInfo: mockRider });
     render(component);
 
     const nameElement = await screen.findByText(/Derek McIntire/i);
