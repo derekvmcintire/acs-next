@@ -5,7 +5,7 @@ import { Flex, Grid } from '@mantine/core';
 import { IRiderInfo } from '@/src/_types';
 import ProfileImage from '../server/ProfileImageServer';
 import Details from './Details';
-import SuggestedRiders from './SuggestedRiders';
+import RiderInfoTeam from './RiderInfoTeam';
 import TopResults from './TopResults';
 import classes from '../styles/rider.module.css';
 
@@ -24,7 +24,7 @@ export default function InfoGrid(riderInfo: InfoGridProps) {
         <TopResults id={riderInfo.id} />
       </Grid.Col>
       <Grid.Col span={4}>
-        <SuggestedRiders team={riderInfo.teams[0].name} />
+        <RiderInfoTeam team={riderInfo.teams[0].name} />
       </Grid.Col>
     </Grid>
   );

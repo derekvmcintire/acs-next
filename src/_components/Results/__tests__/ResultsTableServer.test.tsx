@@ -19,7 +19,7 @@ beforeEach(() => {
 
 describe('ResultsTableServer', () => {
   test('renders with mockResults when fetch is mocked', async () => {
-    const component = await ResultsTableServer({ id: 1 });
+    const component = await ResultsTableServer({ history: mockRacingHistory.results });
     render(component);
 
     const firstRace = mockRacingHistory.results[0].races[0];

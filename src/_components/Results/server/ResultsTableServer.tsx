@@ -1,5 +1,4 @@
 import { Suspense } from 'react';
-import { getRiderHistory } from '@/src/_api/get-history';
 import { IRaceYear } from '@/src/_types';
 import Loader from '@/src/app/loading';
 import ResultsTableTabs from '../client/ResultsTableTabs';
@@ -7,11 +6,10 @@ import { getRaceYears, sortRacingDataByYear } from '../utils';
 import classes from '../styles/results.module.css';
 
 interface ResultsTableServerProps {
-  id: number;
+  history: IRaceYear[];
 }
 
-export default async function ResultsTableServer({ id }: ResultsTableServerProps) {
-  const history: IRaceYear[] = await getRiderHistory(id);
+export default async function ResultsTableServer({ history }: ResultsTableServerProps) {
   const years: number[] = history?.length > 0 ? getRaceYears(history) : [];
 
   return (

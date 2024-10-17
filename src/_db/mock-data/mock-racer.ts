@@ -5,6 +5,7 @@ export const TEAM_B2C2_JRA = 'B2C2 Cycling p/b JRA';
 
 export const mockRider: IRiderInfo = {
   id: 1,
+  currentTeam: 'Composting Seguros',
   name: {
     first: 'Derek',
     last: 'McIntire',

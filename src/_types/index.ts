@@ -63,6 +63,7 @@ export interface IHometown {
 
 export interface IRiderInfo {
   id: number;
+  currentTeam?: string;
   name: IRiderName;
   teams: ITeams[];
   socials: ISocials;

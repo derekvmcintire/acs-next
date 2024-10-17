@@ -12,7 +12,7 @@ interface SuggestedRidersProps {
   team: string;
 }
 
-export default function SuggestedRiders({ team }: SuggestedRidersProps) {
+export default function RiderInfoTeam({ team }: SuggestedRidersProps) {
   const [teamMembers, setTeamMembers] = useState<IRiderInfo[]>([]);
 
   useEffect(() => {
@@ -32,12 +32,12 @@ export default function SuggestedRiders({ team }: SuggestedRidersProps) {
   }
 
   return (
-    <section className={classes.topResults}>
+    <section className={classes.riderInfoTeam}>
       <InfoBlock>
         <Text mb="8" fw={900}>{`Team ${team}`}</Text>
         {teamMembers &&
           teamMembers.map((rider: IRiderInfo) => (
-            <Text size="xs">
+            <Text key={`${rider.name.first} ${rider.name.last}`} size="xs">
               <Anchor href={`${APP_BASE_URL}${APP_RIDER_PATH}/${rider.id}`}>
                 {`${rider.name.first} ${rider.name.last}`}
               </Anchor>

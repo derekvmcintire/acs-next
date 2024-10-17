@@ -1,4 +1,4 @@
-import { IAgeGroup } from './_types';
+import { IAgeGroup, IRiderInfo } from './_types';
 
 export const GF_AGE_GROUPS: IAgeGroup[] = [
   { start: 1, end: 13, text: 'Under 14' },
@@ -22,3 +22,17 @@ export const STRAVA_BASE_URL = 'http://strava.com/athletes/';
 
 export const APP_BASE_URL = 'http://localhost:3000';
 export const APP_RIDER_PATH = '/rider';
+
+export const DEFAULT_RIDER_NOT_FOUND: IRiderInfo = {
+  id: 0,
+  name: {
+    first: 'Rider',
+    last: 'Not Found',
+  },
+  teams: [{ year: 2024, name: 'No Team Available' }],
+  socials: {},
+  categories: [],
+  hometown: { country: 'NO', city: 'Nowhere' },
+  dob: '1854-01-01T00:00:00.000-05:00',
+  photo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png',
+};
