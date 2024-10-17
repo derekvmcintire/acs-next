@@ -22,7 +22,7 @@ interface RiderPageProps {
 export default async function RiderPage({ params }: RiderPageProps) {
   const { id } = params;
   const history: IRaceYear[] = await getRiderHistory(id);
-  const riderInfo: IRiderInfo = await getSingleRider(id) || DEFAULT_RIDER_NOT_FOUND;
+  const riderInfo: IRiderInfo = (await getSingleRider(id)) || DEFAULT_RIDER_NOT_FOUND;
 
   return (
     <>

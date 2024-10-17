@@ -24,6 +24,3 @@ export default async function RiderInfoServer({ riderInfo }: RiderInfoServerProp
     </div>
   );
 }
-
-// data was not refreshing, so eliminating next.js automatic cache
-export const revalidate = 0;
