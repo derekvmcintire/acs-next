@@ -6,11 +6,15 @@ import { mockMultiGlobalFetch } from '@/src/test-helpers';
 import { render, screen } from '@/test-utils';
 import Sample from '../Sample';
 
+// set up mock responses for global.fetch
 const firstExpectedURL = getRiderHistoryRequestUrl(1);
 const firstMockResponse = [mockRacingHistory];
 
 const secondExpectedURL = getSingleRiderRequestUrl(1);
 const secondMockResponse = [mockRider];
+
+const expectedUrls = [firstExpectedURL, secondExpectedURL];
+const expectedMockResponses = [firstMockResponse, secondMockResponse];
 
 afterEach(() => {
   // restore all mocks after each test
@@ -18,10 +22,8 @@ afterEach(() => {
 });
 
 beforeEach(() => {
-  mockMultiGlobalFetch(
-    [firstExpectedURL, secondExpectedURL],
-    [firstMockResponse, secondMockResponse]
-  );
+  // use helper to mock all fetch requests
+  mockMultiGlobalFetch(expectedUrls, expectedMockResponses);
 });
 
 describe('Sample', () => {
