@@ -1,35 +1,37 @@
-import '@testing-library/jest-dom/jest-globals';
-import '@testing-library/jest-dom';
-
-import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
+import {
+  mockRacingHistoryEmpty,
+  mockRacingHistoryEmptyYear,
+  mockRacingHistoryMissingYear,
+} from '@/src/_db/mock-data/mock-race-history';
 import { render, screen } from '../../../../test-utils';
-import ResultsTableServer from '../server/ResultsTableLayoutServer';
+import ResultsTableTabs from '../client/ResultsTabs';
 
-afterEach(() => {
-  jest.restoreAllMocks();
-});
+describe('ResultsTableTabs', () => {
+  it('renders all years provided, even with no races in that year', () => {
+    const history = mockRacingHistoryEmptyYear.results;
 
-beforeEach(() => {
-  global.fetch = jest.fn(() =>
-    Promise.resolve({
-      json: () => Promise.resolve([mockRacingHistory]),
-    })
-  ) as jest.Mock;
-});
+    render(<ResultsTableTabs history={history} />);
 
-describe('ResultsTableServer', () => {
-  test('renders with mockResults when fetch is mocked', async () => {
-    const component = await ResultsTableServer({ history: mockRacingHistory.results });
-    render(component);
+    expect(screen.getByTestId('raceTab2024')).toBeInTheDocument();
+    expect(screen.getByTestId('raceTab2023')).toBeInTheDocument();
+    expect(screen.getByTestId('raceTab2022')).toBeInTheDocument();
+  });
 
-    const firstRace = mockRacingHistory.results[0].races[0];
+  it('renders years provided, even when year is missing', () => {
+    const history = mockRacingHistoryMissingYear.results;
 
-    const name = new RegExp(`${firstRace.name}`, 'i');
-    const category = new RegExp(`${firstRace.category}`, 'i');
-    const points = new RegExp(`${firstRace.points}`, 'i');
+    render(<ResultsTableTabs history={history} />);
 
-    expect(screen.getByText(name)).toBeInTheDocument();
-    expect(screen.getByText(category)).toBeInTheDocument();
-    expect(screen.getByText(points)).toBeInTheDocument();
+    expect(screen.getByTestId('raceTab2024')).toBeInTheDocument();
+    expect(screen.queryByText('raceTab2023')).not.toBeInTheDocument();
+    expect(screen.getByTestId('raceTab2022')).toBeInTheDocument();
+    expect(screen.getByTestId('raceTab2021')).toBeInTheDocument();
+  });
+
+  it('renders no tabs when history is empty', () => {
+    const history = mockRacingHistoryEmpty.results;
+
+    render(<ResultsTableTabs history={history} />);
+    expect(screen.getByText(/No Results Available/i)).toBeInTheDocument();
   });
 });

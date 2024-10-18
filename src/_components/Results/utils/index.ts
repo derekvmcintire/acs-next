@@ -50,3 +50,7 @@ export const getCareerWins = (history: IRaceYear[] = []): number => {
   const reducedResults: IRaceData[] = consolidateResults(history);
   return reducedResults.filter((r: IRaceData) => r.place === 1).length;
 };
+
+/********************** */
+export const getResultsForSingleYear = (year: number, history: IRaceYear[]) =>
+  history.find((raceYear) => raceYear.year === year)?.races || [];

@@ -1,28 +1,29 @@
 'use client';
 
-import React from 'react';
 import { Group, Tabs, Text } from '@mantine/core';
 import { IRaceYear } from '@/src/_types';
+import { getRaceYears, getResultsForSingleYear } from '../utils';
 import RaceTable from './ResultsTable';
 import classes from '../styles/results.module.css';
 
-interface ResultsTableTabsProps {
-  years: number[];
+export const RESULTS_TABLE_SERVER_TEST_ID = 'results-table-server';
+export const NO_RESULTS_TABLE_SERVER_TEST_ID = 'no-results-table-server';
+
+interface ResultsTabsProps {
   history: IRaceYear[];
 }
 
-const getResultsForSingleYear = (year: number, history: IRaceYear[]) =>
-  history.find((raceYear) => raceYear.year === year)?.races || [];
+export default function ResultsTabs({ history }: ResultsTabsProps) {
+  const years: number[] = history?.length > 0 ? getRaceYears(history) : [];
 
-export default function ResultsTableTabs({ years, history }: ResultsTableTabsProps) {
   const getTabs = () => {
     return years.length < 1 ? (
-      <Text>No Results Available</Text>
+      <Text data-testId={NO_RESULTS_TABLE_SERVER_TEST_ID}>No Results Available</Text>
     ) : (
-      <Group className={classes.tabsGroup}>
+      <Group className={classes.tabsGroup} data-testId={RESULTS_TABLE_SERVER_TEST_ID}>
         <Tabs defaultValue={years[0].toString()}>
           <Tabs.List>
-            {years.map((year) => (
+            {getRaceYears(history).map((year) => (
               <Tabs.Tab key={year} value={year.toString()}>
                 <div data-testid={`raceTab${year}`}>{year}</div>
               </Tabs.Tab>
