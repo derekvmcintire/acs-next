@@ -7,7 +7,7 @@ export function ColorSchemeToggle() {
   const { setColorScheme } = useMantineColorScheme();
 
   return (
-    <div className={classes.colorScheme}>
+    <div className={classes.colorScheme} data-testid="color-scheme-toggle">
       <Group justify="center">
         <Button
           size="compact-sm"

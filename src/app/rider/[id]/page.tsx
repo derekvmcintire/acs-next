@@ -28,19 +28,17 @@ export default async function RiderPage({ params }: RiderPageProps) {
   riderInfo.wins = getCareerWins(history);
   riderInfo.topResults = getTopTenResults(history);
 
-  console.log('riderInfo is: ', riderInfo);
-
   return (
     <>
       <div className={classes.infoWrap}>
         <TopNav />
         <Suspense fallback={<Loader />}>
-          <RiderInfoServer data-testid="rider-info-server" riderInfo={riderInfo} />
+          <RiderInfoServer riderInfo={riderInfo} />
         </Suspense>
       </div>
       <div className={classes.resultsWrap}>
         <Group pb="50px">
-          <ResultsTableServer data-testid="results-table-server" history={history} />
+          <ResultsTableServer history={history} />
         </Group>
         <ColorSchemeToggle />
       </div>

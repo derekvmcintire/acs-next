@@ -14,9 +14,12 @@ export const getSingleRider = async (id: number): Promise<IRiderInfo | null> => 
   }
 };
 
+export const getRidersByTeamRequestUrl = (team: string) =>
+  `${BASE_URL}${RACERS_PATH}?currentTeam=${encodeURIComponent(team)}`;
+
 export const getRidersByTeam = async (team: string): Promise<IRiderInfo[] | null> => {
   try {
-    const response = await fetch(`${BASE_URL}${RACERS_PATH}?currentTeam=${team}`);
+    const response = await fetch(getRidersByTeamRequestUrl(team));
     return await response.json();
   } catch (error) {
     return null;
