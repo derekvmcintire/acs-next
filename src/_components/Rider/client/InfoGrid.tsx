@@ -9,7 +9,7 @@ import RiderInfoTeam from './RiderInfoTeam';
 import TopResults from './TopResults';
 import classes from '../styles/rider.module.css';
 
-// type InfoGridProps = IRiderInfo;
+const INFO_GRID_TEST_ID = 'info-grid';
 
 interface InfoGridProps {
   riderInfo: IRiderInfo;
@@ -18,19 +18,21 @@ interface InfoGridProps {
 
 export default function InfoGrid({ riderInfo, riderTeamMembers }: InfoGridProps) {
   return (
-    <Grid className={classes.infoGrid}>
-      <Grid.Col span={5}>
-        <Flex>
-          <ProfileImage img={riderInfo.photo} />
-          <Details {...riderInfo} />
-        </Flex>
-      </Grid.Col>
-      <Grid.Col span={3}>
-        <TopResults {...riderInfo} />
-      </Grid.Col>
-      <Grid.Col span={4}>
-        <RiderInfoTeam members={riderTeamMembers} />
-      </Grid.Col>
-    </Grid>
+    <div className={classes.infoGrid} data-testId={INFO_GRID_TEST_ID}>
+      <Grid>
+        <Grid.Col span={5}>
+          <Flex>
+            <ProfileImage img={riderInfo.photo} />
+            <Details {...riderInfo} />
+          </Flex>
+        </Grid.Col>
+        <Grid.Col span={3}>
+          <TopResults {...riderInfo} />
+        </Grid.Col>
+        <Grid.Col span={4}>
+          <RiderInfoTeam members={riderTeamMembers} />
+        </Grid.Col>
+      </Grid>
+    </div>
   );
 }

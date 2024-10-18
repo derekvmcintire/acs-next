@@ -1,9 +1,10 @@
-import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
-import { Anchor, Text, Title } from '@mantine/core';
+import { MdArrowForwardIos } from 'react-icons/md';
+import { Flex, Text, Title } from '@mantine/core';
 import { IRiderInfo } from '@/src/_types';
-import { ACS_COLOR_BLUE, ACS_COLOR_ORANGE } from '@/src/global-constants';
+import { ACS_COLOR_ORANGE } from '@/src/global-constants';
 import CategoryBadges from '../client/CategoryBadges';
 import { getCurrentTeam } from '../utils';
+import { PrevAndNextRider } from './PrevAndNextRider';
 import classes from '../styles/rider.module.css';
 
 const TEAM_PLACEHOLDER_TEXT = 'n/a';
@@ -26,20 +27,10 @@ export const NameHeadingServer = ({ name, dob, teams, categories, id }: NameHead
           {` ${team || TEAM_PLACEHOLDER_TEXT}  `}
         </Text>
       </Title>
-      <CategoryBadges categories={categories} dob={dob} />
-      <Text ml="26" component="span">
-        <MdArrowBackIos />
-        <Anchor c={ACS_COLOR_BLUE} href={`http://localhost:3000/rider/${id ? id - 1 : 1}`}>
-          {' Previous Rider'}
-        </Anchor>
-      </Text>
-      <Text component="span">{' --- '}</Text>
-      <Text component="span">
-        <Anchor c={ACS_COLOR_BLUE} href={`http://localhost:3000/rider/${id ? Number(id) + 1 : 1}`}>
-          {' Next Rider'}
-        </Anchor>
-        <MdArrowForwardIos />
-      </Text>
+      <Flex justify="space-between">
+        <CategoryBadges categories={categories} dob={dob} />
+        <PrevAndNextRider id={id} />
+      </Flex>
     </div>
   );
 };

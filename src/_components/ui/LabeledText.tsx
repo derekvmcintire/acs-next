@@ -9,6 +9,7 @@ interface LabeledTextProps {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   color?: string;
   noColon?: boolean;
+  isSpan?: boolean;
 }
 
 export default function LabeledText({
@@ -17,9 +18,10 @@ export default function LabeledText({
   size = 'md',
   color = '',
   noColon = false,
+  isSpan = false,
 }: LabeledTextProps) {
   return (
-    <Text size={size} component="span">
+    <Text size={size} span={isSpan}>
       <Text size={size} c={color} fw={900} component="span">
         {`${label}${noColon ? ' ' : ': '}`}
       </Text>

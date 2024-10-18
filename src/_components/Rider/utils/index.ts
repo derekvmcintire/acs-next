@@ -1,6 +1,14 @@
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import { IAgeGroup, ITeams } from '@/src/_types';
-import { GF_AGE_GROUPS } from '@/src/global-constants';
+import {
+  ACS_COLOR_BRONZE,
+  ACS_COLOR_DARK_GOLD,
+  ACS_COLOR_DARK_SILVER,
+  ACS_COLOR_LIGHT_GOLD,
+  ACS_COLOR_LIGHT_SILVER,
+  GF_AGE_GROUPS,
+  LIGHT_COLOR_SCHEME,
+} from '@/src/global-constants';
 
 export const getMockRiderInfo = () => mockRider;
 
@@ -38,4 +46,17 @@ export const calculateAgeGroupFromDob = (dob: string): IAgeGroup => {
   const birthDate = new Date(dob);
   const age = calculateAge(birthDate);
   return getGFAgeGroup(age);
+};
+
+export const getTopResultPlaceColor = (place: number, colorScheme: string) => {
+  switch (place) {
+    case 1:
+      return colorScheme === LIGHT_COLOR_SCHEME ? ACS_COLOR_DARK_GOLD : ACS_COLOR_LIGHT_GOLD;
+    case 2:
+      return colorScheme === LIGHT_COLOR_SCHEME ? ACS_COLOR_DARK_SILVER : ACS_COLOR_LIGHT_SILVER;
+    case 3:
+      return ACS_COLOR_BRONZE;
+    default:
+      return '';
+  }
 };
