@@ -2,19 +2,23 @@ import { getRiderHistoryRequestUrl } from '@/src/_api/get-history';
 import { getSingleRiderRequestUrl } from '@/src/_api/get-rider';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import { mockMultiGlobalFetch } from '@/src/test-helpers';
+import { mockMultiGlobalFetch, mockResponsePackage } from '@/src/test-helpers';
 import { render, screen } from '@/test-utils';
 import Sample from '../Sample';
 
+const mockId = 1;
+
 // set up mock responses for global.fetch
-const firstExpectedURL = getRiderHistoryRequestUrl(1);
-const firstMockResponse = [mockRacingHistory];
+const firstMockPackage: mockResponsePackage = {
+  expectedUrl: getRiderHistoryRequestUrl(mockId),
+  mockResponse: [mockRacingHistory],
+};
+const secondMockPackage: mockResponsePackage = {
+  expectedUrl: getSingleRiderRequestUrl(mockId),
+  mockResponse: [mockRider],
+};
 
-const secondExpectedURL = getSingleRiderRequestUrl(1);
-const secondMockResponse = [mockRider];
-
-const expectedUrls = [firstExpectedURL, secondExpectedURL];
-const expectedMockResponses = [firstMockResponse, secondMockResponse];
+const mockResultsPackages = [firstMockPackage, secondMockPackage];
 
 afterEach(() => {
   // restore all mocks after each test
@@ -23,7 +27,7 @@ afterEach(() => {
 
 beforeEach(() => {
   // use helper to mock all fetch requests
-  mockMultiGlobalFetch(expectedUrls, expectedMockResponses);
+  mockMultiGlobalFetch(mockResultsPackages);
 });
 
 describe('Sample', () => {

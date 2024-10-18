@@ -5,40 +5,40 @@ import { getRiderHistoryRequestUrl } from '@/src/_api/get-history';
 import { getRidersByTeamRequestUrl, getSingleRiderRequestUrl } from '@/src/_api/get-rider';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider, TEAM_B2C2_CONTES } from '@/src/_db/mock-data/mock-racer';
-import { mockMultiGlobalFetch } from '@/src/test-helpers';
+import { mockMultiGlobalFetch, mockResponsePackage } from '@/src/test-helpers';
 import { render, screen } from '@/test-utils';
 import RiderPage from '../page';
 
+const mockId = 1;
+
 // set up mock responses for global.fetch
-const firstExpectedURL = getRiderHistoryRequestUrl(1);
-const firstMockResponse = [mockRacingHistory];
-
-const secondExpectedURL = getSingleRiderRequestUrl(1);
-const secondMockResponse = [mockRider];
-
-const thirdExpectedURL = getRidersByTeamRequestUrl(TEAM_B2C2_CONTES);
-const thirdMockResponse: any[] = [];
-
-const expectedUrls = [firstExpectedURL, secondExpectedURL, thirdExpectedURL];
-const expectedMockResponses = [firstMockResponse, secondMockResponse, thirdMockResponse];
+const firstMockPackage: mockResponsePackage = {
+  expectedUrl: getRiderHistoryRequestUrl(mockId),
+  mockResponse: [mockRacingHistory],
+};
+const secondMockPackage: mockResponsePackage = {
+  expectedUrl: getSingleRiderRequestUrl(mockId),
+  mockResponse: [mockRider],
+};
+const thirdMockPackage: mockResponsePackage = {
+  expectedUrl: getRidersByTeamRequestUrl(TEAM_B2C2_CONTES),
+  mockResponse: [],
+};
+const mockResultsPackages = [firstMockPackage, secondMockPackage, thirdMockPackage];
 
 afterEach(() => {
   jest.restoreAllMocks();
 });
 
 beforeEach(() => {
-  // use helper to mock all fetch requests
-  mockMultiGlobalFetch(expectedUrls, expectedMockResponses);
-  jest.mock('../../../../_components/Rider/client/RiderInfoTeam', () => () => (
-    <div>RiderInfoTeam</div>
-  ));
+  mockMultiGlobalFetch(mockResultsPackages);
 });
 
 describe('RacerInfoServer', () => {
   test('renders with mockRiderInfo when fetch is mocked', async () => {
     const pageProps = {
       params: {
-        id: 1,
+        id: mockId,
       },
     };
     const component = await RiderPage(pageProps);

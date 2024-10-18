@@ -1,43 +1,28 @@
+export type mockResponsePackage = {
+  expectedUrl: string;
+  mockResponse: any;
+};
+
 /*
  ** This function will mock the global fetch object and return however many different responses are necessary
  */
-export const mockMultiGlobalFetch = (expectedUrls: string[], mockResponses: any[]): void => {
+export const mockMultiGlobalFetch = (mockPackages: mockResponsePackage[]): void => {
   global.fetch = jest.fn((input) => {
-    const index = expectedUrls.indexOf(
-      expectedUrls.find((url: string) => url === String(input)) || ''
-    );
-
-    if (index < 0) {
-      console.log(
-        "Uh oh, couldn't find the expected url, make sure you have passed a URL for each expected fetch request!"
-      );
-      const slush = {
-        input,
-        expectedUrls,
-        mockResponses,
-        index,
-      };
-      console.log('slush: ', slush);
-      throw new Error(
-        "Uh oh, couldn't find the expected url, make sure you have passed a URL for each expected fetch request!"
-      );
-    }
-
-    const mockResponse = mockResponses[index];
+    const mockResponse = mockPackages.reduce((r: any, mockedPackage: mockResponsePackage) => {
+      if (mockedPackage.expectedUrl === input) {
+        return mockedPackage.mockResponse;
+      }
+      return r;
+    }, null);
 
     if (!mockResponse) {
-      console.log(
-        "Uh oh, couldn't find the expected mock response, make sure you have passed a mock response for each expected fetch request!"
-      );
       const slush = {
         input,
-        expectedUrls,
-        mockResponses,
-        index,
+        mockPackages,
       };
-      console.log('slush: ', slush);
-      throw new Error(
-        "Uh oh, couldn't find the expected mock response, make sure you have passed a mock response for each expected fetch request!"
+      console.log(
+        "Uh oh, couldn't find the expected mock response, make sure you have passed a mockResponsePackage for each expected fetch request!",
+        slush
       );
     }
 
