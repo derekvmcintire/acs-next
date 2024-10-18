@@ -9,7 +9,7 @@ import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider/server/RiderInfoLayo
 import { TOP_NAV_TEST_ID } from '@/src/_components/TopNav/TopNav';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider, TEAM_B2C2_CONTES } from '@/src/_db/mock-data/mock-racer';
-import { mockMultiGlobalFetch, mockResponsePackage } from '@/src/test-helpers';
+import { mockMultiGlobalFetch, mockResponsePackage } from '@/src/_utility/test-helpers';
 import { render, screen } from '@/test-utils';
 import RiderPage from '../page';
 

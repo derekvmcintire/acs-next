@@ -13,11 +13,12 @@ const customJestConfig = {
   testEnvironment: 'jest-environment-jsdom',
   collectCoverage: true,
   collectCoverageFrom: [
-    "src/_api/**/*.ts",
-    "src/_components/**/*.tsx",
-    "src/_utility/**/*.ts",
-    "src/app/**/*.ts",
-    "!src/_db/**/*.mjs"
+    "src/**/*.{ts,tsx}",
+    "!src/_db/**/*.{mjs,ts}",
+    "!src/_metrics/**/*.ts",
+    "!src/_types/**/*.ts",
+    "!src/global-constants.ts",
+    "!src/app/sample/**/*.tsx"
   ],
   coverageDirectory: '.coverage',
 };

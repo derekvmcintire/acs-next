@@ -2,9 +2,9 @@ import { getRiderHistoryRequestUrl } from '@/src/_api/get-history';
 import { getSingleRiderRequestUrl } from '@/src/_api/get-rider';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import { mockMultiGlobalFetch, mockResponsePackage } from '@/src/test-helpers';
+import { mockMultiGlobalFetch, mockResponsePackage } from '@/src/_utility/test-helpers';
 import { render, screen } from '@/test-utils';
-import Sample from '../../../Sample';
+import Sample from '../Sample';
 
 const mockId = 1;
 
