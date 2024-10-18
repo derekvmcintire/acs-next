@@ -1,45 +1,30 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { GoDotFill } from 'react-icons/go';
 import { Anchor, Text } from '@mantine/core';
-import { getRidersByTeam } from '@/src/_api/get-rider';
 import { IRiderInfo } from '@/src/_types';
-import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
+import { ACS_COLOR_BLUE, APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import InfoBlock from '../../ui/InfoBlock';
+import { getCurrentTeam } from '../utils';
 import classes from '../styles/rider.module.css';
 
 interface RiderInfoTeamProps {
-  team: string;
+  members: IRiderInfo[];
 }
 
-export default function RiderInfoTeam({ team }: RiderInfoTeamProps) {
-  const [teamMembers, setTeamMembers] = useState<IRiderInfo[]>([]);
-
-  useEffect(() => {
-    const fetchTeamMembers = async () => {
-      await getRidersByTeam(team).then((data) => {
-        if (data) {
-          setTeamMembers(data);
-        }
-      });
-    };
-
-    fetchTeamMembers();
-  }, []);
-
-  if (teamMembers.length < 1) {
-    return <Text>Loading...</Text>;
-  }
+export default function RiderInfoTeam({ members }: RiderInfoTeamProps) {
+  const team = getCurrentTeam(members[0].teams);
 
   return (
     <section className={classes.riderInfoTeam}>
       <InfoBlock>
         <Text mb="8" fw={900}>{`Team ${team}`}</Text>
-        {teamMembers &&
-          teamMembers.map((rider: IRiderInfo) => (
-            <Text key={`${rider.name.first} ${rider.name.last}`} size="xs">
-              <Anchor href={`${APP_BASE_URL}${APP_RIDER_PATH}/${rider.id}`}>
-                {`${rider.name.first} ${rider.name.last}`}
+        {members &&
+          members.map((rider: IRiderInfo) => (
+            <Text key={`${rider.name.first} ${rider.name.last}`} size="sm" mb="4px">
+              <GoDotFill />
+              <Anchor c={ACS_COLOR_BLUE} href={`${APP_BASE_URL}${APP_RIDER_PATH}/${rider.id}`}>
+                {` ${rider.name.first} ${rider.name.last}`}
               </Anchor>
             </Text>
           ))}

@@ -1,4 +1,4 @@
-import { BASE_URL, RACERS_PATH } from '@/src/_db/mock-api/constants';
+import { BASE_URL, RACERS_PATH } from '@/src/_api/constants';
 import { IRiderInfo } from '@/src/_types';
 import { DEFAULT_RIDER_NOT_FOUND } from '../global-constants';
 

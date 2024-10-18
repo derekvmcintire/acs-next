@@ -1,4 +1,4 @@
-import { BASE_URL, HISTORY_PATH } from '@/src/_db/mock-api/constants';
+import { BASE_URL, HISTORY_PATH } from '@/src/_api/constants';
 import { IRacerHistory } from '@/src/_types';
 
 export const getRiderHistoryRequestUrl = (id: number) => `${BASE_URL}${HISTORY_PATH}?racerId=${id}`;

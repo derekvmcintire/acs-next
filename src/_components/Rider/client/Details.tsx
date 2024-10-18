@@ -3,7 +3,7 @@
 import React from 'react';
 import { FaStrava } from 'react-icons/fa';
 import { Anchor } from '@mantine/core';
-import { STRAVA_BASE_URL } from '@/src/global-constants';
+import { ACS_COLOR_ORANGE, STRAVA_BASE_URL } from '@/src/global-constants';
 import { IRiderInfo } from '../../../_types';
 import InfoBlock from '../../ui/InfoBlock';
 import LabeledText from '../../ui/LabeledText';
@@ -42,7 +42,7 @@ export default function Details({ socials, dob, hometown }: DetailsProps) {
         </div>
         <div>
           <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>
-            <FaStrava color="orange" />
+            <FaStrava color={ACS_COLOR_ORANGE} />
           </Anchor>
         </div>
       </InfoBlock>
