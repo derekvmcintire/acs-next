@@ -1,4 +1,3 @@
-import { Group } from '@mantine/core';
 import { getRiderHistory } from '@/src/_api/get-history';
 import { getRidersByTeam, getSingleRider } from '@/src/_api/get-rider';
 import { getCareerWins, getTopTenResults } from '@/src/_components/Results/utils';
@@ -9,7 +8,6 @@ import { ColorSchemeToggle } from '../../../_components/ColorSchemeToggle/ColorS
 import ResultsTableLayoutServer from '../../../_components/Results/server/ResultsTableLayoutServer';
 import RiderInfoLayoutServer from '../../../_components/Rider/server/RiderInfoLayoutServer';
 import TopNav from '../../../_components/TopNav/TopNav';
-import classes from './riderpage.module.css';
 
 interface RiderPageParams {
   id: number;
@@ -31,16 +29,10 @@ export default async function RiderPage({ params }: RiderPageProps) {
 
   return (
     <>
-      <div className={classes.infoWrap}>
-        <TopNav />
-        <RiderInfoLayoutServer riderInfo={riderInfo} riderTeamMembers={riderTeamMembers} />
-      </div>
-      <div className={classes.resultsWrap}>
-        <Group pb="50px">
-          <ResultsTableLayoutServer history={history} />
-        </Group>
-        <ColorSchemeToggle />
-      </div>
+      <TopNav />
+      <RiderInfoLayoutServer riderInfo={riderInfo} riderTeamMembers={riderTeamMembers} />
+      <ResultsTableLayoutServer history={history} />
+      <ColorSchemeToggle />
     </>
   );
 }

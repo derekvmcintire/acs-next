@@ -79,7 +79,7 @@ export default function TopResults(riderInfo: TopResultsProps) {
   const hasTopResults = topResults && topResults.length > 0;
 
   return (
-    <section className={classes.topResults} data-testid={TOP_RESULTS_TEST_ID}>
+    <section data-testid={TOP_RESULTS_TEST_ID}>
       <InfoBlock>
         <Text fw={900}>Top Results</Text>
         {hasWins && <Wins wins={wins} />}
