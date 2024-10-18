@@ -3,9 +3,13 @@ import '@testing-library/jest-dom';
 
 import { getRiderHistoryRequestUrl } from '@/src/_api/get-history';
 import { getRidersByTeamRequestUrl, getSingleRiderRequestUrl } from '@/src/_api/get-rider';
+import { COLOR_SCHEME_TOGGLE_TEST_ID } from '@/src/_components/ColorSchemeToggle/ColorSchemeToggle';
+import { RESULTS_TABLE_LAYOUT_TEST_ID } from '@/src/_components/Results/server/ResultsTableLayoutServer';
+import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider/server/RiderInfoLayoutServer';
+import { TOP_NAV_TEST_ID } from '@/src/_components/TopNav/TopNav';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider, TEAM_B2C2_CONTES } from '@/src/_db/mock-data/mock-racer';
-import { mockMultiGlobalFetch, mockResponsePackage } from '@/src/test-helpers';
+import { mockMultiGlobalFetch, mockResponsePackage } from '@/src/_utility/test-helpers';
 import { render, screen } from '@/test-utils';
 import RiderPage from '../page';
 
@@ -44,16 +48,16 @@ describe('RacerInfoServer', () => {
     const component = await RiderPage(pageProps);
     render(component);
 
-    const topNavElement = await screen.findByTestId('top-nav');
+    const topNavElement = await screen.findByTestId(TOP_NAV_TEST_ID);
     expect(topNavElement).toBeInTheDocument();
 
-    const riderInfoElement = await screen.findByTestId('rider-info-server');
+    const riderInfoElement = await screen.findByTestId(RIDER_INFO_TEST_ID);
     expect(riderInfoElement).toBeInTheDocument();
 
-    const historyElement = await screen.findByTestId('results-table-server');
+    const historyElement = await screen.findByTestId(RESULTS_TABLE_LAYOUT_TEST_ID);
     expect(historyElement).toBeInTheDocument();
 
-    const colorSchemeElement = await screen.findByTestId('color-scheme-toggle');
+    const colorSchemeElement = await screen.findByTestId(COLOR_SCHEME_TOGGLE_TEST_ID);
     expect(colorSchemeElement).toBeInTheDocument();
   });
 });

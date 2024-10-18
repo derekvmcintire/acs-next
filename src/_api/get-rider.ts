@@ -4,7 +4,7 @@ import { DEFAULT_RIDER_NOT_FOUND } from '../global-constants';
 
 export const getSingleRiderRequestUrl = (id: number) => `${BASE_URL}${RACERS_PATH}?id=${id}`;
 
-export const getSingleRider = async (id: number): Promise<IRiderInfo | null> => {
+export const getSingleRider = async (id: number): Promise<IRiderInfo> => {
   try {
     const response = await fetch(getSingleRiderRequestUrl(id));
     const parsedResponse: IRiderInfo[] = await response.json();
