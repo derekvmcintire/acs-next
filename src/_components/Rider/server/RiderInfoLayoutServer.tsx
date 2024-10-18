@@ -8,9 +8,13 @@ export const RIDER_INFO_TEST_ID = 'rider-info';
 
 interface RiderInfoLayoutServerProps {
   riderInfo: IRiderInfo;
+  riderTeamMembers: IRiderInfo[];
 }
 
-export default function RiderInfoLayoutServer({ riderInfo }: RiderInfoLayoutServerProps) {
+export default function RiderInfoLayoutServer({
+  riderInfo,
+  riderTeamMembers,
+}: RiderInfoLayoutServerProps) {
   if (!riderInfo) {
     return <div>Did not work</div>;
   }
@@ -18,7 +22,7 @@ export default function RiderInfoLayoutServer({ riderInfo }: RiderInfoLayoutServ
   return (
     <div className={classes.riderInfoServer} data-testid={RIDER_INFO_TEST_ID}>
       <NameHeadingServer data-testid="name-heading" {...riderInfo} />
-      <InfoGrid {...riderInfo} />
+      <InfoGrid riderInfo={riderInfo} riderTeamMembers={riderTeamMembers} />
     </div>
   );
 }

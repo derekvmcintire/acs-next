@@ -2,6 +2,7 @@
 
 import { GoSearch } from 'react-icons/go';
 import { Divider, Flex, Group, Text, TextInput, Title } from '@mantine/core';
+import { ACS_COLOR_BLUE, ACS_COLOR_ORANGE } from '@/src/global-constants';
 import classes from './styles/top-nav.module.css';
 
 export const TOP_NAV_TEST_ID = 'top-nav';
@@ -30,7 +31,7 @@ export default function TopNav() {
             inherit
             variant="gradient"
             component="span"
-            gradient={{ from: 'blue', to: 'orange' }}
+            gradient={{ from: ACS_COLOR_BLUE, to: ACS_COLOR_ORANGE }}
           >
             ACS
           </Text>

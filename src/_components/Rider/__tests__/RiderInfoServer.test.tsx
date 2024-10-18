@@ -1,36 +1,24 @@
 import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
 
-import { mockRider } from '../../../_db/mock-data/mock-racer';
+import { mockRider, mockTeamMembers } from '../../../_db/mock-data/mock-racer';
 import { render, screen } from '../../../../test-utils';
+import { TOP_RESULTS_TEST_ID } from '../client/TopResults';
 import { RACER_PROFILE_IMAGE_TEST_ID } from '../server/ProfileImageServer';
 import RacerInfoServer from '../server/RiderInfoLayoutServer';
 
-afterEach(() => {
-  jest.restoreAllMocks();
-});
-
-beforeEach(() => {
-  global.fetch = jest.fn(() =>
-    Promise.resolve({
-      json: () => Promise.resolve([mockRider]),
-    })
-  ) as jest.Mock;
-});
-
-// Having trouble mocking child components
 describe('RacerInfoServer', () => {
-  test('renders with mockRiderInfo when fetch is mocked', async () => {
-    const component = await RacerInfoServer({ riderInfo: mockRider });
+  test('renders with mockRiderInfo when fetch is mocked', () => {
+    const component = RacerInfoServer({ riderInfo: mockRider, riderTeamMembers: mockTeamMembers });
     render(component);
 
-    const nameElement = await screen.findByText(/Derek McIntire/i);
+    const nameElement = screen.getByText(/Derek McIntire/i);
     expect(nameElement).toBeInTheDocument();
 
-    const imageElement = await screen.findByTestId(RACER_PROFILE_IMAGE_TEST_ID);
+    const imageElement = screen.getByTestId(RACER_PROFILE_IMAGE_TEST_ID);
     expect(imageElement).toBeInTheDocument();
 
-    const topResultsElement = await screen.findByTestId('top-results');
+    const topResultsElement = screen.getByTestId(TOP_RESULTS_TEST_ID);
     expect(topResultsElement).toBeInTheDocument();
   });
 });

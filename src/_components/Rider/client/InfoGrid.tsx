@@ -9,9 +9,14 @@ import RiderInfoTeam from './RiderInfoTeam';
 import TopResults from './TopResults';
 import classes from '../styles/rider.module.css';
 
-type InfoGridProps = IRiderInfo;
+// type InfoGridProps = IRiderInfo;
 
-export default function InfoGrid(riderInfo: InfoGridProps) {
+interface InfoGridProps {
+  riderInfo: IRiderInfo;
+  riderTeamMembers: IRiderInfo[];
+}
+
+export default function InfoGrid({ riderInfo, riderTeamMembers }: InfoGridProps) {
   return (
     <Grid className={classes.infoGrid}>
       <Grid.Col span={5}>
@@ -24,7 +29,7 @@ export default function InfoGrid(riderInfo: InfoGridProps) {
         <TopResults {...riderInfo} />
       </Grid.Col>
       <Grid.Col span={4}>
-        <RiderInfoTeam team={riderInfo.teams[0].name} />
+        <RiderInfoTeam members={riderTeamMembers} />
       </Grid.Col>
     </Grid>
   );
