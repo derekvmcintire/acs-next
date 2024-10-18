@@ -1,4 +1,4 @@
-import Sample from '@/src/_components/Sample/Sample';
+import Sample from '@/src/Sample';
 
 export default function SamplePage() {
   return <Sample />;

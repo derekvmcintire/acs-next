@@ -4,10 +4,12 @@ import { GoSearch } from 'react-icons/go';
 import { Divider, Flex, Group, Text, TextInput, Title } from '@mantine/core';
 import classes from './styles/top-nav.module.css';
 
+export const TOP_NAV_TEST_ID = 'top-nav';
+
 export default function TopNav() {
   const icon = <GoSearch />;
   return (
-    <div data-testid="top-nav">
+    <div data-testid={TOP_NAV_TEST_ID}>
       <Flex justify="right" align="center" pt={10}>
         <Group mr={20}>
           <Text>Home</Text>

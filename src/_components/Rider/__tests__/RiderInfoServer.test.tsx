@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { mockRider } from '../../../_db/mock-data/mock-racer';
 import { render, screen } from '../../../../test-utils';
 import { RACER_PROFILE_IMAGE_TEST_ID } from '../server/ProfileImageServer';
-import RacerInfoServer from '../server/RiderInfoServer';
+import RacerInfoServer from '../server/RiderInfoLayoutServer';
 
 afterEach(() => {
   jest.restoreAllMocks();

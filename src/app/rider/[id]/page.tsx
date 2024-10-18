@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import { Group } from '@mantine/core';
 import { getRiderHistory } from '@/src/_api/get-history';
 import { getSingleRider } from '@/src/_api/get-rider';
@@ -6,10 +5,9 @@ import { getCareerWins, getTopTenResults } from '@/src/_components/Results/utils
 import { IRaceYear, IRiderInfo } from '@/src/_types';
 import { DEFAULT_RIDER_NOT_FOUND } from '@/src/global-constants';
 import { ColorSchemeToggle } from '../../../_components/ColorSchemeToggle/ColorSchemeToggle';
-import ResultsTableServer from '../../../_components/Results/server/ResultsTableServer';
-import RiderInfoServer from '../../../_components/Rider/server/RiderInfoServer';
+import ResultsTableLayoutServer from '../../../_components/Results/server/ResultsTableLayoutServer';
+import RiderInfoLayoutServer from '../../../_components/Rider/server/RiderInfoLayoutServer';
 import TopNav from '../../../_components/TopNav/TopNav';
-import Loader from '../../loading';
 import classes from './riderpage.module.css';
 
 interface RiderPageParams {
@@ -32,13 +30,11 @@ export default async function RiderPage({ params }: RiderPageProps) {
     <>
       <div className={classes.infoWrap}>
         <TopNav />
-        <Suspense fallback={<Loader />}>
-          <RiderInfoServer riderInfo={riderInfo} />
-        </Suspense>
+        <RiderInfoLayoutServer riderInfo={riderInfo} />
       </div>
       <div className={classes.resultsWrap}>
         <Group pb="50px">
-          <ResultsTableServer history={history} />
+          <ResultsTableLayoutServer history={history} />
         </Group>
         <ColorSchemeToggle />
       </div>

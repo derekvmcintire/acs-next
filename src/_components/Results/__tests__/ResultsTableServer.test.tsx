@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { render, screen } from '../../../../test-utils';
-import ResultsTableServer from '../server/ResultsTableServer';
+import ResultsTableServer from '../server/ResultsTableLayoutServer';
 
 afterEach(() => {
   jest.restoreAllMocks();

@@ -2,3 +2,10 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20%;
+}
