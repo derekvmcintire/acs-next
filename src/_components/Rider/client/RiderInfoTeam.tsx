@@ -5,7 +5,7 @@ import { Anchor, Text } from '@mantine/core';
 import { getRidersByTeam } from '@/src/_api/get-rider';
 import { IRiderInfo } from '@/src/_types';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
-import InfoBlock from '../../_ui/InfoBlock';
+import InfoBlock from '../../ui/InfoBlock';
 import classes from '../styles/rider.module.css';
 
 interface RiderInfoTeamProps {

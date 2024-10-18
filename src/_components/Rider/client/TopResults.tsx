@@ -3,9 +3,9 @@
 import { Text, useMantineColorScheme } from '@mantine/core';
 import { IRaceData, IRiderInfo } from '@/src/_types';
 import { getFormattedYearString } from '@/src/_utility/date-helpers';
-import InfoBlock from '../../_ui/InfoBlock';
-import LabeledText from '../../_ui/LabeledText';
 import { getOrdinal } from '../../Results/utils';
+import InfoBlock from '../../ui/InfoBlock';
+import LabeledText from '../../ui/LabeledText';
 import classes from '../styles/rider.module.css';
 
 interface MappedResultsProps {

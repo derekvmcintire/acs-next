@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ICategory } from '@/src/_types';
-import InfoBadge from '../../_ui/InfoBadge';
+import InfoBadge from '../../ui/InfoBadge';
 import { calculateAgeGroupFromDob } from '../utils';
 
 const mapCategories = (categories: ICategory[]): React.ReactNode => {
