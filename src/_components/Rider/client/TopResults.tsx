@@ -12,9 +12,9 @@ import {
   ACS_COLOR_ORANGE,
   LIGHT_COLOR_SCHEME,
 } from '@/src/global-constants';
-import InfoBlock from '../../_ui/InfoBlock';
-import LabeledText from '../../_ui/LabeledText';
 import { getOrdinal } from '../../Results/utils';
+import InfoBlock from '../../ui/InfoBlock';
+import LabeledText from '../../ui/LabeledText';
 import classes from '../styles/rider.module.css';
 
 export const MAPPED_TOP_RESULTS_TEST_ID = 'mapped-results';

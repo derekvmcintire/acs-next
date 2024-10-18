@@ -4,7 +4,7 @@ import { GoDotFill } from 'react-icons/go';
 import { Anchor, Text } from '@mantine/core';
 import { IRiderInfo } from '@/src/_types';
 import { ACS_COLOR_BLUE, APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
-import InfoBlock from '../../_ui/InfoBlock';
+import InfoBlock from '../../ui/InfoBlock';
 import { getCurrentTeam } from '../utils';
 import classes from '../styles/rider.module.css';
 
