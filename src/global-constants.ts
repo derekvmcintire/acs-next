@@ -1,5 +1,38 @@
 import { IAgeGroup, IRiderInfo } from './_types';
 
+// External re-direct URLs
+export const STRAVA_BASE_URL = 'http://strava.com/athletes/';
+
+// App paths
+export const APP_BASE_URL = 'http://localhost:3000';
+export const APP_RIDER_PATH = '/rider';
+
+// Global Colors
+export const LIGHT_COLOR_SCHEME = 'light';
+export const DARK_COLOR_SCHEME = 'dark';
+export const ACS_COLOR_DARK_GOLD = '#B59410';
+export const ACS_COLOR_LIGHT_GOLD = '#FFD700';
+export const ACS_COLOR_DARK_SILVER = '#71706E';
+export const ACS_COLOR_LIGHT_SILVER = '#C0C0C0';
+export const ACS_COLOR_BRONZE = '#CD7F32';
+export const ACS_COLOR_ORANGE = 'orange';
+export const ACS_COLOR_BLUE = 'blue';
+
+// Pick lists and default data
+export const DEFAULT_RIDER_NOT_FOUND: IRiderInfo = {
+  id: 0,
+  name: {
+    first: 'Rider',
+    last: 'Not Found',
+  },
+  teams: [{ year: 2024, name: 'No Team Available' }],
+  socials: {},
+  categories: [],
+  hometown: { country: 'NO', city: 'Nowhere' },
+  dob: '1854-01-01T00:00:00.000-05:00',
+  photo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png',
+};
+
 export const GF_AGE_GROUPS: IAgeGroup[] = [
   { start: 1, end: 13, text: 'Under 14' },
   { start: 14, end: 16, text: '14-16' },
@@ -17,22 +50,3 @@ export const GF_AGE_GROUPS: IAgeGroup[] = [
   { start: 70, end: 74, text: '70-74' },
   { start: 75, end: 10000, text: '75 and Over' },
 ];
-
-export const STRAVA_BASE_URL = 'http://strava.com/athletes/';
-
-export const APP_BASE_URL = 'http://localhost:3000';
-export const APP_RIDER_PATH = '/rider';
-
-export const DEFAULT_RIDER_NOT_FOUND: IRiderInfo = {
-  id: 0,
-  name: {
-    first: 'Rider',
-    last: 'Not Found',
-  },
-  teams: [{ year: 2024, name: 'No Team Available' }],
-  socials: {},
-  categories: [],
-  hometown: { country: 'NO', city: 'Nowhere' },
-  dob: '1854-01-01T00:00:00.000-05:00',
-  photo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png',
-};

@@ -8,7 +8,7 @@ import { RESULTS_TABLE_LAYOUT_TEST_ID } from '@/src/_components/Results/server/R
 import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider/server/RiderInfoLayoutServer';
 import { TOP_NAV_TEST_ID } from '@/src/_components/TopNav/TopNav';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
-import { mockRider, TEAM_B2C2_CONTES } from '@/src/_db/mock-data/mock-racer';
+import { mockRider, mockTeamMembers, TEAM_B2C2_CONTES } from '@/src/_db/mock-data/mock-racer';
 import { mockMultiGlobalFetch, mockResponsePackage } from '@/src/_utility/test-helpers';
 import { render, screen } from '@/test-utils';
 import RiderPage from '../page';
@@ -26,7 +26,7 @@ const secondMockPackage: mockResponsePackage = {
 };
 const thirdMockPackage: mockResponsePackage = {
   expectedUrl: getRidersByTeamRequestUrl(TEAM_B2C2_CONTES),
-  mockResponse: [],
+  mockResponse: mockTeamMembers,
 };
 const mockResultsPackages = [firstMockPackage, secondMockPackage, thirdMockPackage];
 
