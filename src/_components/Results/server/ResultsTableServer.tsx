@@ -9,11 +9,11 @@ interface ResultsTableServerProps {
   history: IRaceYear[];
 }
 
-export default async function ResultsTableServer({ history }: ResultsTableServerProps) {
+export default function ResultsTableServer({ history }: ResultsTableServerProps) {
   const years: number[] = history?.length > 0 ? getRaceYears(history) : [];
 
   return (
-    <div className={classes.raceTableContainer}>
+    <div className={classes.raceTableContainer} data-testid="results-table-server">
       <Suspense fallback={<Loader />}>
         <ResultsTableTabs years={years} history={sortRacingDataByYear(history)} />
       </Suspense>

@@ -8,13 +8,13 @@ interface RiderInfoServerProps {
   riderInfo: IRiderInfo;
 }
 
-export default async function RiderInfoServer({ riderInfo }: RiderInfoServerProps) {
+export default function RiderInfoServer({ riderInfo }: RiderInfoServerProps) {
   if (!riderInfo) {
     return <div>Did not work</div>;
   }
 
   return (
-    <div className={classes.riderInfoServer}>
+    <div className={classes.riderInfoServer} data-testid="rider-info-server">
       <NameHeadingServer data-testid="name-heading" {...riderInfo} />
       <InfoGrid {...riderInfo} />
     </div>

@@ -11,12 +11,32 @@ export const mockMultiGlobalFetch = (expectedUrls: string[], mockResponses: any[
       console.log(
         "Uh oh, couldn't find the expected url, make sure you have passed a URL for each expected fetch request!"
       );
+      const slush = {
+        input,
+        expectedUrls,
+        mockResponses,
+        index,
+      };
+      console.log('slush: ', slush);
+      throw new Error(
+        "Uh oh, couldn't find the expected url, make sure you have passed a URL for each expected fetch request!"
+      );
     }
 
     const mockResponse = mockResponses[index];
 
     if (!mockResponse) {
       console.log(
+        "Uh oh, couldn't find the expected mock response, make sure you have passed a mock response for each expected fetch request!"
+      );
+      const slush = {
+        input,
+        expectedUrls,
+        mockResponses,
+        index,
+      };
+      console.log('slush: ', slush);
+      throw new Error(
         "Uh oh, couldn't find the expected mock response, make sure you have passed a mock response for each expected fetch request!"
       );
     }
