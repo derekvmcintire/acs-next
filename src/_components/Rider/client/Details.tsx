@@ -24,27 +24,17 @@ export default function Details({ socials, dob, hometown }: DetailsProps) {
   return (
     <section className={classes.details}>
       <InfoBlock>
-        <div>
-          <LabeledText size="sm" label="Birthday" text={birthDate.toDateString()} />
-        </div>
-        <div>
-          <LabeledText size="sm" label="Age" text={age.toString()} />
-        </div>
-        <div>
-          <LabeledText size="sm" label="Nationality" text={country?.toUpperCase() || ''} />
-        </div>
-        <div>
-          <LabeledText
-            size="sm"
-            label="Hometown"
-            text={`${city || ''}${state ? `, ${state.toUpperCase()}` : ''}`}
-          />
-        </div>
-        <div>
-          <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>
-            <FaStrava color={ACS_COLOR_ORANGE} />
-          </Anchor>
-        </div>
+        <LabeledText size="sm" label="Birthday" text={birthDate.toDateString()} />
+        <LabeledText size="sm" label="Age" text={age.toString()} />
+        <LabeledText size="sm" label="Nationality" text={country?.toUpperCase() || ''} />
+        <LabeledText
+          size="sm"
+          label="Hometown"
+          text={`${city || ''}${state ? `, ${state.toUpperCase()}` : ''}`}
+        />
+        <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>
+          <FaStrava color={ACS_COLOR_ORANGE} />
+        </Anchor>
       </InfoBlock>
     </section>
   );

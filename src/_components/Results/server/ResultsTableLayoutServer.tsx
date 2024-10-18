@@ -15,10 +15,10 @@ export default function ResultsTableLayoutServer({ history }: ResultsTableLayout
   const years: number[] = history?.length > 0 ? getRaceYears(history) : [];
 
   return (
-    <div className={classes.raceTableContainer} data-testid={RESULTS_TABLE_LAYOUT_TEST_ID}>
+    <section className={classes.raceTableContainer} data-testid={RESULTS_TABLE_LAYOUT_TEST_ID}>
       <Suspense fallback={<Loader />}>
         <ResultsTableTabs years={years} history={sortRacingDataByYear(history)} />
       </Suspense>
-    </div>
+    </section>
   );
 }

@@ -13,15 +13,17 @@ const mapCategories = (categories: ICategory[]): React.ReactNode => {
   ));
 };
 
+const CATEGORY_BADGE_TEST_ID = 'category-badges';
+
 interface CategoryBadgesType {
   categories: ICategory[];
   dob: string;
 }
 export default function CategoryBadges({ categories, dob }: CategoryBadgesType) {
   return (
-    <>
+    <div data-testId={CATEGORY_BADGE_TEST_ID}>
       {mapCategories(categories)}
       <InfoBadge>{`GF: ${calculateAgeGroupFromDob(dob).text}`}</InfoBadge>
-    </>
+    </div>
   );
 }
