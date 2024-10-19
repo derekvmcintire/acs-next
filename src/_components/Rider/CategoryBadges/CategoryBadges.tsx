@@ -21,7 +21,7 @@ export default function CategoryBadges() {
   const { dob, categories } = riderInfo;
 
   return (
-    <div data-testId={CATEGORY_BADGE_TEST_ID}>
+    <div data-testid={CATEGORY_BADGE_TEST_ID}>
       {mapCategories(categories)}
       <InfoBadge>{`GF: ${calculateAgeGroupFromDob(dob).text}`}</InfoBadge>
     </div>

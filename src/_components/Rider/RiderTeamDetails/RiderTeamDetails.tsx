@@ -14,7 +14,7 @@ interface TeamMemberProps {
 }
 
 const TeamMember = ({ rider }: TeamMemberProps) => (
-  <Text key={`${rider.name.first} ${rider.name.last}`} className={classes.teamMember} size="sm">
+  <Text size="sm">
     <GoDotFill />
     <Anchor c={ACS_COLOR_BLUE} href={`${APP_BASE_URL}${APP_RIDER_PATH}/${rider.id}`}>
       {` ${rider.name.first} ${rider.name.last}`}
@@ -33,13 +33,19 @@ export default function RiderTeamDetails() {
   const isNotCurrentRider = (rider: IRiderInfo) => rider.id !== id;
 
   return (
-    <section className={classes.riderInfoTeam} data-testId={RIDER_INFO_TEAM_TEST_ID}>
+    <section className={classes.riderInfoTeam} data-testid={RIDER_INFO_TEAM_TEST_ID}>
       <InfoBlock>
         <Text mb="8" fw={900}>{`Team ${team}`}</Text>
         {hasTeamMembers &&
-          riderTeamMembers.map((rider: IRiderInfo) =>
-            isNotCurrentRider(rider) ? <TeamMember rider={rider} /> : <></>
-          )}
+          riderTeamMembers.map((rider: IRiderInfo) => {
+            return isNotCurrentRider(rider) ? (
+              <div key={`${rider.id}${rider.dob}`} className={classes.teamMember}>
+                <TeamMember rider={rider} />
+              </div>
+            ) : (
+              <div key={`${rider.id}${rider.dob}`} className={classes.teamMember}></div>
+            );
+          })}
       </InfoBlock>
     </section>
   );
