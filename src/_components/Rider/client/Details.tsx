@@ -4,15 +4,15 @@ import React from 'react';
 import { FaStrava } from 'react-icons/fa';
 import { Anchor } from '@mantine/core';
 import { ACS_COLOR_ORANGE, STRAVA_BASE_URL } from '@/src/global-constants';
-import { IRiderInfo } from '../../../_types';
 import InfoBlock from '../../ui/InfoBlock';
 import LabeledText from '../../ui/LabeledText';
+import { useRider } from '../context/RiderContext';
 import { calculateAge } from '../utils';
 import classes from '../styles/rider.module.css';
 
-type DetailsProps = IRiderInfo;
-
-export default function Details({ socials, dob, hometown }: DetailsProps) {
+export default function Details() {
+  const { riderInfo } = useRider();
+  const { socials, dob, hometown } = riderInfo;
   const { country, city, state } = hometown;
 
   const birthDate: Date = new Date(dob);

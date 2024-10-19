@@ -5,7 +5,7 @@ import { getRiderHistoryRequestUrl } from '@/src/_api/get-history';
 import { getRidersByTeamRequestUrl, getSingleRiderRequestUrl } from '@/src/_api/get-rider';
 import { COLOR_SCHEME_TOGGLE_TEST_ID } from '@/src/_components/ColorSchemeToggle/ColorSchemeToggle';
 import { RESULTS_TABLE_SERVER_TEST_ID } from '@/src/_components/Results/client/ResultsTabs';
-import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider/client/RiderInfoLayout';
+import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider/client/Rider';
 import { TOP_NAV_TEST_ID } from '@/src/_components/TopNav/TopNav';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider, mockTeamMembers, TEAM_B2C2_CONTES } from '@/src/_db/mock-data/mock-racer';
