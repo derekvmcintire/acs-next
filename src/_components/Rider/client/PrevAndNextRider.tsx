@@ -3,17 +3,16 @@
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 import { Anchor, Button } from '@mantine/core';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
+import { useRider } from '../context/RiderContext';
 import classes from '../styles/rider.module.css';
 
 const RIDER_URL = `${APP_BASE_URL}${APP_RIDER_PATH}`;
 const PREV_RIDER_BUTTON_TEXT = 'Previous Rider';
 const NEXT_RIDER_BUTTON_TEXT = 'Next Rider';
 
-interface PrevAndNextRiderProps {
-  id: number;
-}
-
-export const PrevAndNextRider = ({ id }: PrevAndNextRiderProps) => {
+export const PrevAndNextRider = () => {
+  const { riderInfo } = useRider();
+  const { id } = riderInfo;
   return (
     <div>
       <Button
