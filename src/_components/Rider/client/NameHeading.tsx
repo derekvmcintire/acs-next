@@ -1,29 +1,32 @@
+'use client';
+
 import { MdArrowForwardIos } from 'react-icons/md';
 import { Flex, Text, Title } from '@mantine/core';
-import { IRiderInfo } from '@/src/_types';
 import { ACS_COLOR_ORANGE } from '@/src/global-constants';
-import CategoryBadges from '../client/CategoryBadges';
+import { useRider } from '../context/RiderContext';
 import { getCurrentTeam } from '../utils';
+import CategoryBadges from './CategoryBadges';
 import { PrevAndNextRider } from './PrevAndNextRider';
 import classes from '../styles/rider.module.css';
 
 const TEAM_PLACEHOLDER_TEXT = 'n/a';
 
-type NameHeadingProps = IRiderInfo;
+export const NameHeading = () => {
+  const { riderInfo } = useRider();
+  const { name, dob, teams, categories, id } = riderInfo;
 
-export const NameHeadingServer = ({ name, dob, teams, categories, id }: NameHeadingProps) => {
   const team = getCurrentTeam(teams);
 
   return (
     <div className={classes.riderTitle}>
       <Title>
-        <Text inherit c={ACS_COLOR_ORANGE} component="span">
+        <Text inherit c={ACS_COLOR_ORANGE} span>
           {`${name.first || ''} ${name.last || ''} `}
         </Text>
-        <Text component="span">
+        <Text span>
           <MdArrowForwardIos />
         </Text>
-        <Text className={classes.riderTeam} component="span">
+        <Text className={classes.riderTeam} span>
           {` ${team || TEAM_PLACEHOLDER_TEXT}  `}
         </Text>
       </Title>

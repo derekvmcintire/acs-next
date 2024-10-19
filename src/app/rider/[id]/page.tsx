@@ -10,7 +10,7 @@ import { getCurrentTeam } from '@/src/_components/Rider/utils';
 import { IRaceYear, IRiderInfo } from '@/src/_types';
 import { DEFAULT_RIDER_NOT_FOUND } from '@/src/global-constants';
 import { ColorSchemeToggle } from '../../../_components/ColorSchemeToggle/ColorSchemeToggle';
-import RiderInfoLayoutServer from '../../../_components/Rider/server/RiderInfoLayoutServer';
+import RiderInfoLayout from '../../../_components/Rider/client/RiderInfoLayout';
 import TopNav from '../../../_components/TopNav/TopNav';
 
 interface RiderPageParams {
@@ -34,7 +34,7 @@ export default async function RiderPage({ params }: RiderPageProps) {
   return (
     <>
       <TopNav />
-      <RiderInfoLayoutServer riderInfo={riderInfo} riderTeamMembers={riderTeamMembers} />
+      <RiderInfoLayout riderInfo={riderInfo} riderTeamMembers={riderTeamMembers} />
       <ResultsTableTabs history={sortRacingDataByYear(history)} />
       <ColorSchemeToggle />
     </>

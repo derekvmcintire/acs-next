@@ -1,3 +1,5 @@
+'use client';
+
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 import { Anchor, Button } from '@mantine/core';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';

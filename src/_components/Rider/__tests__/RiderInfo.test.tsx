@@ -3,9 +3,9 @@ import '@testing-library/jest-dom';
 
 import { mockRider, mockTeamMembers } from '../../../_db/mock-data/mock-racer';
 import { render, screen } from '../../../../test-utils';
+import { RACER_PROFILE_IMAGE_TEST_ID } from '../client/ProfileImage';
+import RacerInfoServer from '../client/RiderInfoLayout';
 import { TOP_RESULTS_TEST_ID } from '../client/TopResults';
-import { RACER_PROFILE_IMAGE_TEST_ID } from '../server/ProfileImageServer';
-import RacerInfoServer from '../server/RiderInfoLayoutServer';
 
 describe('RacerInfoServer', () => {
   test('renders with mockRiderInfo when fetch is mocked', () => {
