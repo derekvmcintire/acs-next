@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { IRaceYear, IRiderInfo } from '@/src/_types';
-import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
-import { RiderProvider } from './context/RiderContext';
-import History from './History';
-import InfoGrid from './InfoGrid';
-import { NameHeading } from './NameHeading';
+import { ColorSchemeToggle } from '../shared/ColorSchemeToggle/ColorSchemeToggle';
+import History from './History/History';
+import InfoGrid from './InfoGrid/InfoGrid';
+import { NameHeading } from './NameHeading/NameHeading';
+import { RiderProvider } from './RiderContext/RiderContext';
 import { sortRacingDataByYear } from './utils';
-import classes from './styles/rider.module.css';
+import classes from './rider.module.css';
 
 export const RIDER_INFO_TEST_ID = 'rider-info';
 

@@ -4,7 +4,7 @@ import { getCareerWins, getCurrentTeam, getTopTenResults } from '@/src/_componen
 import { IRaceYear, IRiderInfo } from '@/src/_types';
 import { DEFAULT_RIDER_NOT_FOUND } from '@/src/global-constants';
 import RiderInfoLayout from '../../../_components/Rider/Rider';
-import TopNav from '../../../_components/TopNav/TopNav';
+import TopNav from '../../../_components/shared/TopNav/TopNav';
 
 interface RiderPageParams {
   id: number;
