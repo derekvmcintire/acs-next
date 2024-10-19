@@ -13,7 +13,7 @@ const TEAM_PLACEHOLDER_TEXT = 'n/a';
 
 export const NameHeading = () => {
   const { riderInfo } = useRider();
-  const { name, dob, teams, categories } = riderInfo;
+  const { name, teams } = riderInfo;
 
   const team = getCurrentTeam(teams);
 
@@ -31,7 +31,7 @@ export const NameHeading = () => {
         </Text>
       </Title>
       <Flex justify="space-between">
-        <CategoryBadges categories={categories} dob={dob} />
+        <CategoryBadges />
         <PrevAndNextRider />
       </Flex>
     </div>
