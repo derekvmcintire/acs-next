@@ -1,6 +1,6 @@
+import { RiderProvider } from '../../../_contexts/Rider/RiderContext';
 import { mockRider } from '../../../_db/mock-data/mock-racer';
 import { render, screen } from '../../../../test-utils';
-import { RiderProvider } from '../RiderContext/RiderContext';
 import { calculateAge } from '../utils';
 import RiderDetails from './RiderDetails';
 

@@ -1,16 +1,21 @@
+import { RiderHistoryProvider } from '@/src/_contexts/Rider/RiderHistoryContext';
 import {
   mockRacingHistoryEmpty,
   mockRacingHistoryEmptyYear,
   mockRacingHistoryMissingYear,
 } from '@/src/_db/mock-data/mock-race-history';
 import { render, screen } from '../../../../test-utils';
-import ResultsTableTabs from './History';
+import History from './History';
 
-describe('ResultsTableTabs', () => {
+describe('History', () => {
   it('renders all years provided, even with no races in that year', () => {
     const history = mockRacingHistoryEmptyYear.results;
 
-    render(<ResultsTableTabs history={history} />);
+    render(
+      <RiderHistoryProvider initialHistory={history}>
+        <History />
+      </RiderHistoryProvider>
+    );
 
     expect(screen.getByTestId('raceTab2024')).toBeInTheDocument();
     expect(screen.getByTestId('raceTab2023')).toBeInTheDocument();
@@ -20,7 +25,11 @@ describe('ResultsTableTabs', () => {
   it('renders years provided, even when year is missing', () => {
     const history = mockRacingHistoryMissingYear.results;
 
-    render(<ResultsTableTabs history={history} />);
+    render(
+      <RiderHistoryProvider initialHistory={history}>
+        <History />
+      </RiderHistoryProvider>
+    );
 
     expect(screen.getByTestId('raceTab2024')).toBeInTheDocument();
     expect(screen.queryByText('raceTab2023')).not.toBeInTheDocument();
@@ -31,7 +40,11 @@ describe('ResultsTableTabs', () => {
   it('renders no tabs when history is empty', () => {
     const history = mockRacingHistoryEmpty.results;
 
-    render(<ResultsTableTabs history={history} />);
+    render(
+      <RiderHistoryProvider initialHistory={history}>
+        <History />
+      </RiderHistoryProvider>
+    );
     expect(screen.getByText(/No Results Available/i)).toBeInTheDocument();
   });
 });

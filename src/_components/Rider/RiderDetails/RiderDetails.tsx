@@ -4,9 +4,9 @@ import React from 'react';
 import { FaStrava } from 'react-icons/fa';
 import { Anchor } from '@mantine/core';
 import { ACS_COLOR_ORANGE, STRAVA_BASE_URL } from '@/src/global-constants';
+import { useRider } from '../../../_contexts/Rider/RiderContext';
 import InfoBlock from '../../ui/InfoBlock/InfoBlock';
 import LabeledText from '../../ui/LabeledText/LabeledText';
-import { useRider } from '../RiderContext/RiderContext';
 import { calculateAge } from '../utils';
 import classes from '../rider.module.css';
 

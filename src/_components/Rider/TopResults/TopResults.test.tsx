@@ -1,7 +1,7 @@
 import React from 'react';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import { render, screen } from '@/test-utils';
-import { RiderProvider } from '../RiderContext/RiderContext';
+import { RiderProvider } from '../../../_contexts/Rider/RiderContext';
 import TopResults from './TopResults';
 
 describe('TopResults', () => {

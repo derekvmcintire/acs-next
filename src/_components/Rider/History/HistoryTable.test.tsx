@@ -1,12 +1,12 @@
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { render, screen } from '../../../../test-utils';
-import ResultsTable from './HistoryTable';
+import HistoryTable from './HistoryTable';
 
 describe('RaceTable Component', () => {
   const history = mockRacingHistory.results;
 
   it('has the right columns', () => {
-    render(<ResultsTable results={history[0].races} />);
+    render(<HistoryTable results={history[0].races} />);
 
     expect(screen.getByText(/Date/i)).toBeInTheDocument();
     expect(screen.getByText(/Result/i)).toBeInTheDocument();
@@ -17,7 +17,7 @@ describe('RaceTable Component', () => {
   });
 
   it('renders the mock races', () => {
-    render(<ResultsTable results={history[0].races} />);
+    render(<HistoryTable results={history[0].races} />);
 
     const firstRace = mockRacingHistory.results[0].races[0];
 

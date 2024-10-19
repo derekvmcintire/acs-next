@@ -1,7 +1,7 @@
 'use client';
 
 import { Group, Tabs, Text } from '@mantine/core';
-import { IRaceYear } from '@/src/_types';
+import { useRiderHistory } from '@/src/_contexts/Rider/RiderHistoryContext';
 import { getRaceYears, getResultsForSingleYear } from '../utils';
 import RaceTable from './HistoryTable';
 import classes from '../rider.module.css';
@@ -9,11 +9,8 @@ import classes from '../rider.module.css';
 export const RESULTS_TABLE_SERVER_TEST_ID = 'results-table-server';
 export const NO_RESULTS_TABLE_SERVER_TEST_ID = 'no-results-table-server';
 
-interface HistoryProps {
-  history: IRaceYear[];
-}
-
-export default function History({ history }: HistoryProps) {
+export default function History() {
+  const { history } = useRiderHistory();
   const years: number[] = history?.length > 0 ? getRaceYears(history) : [];
 
   const getTabs = () => {

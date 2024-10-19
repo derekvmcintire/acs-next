@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { ICategory } from '@/src/_types';
+import { useRider } from '../../../_contexts/Rider/RiderContext';
 import InfoBadge from '../../ui/InfoBadge/InfoBadge';
-import { useRider } from '../RiderContext/RiderContext';
 import { calculateAgeGroupFromDob } from '../utils';
 
 const mapCategories = (categories: ICategory[]): React.ReactNode => {
