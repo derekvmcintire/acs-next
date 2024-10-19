@@ -1,4 +1,3 @@
-// RiderContext.tsx
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 import { IRiderInfo } from '@/src/_types';
 import { DEFAULT_RIDER_NOT_FOUND } from '@/src/global-constants';

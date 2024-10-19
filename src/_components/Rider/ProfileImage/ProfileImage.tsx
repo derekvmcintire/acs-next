@@ -1,7 +1,7 @@
 'use client';
 
 import { Image } from '@mantine/core';
-import { useRider } from '../RiderContext/RiderContext';
+import { useRider } from '../../../_contexts/RiderContext';
 import classes from '../rider.module.css';
 
 const PLACEHOLDER_IMG =
