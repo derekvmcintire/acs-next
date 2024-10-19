@@ -1,16 +1,15 @@
 'use client';
 
 import { Text } from '@mantine/core';
-import { IRiderInfo } from '@/src/_types';
 import { ACS_COLOR_ORANGE } from '@/src/global-constants';
 import InfoBlock from '../../ui/InfoBlock';
+import { useRider } from '../context/RiderContext';
 import { MappedTopResults } from './MappedTopResults';
 
 export const TOP_RESULTS_TEST_ID = 'top-results';
 
-type TopResultsProps = IRiderInfo;
-
-export default function TopResults(riderInfo: TopResultsProps) {
+export default function TopResults() {
+  const { riderInfo } = useRider();
   const { wins, topResults } = riderInfo;
 
   const hasWins = wins && wins > 0;

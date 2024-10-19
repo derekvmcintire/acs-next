@@ -24,7 +24,7 @@ export default function InfoGrid() {
           </Flex>
         </Grid.Col>
         <Grid.Col span={3}>
-          <TopResults {...riderInfo} />
+          <TopResults />
         </Grid.Col>
         <Grid.Col span={4}>
           <RiderInfoTeam members={riderTeamMembers} />
