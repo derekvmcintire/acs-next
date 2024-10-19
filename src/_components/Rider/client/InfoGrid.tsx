@@ -2,27 +2,25 @@
 
 import React from 'react';
 import { Flex, Grid } from '@mantine/core';
-import { IRiderInfo } from '@/src/_types';
-import ProfileImage from '../server/ProfileImageServer';
+import { useRider } from '../context/RiderContext';
 import Details from './Details';
+import ProfileImage from './ProfileImage';
 import RiderInfoTeam from './RiderInfoTeam';
 import TopResults from './TopResults';
 import classes from '../styles/rider.module.css';
 
 const INFO_GRID_TEST_ID = 'info-grid';
 
-interface InfoGridProps {
-  riderInfo: IRiderInfo;
-  riderTeamMembers: IRiderInfo[];
-}
+export default function InfoGrid() {
+  const { riderInfo, riderTeamMembers } = useRider();
+  const { photo } = riderInfo;
 
-export default function InfoGrid({ riderInfo, riderTeamMembers }: InfoGridProps) {
   return (
     <div className={classes.infoGrid} data-testId={INFO_GRID_TEST_ID}>
       <Grid>
         <Grid.Col span={5}>
           <Flex>
-            <ProfileImage img={riderInfo.photo} />
+            <ProfileImage img={photo} />
             <Details {...riderInfo} />
           </Flex>
         </Grid.Col>

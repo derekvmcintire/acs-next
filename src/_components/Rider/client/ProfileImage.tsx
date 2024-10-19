@@ -1,16 +1,18 @@
+'use client';
+
 import { Image } from '@mantine/core';
 import classes from '../styles/rider.module.css';
 
 const PLACEHOLDER_IMG =
   'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
 
-interface ProfileImageServerProps {
+export const RACER_PROFILE_IMAGE_TEST_ID = 'racerProfileTestId';
+
+interface ProfileImageProps {
   img?: string;
 }
 
-export const RACER_PROFILE_IMAGE_TEST_ID = 'racerProfileTestId';
-
-export default function ProfileImageServer({ img = PLACEHOLDER_IMG }: ProfileImageServerProps) {
+export default function ProfileImage({ img = PLACEHOLDER_IMG }: ProfileImageProps) {
   return (
     <div className={classes.profileImage} data-testid={RACER_PROFILE_IMAGE_TEST_ID}>
       <Image

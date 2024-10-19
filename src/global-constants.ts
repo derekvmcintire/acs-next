@@ -25,11 +25,11 @@ export const DEFAULT_RIDER_NOT_FOUND: IRiderInfo = {
     first: 'Rider',
     last: 'Not Found',
   },
-  teams: [{ year: 2024, name: 'No Team Available' }],
+  teams: [],
   socials: {},
   categories: [],
-  hometown: { country: 'NO', city: 'Nowhere' },
-  dob: '1854-01-01T00:00:00.000-05:00',
+  hometown: { country: '', city: '' },
+  dob: '',
   photo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png',
 };
 
