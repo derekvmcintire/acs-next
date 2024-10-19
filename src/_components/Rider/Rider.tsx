@@ -4,7 +4,7 @@ import React from 'react';
 import { RiderHistoryProvider } from '@/src/_contexts/Rider/RiderHistoryContext';
 import { IRaceYear, IRiderInfo } from '@/src/_types';
 import { RiderProvider } from '../../_contexts/Rider/RiderContext';
-import PageWrapHoc from '../shared/PageWrap/PageWrapHoc';
+import PageLayout from '../shared/PageLayout/PageLayout';
 import History from './History/History';
 import InfoGrid from './InfoGrid/InfoGrid';
 import { NameHeading } from './NameHeading/NameHeading';
@@ -23,11 +23,11 @@ export default function Rider({ riderInfo, riderTeamMembers, history }: RiderPro
     <div className={classes.riderInfoServer} data-testid={RIDER_INFO_TEST_ID}>
       <RiderProvider initialRiderInfo={riderInfo} initialRiderTeamMembers={riderTeamMembers}>
         <RiderHistoryProvider initialHistory={history}>
-          <PageWrapHoc>
+          <PageLayout>
             <NameHeading />
             <InfoGrid />
             <History />
-          </PageWrapHoc>
+          </PageLayout>
         </RiderHistoryProvider>
       </RiderProvider>
     </div>

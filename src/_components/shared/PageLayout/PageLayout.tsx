@@ -2,10 +2,10 @@ import React from 'react';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import TopNav from '../TopNav/TopNav';
 
-interface PageWrapHocProps {
+interface PageLayoutProps {
   children: React.ReactNode;
 }
-export default function PageWrapHoc({ children }: PageWrapHocProps) {
+export default function PageLayout({ children }: PageLayoutProps) {
   return (
     <>
       <TopNav />

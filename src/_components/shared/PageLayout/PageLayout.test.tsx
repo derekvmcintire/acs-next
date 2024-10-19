@@ -1,17 +1,17 @@
 import { render, screen } from '@/test-utils';
 import { COLOR_SCHEME_TOGGLE_TEST_ID } from '../ColorSchemeToggle/ColorSchemeToggle';
 import { TOP_NAV_TEST_ID } from '../TopNav/TopNav';
-import PageWrapHoc from './PageWrapHoc';
+import PageLayout from './PageLayout';
 
-describe('PageWrapHoc', () => {
+describe('PageLayout', () => {
   it('Renders the TopNav and ColorSchemeToggle components', () => {
     const MOCK_TEST_ID = 'mock-component';
     const MockComponent = () => <div data-testid={MOCK_TEST_ID}>Mock Component</div>;
 
     render(
-      <PageWrapHoc>
+      <PageLayout>
         <MockComponent />
-      </PageWrapHoc>
+      </PageLayout>
     );
 
     const topNavElement = screen.getByTestId(TOP_NAV_TEST_ID);
