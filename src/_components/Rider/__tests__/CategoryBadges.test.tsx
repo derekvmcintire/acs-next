@@ -1,6 +1,6 @@
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import { render, screen } from '../../../../test-utils';
-import CategoryBadges from '../client/CategoryBadges';
+import CategoryBadges from '../CategoryBadges';
 import { RiderProvider } from '../context/RiderContext';
 import { calculateAgeGroupFromDob } from '../utils';
 

@@ -1,10 +1,9 @@
 import { useMantineColorScheme } from '@mantine/core';
 import { IRaceData } from '@/src/_types';
 import { getFormattedYearString } from '@/src/_utility/date-helpers';
-import { getOrdinal } from '../../Results/utils';
-import LabeledText from '../../ui/LabeledText';
-import { getTopResultPlaceColor } from '../utils';
-import classes from '../styles/rider.module.css';
+import LabeledText from '../ui/LabeledText';
+import { getOrdinal, getTopResultPlaceColor } from './utils';
+import classes from './styles/rider.module.css';
 
 export const MAPPED_TOP_RESULTS_TEST_ID = 'mapped-results';
 

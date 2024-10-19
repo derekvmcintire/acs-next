@@ -1,10 +1,9 @@
 import { getRiderHistory } from '@/src/_api/get-history';
 import { getRidersByTeam, getSingleRider } from '@/src/_api/get-rider';
-import { getCareerWins, getTopTenResults } from '@/src/_components/Results/utils';
-import { getCurrentTeam } from '@/src/_components/Rider/utils';
+import { getCareerWins, getCurrentTeam, getTopTenResults } from '@/src/_components/Rider/utils';
 import { IRaceYear, IRiderInfo } from '@/src/_types';
 import { DEFAULT_RIDER_NOT_FOUND } from '@/src/global-constants';
-import RiderInfoLayout from '../../../_components/Rider/client/Rider';
+import RiderInfoLayout from '../../../_components/Rider/Rider';
 import TopNav from '../../../_components/TopNav/TopNav';
 
 interface RiderPageParams {

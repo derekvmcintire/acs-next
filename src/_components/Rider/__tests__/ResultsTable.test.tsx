@@ -1,6 +1,6 @@
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { render, screen } from '../../../../test-utils';
-import ResultsTable from '../client/ResultsTable';
+import ResultsTable from '../HistoryTable';
 
 describe('RaceTable Component', () => {
   const history = mockRacingHistory.results;

@@ -2,18 +2,18 @@
 
 import { Group, Tabs, Text } from '@mantine/core';
 import { IRaceYear } from '@/src/_types';
-import { getRaceYears, getResultsForSingleYear } from '../utils';
-import RaceTable from './ResultsTable';
-import classes from '../styles/results.module.css';
+import RaceTable from './HistoryTable';
+import { getRaceYears, getResultsForSingleYear } from './utils';
+import classes from './styles/rider.module.css';
 
 export const RESULTS_TABLE_SERVER_TEST_ID = 'results-table-server';
 export const NO_RESULTS_TABLE_SERVER_TEST_ID = 'no-results-table-server';
 
-interface ResultsTabsProps {
+interface HistoryProps {
   history: IRaceYear[];
 }
 
-export default function ResultsTabs({ history }: ResultsTabsProps) {
+export default function History({ history }: HistoryProps) {
   const years: number[] = history?.length > 0 ? getRaceYears(history) : [];
 
   const getTabs = () => {

@@ -41,3 +41,22 @@
 .prevButton {
   margin-right: 16px;
 }
+
+.raceTabs {
+  padding: 20px;
+}
+
+.result {
+  font-weight: 700;
+}
+
+.raceTableContainer {
+    padding-left: 5%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.riderInfoTeam {
+  margin-top: 32px;
+}

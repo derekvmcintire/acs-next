@@ -3,11 +3,11 @@
 import { MdArrowForwardIos } from 'react-icons/md';
 import { Flex, Text, Title } from '@mantine/core';
 import { ACS_COLOR_ORANGE } from '@/src/global-constants';
-import { useRider } from '../context/RiderContext';
-import { getCurrentTeam } from '../utils';
 import CategoryBadges from './CategoryBadges';
+import { useRider } from './context/RiderContext';
 import { PrevAndNextRider } from './PrevAndNextRider';
-import classes from '../styles/rider.module.css';
+import { getCurrentTeam } from './utils';
+import classes from './styles/rider.module.css';
 
 const TEAM_PLACEHOLDER_TEXT = 'n/a';
 

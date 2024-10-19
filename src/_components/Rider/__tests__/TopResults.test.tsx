@@ -1,8 +1,8 @@
 import React from 'react';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import { render, screen } from '@/test-utils';
-import TopResults from '../client/TopResults';
 import { RiderProvider } from '../context/RiderContext';
+import TopResults from '../TopResults';
 
 describe('TopResults', () => {
   it('renders the top results', () => {

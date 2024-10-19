@@ -4,10 +4,10 @@ import { GoDotFill } from 'react-icons/go';
 import { Anchor, Text } from '@mantine/core';
 import { IRiderInfo } from '@/src/_types';
 import { ACS_COLOR_BLUE, APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
-import InfoBlock from '../../ui/InfoBlock';
-import { useRider } from '../context/RiderContext';
-import { getCurrentTeam } from '../utils';
-import classes from '../styles/rider.module.css';
+import InfoBlock from '../ui/InfoBlock';
+import { useRider } from './context/RiderContext';
+import { getCurrentTeam } from './utils';
+import classes from './styles/rider.module.css';
 
 interface TeamMemberProps {
   rider: IRiderInfo;
@@ -24,7 +24,7 @@ const TeamMember = ({ rider }: TeamMemberProps) => (
 
 const RIDER_INFO_TEAM_TEST_ID = 'rider-info-team';
 
-export default function RiderInfoTeam() {
+export default function RiderTeamDetails() {
   const { riderTeamMembers } = useRider();
   const team = getCurrentTeam(riderTeamMembers[0].teams);
 

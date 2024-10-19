@@ -2,7 +2,7 @@
 
 import { Flex, Table, Text } from '@mantine/core';
 import { IRaceData } from '@/src/_types';
-import classes from '../styles/results.module.css';
+import classes from './styles/rider.module.css';
 
 const getFormattedDateString = (date: Date) => {
   const month = date.getMonth() + 1;
@@ -10,11 +10,11 @@ const getFormattedDateString = (date: Date) => {
   return `${month}/${day}`;
 };
 
-interface ResultsTableProps {
+interface HistoryTableProps {
   results: IRaceData[];
 }
 
-export default function ResultsTable({ results }: ResultsTableProps) {
+export default function HistoryTable({ results }: HistoryTableProps) {
   const hasResults = results && results?.length > 0;
 
   if (!hasResults) {

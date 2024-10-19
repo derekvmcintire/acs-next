@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { Flex, Grid } from '@mantine/core';
-import Details from './Details';
 import ProfileImage from './ProfileImage';
-import RiderInfoTeam from './RiderInfoTeam';
+import RiderDetails from './RiderDetails';
+import RiderTeamDetails from './RiderTeamDetails';
 import TopResults from './TopResults';
-import classes from '../styles/rider.module.css';
+import classes from './styles/rider.module.css';
 
 const INFO_GRID_TEST_ID = 'info-grid';
 
@@ -17,14 +17,14 @@ export default function InfoGrid() {
         <Grid.Col span={5}>
           <Flex>
             <ProfileImage />
-            <Details />
+            <RiderDetails />
           </Flex>
         </Grid.Col>
         <Grid.Col span={3}>
           <TopResults />
         </Grid.Col>
         <Grid.Col span={4}>
-          <RiderInfoTeam />
+          <RiderTeamDetails />
         </Grid.Col>
       </Grid>
     </div>
