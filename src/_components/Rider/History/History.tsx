@@ -15,9 +15,9 @@ export default function History() {
 
   const getTabs = () => {
     return years.length < 1 ? (
-      <Text data-testId={NO_RESULTS_TABLE_SERVER_TEST_ID}>No Results Available</Text>
+      <Text data-testid={NO_RESULTS_TABLE_SERVER_TEST_ID}>No Results Available</Text>
     ) : (
-      <Group className={classes.tabsGroup} data-testId={RESULTS_TABLE_SERVER_TEST_ID}>
+      <Group className={classes.tabsGroup} data-testid={RESULTS_TABLE_SERVER_TEST_ID}>
         <Tabs defaultValue={years[0].toString()}>
           <Tabs.List>
             {getRaceYears(history).map((year) => (
