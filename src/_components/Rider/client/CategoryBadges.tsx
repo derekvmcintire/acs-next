@@ -3,6 +3,7 @@
 import React from 'react';
 import { ICategory } from '@/src/_types';
 import InfoBadge from '../../ui/InfoBadge';
+import { useRider } from '../context/RiderContext';
 import { calculateAgeGroupFromDob } from '../utils';
 
 const mapCategories = (categories: ICategory[]): React.ReactNode => {
@@ -15,11 +16,10 @@ const mapCategories = (categories: ICategory[]): React.ReactNode => {
 
 const CATEGORY_BADGE_TEST_ID = 'category-badges';
 
-interface CategoryBadgesType {
-  categories: ICategory[];
-  dob: string;
-}
-export default function CategoryBadges({ categories, dob }: CategoryBadgesType) {
+export default function CategoryBadges() {
+  const { riderInfo } = useRider();
+  const { dob, categories } = riderInfo;
+
   return (
     <div data-testId={CATEGORY_BADGE_TEST_ID}>
       {mapCategories(categories)}
