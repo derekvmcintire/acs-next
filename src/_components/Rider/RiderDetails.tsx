@@ -4,13 +4,15 @@ import React from 'react';
 import { FaStrava } from 'react-icons/fa';
 import { Anchor } from '@mantine/core';
 import { ACS_COLOR_ORANGE, STRAVA_BASE_URL } from '@/src/global-constants';
-import InfoBlock from '../../ui/InfoBlock';
-import LabeledText from '../../ui/LabeledText';
-import { useRider } from '../context/RiderContext';
-import { calculateAge } from '../utils';
-import classes from '../styles/rider.module.css';
+import InfoBlock from '../ui/InfoBlock';
+import LabeledText from '../ui/LabeledText';
+import { useRider } from './context/RiderContext';
+import { calculateAge } from './utils';
+import classes from './styles/rider.module.css';
 
-export default function Details() {
+const RIDER_DETAILS_TEST_ID = 'rider-details';
+
+export default function RiderDetails() {
   const { riderInfo } = useRider();
   const { socials, dob, hometown } = riderInfo;
   const { country, city, state } = hometown;
@@ -22,7 +24,7 @@ export default function Details() {
   const stravaUrl = strava ? `${STRAVA_BASE_URL}${strava}` : '';
 
   return (
-    <section className={classes.details}>
+    <section className={classes.details} data-testid={RIDER_DETAILS_TEST_ID}>
       <InfoBlock>
         <LabeledText size="sm" label="Birthday" text={birthDate.toDateString()} />
         <LabeledText size="sm" label="Age" text={age.toString()} />

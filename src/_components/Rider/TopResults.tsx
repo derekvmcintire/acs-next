@@ -2,8 +2,8 @@
 
 import { Text } from '@mantine/core';
 import { ACS_COLOR_ORANGE } from '@/src/global-constants';
-import InfoBlock from '../../ui/InfoBlock';
-import { useRider } from '../context/RiderContext';
+import InfoBlock from '../ui/InfoBlock';
+import { useRider } from './context/RiderContext';
 import { MappedTopResults } from './MappedTopResults';
 
 export const TOP_RESULTS_TEST_ID = 'top-results';

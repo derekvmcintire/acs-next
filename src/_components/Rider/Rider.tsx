@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { IRaceYear, IRiderInfo } from '@/src/_types';
-import { ColorSchemeToggle } from '../../ColorSchemeToggle/ColorSchemeToggle';
-import ResultsTabs from '../../Results/client/ResultsTabs';
-import { sortRacingDataByYear } from '../../Results/utils';
-import { RiderProvider } from '../context/RiderContext';
+import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
+import { RiderProvider } from './context/RiderContext';
+import History from './History';
 import InfoGrid from './InfoGrid';
 import { NameHeading } from './NameHeading';
-import classes from '../styles/rider.module.css';
+import { sortRacingDataByYear } from './utils';
+import classes from './styles/rider.module.css';
 
 export const RIDER_INFO_TEST_ID = 'rider-info';
 
@@ -24,7 +24,7 @@ export default function Rider({ riderInfo, riderTeamMembers, history }: RiderPro
       <RiderProvider initialRiderInfo={riderInfo} initialRiderTeamMembers={riderTeamMembers}>
         <NameHeading />
         <InfoGrid />
-        <ResultsTabs history={sortRacingDataByYear(history)} />
+        <History history={sortRacingDataByYear(history)} />
         <ColorSchemeToggle />
       </RiderProvider>
     </div>

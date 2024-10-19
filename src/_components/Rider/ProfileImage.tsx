@@ -1,8 +1,8 @@
 'use client';
 
 import { Image } from '@mantine/core';
-import { useRider } from '../context/RiderContext';
-import classes from '../styles/rider.module.css';
+import { useRider } from './context/RiderContext';
+import classes from './styles/rider.module.css';
 
 const PLACEHOLDER_IMG =
   'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
