@@ -2,7 +2,7 @@
 
 import { Text } from '@mantine/core';
 import { ACS_COLOR_ORANGE } from '@/src/global-constants';
-import { useRider } from '../../../_contexts/RiderContext';
+import { useRider } from '../../../_contexts/Rider/RiderContext';
 import InfoBlock from '../../ui/InfoBlock/InfoBlock';
 import { MappedTopResults } from './MappedTopResults';
 

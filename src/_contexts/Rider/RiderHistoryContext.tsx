@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
-import { sortRacingDataByYear } from '../_components/Rider/utils';
-import { IRaceYear } from '../_types';
+import { sortRacingDataByYear } from '../../_components/Rider/utils';
+import { IRaceYear } from '../../_types';
 
 interface IRiderHistoryContext {
   history: IRaceYear[];

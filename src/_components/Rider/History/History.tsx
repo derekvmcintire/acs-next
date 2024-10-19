@@ -1,7 +1,7 @@
 'use client';
 
 import { Group, Tabs, Text } from '@mantine/core';
-import { useRiderHistory } from '@/src/_contexts/HistoryContext';
+import { useRiderHistory } from '@/src/_contexts/Rider/RiderHistoryContext';
 import { getRaceYears, getResultsForSingleYear } from '../utils';
 import RaceTable from './HistoryTable';
 import classes from '../rider.module.css';

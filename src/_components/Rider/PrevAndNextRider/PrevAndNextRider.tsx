@@ -3,7 +3,7 @@
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 import { Anchor, Button } from '@mantine/core';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
-import { useRider } from '../../../_contexts/RiderContext';
+import { useRider } from '../../../_contexts/Rider/RiderContext';
 import classes from '../rider.module.css';
 
 const RIDER_URL = `${APP_BASE_URL}${APP_RIDER_PATH}`;

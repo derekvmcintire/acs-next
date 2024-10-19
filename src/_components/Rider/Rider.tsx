@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { RiderHistoryProvider } from '@/src/_contexts/HistoryContext';
+import { RiderHistoryProvider } from '@/src/_contexts/Rider/RiderHistoryContext';
 import { IRaceYear, IRiderInfo } from '@/src/_types';
-import { RiderProvider } from '../../_contexts/RiderContext';
+import { RiderProvider } from '../../_contexts/Rider/RiderContext';
 import { ColorSchemeToggle } from '../shared/ColorSchemeToggle/ColorSchemeToggle';
 import History from './History/History';
 import InfoGrid from './InfoGrid/InfoGrid';

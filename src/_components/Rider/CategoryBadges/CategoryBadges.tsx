@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ICategory } from '@/src/_types';
-import { useRider } from '../../../_contexts/RiderContext';
+import { useRider } from '../../../_contexts/Rider/RiderContext';
 import InfoBadge from '../../ui/InfoBadge/InfoBadge';
 import { calculateAgeGroupFromDob } from '../utils';
 
