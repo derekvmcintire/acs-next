@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { mockRider, mockTeamMembers } from '../../../_db/mock-data/mock-racer';
 import { render, screen } from '../../../../test-utils';
 import { RACER_PROFILE_IMAGE_TEST_ID } from '../client/ProfileImage';
-import RacerInfoServer from '../client/RiderInfoLayout';
+import RacerInfoServer from '../client/Rider';
 import { TOP_RESULTS_TEST_ID } from '../client/TopResults';
 
 describe('RacerInfoServer', () => {
