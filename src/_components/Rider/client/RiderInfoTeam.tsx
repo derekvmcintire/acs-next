@@ -5,6 +5,7 @@ import { Anchor, Text } from '@mantine/core';
 import { IRiderInfo } from '@/src/_types';
 import { ACS_COLOR_BLUE, APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import InfoBlock from '../../ui/InfoBlock';
+import { useRider } from '../context/RiderContext';
 import { getCurrentTeam } from '../utils';
 import classes from '../styles/rider.module.css';
 
@@ -23,18 +24,18 @@ const TeamMember = ({ rider }: TeamMemberProps) => (
 
 const RIDER_INFO_TEAM_TEST_ID = 'rider-info-team';
 
-interface RiderInfoTeamProps {
-  members: IRiderInfo[];
-}
+export default function RiderInfoTeam() {
+  const { riderTeamMembers } = useRider();
+  const team = getCurrentTeam(riderTeamMembers[0].teams);
 
-export default function RiderInfoTeam({ members }: RiderInfoTeamProps) {
-  const team = getCurrentTeam(members[0].teams);
+  const hasTeamMembers = riderTeamMembers && riderTeamMembers.length > 0;
 
   return (
     <section className={classes.riderInfoTeam} data-testId={RIDER_INFO_TEAM_TEST_ID}>
       <InfoBlock>
         <Text mb="8" fw={900}>{`Team ${team}`}</Text>
-        {members && members.map((rider: IRiderInfo) => <TeamMember rider={rider} />)}
+        {hasTeamMembers &&
+          riderTeamMembers.map((rider: IRiderInfo) => <TeamMember rider={rider} />)}
       </InfoBlock>
     </section>
   );

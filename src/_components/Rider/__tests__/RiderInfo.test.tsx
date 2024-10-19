@@ -1,16 +1,20 @@
 import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
 
+import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider, mockTeamMembers } from '../../../_db/mock-data/mock-racer';
 import { render, screen } from '../../../../test-utils';
 import { RACER_PROFILE_IMAGE_TEST_ID } from '../client/ProfileImage';
-import RacerInfoServer from '../client/Rider';
+import Rider from '../client/Rider';
 import { TOP_RESULTS_TEST_ID } from '../client/TopResults';
 
-describe('RacerInfoServer', () => {
+const mockHistory = mockRacingHistory.results;
+
+describe('Rider', () => {
   test('renders with mockRiderInfo when fetch is mocked', () => {
-    const component = RacerInfoServer({ riderInfo: mockRider, riderTeamMembers: mockTeamMembers });
-    render(component);
+    render(
+      <Rider riderInfo={mockRider} riderTeamMembers={mockTeamMembers} history={mockHistory} />
+    );
 
     const nameElement = screen.getByText(/Derek McIntire/i);
     expect(nameElement).toBeInTheDocument();
