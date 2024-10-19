@@ -1,11 +1,15 @@
 import { getRiderHistory } from '@/src/_api/get-history';
 import { getRidersByTeam, getSingleRider } from '@/src/_api/get-rider';
-import { getCareerWins, getTopTenResults } from '@/src/_components/Results/utils';
+import ResultsTableTabs from '@/src/_components/Results/client/ResultsTabs';
+import {
+  getCareerWins,
+  getTopTenResults,
+  sortRacingDataByYear,
+} from '@/src/_components/Results/utils';
 import { getCurrentTeam } from '@/src/_components/Rider/utils';
 import { IRaceYear, IRiderInfo } from '@/src/_types';
 import { DEFAULT_RIDER_NOT_FOUND } from '@/src/global-constants';
 import { ColorSchemeToggle } from '../../../_components/ColorSchemeToggle/ColorSchemeToggle';
-import ResultsTableLayoutServer from '../../../_components/Results/server/ResultsTableLayoutServer';
 import RiderInfoLayoutServer from '../../../_components/Rider/server/RiderInfoLayoutServer';
 import TopNav from '../../../_components/TopNav/TopNav';
 
@@ -31,7 +35,7 @@ export default async function RiderPage({ params }: RiderPageProps) {
     <>
       <TopNav />
       <RiderInfoLayoutServer riderInfo={riderInfo} riderTeamMembers={riderTeamMembers} />
-      <ResultsTableLayoutServer history={history} />
+      <ResultsTableTabs history={sortRacingDataByYear(history)} />
       <ColorSchemeToggle />
     </>
   );

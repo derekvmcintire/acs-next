@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { getRiderHistoryRequestUrl } from '@/src/_api/get-history';
 import { getRidersByTeamRequestUrl, getSingleRiderRequestUrl } from '@/src/_api/get-rider';
 import { COLOR_SCHEME_TOGGLE_TEST_ID } from '@/src/_components/ColorSchemeToggle/ColorSchemeToggle';
-import { RESULTS_TABLE_LAYOUT_TEST_ID } from '@/src/_components/Results/server/ResultsTableLayoutServer';
+import { RESULTS_TABLE_SERVER_TEST_ID } from '@/src/_components/Results/client/ResultsTabs';
 import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider/server/RiderInfoLayoutServer';
 import { TOP_NAV_TEST_ID } from '@/src/_components/TopNav/TopNav';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
@@ -54,7 +54,7 @@ describe('RacerInfoServer', () => {
     const riderInfoElement = await screen.findByTestId(RIDER_INFO_TEST_ID);
     expect(riderInfoElement).toBeInTheDocument();
 
-    const historyElement = await screen.findByTestId(RESULTS_TABLE_LAYOUT_TEST_ID);
+    const historyElement = await screen.findByTestId(RESULTS_TABLE_SERVER_TEST_ID);
     expect(historyElement).toBeInTheDocument();
 
     const colorSchemeElement = await screen.findByTestId(COLOR_SCHEME_TOGGLE_TEST_ID);
