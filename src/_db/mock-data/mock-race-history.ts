@@ -240,3 +240,19 @@ export const mockRacingHistory: IRacerHistory = {
     },
   ],
 };
+
+export const mockRaces = [
+  {
+    name: 'Mock Race One',
+    type: 'hill',
+    startDate: '2024-08-03T00:00:00.000-05:00',
+    endDate: null,
+    category: 'Overall Men',
+    place: 1,
+    racers: 65,
+    points: 329.38,
+    upgPoints: 0,
+    stages: null,
+    noPlaceCode: null,
+  },
+];
