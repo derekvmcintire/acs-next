@@ -10,6 +10,7 @@ import { getCurrentTeam } from '../utils';
 import classes from '../rider.module.css';
 
 const TEAM_PLACEHOLDER_TEXT = 'n/a';
+const NAME_PLACEHOLDER_TEXT = 'Rider Not Found';
 
 export const NameHeading = () => {
   const { riderInfo } = useRider();
@@ -21,7 +22,7 @@ export const NameHeading = () => {
     <div className={classes.riderTitle}>
       <Title>
         <Text inherit c={ACS_COLOR_ORANGE} span>
-          {`${name.first || ''} ${name.last || ''} `}
+          {`${name.first || NAME_PLACEHOLDER_TEXT} ${name.last || ''} `}
         </Text>
         <Text span>
           <MdArrowForwardIos />
