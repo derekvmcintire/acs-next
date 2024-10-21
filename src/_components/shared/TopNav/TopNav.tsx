@@ -11,7 +11,7 @@ export default function TopNav() {
   const icon = <GoSearch />;
   return (
     <div data-testid={TOP_NAV_TEST_ID}>
-      <Flex justify="right" align="center" pt={10}>
+      <Flex justify="center" align="center" pt={10}>
         <Group mr={20}>
           <Text>Home</Text>
           <Divider orientation="vertical" />
