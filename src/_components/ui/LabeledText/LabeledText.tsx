@@ -3,12 +3,12 @@
 import React from 'react';
 import { Text } from '@mantine/core';
 
-interface LabeledTextProps {
+export interface LabeledTextProps {
   text: string;
   label: string;
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   color?: string;
-  noColon?: boolean;
+  hasColon?: boolean;
   isSpan?: boolean;
 }
 
@@ -17,13 +17,13 @@ export default function LabeledText({
   label,
   size = 'md',
   color = '',
-  noColon = false,
+  hasColon = true,
   isSpan = false,
 }: LabeledTextProps) {
   return (
     <Text size={size} span={isSpan}>
       <Text size={size} c={color} fw={900} component="span">
-        {`${label}${noColon ? ' ' : ': '}`}
+        {`${label}${hasColon ? ': ' : ' '}`}
       </Text>
       {text}
     </Text>

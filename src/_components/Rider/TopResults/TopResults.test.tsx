@@ -14,7 +14,7 @@ describe('TopResults', () => {
 
     const titleElement = screen.getByText(/Top Results/i);
     expect(titleElement).toBeInTheDocument();
-    const resultElement = screen.getByText(/Mock Top Result/i);
+    const resultElement = screen.getByText(/Mock Race/i);
     expect(resultElement).toBeInTheDocument();
   });
 });
