@@ -8,7 +8,7 @@ export const mockRider: IRiderInfo = {
   wins: 4,
   topResults: [
     {
-      name: 'Mock Top Result',
+      name: 'Mock Race',
       type: 'road',
       startDate: 'Tue Aug 13 2024',
       endDate: null,
@@ -21,12 +21,12 @@ export const mockRider: IRiderInfo = {
       noPlaceCode: null,
     },
     {
-      name: 'dlavzjlsodwltr',
+      name: 'Mock Second Race',
       type: 'xc',
       startDate: 'Fri Sep 13 2024',
       endDate: null,
       category: 'Cat 5',
-      place: 1,
+      place: 2,
       racers: 1,
       points: 390,
       upgPoints: 5,

@@ -23,7 +23,7 @@ export const MappedTopResults = ({ topResults }: MappedTopResultsProps) => {
             color={getTopResultPlaceColor(result.place, colorScheme)}
             label={`${getOrdinal(result.place)}`}
             text={`at ${result.name} (${getFormattedYearString(new Date(result.startDate))})`}
-            noColon
+            hasColon={false}
           />
         </div>
       ))}

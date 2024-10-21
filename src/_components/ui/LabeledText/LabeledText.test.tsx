@@ -5,7 +5,7 @@ describe('InfoBlock', () => {
   test('renders its children without colon', () => {
     const myLabel = 'My Label';
     const myText = 'My Text';
-    render(<LabeledText label={myLabel} text={myText} noColon />);
+    render(<LabeledText label={myLabel} text={myText} hasColon={false} />);
 
     expect(screen.getByText(myLabel)).toBeInTheDocument();
     expect(screen.getByText(myText)).toBeInTheDocument();
