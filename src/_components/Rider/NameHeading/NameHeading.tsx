@@ -18,7 +18,7 @@ export const NameHeading = () => {
   const team = getCurrentTeam(teams);
 
   return (
-    <div className={classes.riderTitle}>
+    <div className={classes.nameHeading}>
       <Title>
         <Text inherit c={ACS_COLOR_ORANGE} span>
           {`${name.first || NAME_PLACEHOLDER_TEXT} ${name.last || ''} `}

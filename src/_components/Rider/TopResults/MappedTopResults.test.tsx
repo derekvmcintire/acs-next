@@ -56,11 +56,11 @@ describe('MappedTopResults Component', () => {
     expect(labeledTexts).toHaveLength(topResults.length);
 
     expect(labeledTexts[0]).toHaveTextContent('1th'); // Mocked ordinal
-    expect(labeledTexts[0]).toHaveTextContent('at Mock Race (2024)');
+    expect(labeledTexts[0]).toHaveTextContent('Mock Race (2024)');
     expect(labeledTexts[0]).toHaveTextContent('gold'); // From the mock implementation
 
     expect(labeledTexts[1]).toHaveTextContent('2th'); // Mocked ordinal
-    expect(labeledTexts[1]).toHaveTextContent('at Mock Second Race (2024)');
+    expect(labeledTexts[1]).toHaveTextContent('Mock Second Race (2024)');
     expect(labeledTexts[1]).toHaveTextContent('silver'); // From the mock implementation
   });
 });

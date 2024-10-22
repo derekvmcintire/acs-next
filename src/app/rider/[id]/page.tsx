@@ -23,6 +23,10 @@ export default async function RiderPage({ params }: RiderPageProps) {
   riderInfo.wins = getCareerWins(history);
   riderInfo.topResults = getTopTenResults(history);
 
+  // const teamWins = // write helper function
+  // const teamRaces = // write helper function
+  // // add team wins and races to context to use in Team Quick Stats component
+
   return (
     <>
       <Rider riderInfo={riderInfo} riderTeamMembers={riderTeamMembers} history={history} />

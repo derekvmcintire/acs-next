@@ -19,10 +19,10 @@ export const MappedTopResults = ({ topResults }: MappedTopResultsProps) => {
       {topResults.map((result) => (
         <div key={`${result.startDate}${result.points}`}>
           <LabeledText
-            size="xs"
+            size="sm"
             color={getTopResultPlaceColor(result.place, colorScheme)}
             label={`${getOrdinal(result.place)}`}
-            text={`at ${result.name} (${getFormattedYearString(new Date(result.startDate))})`}
+            text={`${result.name} (${getFormattedYearString(new Date(result.startDate))})`}
             hasColon={false}
           />
         </div>

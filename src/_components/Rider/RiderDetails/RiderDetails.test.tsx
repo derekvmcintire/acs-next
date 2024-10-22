@@ -8,7 +8,7 @@ const country = new RegExp(`${mockRider.hometown.country?.toUpperCase()}`, 'i');
 
 const birthDate: Date = new Date(mockRider.dob);
 const age = calculateAge(birthDate);
-const dob = new RegExp(`${birthDate.toDateString()}`, 'i');
+const dob = new RegExp(`${birthDate.toLocaleDateString()}`, 'i');
 const displayedAge = new RegExp(`${age}`, 'i');
 
 describe('RacerInfoBlock', () => {

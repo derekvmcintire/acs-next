@@ -25,10 +25,10 @@ export default function RiderDetails() {
 
   return (
     <section className={classes.details} data-testid={RIDER_DETAILS_TEST_ID}>
-      <InfoBlock>
-        <LabeledText size="sm" label="Birthday" text={birthDate.toDateString()} />
-        <LabeledText size="sm" label="Age" text={age.toString()} />
-        <LabeledText size="sm" label="Nationality" text={country?.toUpperCase() || ''} />
+      <InfoBlock title="Rider Details">
+        <LabeledText label="Birthday" text={birthDate.toLocaleDateString()} />
+        <LabeledText label="Age" text={age.toString()} />
+        <LabeledText label="Nationality" text={country?.toUpperCase() || ''} />
         <LabeledText
           size="sm"
           label="Hometown"
