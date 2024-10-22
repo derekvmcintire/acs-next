@@ -60,3 +60,16 @@
 .riderInfoTeam {
   margin-top: 32px;
 }
+
+.prevRiderAnchor {
+  margin-right: 36px;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+
+.nextRiderAnchor {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+
+.prevAndNextAnchors {
+  margin-top: 16px;
+}

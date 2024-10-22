@@ -1,7 +1,7 @@
 'use client';
 
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
-import { Anchor, Button } from '@mantine/core';
+import { Anchor, Flex } from '@mantine/core';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import classes from '../rider.module.css';
@@ -16,30 +16,23 @@ export const PrevAndNextRider = () => {
   const { riderInfo } = useRider();
   const { id } = riderInfo;
   return (
-    <div>
-      <Button
-        className={classes.prevButton}
-        size="compact-xs"
-        variant="outline"
-        leftSection={<MdArrowBackIos />}
+    <Flex align="center" className={classes.prevAndNextAnchors}>
+      <MdArrowBackIos />
+      <Anchor
+        className={classes.prevRiderAnchor}
+        data-testid="prev-rider-anchor"
+        href={`${RIDER_URL}/${id ? Number(id) - 1 : 1}`}
       >
-        <Anchor data-testid="prev-rider-anchor" href={`${RIDER_URL}/${id ? Number(id) - 1 : 1}`}>
-          {PREV_RIDER_BUTTON_TEXT}
-        </Anchor>
-      </Button>
-      <Button
-        className={classes.nextButton}
-        size="compact-xs"
-        variant="outline"
-        rightSection={<MdArrowForwardIos />}
+        {PREV_RIDER_BUTTON_TEXT}
+      </Anchor>
+      <Anchor
+        className={classes.nextRiderAnchor}
+        data-testid={NEXT_RIDER_ANCHOR_TEST_ID}
+        href={`${RIDER_URL}/${id ? Number(id) + 1 : 1}`}
       >
-        <Anchor
-          data-testid={NEXT_RIDER_ANCHOR_TEST_ID}
-          href={`${RIDER_URL}/${id ? Number(id) + 1 : 1}`}
-        >
-          {NEXT_RIDER_BUTTON_TEXT}
-        </Anchor>
-      </Button>
-    </div>
+        {NEXT_RIDER_BUTTON_TEXT}
+      </Anchor>
+      <MdArrowForwardIos />
+    </Flex>
   );
 };

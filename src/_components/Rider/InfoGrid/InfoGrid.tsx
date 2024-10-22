@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Flex, Grid } from '@mantine/core';
+import { PrevAndNextRider } from '../PrevAndNextRider/PrevAndNextRider';
 import ProfileImage from '../ProfileImage/ProfileImage';
 import RiderDetails from '../RiderDetails/RiderDetails';
 import RiderTeamDetails from '../RiderTeamDetails/RiderTeamDetails';
@@ -19,6 +20,7 @@ export default function InfoGrid() {
             <ProfileImage />
             <RiderDetails />
           </Flex>
+          <PrevAndNextRider />
         </Grid.Col>
         <Grid.Col span={3}>
           <TopResults />
