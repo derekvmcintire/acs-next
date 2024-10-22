@@ -1,28 +1,25 @@
 'use client';
 
-import { Flex, Text } from '@mantine/core';
-import { ACS_COLOR_ORANGE } from '@/src/global-constants';
+import { ITeam } from '@/src/_types';
+import { yearTrunc } from '@/src/_utility/date-helpers';
+import { stringTrunc } from '@/src/_utility/string-helpers';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import InfoBlock from '../../ui/InfoBlock/InfoBlock';
-import { MappedTopResults } from '../TopResults/MappedTopResults';
 import classes from '../rider.module.css';
 
 export const TOP_RESULTS_TEST_ID = 'tbd';
 
-export default function TBD() {
+export default function RiderTeams() {
   const { riderInfo } = useRider();
-  const { wins, topResults } = riderInfo;
-
-  const hasWins = !!(wins && wins > 0);
-  const hasTopResults = topResults && topResults.length > 0;
+  // const { teams } = riderInfo;
+  const teams = riderInfo.teams || [];
 
   return (
     <section data-testid={TOP_RESULTS_TEST_ID} className={classes.topResults}>
-      <InfoBlock title="Top Results">
-        <Flex justify="center">
-          {hasWins && <Text size="sm" c={ACS_COLOR_ORANGE} fw={700}>{`${wins} Career Wins`}</Text>}
-        </Flex>
-        {hasTopResults ? <MappedTopResults topResults={topResults} /> : <>No Top Results Found</>}
+      <InfoBlock title="Teams">
+        {teams.map((team: ITeam) => (
+          <div>{`'${yearTrunc(team.year)} - ${stringTrunc(team.name, 15)}`}</div>
+        ))}
       </InfoBlock>
     </section>
   );

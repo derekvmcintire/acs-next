@@ -1,5 +1,5 @@
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import { IAgeGroup, IRaceData, IRaceYear, ITeams } from '@/src/_types';
+import { IAgeGroup, IRaceData, IRaceYear, ITeam } from '@/src/_types';
 import {
   ACS_COLOR_BRONZE,
   ACS_COLOR_DARK_GOLD,
@@ -12,7 +12,7 @@ import {
 
 export const getMockRiderInfo = () => mockRider;
 
-export const getCurrentTeam = (teams: ITeams[]): string => {
+export const getCurrentTeam = (teams: ITeam[]): string => {
   if (teams?.length < 1) {
     return '';
   }
