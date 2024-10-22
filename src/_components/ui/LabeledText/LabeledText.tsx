@@ -22,7 +22,7 @@ export default function LabeledText({
 }: LabeledTextProps) {
   return (
     <Text size={size} span={isSpan}>
-      <Text size={size} c={color} fw={900} component="span">
+      <Text size={size} c={color} fw={600} component="span">
         {`${label}${hasColon ? ': ' : ' '}`}
       </Text>
       {text}

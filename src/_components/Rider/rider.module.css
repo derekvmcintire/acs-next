@@ -43,13 +43,14 @@
 
 .teamListTeamName {
   width: 100%;
-  border: 1px solid red;
 }
 
 .teamListRider {
-  margin-bottom: 4px;
   padding: 4px;
-  border-color: light-dark(#dee0e0, #dee0e0);
+}
+
+.teamListAge {
+  margin-left: 16px;
 }
 
 .result {
@@ -94,10 +95,6 @@
   margin-left: 16px;
 }
 
-.teamListAge {
-  margin-left: 16px;
-}
-
-.teamListHometown {
-  margin-left: 16px;
+.teamQuickStats {
+  margin-top: 16px;
 }
