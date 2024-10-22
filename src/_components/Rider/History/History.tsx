@@ -36,5 +36,5 @@ export default function History() {
     );
   };
 
-  return <div className={classes.raceTabs}>{getTabs()}</div>;
+  return <div className={classes.history}>{getTabs()}</div>;
 }

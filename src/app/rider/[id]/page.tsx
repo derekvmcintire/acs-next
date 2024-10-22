@@ -28,9 +28,9 @@ export default async function RiderPage({ params }: RiderPageProps) {
   // // add team wins and races to context to use in Team Quick Stats component
 
   return (
-    <>
+    <main>
       <Rider riderInfo={riderInfo} riderTeamMembers={riderTeamMembers} history={history} />
-    </>
+    </main>
   );
 }
 
