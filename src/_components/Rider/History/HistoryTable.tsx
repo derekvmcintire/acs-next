@@ -37,7 +37,7 @@ export default function HistoryTable({ results }: HistoryTableProps) {
       <Flex justify="right">
         <Text fs="italic" fw={700} pr={12} pt={8}>{`${results.length} races`}</Text>
       </Flex>
-      <Table className={classes.raceTable}>
+      <Table className={classes.raceTable} horizontalSpacing="md">
         <Table.Thead>
           <Table.Tr>
             <Table.Th>Date</Table.Th>

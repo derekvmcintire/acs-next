@@ -1,41 +1,60 @@
-.riderInfoServer {
-  margin-left: 5%;
-  margin-right: 20px;
-}
-
 .infoGrid {
   width: 100%;
   min-height: 215px;
+  margin-bottom: 16px;
 }
 
 .profileImage {
   width: 100%;
   max-width: 128px;
   min-width: 64px;
+  margin: 8px;
 }
 
-.infoBlockText {
-  padding-left: 8px;
+.details {
+  width: 100%;
 }
 
-.riderTeam {
+.teamList {
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
   font-size: rem(20px);
   font-weight: 700;
   letter-spacing: rem(-1px);
+  width: 100%;
+  margin-top: 48px;
 }
 
-.riderTitle {
+.teamListAnchor {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+
+.riderContentWrap {
+  min-width: 55%;
+}
+
+.nameHeading {
   padding-right: 40px;
   padding-bottom: 20px;
+  width: 100%;
+}
+
+.topResults {
+  width: 100%;
 }
 
 .topResultsList {
   margin-top: 8px;
 }
 
-.teamMember {
+.teamListTeamName {
+  width: 100%;
+  border: 1px solid red;
+}
+
+.teamListRider {
   margin-bottom: 4px;
+  padding: 4px;
+  border-color: light-dark(#dee0e0, #dee0e0);
 }
 
 .prevButton {
