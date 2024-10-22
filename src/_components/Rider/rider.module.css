@@ -1,7 +1,5 @@
 .infoGrid {
   width: 100%;
-  min-height: 215px;
-  margin-bottom: 16px;
 }
 
 .profileImage {
@@ -15,21 +13,8 @@
   width: 100%;
 }
 
-.teamList {
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-  font-size: rem(20px);
-  font-weight: 700;
-  letter-spacing: rem(-1px);
-  width: 100%;
-  margin-top: 48px;
-}
-
-.teamListAnchor {
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-}
-
 .riderContentWrap {
-  min-width: 55%;
+  min-width: 70%;
 }
 
 .nameHeading {
@@ -44,6 +29,20 @@
 
 .topResultsList {
   margin-top: 8px;
+}
+
+.teamList {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-size: rem(20px);
+  font-weight: 700;
+  letter-spacing: rem(-1px);
+  width: 100%;
+  margin-left: 4px;
+  margin-right: 16px;
+}
+
+.teamListAnchor {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 }
 
 .teamListTeamName {
@@ -61,21 +60,33 @@
   margin-right: 16px;
 }
 
-.raceTabs {
-  padding: 20px;
-}
-
 .result {
   font-weight: 700;
 }
 
-.raceTableContainer {
+.historyAndTeamList {
+  margin-top: 4px;
+}
+
+.riderHistory {
+    margin-top: 5px;
+    margin-right: 36px;
     padding-left: 5%;
     padding-right: 10%;
     display: flex;
     justify-content: flex-start;
 }
 
-.riderInfoTeam {
-  margin-top: 32px;
+.prevRiderAnchor {
+  margin-right: 36px;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+
+.nextRiderAnchor {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+
+.prevAndNextAnchors {
+  margin-top: 16px;
+  margin-left: 8px;
 }

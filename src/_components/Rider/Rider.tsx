@@ -30,7 +30,7 @@ export default function Rider({ riderInfo, riderTeamMembers, history }: RiderPro
               <NameHeading />
               <InfoGrid />
               <div>
-                <Flex>
+                <Flex className={classes.historyAndTeamList}>
                   <History />
                   <TeamList />
                 </Flex>

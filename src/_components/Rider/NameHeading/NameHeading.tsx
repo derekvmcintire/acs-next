@@ -5,7 +5,6 @@ import { Flex, Text, Title } from '@mantine/core';
 import { ACS_COLOR_ORANGE } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import CategoryBadges from '../CategoryBadges/CategoryBadges';
-import { PrevAndNextRider } from '../PrevAndNextRider/PrevAndNextRider';
 import { getCurrentTeam } from '../utils';
 import classes from '../rider.module.css';
 
@@ -33,7 +32,6 @@ export const NameHeading = () => {
       </Title>
       <Flex justify="space-between">
         <CategoryBadges />
-        <PrevAndNextRider />
       </Flex>
     </div>
   );
