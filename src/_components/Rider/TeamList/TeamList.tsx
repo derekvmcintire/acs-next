@@ -1,10 +1,11 @@
 'use client';
 
-import { Anchor, Divider, Flex, Image, Text } from '@mantine/core';
+import { Anchor, Container, Divider, Flex, Image, Text } from '@mantine/core';
 import { IRiderInfo } from '@/src/_types';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import InfoBlock from '../../ui/InfoBlock/InfoBlock';
+import SectionLabel from '../../ui/SectionLabel/SectionLabel';
 import { calculateAge, getCurrentTeam } from '../utils';
 import TeamQuickStats from './TeamQuickStats';
 import classes from '../rider.module.css';
@@ -48,16 +49,19 @@ export default function TeamList() {
   return (
     <Flex justify="center" className={classes.teamList} data-testid={RIDER_INFO_TEAM_TEST_ID}>
       <InfoBlock className={classes.teamListInfoBlock} title={`Team ${team}`}>
-        {hasTeamMembers &&
-          riderTeamMembers.map((rider: IRiderInfo) => {
-            return isNotCurrentRider(rider) ? (
-              <div key={`${rider.id}${rider.dob}`} className={classes.teamListRider}>
-                <TeamMember rider={rider} />
-              </div>
-            ) : (
-              <div key={`${rider.id}${rider.dob}`}></div>
-            );
-          })}
+        <Container mb="36px">
+          <SectionLabel text="Riders" />
+          {hasTeamMembers &&
+            riderTeamMembers.map((rider: IRiderInfo) => {
+              return isNotCurrentRider(rider) ? (
+                <div key={`${rider.id}${rider.dob}`} className={classes.teamListRider}>
+                  <TeamMember rider={rider} />
+                </div>
+              ) : (
+                <div key={`${rider.id}${rider.dob}`}></div>
+              );
+            })}
+        </Container>
         <TeamQuickStats />
       </InfoBlock>
     </Flex>

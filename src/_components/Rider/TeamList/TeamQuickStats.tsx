@@ -19,7 +19,6 @@ export default function TeamQuickStats() {
 
   return (
     <Container className={classes.teamQuickStats} data-testid={TEAM_QUICK_STATS_TEST_ID}>
-      <Divider mb="16px" mt="16px" />
       <SectionLabel text={`${year} Quick Stats`} />
       <LabeledText size="xs" label="Wins" text={`${wins}`} />
       <LabeledText size="xs" label="Races Entered" text={`${races}`} />

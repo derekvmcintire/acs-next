@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Container, Text } from '@mantine/core';
+import { Container, Divider, Text } from '@mantine/core';
 import classes from '../styles/section-label.module.css';
 
 interface SectionLabelProps {
@@ -9,8 +9,11 @@ interface SectionLabelProps {
 }
 export default function SectionLabel({ text }: SectionLabelProps) {
   return (
-    <Container className={classes.teamQuickStatsLabel}>
-      <Text>{text}</Text>
-    </Container>
+    <>
+      <Container className={classes.teamQuickStatsLabel}>
+        <Text>{text}</Text>
+      </Container>
+      <Divider mb="16px" mt="16px" />
+    </>
   );
 }
