@@ -7,6 +7,7 @@ import { ACS_COLOR_ORANGE, STRAVA_BASE_URL } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import InfoBlock from '../../ui/InfoBlock/InfoBlock';
 import LabeledText from '../../ui/LabeledText/LabeledText';
+import { PrevAndNextRider } from '../PrevAndNextRider/PrevAndNextRider';
 import { calculateAge } from '../utils';
 import classes from '../rider.module.css';
 
@@ -38,6 +39,7 @@ export default function RiderDetails() {
           <FaStrava color={ACS_COLOR_ORANGE} />
         </Anchor>
       </InfoBlock>
+      <PrevAndNextRider />
     </section>
   );
 }

@@ -48,10 +48,6 @@
   border-color: light-dark(#dee0e0, #dee0e0);
 }
 
-.prevButton {
-  margin-right: 16px;
-}
-
 .result {
   font-weight: 700;
 }
@@ -73,13 +69,25 @@
   font-size: .7em;
 }
 
-.prevRiderAnchor {
-  margin-right: 36px;
+.nextRiderChevron {
+  margin-left: 8px;
+}
+
+.prevRiderChevron {
+  margin-right: 8px;
 }
 
 .prevAndNextAnchors {
-  margin-top: 16px;
-  margin-left: 26px;
+  width: 100%;
+  margin-left: 16px;
+}
+
+.prevRiderAnchor {
+  margin-right: 16px;
+}
+
+.nextRiderAnchor {
+  margin-left: 16px;
 }
 
 .teamListAge {
