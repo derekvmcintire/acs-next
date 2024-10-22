@@ -27,9 +27,9 @@ export default function HistoryTable({ results }: HistoryTableProps) {
       <Table.Td className={classes.result}>{place || 'DNF'}</Table.Td>
       <Table.Td>{racers}</Table.Td>
       <Table.Td>
-          <Text size="xs" className={classes.raceNameText}>
-            {name}
-          </Text>
+        <Text size="xs" className={classes.raceNameText}>
+          {name}
+        </Text>
       </Table.Td>
       <Table.Td>{type}</Table.Td>
       <Table.Td>{category}</Table.Td>
