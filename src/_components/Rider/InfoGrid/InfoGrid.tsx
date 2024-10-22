@@ -14,17 +14,17 @@ export default function InfoGrid() {
   return (
     <div className={classes.infoGrid} data-testid={INFO_GRID_TEST_ID}>
       <Grid>
-        <Grid.Col span={5}>
-          <Flex>
+        <Grid.Col span={6}>
+          <Flex justify="center">
             <ProfileImage />
             <RiderDetails />
           </Flex>
           <PrevAndNextRider />
         </Grid.Col>
-        <Grid.Col span={3}>
-          <TopResults />
-        </Grid.Col>
-        <Grid.Col span={4}>
+        <Grid.Col span={6}>
+          <Flex justify="flex-end">
+            <TopResults />
+          </Flex>
         </Grid.Col>
       </Grid>
     </div>
