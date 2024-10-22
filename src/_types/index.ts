@@ -40,7 +40,7 @@ export interface IRiderName {
   last: string;
 }
 
-export interface ITeams {
+export interface ITeam {
   year: number;
   name: string;
 }
@@ -65,7 +65,7 @@ export interface IRiderInfo {
   id: number;
   currentTeam?: string;
   name: IRiderName;
-  teams: ITeams[];
+  teams: ITeam[];
   socials: ISocials;
   categories: ICategory[];
   hometown: IHometown;

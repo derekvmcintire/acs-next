@@ -5,7 +5,7 @@ import { IRiderInfo } from '@/src/_types';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import InfoBlock from '../../ui/InfoBlock/InfoBlock';
-import { getCurrentTeam } from '../utils';
+import { calculateAge, getCurrentTeam } from '../utils';
 import classes from '../rider.module.css';
 
 interface TeamMemberProps {
@@ -13,15 +13,16 @@ interface TeamMemberProps {
 }
 
 const TeamMember = ({ rider }: TeamMemberProps) => {
-  const { id, name, photo } = rider;
+  const { dob, id, name, photo } = rider;
   const { first, last } = name;
   return (
     <Flex align="flex-end">
       <Image h={40} src={photo} mr={8}></Image>
       <Text size="sm">
         <Anchor className={classes.teamListAnchor} href={`${APP_BASE_URL}${APP_RIDER_PATH}/${id}`}>
-          {` ${first} ${last}`}
+          <span className={classes.teamListName}>{` ${first} ${last}`}</span>
         </Anchor>
+        <span className={classes.teamListAge}>{` ${calculateAge(new Date(dob))}`}</span>
       </Text>
     </Flex>
   );

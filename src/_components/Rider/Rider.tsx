@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Flex } from '@mantine/core';
+import { Center, Flex } from '@mantine/core';
 import { RiderHistoryProvider } from '@/src/_contexts/Rider/RiderHistoryContext';
 import { IRaceYear, IRiderInfo } from '@/src/_types';
 import { RiderProvider } from '../../_contexts/Rider/RiderContext';
@@ -22,23 +22,20 @@ interface RiderProps {
 
 export default function Rider({ riderInfo, riderTeamMembers, history }: RiderProps) {
   return (
-    <div className={classes.rider} data-testid={RIDER_INFO_TEST_ID}>
+    <Center className={classes.rider} data-testid={RIDER_INFO_TEST_ID}>
       <RiderProvider initialRiderInfo={riderInfo} initialRiderTeamMembers={riderTeamMembers}>
         <RiderHistoryProvider initialHistory={history}>
           <PageLayout>
-            <div className={classes.riderContentWrap}>
-              <NameHeading />
-              <InfoGrid />
-              <div>
-                <Flex className={classes.historyAndTeamList}>
-                  <History />
-                  <TeamList />
-                </Flex>
-              </div>
-            </div>
+            <NameHeading />
+            <InfoGrid />
+
+            <Flex className={classes.historyAndTeamList} justify="space-between">
+              <History />
+              <TeamList />
+            </Flex>
           </PageLayout>
         </RiderHistoryProvider>
       </RiderProvider>
-    </div>
+    </Center>
   );
 }

@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { Flex, Grid } from '@mantine/core';
-import { PrevAndNextRider } from '../PrevAndNextRider/PrevAndNextRider';
 import ProfileImage from '../ProfileImage/ProfileImage';
 import RiderDetails from '../RiderDetails/RiderDetails';
+import TBD from '../TBD/TBD';
 import TopResults from '../TopResults/TopResults';
 import classes from '../rider.module.css';
 
@@ -19,11 +19,11 @@ export default function InfoGrid() {
             <ProfileImage />
             <RiderDetails />
           </Flex>
-          <PrevAndNextRider />
         </Grid.Col>
         <Grid.Col span={6}>
           <Flex justify="flex-end">
             <TopResults />
+            <TBD />
           </Flex>
         </Grid.Col>
       </Grid>

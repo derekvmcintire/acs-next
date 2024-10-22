@@ -1,6 +1,7 @@
 import React from 'react';
 import { MantineProvider, useMantineColorScheme } from '@mantine/core';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
+import { stringTrunc } from '@/src/_utility/string-helpers';
 import { render, screen } from '@/test-utils';
 import { LabeledTextProps } from '../../ui/LabeledText/LabeledText';
 import { getTopResultPlaceColor } from '../utils';
@@ -55,12 +56,15 @@ describe('MappedTopResults Component', () => {
     const labeledTexts = screen.getAllByTestId('labeled-text');
     expect(labeledTexts).toHaveLength(topResults.length);
 
+    const expectedRaceNameOne = mockRider?.topResults ? mockRider.topResults[0]?.name : '';
+    const expectedRaceNameTwo = mockRider?.topResults ? mockRider.topResults[1]?.name : '';
+
     expect(labeledTexts[0]).toHaveTextContent('1th'); // Mocked ordinal
-    expect(labeledTexts[0]).toHaveTextContent('Mock Race (2024)');
+    expect(labeledTexts[0]).toHaveTextContent(`${stringTrunc(expectedRaceNameOne)} (2024)`);
     expect(labeledTexts[0]).toHaveTextContent('gold'); // From the mock implementation
 
     expect(labeledTexts[1]).toHaveTextContent('2th'); // Mocked ordinal
-    expect(labeledTexts[1]).toHaveTextContent('Mock Second Race (2024)');
+    expect(labeledTexts[1]).toHaveTextContent(`${stringTrunc(expectedRaceNameTwo)} (2024)`);
     expect(labeledTexts[1]).toHaveTextContent('silver'); // From the mock implementation
   });
 });

@@ -18,7 +18,7 @@ export default function History() {
       <Text data-testid={NO_RESULTS_TABLE_SERVER_TEST_ID}>No Results Available</Text>
     ) : (
       <Group className={classes.riderHistory} data-testid={RESULTS_TABLE_SERVER_TEST_ID}>
-        <Tabs defaultValue={years[0].toString()}>
+        <Tabs variant="outline" defaultValue={years[0].toString()}>
           <Tabs.List>
             {getRaceYears(history).map((year) => (
               <Tabs.Tab key={year} value={year.toString()}>

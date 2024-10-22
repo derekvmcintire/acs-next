@@ -13,10 +13,6 @@
   width: 100%;
 }
 
-.riderContentWrap {
-  min-width: 70%;
-}
-
 .nameHeading {
   padding-right: 40px;
   padding-bottom: 20px;
@@ -56,10 +52,6 @@
   border-color: light-dark(#dee0e0, #dee0e0);
 }
 
-.prevButton {
-  margin-right: 16px;
-}
-
 .result {
   font-weight: 700;
 }
@@ -77,16 +69,35 @@
     justify-content: flex-start;
 }
 
-.prevRiderAnchor {
-  margin-right: 36px;
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+.historyTable {
+  font-size: .7em;
 }
 
-.nextRiderAnchor {
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+.nextRiderChevron {
+  margin-left: 8px;
+}
+
+.prevRiderChevron {
+  margin-right: 8px;
 }
 
 .prevAndNextAnchors {
-  margin-top: 16px;
-  margin-left: 8px;
+  width: 100%;
+  margin-left: 16px;
+}
+
+.prevRiderAnchor {
+  margin-right: 16px;
+}
+
+.nextRiderAnchor {
+  margin-left: 16px;
+}
+
+.teamListAge {
+  margin-left: 16px;
+}
+
+.teamListHometown {
+  margin-left: 16px;
 }

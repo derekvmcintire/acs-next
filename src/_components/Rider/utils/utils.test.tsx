@@ -1,6 +1,6 @@
 import { mockRaces } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import { IAgeGroup, IRaceYear, ITeams } from '@/src/_types';
+import { IAgeGroup, IRaceYear, ITeam } from '@/src/_types';
 import {
   ACS_COLOR_BRONZE,
   ACS_COLOR_DARK_GOLD,
@@ -27,7 +27,7 @@ describe('Utility Functions', () => {
   });
 
   it('getCurrentTeam returns the current team based on year', () => {
-    const teams: ITeams[] = [
+    const teams: ITeam[] = [
       { name: 'Team A', year: 2022 },
       { name: 'Team B', year: 2023 },
     ];

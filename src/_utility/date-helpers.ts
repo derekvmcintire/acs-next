@@ -8,3 +8,7 @@ export const getFormattedYearString = (date: Date) => {
   const year = date.getFullYear();
   return `${year}`;
 };
+
+export const yearTrunc = (year: number) => {
+  return Math.abs(year).toString().slice(-2);
+};
