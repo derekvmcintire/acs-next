@@ -22,7 +22,9 @@ export default function InfoGrid() {
         </Grid.Col>
         <Grid.Col span={6}>
           <Flex justify="flex-end">
-            <TopResults />
+            <section className={classes.topResultsWrap}>
+              <TopResults />
+            </section>
             <TBD />
           </Flex>
         </Grid.Col>

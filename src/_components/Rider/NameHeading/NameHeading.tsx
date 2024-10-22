@@ -11,6 +11,8 @@ import classes from '../rider.module.css';
 const TEAM_PLACEHOLDER_TEXT = 'n/a';
 const NAME_PLACEHOLDER_TEXT = 'Rider Not Found';
 
+export const NAME_HEADING_TEST_ID = 'name-heading';
+
 export const NameHeading = () => {
   const { riderInfo } = useRider();
   const { name, teams } = riderInfo;
@@ -18,7 +20,7 @@ export const NameHeading = () => {
   const team = getCurrentTeam(teams);
 
   return (
-    <div className={classes.nameHeading}>
+    <div className={classes.nameHeading} data-testid={NAME_HEADING_TEST_ID}>
       <Title>
         <Text inherit c={ACS_COLOR_ORANGE} span>
           {`${name.first || NAME_PLACEHOLDER_TEXT} ${name.last || ''} `}

@@ -26,7 +26,11 @@ export default function HistoryTable({ results }: HistoryTableProps) {
       <Table.Td>{getFormattedDateString(new Date(startDate))}</Table.Td>
       <Table.Td className={classes.result}>{place || 'DNF'}</Table.Td>
       <Table.Td>{racers}</Table.Td>
-      <Table.Td>{name}</Table.Td>
+      <Table.Td>
+        <Text size="xs" className={classes.raceNameText}>
+          {name}
+        </Text>
+      </Table.Td>
       <Table.Td>{type}</Table.Td>
       <Table.Td>{category}</Table.Td>
       <Table.Td>{points}</Table.Td>
@@ -38,7 +42,7 @@ export default function HistoryTable({ results }: HistoryTableProps) {
       <Flex justify="right">
         <Text fs="italic" fw={700} pr={12} pt={8}>{`${results.length} races`}</Text>
       </Flex>
-      <Table className={classes.historyTable} striped horizontalSpacing="md">
+      <Table className={classes.historyTable} striped horizontalSpacing="xs">
         <Table.Thead>
           <Table.Tr>
             <Table.Th>Date</Table.Th>

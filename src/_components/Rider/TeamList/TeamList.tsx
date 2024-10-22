@@ -1,11 +1,13 @@
 'use client';
 
-import { Anchor, Flex, Image, Text } from '@mantine/core';
+import { Anchor, Container, Divider, Flex, Image, Text } from '@mantine/core';
 import { IRiderInfo } from '@/src/_types';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import InfoBlock from '../../ui/InfoBlock/InfoBlock';
+import SectionLabel from '../../ui/SectionLabel/SectionLabel';
 import { calculateAge, getCurrentTeam } from '../utils';
+import TeamQuickStats from './TeamQuickStats';
 import classes from '../rider.module.css';
 
 interface TeamMemberProps {
@@ -16,15 +18,21 @@ const TeamMember = ({ rider }: TeamMemberProps) => {
   const { dob, id, name, photo } = rider;
   const { first, last } = name;
   return (
-    <Flex align="flex-end">
-      <Image h={40} src={photo} mr={8}></Image>
-      <Text size="sm">
-        <Anchor className={classes.teamListAnchor} href={`${APP_BASE_URL}${APP_RIDER_PATH}/${id}`}>
-          <span className={classes.teamListName}>{` ${first} ${last}`}</span>
-        </Anchor>
-        <span className={classes.teamListAge}>{` ${calculateAge(new Date(dob))}`}</span>
-      </Text>
-    </Flex>
+    <>
+      <Flex align="flex-end" justify="space-between">
+        <Image h={30} src={photo} mr={8}></Image>
+        <Text size="sm">
+          <Anchor
+            className={classes.teamListAnchor}
+            href={`${APP_BASE_URL}${APP_RIDER_PATH}/${id}`}
+          >
+            <span className={classes.teamListName}>{` ${first} ${last}`}</span>
+          </Anchor>
+          <span className={classes.teamListAge}>{` ${calculateAge(new Date(dob))}`}</span>
+        </Text>
+      </Flex>
+      <Divider mt="4px" />
+    </>
   );
 };
 
@@ -41,16 +49,20 @@ export default function TeamList() {
   return (
     <Flex justify="center" className={classes.teamList} data-testid={RIDER_INFO_TEAM_TEST_ID}>
       <InfoBlock className={classes.teamListInfoBlock} title={`Team ${team}`}>
-        {hasTeamMembers &&
-          riderTeamMembers.map((rider: IRiderInfo) => {
-            return isNotCurrentRider(rider) ? (
-              <div key={`${rider.id}${rider.dob}`} className={classes.teamListRider}>
-                <TeamMember rider={rider} />
-              </div>
-            ) : (
-              <div key={`${rider.id}${rider.dob}`}></div>
-            );
-          })}
+        <Container mb="36px">
+          <SectionLabel text="Riders" />
+          {hasTeamMembers &&
+            riderTeamMembers.map((rider: IRiderInfo) => {
+              return isNotCurrentRider(rider) ? (
+                <div key={`${rider.id}${rider.dob}`} className={classes.teamListRider}>
+                  <TeamMember rider={rider} />
+                </div>
+              ) : (
+                <div key={`${rider.id}${rider.dob}`}></div>
+              );
+            })}
+        </Container>
+        <TeamQuickStats />
       </InfoBlock>
     </Flex>
   );

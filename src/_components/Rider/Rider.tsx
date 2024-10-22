@@ -22,14 +22,13 @@ interface RiderProps {
 
 export default function Rider({ riderInfo, riderTeamMembers, history }: RiderProps) {
   return (
-    <Center className={classes.rider} data-testid={RIDER_INFO_TEST_ID}>
+    <Center data-testid={RIDER_INFO_TEST_ID}>
       <RiderProvider initialRiderInfo={riderInfo} initialRiderTeamMembers={riderTeamMembers}>
         <RiderHistoryProvider initialHistory={history}>
           <PageLayout>
             <NameHeading />
             <InfoGrid />
-
-            <Flex className={classes.historyAndTeamList} justify="space-between">
+            <Flex className={classes.historyAndTeamList} justify="center">
               <History />
               <TeamList />
             </Flex>
