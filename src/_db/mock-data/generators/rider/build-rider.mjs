@@ -1,4 +1,5 @@
 import { FIRST_NAMES, LAST_NAMES } from '../../constants/names.mjs';
+import { COUNTRIES, CITIES } from '../../constants/hometowns.mjs';
 import { IMG_URLS } from '../../constants/photos.mjs';
 import { generateRandomTeam, generateRandomNumber, generateRandomString, getRandomBirthday } from '../helper-functions.mjs';
 
@@ -48,9 +49,9 @@ export const buildMockRacerInfo = (racerInfo = {}, teamName) => {
       },
     ],
     hometown: hometown || {
-      country: generateRandomString(1000).substring(0, 2),
-      state: generateRandomString(1000).substring(0, 2),
-      city: generateRandomString(),
+      country: COUNTRIES[generateRandomNumber(COUNTRIES.length - 1)],
+      state: '',
+      city: CITIES[generateRandomNumber(CITIES.length - 1)],
     },
     photo: photo || IMG_URLS[generateRandomNumber(IMG_URLS.length - 1)],
   };

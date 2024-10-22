@@ -13,17 +13,9 @@
   width: 100%;
 }
 
-.riderContentWrap {
-  min-width: 70%;
-}
-
 .nameHeading {
   padding-right: 40px;
   padding-bottom: 20px;
-  width: 100%;
-}
-
-.topResults {
   width: 100%;
 }
 
@@ -77,16 +69,23 @@
     justify-content: flex-start;
 }
 
-.prevRiderAnchor {
-  margin-right: 36px;
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+.historyTable {
+  font-size: .7em;
 }
 
-.nextRiderAnchor {
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+.prevRiderAnchor {
+  margin-right: 36px;
 }
 
 .prevAndNextAnchors {
   margin-top: 16px;
-  margin-left: 8px;
+  margin-left: 26px;
+}
+
+.teamListAge {
+  margin-left: 16px;
+}
+
+.teamListHometown {
+  margin-left: 16px;
 }

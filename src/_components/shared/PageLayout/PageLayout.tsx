@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from '@mantine/core';
+import { Container } from '@mantine/core';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import TopNav from '../TopNav/TopNav';
 
@@ -8,10 +8,10 @@ interface PageLayoutProps {
 }
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <div>
+    <Container>
       <TopNav />
-      <Flex justify="center">{children}</Flex>
+      {children}
       <ColorSchemeToggle />
-    </div>
+    </Container>
   );
 }
