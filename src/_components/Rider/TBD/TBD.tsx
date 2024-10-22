@@ -18,7 +18,7 @@ export default function RiderTeams() {
     <section data-testid={TOP_RESULTS_TEST_ID} className={classes.topResults}>
       <InfoBlock title="Teams">
         {teams.map((team: ITeam) => (
-          <div>{`'${yearTrunc(team.year)} - ${stringTrunc(team.name, 15)}`}</div>
+          <div key={team.year}>{`'${yearTrunc(team.year)} - ${stringTrunc(team.name, 15)}`}</div>
         ))}
       </InfoBlock>
     </section>
