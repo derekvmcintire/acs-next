@@ -2,8 +2,9 @@ import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
 
 import { getRiderHistoryRequestUrl } from '@/src/_api/get-history';
-import { getRidersByTeamRequestUrl, getSingleRiderRequestUrl } from '@/src/_api/get-rider';
-import { RESULTS_TABLE_SERVER_TEST_ID } from '@/src/_components/Rider/History/History';
+import { getSingleRiderRequestUrl } from '@/src/_api/get-rider';
+import { getRidersByTeamRequestUrl } from '@/src/_api/get-riders-by-team';
+import { HISTORY_TEST_ID } from '@/src/_components/Rider/History/History';
 import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider/Rider';
 import { COLOR_SCHEME_TOGGLE_TEST_ID } from '@/src/_components/shared/ColorSchemeToggle/ColorSchemeToggle';
 import { TOP_NAV_TEST_ID } from '@/src/_components/shared/TopNav/TopNav';
@@ -22,11 +23,11 @@ const firstMockPackage: mockResponsePackage = {
 };
 const secondMockPackage: mockResponsePackage = {
   expectedUrl: getSingleRiderRequestUrl(mockId),
-  mockResponse: { riderInfo: mockRider },
+  mockResponse: [mockRider],
 };
 const thirdMockPackage: mockResponsePackage = {
   expectedUrl: getRidersByTeamRequestUrl(TEAM_B2C2_CONTES),
-  mockResponse: { riders: mockTeamMembers },
+  mockResponse: mockTeamMembers,
 };
 const mockResultsPackages = [firstMockPackage, secondMockPackage, thirdMockPackage];
 
@@ -54,7 +55,7 @@ describe('RacerInfoServer', () => {
     const riderInfoElement = await screen.findByTestId(RIDER_INFO_TEST_ID);
     expect(riderInfoElement).toBeInTheDocument();
 
-    const historyElement = await screen.findByTestId(RESULTS_TABLE_SERVER_TEST_ID);
+    const historyElement = await screen.findByTestId(HISTORY_TEST_ID);
     expect(historyElement).toBeInTheDocument();
 
     const colorSchemeElement = await screen.findByTestId(COLOR_SCHEME_TOGGLE_TEST_ID);

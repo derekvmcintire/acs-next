@@ -28,6 +28,7 @@ export const mockMultiGlobalFetch = (mockPackages: mockResponsePackage[]): void 
 
     return Promise.resolve({
       json: () => Promise.resolve(mockResponse),
+      ok: true,
     });
   }) as jest.Mock;
 };
