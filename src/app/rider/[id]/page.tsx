@@ -21,28 +21,19 @@ interface RiderPageProps {
 
 export default async function RiderPage({ params }: RiderPageProps) {
   const { id } = params;
+  const errors = [];
+
   const history: IRaceYear[] = await getRiderHistory(id);
 
   const riderResponse: IGetSingleRiderResponse = await getSingleRider(id);
+  riderResponse?.error && errors.push(riderResponse.error);
   const riderInfo = riderResponse?.riderInfo || DEFAULT_RIDER_NOT_FOUND;
 
   const riderTeamResponse: IGetRidersByTeamResponse = await getRidersByTeam(
     getCurrentTeam(riderInfo.teams)
   );
+  riderTeamResponse?.error && errors.push(riderTeamResponse.error);
   const riderTeamMembers = riderTeamResponse?.riders || [];
-
-  const getErrors = (): string[] => {
-    const errors: string[] = [];
-    if (riderResponse?.error) {
-      errors.push(riderResponse.error);
-    }
-    if (riderTeamResponse?.error) {
-      errors.push(riderTeamResponse.error);
-    }
-    return errors;
-  };
-
-  const errors: string[] = getErrors();
 
   riderInfo.wins = getCareerWins(history);
   riderInfo.topResults = getTopTenResults(history);
