@@ -13,7 +13,7 @@ import {
 export const getMockRiderInfo = () => mockRider;
 
 export const getCurrentTeam = (teams: ITeam[]): string => {
-  if (teams?.length < 1) {
+  if (!teams || teams?.length < 1) {
     return '';
   }
   const sortedTeams = teams.sort((a, b) => b.year - a.year);

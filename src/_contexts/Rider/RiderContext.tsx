@@ -7,6 +7,8 @@ interface RiderContextType {
   setRiderInfo: (info: IRiderInfo) => void;
   riderTeamMembers: IRiderInfo[];
   setRiderTeamMembers: (members: IRiderInfo[]) => void;
+  errors: string[];
+  setErrors: (errors: string[]) => void;
 }
 
 const defaultRiderContext: RiderContextType = {
@@ -14,6 +16,8 @@ const defaultRiderContext: RiderContextType = {
   setRiderInfo: () => {},
   riderTeamMembers: [],
   setRiderTeamMembers: () => {},
+  errors: [],
+  setErrors: () => {},
 };
 
 const RiderContext = createContext<RiderContextType>(defaultRiderContext);
@@ -31,10 +35,11 @@ export const RiderProvider: React.FC<RiderProviderProps> = ({
 }) => {
   const [riderInfo, setRiderInfo] = useState<IRiderInfo>(initialRiderInfo);
   const [riderTeamMembers, setRiderTeamMembers] = useState<IRiderInfo[]>(initialRiderTeamMembers);
+  const [errors, setErrors] = useState<string[]>([]);
 
   return (
     <RiderContext.Provider
-      value={{ riderInfo, setRiderInfo, riderTeamMembers, setRiderTeamMembers }}
+      value={{ riderInfo, setRiderInfo, riderTeamMembers, setRiderTeamMembers, errors, setErrors }}
     >
       {children}
     </RiderContext.Provider>
