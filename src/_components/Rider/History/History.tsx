@@ -6,8 +6,8 @@ import { getRaceYears, getResultsForSingleYear } from '../utils';
 import RaceTable from './HistoryTable';
 import classes from '../rider.module.css';
 
-export const RESULTS_TABLE_SERVER_TEST_ID = 'results-table-server';
-export const NO_RESULTS_TABLE_SERVER_TEST_ID = 'no-results-table-server';
+export const HISTORY_TEST_ID = 'history';
+export const NO_HISTORY_TEST_ID = 'no-history';
 
 export default function History() {
   const { history } = useRiderHistory();
@@ -15,9 +15,9 @@ export default function History() {
 
   const getTabs = () => {
     return years.length < 1 ? (
-      <Text data-testid={NO_RESULTS_TABLE_SERVER_TEST_ID}>No Results Available</Text>
+      <Text data-testid={NO_HISTORY_TEST_ID}>No Results Available</Text>
     ) : (
-      <Group className={classes.riderHistory} data-testid={RESULTS_TABLE_SERVER_TEST_ID}>
+      <Group className={classes.riderHistory} data-testid={HISTORY_TEST_ID}>
         <Tabs variant="outline" defaultValue={years[0].toString()}>
           <Tabs.List>
             {getRaceYears(history).map((year) => (

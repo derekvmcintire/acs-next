@@ -1,13 +1,13 @@
 import { getRiderHistory } from '@/src/_api/get-history';
+import { getSingleRider } from '@/src/_api/get-rider';
+import { getRidersByTeam } from '@/src/_api/get-riders-by-team';
 import {
-  getRidersByTeam,
-  getSingleRider,
+  IGetHistoryResponse,
   IGetRidersByTeamResponse,
   IGetSingleRiderResponse,
-} from '@/src/_api/get-rider';
+} from '@/src/_api/types';
 import { getCareerWins, getCurrentTeam, getTopTenResults } from '@/src/_components/Rider/utils';
 import NetworkError from '@/src/_components/ui/NetworkError/NetworkError';
-import { IRaceYear } from '@/src/_types';
 import { DEFAULT_RIDER_NOT_FOUND } from '@/src/global-constants';
 import Rider from '../../../_components/Rider/Rider';
 
@@ -21,9 +21,11 @@ interface RiderPageProps {
 
 export default async function RiderPage({ params }: RiderPageProps) {
   const { id } = params;
-  const errors = [];
+  const errors: string[] = [];
 
-  const history: IRaceYear[] = await getRiderHistory(id);
+  const historyResponse: IGetHistoryResponse = await getRiderHistory(id);
+  historyResponse?.error && errors.push(historyResponse.error);
+  const history = historyResponse?.history || [];
 
   const riderResponse: IGetSingleRiderResponse = await getSingleRider(id);
   riderResponse?.error && errors.push(riderResponse.error);
