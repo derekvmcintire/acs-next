@@ -40,6 +40,7 @@ export const mockGlobalFetch = (mockResponse: any): void => {
   global.fetch = jest.fn(() => {
     return Promise.resolve({
       json: () => Promise.resolve(mockResponse),
+      ok: true,
     });
   }) as jest.Mock;
 };
