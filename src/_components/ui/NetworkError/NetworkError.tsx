@@ -14,7 +14,7 @@ export default function NetworkError({ errors }: NetworkErrorProps) {
       {errors.length > 0 && (
         <>
           {errors.map((error: string) => (
-            <Alert variant="light" color="red" title="Network Error" icon={icon}>
+            <Alert key={error} variant="light" color="red" title="Network Error" icon={icon}>
               {error}
             </Alert>
           ))}
