@@ -22,11 +22,11 @@ const firstMockPackage: mockResponsePackage = {
 };
 const secondMockPackage: mockResponsePackage = {
   expectedUrl: getSingleRiderRequestUrl(mockId),
-  mockResponse: [mockRider],
+  mockResponse: { riderInfo: mockRider },
 };
 const thirdMockPackage: mockResponsePackage = {
   expectedUrl: getRidersByTeamRequestUrl(TEAM_B2C2_CONTES),
-  mockResponse: mockTeamMembers,
+  mockResponse: { riders: mockTeamMembers },
 };
 const mockResultsPackages = [firstMockPackage, secondMockPackage, thirdMockPackage];
 

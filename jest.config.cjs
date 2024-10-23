@@ -18,7 +18,6 @@ const customJestConfig = {
     "!src/_metrics/**/*.ts",
     "!src/_types/**/*.ts",
     "!src/global-constants.ts",
-    "!src/app/sample/**/*.tsx"
   ],
   coverageDirectory: '.coverage',
 };

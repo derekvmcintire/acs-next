@@ -1,5 +1,9 @@
 import { NO_PLACE_CODE, RACE_TYPES } from './constants';
 
+export interface INetworkResponse {
+  error?: string | null;
+}
+
 interface IBaseRaceData {
   name: string;
   type: string;

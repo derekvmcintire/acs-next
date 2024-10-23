@@ -41,8 +41,7 @@ const RIDER_INFO_TEAM_TEST_ID = 'team-list';
 export default function TeamList() {
   const { riderTeamMembers, riderInfo } = useRider();
   const { id } = riderInfo;
-  const team = getCurrentTeam(riderTeamMembers[0].teams);
-
+  const team = riderTeamMembers ? getCurrentTeam(riderTeamMembers[0]?.teams) : [];
   const hasTeamMembers = riderTeamMembers && riderTeamMembers.length > 0;
   const isNotCurrentRider = (rider: IRiderInfo) => rider.id !== id;
 
