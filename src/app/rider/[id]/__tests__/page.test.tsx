@@ -19,11 +19,11 @@ const mockId = 1;
 // set up mock responses for global.fetch
 const firstMockPackage: mockResponsePackage = {
   expectedUrl: getRiderHistoryRequestUrl(mockId),
-  mockResponse: [mockRacingHistory],
+  mockResponse: mockRacingHistory,
 };
 const secondMockPackage: mockResponsePackage = {
   expectedUrl: getSingleRiderRequestUrl(mockId),
-  mockResponse: [mockRider],
+  mockResponse: mockRider,
 };
 const thirdMockPackage: mockResponsePackage = {
   expectedUrl: getRidersByTeamRequestUrl(TEAM_B2C2_CONTES),

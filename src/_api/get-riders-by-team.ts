@@ -1,10 +1,10 @@
 import { IRiderInfo } from '../_types';
-import { BASE_URL, RACERS_PATH } from './constants';
+import { API_BASE_URL, API_RIDER_PATH } from './constants';
 import { getResponse } from './helpers';
 import { IGetRidersByTeamResponse } from './types';
 
 export const getRidersByTeamRequestUrl = (team: string) =>
-  `${BASE_URL}${RACERS_PATH}?currentTeam=${encodeURIComponent(team)}`;
+  `${API_BASE_URL}${API_RIDER_PATH}?team=${encodeURIComponent(team)}`;
 
 export const getRidersByTeam = async (team: string): Promise<IGetRidersByTeamResponse> => {
   const result = await getResponse(
