@@ -4,6 +4,10 @@ export interface IGetSingleRiderResponse extends INetworkResponse {
   riderInfo?: IRiderInfo | null;
 }
 
+export interface IGetRidersResponse extends INetworkResponse {
+  riders?: IRiderInfo | null;
+}
+
 export interface IGetHistoryResponse extends INetworkResponse {
   history?: IRaceYear[] | null;
 }

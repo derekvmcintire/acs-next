@@ -1,14 +1,13 @@
 'use client';
 
-import { GoSearch } from 'react-icons/go';
-import { Container, Divider, Flex, Group, Text, TextInput, Title } from '@mantine/core';
+import { Container, Divider, Flex, Group, Text, Title } from '@mantine/core';
 import { ACS_COLOR_BLUE, ACS_COLOR_ORANGE } from '@/src/global-constants';
+import Search from './Search';
 import classes from './top-nav.module.css';
 
 export const TOP_NAV_TEST_ID = 'top-nav';
 
 export default function TopNav() {
-  const icon = <GoSearch />;
   return (
     <Container data-testid={TOP_NAV_TEST_ID}>
       <Flex justify="center" align="center" pt={10}>
@@ -25,7 +24,7 @@ export default function TopNav() {
           <Divider size="sm" orientation="vertical" />
           <Text>Rankings</Text>
         </Group>
-        <TextInput leftSectionPointerEvents="none" leftSection={icon} placeholder="search" />
+        <Search />
         <Title className={classes.title} ta="right" pl={20} pr={40}>
           <Text
             inherit
