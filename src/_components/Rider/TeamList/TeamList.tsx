@@ -20,13 +20,13 @@ const TeamMember = ({ rider }: TeamMemberProps) => {
   return (
     <>
       <Flex align="flex-end" justify="space-between">
-        <Image h={30} src={photo} mr={8}></Image>
+        <Image h={30} src={photo} mr={16}></Image>
         <Text size="sm">
           <Anchor
             className={classes.teamListAnchor}
             href={`${APP_BASE_URL}${APP_RIDER_PATH}/${id}`}
           >
-            <span className={classes.teamListName}>{` ${first} ${last}`}</span>
+            <span className={classes.teamListName}>{` ${first.charAt(0)}. ${last}`}</span>
           </Anchor>
           <span className={classes.teamListAge}>{` ${calculateAge(new Date(dob))}`}</span>
         </Text>
