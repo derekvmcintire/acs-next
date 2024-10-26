@@ -65,6 +65,21 @@ export interface IHometown {
   city: string | null;
 }
 
+/**
+ * parsedResponse be:  {
+  id: 3149,
+  currentTeam: 'TJ Maxx -',
+  name: { first: 'Laurens', last: 'Ghekiere' },
+  teams: [ { year: 2024, name: 'TJ Maxx -' } ],
+  socials: { strava: '4294964', insta: 'sjzztdg' },
+  categories: [ { discipline: 'road', category: 1 } ],
+  hometown: { country: 'Iran', city: 'Novi Sad' },
+  dob: 'Wed Mar 23 2005',
+  photo: 'https://www.procyclingstats.com/images/riders/bp/dc/tadej-pogacar-2024-n2.jpeg',
+  wins: 43
+}
+ */
+
 export interface IRiderInfo {
   id: number;
   currentTeam?: string;
