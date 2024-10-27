@@ -17,6 +17,8 @@ type SearchOptionType = {
   label: string;
 };
 
+export const RIDER_SEARCH_DATA_TEST_ID = 'rider-search';
+
 export default function Search() {
   const [searchValue, setSearchValue] = React.useState('');
   const [data, setData] = React.useState<SearchOptionType[]>([]);
@@ -52,15 +54,17 @@ export default function Search() {
   };
 
   return (
-    <Autocomplete
-      leftSectionPointerEvents="none"
-      leftSection={icon}
-      placeholder="Search for Riders"
-      data={data}
-      limit={15}
-      value={searchValue}
-      onChange={handleChange}
-      onOptionSubmit={handleOptionSubmit}
-    />
+    <div data-testid={RIDER_SEARCH_DATA_TEST_ID}>
+      <Autocomplete
+        leftSectionPointerEvents="none"
+        leftSection={icon}
+        placeholder="Search for Riders"
+        data={data}
+        limit={15}
+        value={searchValue}
+        onChange={handleChange}
+        onOptionSubmit={handleOptionSubmit}
+      />
+    </div>
   );
 }
