@@ -5,8 +5,6 @@ export const getResponse = async <T>(
   try {
     const response = await fetch(url);
 
-    console.log('got response: ', response);
-
     if (!response.ok) {
       return { error: `Network response status ${response.status} with url ${url}` };
     }

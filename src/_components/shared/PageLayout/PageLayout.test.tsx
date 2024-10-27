@@ -1,7 +1,14 @@
 import { render, screen } from '@/test-utils';
 import { COLOR_SCHEME_TOGGLE_TEST_ID } from '../ColorSchemeToggle/ColorSchemeToggle';
+import { RIDER_SEARCH_DATA_TEST_ID } from '../TopNav/Search';
 import { TOP_NAV_TEST_ID } from '../TopNav/TopNav';
 import PageLayout from './PageLayout';
+
+jest.mock('../TopNav/Search', () => {
+  return function MockSearch() {
+    return <div data-testid={RIDER_SEARCH_DATA_TEST_ID}>Search</div>;
+  };
+});
 
 describe('PageLayout', () => {
   it('Renders the TopNav and ColorSchemeToggle components', () => {
