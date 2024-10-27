@@ -3,7 +3,8 @@ import { IRacerHistory } from '@/src/_types';
 import { getResponse } from './helpers';
 import { IGetHistoryResponse } from './types';
 
-export const getRiderHistoryRequestUrl = (id: number) => `${API_BASE_URL}${API_RESULT_PATH}/${id}`;
+export const getRiderHistoryRequestUrl = (id: number) =>
+  `${API_BASE_URL}${API_RESULT_PATH}?riderId=${id}`;
 
 export const getRiderHistory = async (id: number) => {
   const result = await getResponse(
