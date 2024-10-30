@@ -11,7 +11,6 @@ export const TOP_RESULTS_TEST_ID = 'tbd';
 
 export default function RiderTeams() {
   const { riderInfo } = useRider();
-  // const { teams } = riderInfo;
   const teams = riderInfo.teams || [];
 
   return (

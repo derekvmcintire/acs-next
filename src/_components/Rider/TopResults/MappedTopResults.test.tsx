@@ -40,7 +40,7 @@ describe('MappedTopResults Component', () => {
   });
 
   afterEach(() => {
-    jest.clearAllMocks(); // Clear mocks after each test
+    jest.clearAllMocks();
   });
 
   it('renders the top results correctly', () => {
