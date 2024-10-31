@@ -7,7 +7,7 @@ import classes from '../rider.module.css';
 // const PLACEHOLDER_IMG =
 //   'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
 
-  const PLACEHOLDER_IMG = '/shadowbarn.jpeg';
+const PLACEHOLDER_IMG = '/shadowbarn.jpeg';
 
 export const RACER_PROFILE_IMAGE_TEST_ID = 'racerProfileTestId';
 
