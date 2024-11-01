@@ -20,7 +20,7 @@ export const mockMultiGlobalFetch = (mockPackages: mockResponsePackage[]): void 
         input,
         mockPackages,
       };
-      console.log(
+      console.warn(
         "Uh oh, couldn't find the expected mock response, make sure you have passed a mockResponsePackage for each expected fetch request!",
         slush
       );

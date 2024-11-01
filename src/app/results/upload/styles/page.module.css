@@ -1,7 +1,22 @@
 .formSection {
-  width: 60%;
+  width: 40%;
 }
 
 .textArea {
-  height: 500px;
+  width: 80%;
+  margin-bottom: 16px;
+}
+
+.resultsForm {
+  border: 1px solid;
+  border-color: light-dark(#343637, #d8dfe3);
+  width: 90%;
+  margin-top: 36px;
+  padding: 26px;
+  background-color: light-dark(#d8dfe3, #343637);
+  border-radius: 4px;
+}
+
+.why {
+  border: 1px solid pink;
 }

@@ -15,7 +15,14 @@ const getHeader = (header: string): string | null => {
 
 export const prepareResults = (data: string): PreparedResult[] => {
   const rows = data.trim().split('\n');
-  const headers = rows[0].split('\t');
+  const isTabSeparated = rows[0].includes('\t');
+  const isCommaSeparated = rows[0].includes(',');
+
+  if (!isTabSeparated || isCommaSeparated) {
+    throw new Error('Results must be tab or comma separated');
+  }
+
+  const headers = rows[0].split(isTabSeparated ? '\t' : ',');
 
   const result = rows.slice(1).map((row) => {
     const values = row.split('\t');

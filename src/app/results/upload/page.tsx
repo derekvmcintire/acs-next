@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Button, Flex, Select, Textarea, TextInput } from '@mantine/core';
+import { Button, Center, Flex, Select, Text, Textarea, TextInput } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
 import { CreateRaceReturnData } from '@/src/_api/create-race';
 import PageLayout from '@/src/_components/shared/PageLayout/PageLayout';
@@ -16,6 +16,7 @@ export interface ResultFormData {
   startDate?: Date;
   endDate?: Date;
   location?: string;
+  category?: string;
   results?: string;
 }
 
@@ -25,6 +26,7 @@ const DEFAULT_FORM_VALUES = {
   startDate: undefined,
   endDate: undefined,
   location: '',
+  category: '',
   results: '',
 };
 
@@ -32,12 +34,7 @@ function RaceForm() {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [race, setRace] = React.useState<CreateRaceReturnData | undefined>(undefined);
 
-  const {
-    control,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm({
+  const { control, handleSubmit, reset } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
   });
 
@@ -65,112 +62,149 @@ function RaceForm() {
       {isLoading ? (
         <Loader />
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Flex direction="column" align="center" justify="center" gap="md">
-            {/* Name Field */}
-            <Controller
-              name="name"
-              control={control}
-              rules={{ required: 'Name is required' }}
-              render={({ field }) => (
-                <TextInput
-                  className={classes.formSection}
-                  label="Name"
-                  placeholder="Enter name"
-                  error={String(errors.name?.message)}
-                  {...field}
-                />
-              )}
-            />
+        <Center>
+          <form onSubmit={handleSubmit(onSubmit)} className={classes.resultsForm}>
+            <section>
+              <Flex mb={16} align="center" justify="center" gap="md">
+                <Text fw="700">Results Upload Form</Text>
+              </Flex>
+            </section>
+            <Flex align="center" justify="center" gap="md">
+              {/* Name Field */}
+              <Controller
+                name="name"
+                control={control}
+                rules={{ required: 'Name is required' }}
+                render={({ field }) => (
+                  <TextInput
+                    className={classes.formSection}
+                    withAsterisk
+                    size="xs"
+                    label="Name"
+                    placeholder="Enter name"
+                    {...field}
+                  />
+                )}
+              />
 
-            {/* Race Type Field */}
-            <Controller
-              name="raceType"
-              control={control}
-              rules={{ required: 'Race type is required' }}
-              render={({ field }) => (
-                <Select
-                  className={classes.formSection}
-                  label="Race Type"
-                  placeholder="Select race type"
-                  data={[
-                    { value: 'type1', label: 'Type 1' },
-                    { value: 'type2', label: 'Type 2' },
-                    { value: 'type3', label: 'Type 3' },
-                  ]}
-                  error={String(errors.name?.message)}
-                  {...field}
-                />
-              )}
-            />
+              {/* Race Type Field */}
+              <Controller
+                name="raceType"
+                control={control}
+                rules={{ required: 'Race type is required' }}
+                render={({ field }) => (
+                  <Select
+                    className={classes.formSection}
+                    withAsterisk
+                    size="xs"
+                    label="Race Type"
+                    placeholder="Select race type"
+                    data={[
+                      { value: 'type1', label: 'Category 1' },
+                      { value: 'type2', label: 'Category 2' },
+                      { value: 'type3', label: 'Category 3' },
+                    ]}
+                    {...field}
+                  />
+                )}
+              />
+            </Flex>
+            <Flex align="center" justify="center" gap="md">
+              {/* Start Date Field */}
+              <Controller
+                name="startDate"
+                control={control}
+                rules={{ required: 'Start date is required' }}
+                render={({ field }) => (
+                  <DateInput
+                    className={classes.formSection}
+                    withAsterisk
+                    size="xs"
+                    label="Start Date"
+                    placeholder="Pick a start date"
+                    {...field}
+                  />
+                )}
+              />
 
-            {/* Start Date Field */}
-            <Controller
-              name="startDate"
-              control={control}
-              rules={{ required: 'Start date is required' }}
-              render={({ field }) => (
-                <DateInput
-                  className={classes.formSection}
-                  label="Start Date"
-                  placeholder="Pick a start date"
-                  error={String(errors.name?.message)}
-                  {...field}
-                />
-              )}
-            />
-
-            {/* End Date Field */}
-            <Controller
-              name="endDate"
-              control={control}
-              render={({ field }) => (
-                <DateInput
-                  className={classes.formSection}
-                  label="End Date"
-                  placeholder="Pick an end date"
-                  {...field}
-                />
-              )}
-            />
-
-            {/* Location Field */}
-            <Controller
-              name="location"
-              control={control}
-              render={({ field }) => (
-                <TextInput
-                  className={classes.formSection}
-                  label="Location"
-                  placeholder="Enter location"
-                  {...field}
-                />
-              )}
-            />
-
-            {/* Results Field */}
-            <Controller
-              name="results"
-              control={control}
-              render={({ field }) => (
-                <Textarea
-                  className={`${classes.formSection}`}
-                  autosize
-                  label="Results"
-                  placeholder="Enter results"
-                  minRows={8}
-                  maxRows={20}
-                  {...field}
-                />
-              )}
-            />
-
-            {/* Submit Button */}
-            <Button disabled={isLoading} type="submit">
-              Submit
-            </Button>
-          </Flex>
-        </form>
+              {/* End Date Field */}
+              <Controller
+                name="endDate"
+                control={control}
+                render={({ field }) => (
+                  <DateInput
+                    className={classes.formSection}
+                    size="xs"
+                    label="End Date"
+                    placeholder="Pick an end date"
+                    {...field}
+                  />
+                )}
+              />
+            </Flex>
+            <Flex align="center" justify="center" gap="md">
+              {/* Category Field */}
+              <Controller
+                name="category"
+                control={control}
+                rules={{ required: 'Category is required' }}
+                render={({ field }) => (
+                  <Select
+                    className={classes.formSection}
+                    withAsterisk
+                    size="xs"
+                    label="Category"
+                    placeholder="Select category"
+                    data={[
+                      { value: 'type1', label: 'Type 1' },
+                      { value: 'type2', label: 'Type 2' },
+                      { value: 'type3', label: 'Type 3' },
+                    ]}
+                    {...field}
+                  />
+                )}
+              />
+              {/* Location Field */}
+              <Controller
+                name="location"
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    className={classes.formSection}
+                    size="xs"
+                    label="Location"
+                    placeholder="Enter location"
+                    {...field}
+                  />
+                )}
+              />
+            </Flex>
+            <Flex align="center" justify="center" gap="md">
+              {/* Results Field */}
+              <Controller
+                name="results"
+                control={control}
+                render={({ field }) => (
+                  <Textarea
+                    className={classes.textArea}
+                    autosize
+                    label="Results"
+                    placeholder="Enter results"
+                    minRows={8}
+                    maxRows={20}
+                    {...field}
+                  />
+                )}
+              />
+            </Flex>
+            <Flex align="center" justify="center" gap="md">
+              {/* Submit Button */}
+              <Button disabled={isLoading} type="submit">
+                Submit
+              </Button>
+            </Flex>
+          </form>
+        </Center>
       )}
     </PageLayout>
   );
