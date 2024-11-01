@@ -28,7 +28,7 @@ const TeamMember = ({ rider }: TeamMemberProps) => {
           >
             <span className={classes.teamListName}>{` ${first.charAt(0)}. ${last}`}</span>
           </Anchor>
-          <span className={classes.teamListAge}>{` ${calculateAge(new Date(dob))}`}</span>
+          {dob && <span className={classes.teamListAge}>{` ${calculateAge(new Date(dob))}`}</span>}
         </Text>
       </Flex>
       <Divider mt="4px" />
@@ -44,6 +44,8 @@ export default function TeamList() {
   const team = riderTeamMembers ? getCurrentTeam(riderTeamMembers[0]?.teams) : [];
   const hasTeamMembers = riderTeamMembers && riderTeamMembers.length > 0;
   const isNotCurrentRider = (rider: IRiderInfo) => rider.id !== id;
+  const truncatedTeamMembers = [...riderTeamMembers];
+  truncatedTeamMembers.length = 20;
 
   return (
     <Flex justify="center" className={classes.teamList} data-testid={RIDER_INFO_TEAM_TEST_ID}>
@@ -51,7 +53,7 @@ export default function TeamList() {
         <Container mb="36px">
           <SectionLabel text="Riders" />
           {hasTeamMembers &&
-            riderTeamMembers.map((rider: IRiderInfo) => {
+            truncatedTeamMembers.map((rider: IRiderInfo) => {
               return isNotCurrentRider(rider) ? (
                 <div key={`${rider.id}${rider.dob}`} className={classes.teamListRider}>
                   <TeamMember rider={rider} />

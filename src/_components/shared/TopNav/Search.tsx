@@ -30,7 +30,7 @@ export default function Search() {
     const search = async () => {
       const response: IGetRidersResponse = await getRidersByName(debouncedSearchValue);
       if (response && response?.error) {
-        console.log('got error: ', response.error);
+        throw new Error(String(response.error));
       } else {
         const riders = Array.isArray(response?.riders) ? response?.riders : [];
 
