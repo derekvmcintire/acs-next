@@ -11,12 +11,21 @@ interface CreateRaceData {
   location: string;
 }
 
+export interface CreateRaceReturnData {
+  id: number;
+  eventId: number;
+  raceTypeId: number;
+  startDate: string;
+  endDate: string | null;
+  location: string | null;
+}
+
 export const createRace = async (raceData: CreateRaceData) => {
   const result = await postResponse(
     createRaceRequestUrl(),
-    async (response: Response): Promise<any> => {
-      const parsedResponse: any = await response.json();
-      return { riderInfo: parsedResponse };
+    async (response: Response): Promise<CreateRaceReturnData> => {
+      const parsedResponse: CreateRaceReturnData = await response.json();
+      return parsedResponse;
     },
     JSON.stringify(raceData)
   );

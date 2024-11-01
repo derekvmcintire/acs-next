@@ -4,12 +4,8 @@ import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { Button, Flex, Select, Textarea, TextInput } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
-import { createRace } from '@/src/_api/create-race';
-import { createRider, CreateRiderData } from '@/src/_api/create-rider';
-import { getRidersByName } from '@/src/_api/get-riders-by-name';
-import { IGetRidersResponse } from '@/src/_api/types';
 import PageLayout from '@/src/_components/shared/PageLayout/PageLayout';
-import { prepareResults } from '@/src/_utility/data/prepare-results';
+import { processResults } from '@/src/_processers/results';
 import classes from './styles/page.module.css';
 
 export interface ResultFormData {
@@ -19,25 +15,6 @@ export interface ResultFormData {
   endDate?: Date;
   location?: string;
   results?: string;
-}
-
-export interface FullName {
-  firstName: string;
-  lastName: string;
-}
-
-function splitName(name: string): FullName {
-  const lastSpaceIndex = name.lastIndexOf(' ');
-
-  if (lastSpaceIndex === -1) return { firstName: '', lastName: name };
-
-  const firstName = name.slice(0, lastSpaceIndex);
-  const lastName = name.slice(lastSpaceIndex + 1);
-
-  return {
-    firstName,
-    lastName,
-  };
 }
 
 function RaceForm() {
@@ -58,69 +35,9 @@ function RaceForm() {
   });
 
   const onSubmit = (data: ResultFormData) => {
-    console.log(data);
-    // create race
-    const { name, startDate, location, results } = data;
-
-    const race = createRace({
-      name,
-      raceTypeId: 56,
-      startDate: startDate ? startDate.toLocaleDateString() : new Date().toLocaleDateString(),
-      endDate: '',
-      location: location || '',
+    processResults(data).then((resp: any) => {
+      console.log('finished handling submit results: ', resp);
     });
-
-    if (!race) {
-      console.log('error creating race');
-      return;
-    }
-
-    console.log('race created: ', race);
-    // Convert results to object
-    if (results) {
-      const parsedResults = prepareResults(results);
-      console.log(parsedResults);
-      // for each result
-      parsedResults.forEach((result: any) => {
-        getRidersByName(result.name)
-          .then((response: IGetRidersResponse) => {
-            console.log('result', result);
-            if (response && response?.error) {
-              console.log('got error: ', response.error);
-            } else {
-              const riders = Array.isArray(response?.riders) ? response?.riders : [];
-              if (riders.length < 1) {
-                console.log('need to create a new rider');
-                const riderName = result?.name || '';
-                const { firstName, lastName } = splitName(riderName);
-
-                const riderData: CreateRiderData = {
-                  firstName,
-                  lastName,
-                  dob: '',
-                  country: '',
-                  hometown: result.hometowm || '',
-                  photo: '',
-                  strava: '',
-                  insta: '',
-                  about: '',
-                };
-                createRider(riderData)
-                  .then((createdRider) => {
-                    console.log('created rider! ', createdRider);
-                  })
-                  .catch((error) => {
-                    console.log('error creating rider: ', error);
-                  });
-              }
-            }
-          })
-          .catch((error) => {
-            console.log('error bb: ', error);
-            return null;
-          });
-      });
-    }
   };
 
   return (
@@ -218,7 +135,8 @@ function RaceForm() {
                 autosize
                 label="Results"
                 placeholder="Enter results"
-                minRows={4}
+                minRows={8}
+                maxRows={20}
                 {...field}
               />
             )}

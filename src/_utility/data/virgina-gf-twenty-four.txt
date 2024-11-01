@@ -1,0 +1,633 @@
+VIRGINIA BLUE RIDGE GF
+
+Pl		Name	Sex	Racing Age	Div	Div Pl	City	Section 1	Section 2	Section 3	Speed	Time	Gap	 
+1	206	Keith Gerarden	Men	45	M45-54	1		9:06.76	6:46.31	7:47.85	21.78	23:40.93	--	 
+2	182	Kerry Werner Jr.	Men	33	M23-34	1	Vinton VA	9:12.37	6:45.85	7:47.16	21.72	23:45.39	+0:04.458	 
+3	125	Kelby Hanson	Men	21	M23-	1	Salem VA	9:17.07	6:53.82	7:45.36	21.55	23:56.26	+0:15.332	 
+4	163	Brian Schworm	Men	54	M45-54	2	Morehead KY	9:27.84	6:52.79	8:01.50	21.17	24:22.14	+0:41.208	 
+5	191	Jorg Decressin	Men	57	M55-64	1	Bethesda MD	9:49.71	6:47.71	8:02.67	20.91	24:40.10	+0:59.167	 
+6	183	Seager Wilson	Men	37	M35-44	1	Roanoke VA	9:51.52	6:47.96	8:04.24	20.86	24:43.73	+1:02.801	 
+7	198	Kyle Mitchell	Men	36	M35-44	2		9:45.56	6:51.80	8:09.83	20.81	24:47.20	+1:06.266	 
+8	201	Henry Schumm	Men	17	M23-	2		9:12.16	7:44.17	7:54.69	20.76	24:51.02	+1:10.090	 
+9	134	Samuel Lang	Men	19	M23-	3	Salem VA	10:11.00	6:54.10	7:56.27	20.62	25:01.38	+1:20.446	 
+10	107	Sean Burrows	Men	49	M45-54	3	Blacksburg VA	10:21.61	6:53.20	8:10.81	20.29	25:25.63	+1:44.693	 
+11	148	Brendan O'Connor	Men	26	M23-34	2	Frederick MD	10:18.57	6:59.24	8:08.76	20.28	25:26.58	+1:45.649	 
+12	145	Marlies Mejias Garcia	Women	32	W23-34	1	Havana UNK	10:30.46	6:55.34	8:08.52	20.17	25:34.34	+1:53.407	 
+13	123	Timothy Groves	Men	18	M23-	4	Charlottesville VA	10:28.78	6:57.60	8:08.87	20.16	25:35.26	+1:54.324	 
+14	184	John Winn	Men	48	M45-54	4	Crozet VA	10:19.01	6:58.20	8:44.29	19.82	26:01.51	+2:20.575	 
+15	185	Liam Winn	Men	14	M23-	5	Charlottesville VA	10:38.41	6:57.49	8:46.66	19.56	26:22.57	+2:41.633	 
+16	111	Bridget Ciambotti	Women	17	W23-	1	Charlottesville VA	11:19.39	6:57.48	8:08.05	19.53	26:24.93	+2:43.993	 
+17	146	Kyle Morley	Men	29	M23-34	3	Arlington VA	10:45.52	7:24.49	8:23.09	19.43	26:33.11	+2:52.180	 
+18	199	Robert Rice	Men	34	M23-34	4	Roanoke VA	11:36.48	6:59.52	8:28.53	19.05	27:04.55	+3:23.614	 
+19	114	Joshua Decker	Men	54	M45-54	5	Matthews NC	11:39.85	6:56.02	9:08.79	18.59	27:44.67	+4:03.735	 
+20	186	Chris Warno	Men	20	M23-	6	Fairfax VA	11:25.54	7:42.48	8:51.99	18.42	28:00.02	+4:19.083	 
+21	132	Max Knipper	Men	43	M35-44	3	Cary NC	11:46.55	7:00.32	9:20.62	18.34	28:07.50	+4:26.563	 
+22	187	Mark Warno	Men	52	M45-54	6	Fairfax VA	11:34.01	7:42.45	8:52.50	18.33	28:08.96	+4:28.032	 
+23	131	Charlie Hutchens	Men	17	M23-	7	Herndon VA	11:00.68	8:19.22	9:07.44	18.13	28:27.35	+4:46.420	 
+24	193	Andy Mitchell	Men	55	M55-64	2	Roanoke VA	12:04.26	6:57.13	9:32.20	18.06	28:33.60	+4:52.672	 
+25	161	Aaron Schelegle	Men	40	M35-44	4	Roanoke VA	11:34.98	7:01.96	10:31.84	17.70	29:08.78	+5:27.852	 
+26	108	John Burton	Men	58	M55-64	3	Daleville VA	11:49.14	7:59.75	9:20.87	17.69	29:09.78	+5:28.845	 
+27	203	Fernando Gracia	Men	35	M35-44	5		10:57.07	7:51.45	10:32.58	17.57	29:21.11	+5:40.180	 
+28	155	Matt Prescott	Men	61	M55-64	4	Roanoke VA	11:53.37	8:13.33	9:49.62	17.23	29:56.33	+6:15.395	 
+29	124	Matthew Hale	Men	33	M23-34	5	Washington DC	12:21.85	8:15.59	9:19.61	17.22	29:57.06	+6:16.124	 
+30	103	Leah Balkin	Women	27	W23-34	2	Arlington VA	12:59.55	7:25.59	9:37.87	17.17	30:03.01	+6:22.082	 
+31	135	Zachary Leicht	Men	30	M23-34	6	Lexington KY	12:27.86	8:15.48	9:19.67	17.17	30:03.02	+6:22.083	 
+32	104	Michael Basgier	Men	46	M45-54	7	Keezletown VA	12:43.92	8:04.37	9:33.01	16.99	30:21.31	+6:40.375	 
+33	167	Christine Shuey	Women	39	W35-44	1	Walkersville MD	13:15.36	8:03.45	9:13.46	16.89	30:32.28	+6:51.344	 
+34	175	Paul Stromberg	Men	47	M45-54	8	Roanoke VA	12:33.18	8:06.87	9:55.54	16.86	30:35.60	+6:54.669	 
+35	112	Patton Coles	Men	68	M65+	1	Roanoke VA	12:37.42	8:13.37	9:49.00	16.82	30:39.81	+6:58.876	 
+36	159	Benjamin Raydo	Men	43	M35-44	6	Williamsburg VA	12:33.08	8:04.70	10:03.98	16.80	30:41.78	+7:00.844	 
+37	152	Ainhoa Perez-Diez	Women	53	W45-54	1	Olney MD	12:48.62	8:35.10	9:19.96	16.79	30:43.69	+7:02.754	 
+38	154	Noel Preece	Men	24	M23-34	7	Fincastle VA	10:56.09	7:42.70	12:21.97	16.63	31:00.78	+7:19.845	 
+39	118	Steven Ellmann	Men	34	M23-34	8	Asheville NC	11:39.62	8:48.74	10:33.21	16.63	31:01.58	+7:20.649	 
+40	195	Jim Frith	Men	66	M65+	2	Martinsville VA	12:49.63	8:17.07	10:15.48	16.44	31:22.19	+7:41.258	 
+41	204	Gerald Escoto	Men	51	M45-54	9		13:38.65	8:03.51	9:42.72	16.42	31:24.88	+7:43.949	 
+42	133	Andrej Kolaja	Men	57	M55-64	5	North Beach MD	14:05.35	8:12.96	9:20.29	16.30	31:38.61	+7:57.680	 
+43	165	Stuart Shelby	Men	56	M55-64	6	Moseley VA	12:57.78	8:51.65	9:51.69	16.28	31:41.13	+8:00.196	 
+44	180	Gail Waldman	Women	66	W65+	1	North Chesterfield VA	13:58.76	8:20.09	9:48.51	16.06	32:07.37	+8:26.433	 
+45	207	Michael Fitzsimmons	Men	64	M55-64	7	Clarksburg MD	13:21.78	8:52.48	9:54.73	16.04	32:08.99	+8:28.062	 
+46	158	Julie Raydo	Women	15	W23-	2	Williamsburg VA	14:02.71	8:04.49	10:04.26	16.02	32:11.48	+8:30.543	 
+47	173	John Stanton	Men	56	M55-64	8	Falls Church VA	13:31.58	8:20.15	10:21.73	16.01	32:13.47	+8:32.539	 
+48	160	Stephen Robertson	Men	65	M65+	3	Blue Ridge VA	13:27.88	8:15.04	10:59.17	15.77	32:42.09	+9:01.160	 
+49	101	Matthew Austin	Men	47	M45-54	10	Baltimore MD	14:14.31	8:40.13	10:11.96	15.58	33:06.41	+9:25.481	 
+50	171	Andrew Sparta	Men	67	M65+	4	Shaftsbury VT	13:41.91	9:09.46	10:25.07	15.50	33:16.45	+9:35.516	 
+51	194	Andrew Hynes	Men	42	M35-44	7	Axton VA	13:16.40	8:17.07	11:45.26	15.48	33:18.74	+9:37.808	 
+52	189	Darrin Doss	Men	46	M45-54	11	Martinsville VA	13:27.07	9:03.91	11:14.56	15.28	33:45.55	+10:04.622	 
+53	143	David Mckibben	Men	41	M35-44	8	Mechanicsville VA	12:02.55	8:40.80	14:05.60	14.82	34:48.96	+11:08.032	 
+54	144	James Mcternan	Men	66	M65+	5	Sandy Spring MD	15:23.86	8:54.52	11:00.23	14.61	35:18.62	+11:37.690	 
+55	197	Arden Rossi	Women	18	W23-	3	Georges Mills NH	13:10.43	11:04.80	11:26.48	14.45	35:41.71	+12:00.782	 
+56	121	Andres Gaviria-Figueroa	Men	45	M45-54	12	Washington DC	15:37.12	9:49.55	10:52.49	14.20	36:19.17	+12:38.234	 
+57	162	Zachary Schwartz	Men	34	M23-34	9	Virginia Beach VA	14:58.19	9:19.21	12:03.43	14.19	36:20.84	+12:39.906	 
+58	169	Michael Smith	Men	29	M23-34	10	Roanoke VA	13:46.05	9:45.16	13:03.46	14.10	36:34.68	+12:53.749	 
+59	192	Hunter Doss	Men	15	M23-	8	Martinsville VA	13:17.96	11:04.00	13:03.08	13.79	37:25.05	+13:44.118	 
+60	113	Brian Curtin	Men	45	M45-54	13	Washington DC	15:31.91	9:36.02	12:22.39	13.75	37:30.32	+13:49.391	 
+61	188	John Grier	Men	57	M55-64	9	Rockville VA	15:30.35	9:59.29	12:21.71	13.63	37:51.36	+14:10.431	 
+62	196	Mary Beth Grier	Women	55	W55-64	1	Rockville VA	15:29.47	10:00.50	12:21.86	13.62	37:51.84	+14:10.903	 
+63	122	Sarah Grier Barber	Women	60	W55-64	2	Providence Forge VA	15:30.48	9:59.87	12:22.26	13.62	37:52.61	+14:11.680	 
+64	106	Lauren Bracken	Women	25	W23-34	3	Washington DC	16:33.27	10:03.69	11:17.20	13.61	37:54.16	+14:13.231	 
+65	168	Benjamin Simon	Men	23	M23-34	11	Woodbridge CT	14:38.89	10:25.47	12:52.05	13.60	37:56.41	+14:15.480	 
+66	149	Shelley Olds	Women	44	W35-44	2	Boones Mill VA	15:36.03	9:57.69	12:56.91	13.39	38:30.65	+14:49.719	 
+67	120	Stephanie Galen	Women	28	W23-34	4	Arlington VA	17:00.95	10:02.50	11:34.23	13.35	38:37.69	+14:56.755	 
+68	205	David Glunt	Men	57	M55-64	10		15:54.96	10:22.61	12:32.19	13.28	38:49.77	+15:08.836	 
+69	179	Cesar Vence	Men	41	M35-44	9	Washington MD	16:50.67	9:57.33	12:03.55	13.27	38:51.56	+15:10.626	 
+70	200	Will Castro	Men	52	M45-54	14		17:02.18	9:33.60	12:18.01	13.26	38:53.81	+15:12.876	 
+71	127	Susan Hefler	Women	64	W55-64	3	Hamilon VA	16:15.05	9:14.97	13:29.99	13.23	39:00.02	+15:19.090	 
+72	142	Andrew Maresca	Men	23	M23-34	12	Tewksbury MA	16:02.55	10:11.09	12:57.21	13.16	39:10.85	+15:29.922	 
+73	153	William Piervincenzi	Men	55	M55-64	11	Arlington VA	16:25.72	10:20.57	12:46.51	13.04	39:32.81	+15:51.875	 
+74	174	Jeremiah Stokes	Men	50	M45-54	15	Knoxville MD	15:38.94	10:59.55	13:16.16	12.92	39:54.65	+16:13.722	 
+75	202	John Kovac	Men	48	M45-54	16		17:16.69	9:29.49	13:32.34	12.80	40:18.53	+16:37.596	 
+76	178	Harold Trease	Men	69	M65+	6	Blacksburg VA	16:43.27	11:13.72	12:31.54	12.74	40:28.54	+16:47.611	 
+77	176	Everton The Da Silva	Men	37	M35-44	10	High Point NC	16:27.27	11:33.05	12:31.85	12.72	40:32.19	+16:51.253	 
+78	109	John Bush	Men	61	M55-64	12	Blacksburg VA	16:56.55	11:15.00	12:31.92	12.67	40:43.49	+17:02.555	 
+79	129	Scott Hopkins	Men	50	M45-54	17	Ridgeland SC	18:16.44	9:32.32	13:25.62	12.51	41:14.40	+17:33.466	 
+80	164	Timothy Shank	Men	64	M55-64	13	Daleville VA	17:41.88	10:47.35	13:26.62	12.30	41:55.87	+18:14.934	 
+81	130	Hunter Hutchens	Men	53	M45-54	18	Herndon VA	17:01.61	9:22.45	16:03.18	12.15	42:27.25	+18:46.316	 
+82	177	Joaquim Meneleu Torres Neto	Men	50	M45-54	19	Greensboro NC	16:56.78	11:30.12	14:19.23	12.06	42:46.14	+19:05.211	 
+83	151	Jose Padron	 	36	 	*	Midlothian VA	18:31.20	11:01.20	13:58.14	11.85	43:30.55	+19:49.614	 
+84	190	Julio Gomez	Men	53	M45-54	20	Scotch Plains NJ	21:04.04	13:50.57	22:40.97	8.95	57:35.59	+33:54.653	 
+85	156	Bruce Pully	Men	74	M65+	7	Yorktown VA	28:30.57	13:11.12	18:36.09	8.55	1:00:17.79	+36:36.856	 
+86	137	Lawrence Loster	Men	68	M65+	8	Sparta TN	18:59.45	10:44.80	42:56.06	7.10	1:12:40.32	+48:59.388	 
+*	117	Justin Eanes	Men	42	M35-44	*	Ridgeway VA	13:56.39	 	 	0.00	 	 	 
+*	166	John Showers	Men	41	M35-44	*	Ridgeway VA	14:13.00	 	 	0.00	 	 	 
+*	170	Bobby Smits	Men	50	M45-54	*	Chesapeake VA	14:23.53	 	 	0.00	 	 	 
+Number of records: 89
+
+
+
+
+
+
+
+
+
+
+
+
+ASHEVILLE GF RESULTS:
+
+place	name	sex	age	div	divpl	city	section1	section2	section3	section4	speed	time	gap
+1.	386 Carlos Julian Quintero	Men	38	M35-44	1	Delray Beach FL	8:02.07	18:44.00	16:20.34	22:40.49	20.97	1:05:46.91	--	 
+2.	581 Jeff Case	Men	30	M23-34	1	Pelzer SC	8:01.24	18:52.52	16:46.42	22:43.17	20.78	1:06:23.37	+0:36.45	 
+3.	3 Andrew Knight	Men	47	M45-54	1	Marietta GA	8:06.71	18:53.32	16:42.30	22:44.11	20.77	1:06:26.45	+0:39.53	 
+4.	335 Ethan Burns	Men	42	M35-44	2	Asheville NC	8:01.72	19:10.41	16:46.52	23:02.69	20.59	1:07:01.36	+1:14.44	 
+5.	484 Felipe Aros	Men	34	M23-34  2	Miami FL	8:01.51	18:41.73	16:21.46	24:09.29	20.52	1:07:14.00	+1:27.09	 
+6.	503 Noah Niwinski	Men	39	M35-44	3	Vilas NC	8:03.89	19:23.37	16:55.15	24:08.08	20.14	1:08:30.50	+2:43.58	 
+7.	459 Oscar Stangoni	Men	22	M23-	1	North Lauderdale FL	8:03.70	19:18.17	16:29.45	24:58.57	20.04	1:08:49.90	+3:02.98	 
+8.	595 Keith Gerarden	Men	45	M45-54	2		8:10.37	19:39.58	16:39.37	24:35.31	19.97	1:09:04.64	+3:17.73	 
+9.	583 Abraham Close	Men	27	M23-34	3	Pisgah Forest NC	8:10.88	20:39.16	17:05.09	24:38.38	19.55	1:10:33.53	+4:46.61	 
+10.	373 Stephen Justice	Men	32	M23-34	4	Brevard NC	8:06.49	19:55.02	16:51.81	25:41.07	19.55	1:10:34.41	+4:47.49	 
+11.	511 Kerry Werner Jr.	Men	33	M23-34	5	Vinton VA	8:07.34	19:49.66	16:56.57	25:45.65	19.53	1:10:39.23	+4:52.31	 
+12.	538 Alexander Zambrana	Men	52	M45-54	3	Asheville NC	8:10.73	20:16.46	16:29.29	26:16.67	19.37	1:11:13.18	+5:26.26	 
+13.	522 Pete Davis	Men	36	M35-44	4	Asheville NC	8:12.59	20:18.02	17:12.27	26:01.61	19.23	1:11:44.50	+5:57.58	 
+14.	473 Alex Runge	Men	31	M23-34	6	Hendersonville NC	8:09.65	19:45.15	16:47.65	27:23.46	19.14	1:12:05.92	+6:19.00	 
+15.	561 Bob Koplos	Men	38	M35-44	5	Asheville NC	8:15.10	20:19.68	17:34.92	27:26.70	18.74	1:13:36.42	+7:49.50	 
+16.	514 Joe Helton	Men	36	M35-44	6	Swannanoa NC	8:03.75	20:20.97	17:00.92	28:14.40	18.73	1:13:40.06	+7:53.14	 
+17.	426 Jean Palau	Men	40	M35-44	7	Miami FL	8:09.21	20:26.97	16:44.06	28:51.16	18.60	1:14:11.41	+8:24.49	 
+18.	520 James Tobias	Men	35	M35-44	8	Summerville SC	8:28.66	20:46.12	17:15.82	28:12.89	18.46	1:14:43.51	+8:56.59	 
+19.	173 Roger Andujar	Men	50	M45-54	4	Clarksville TN	8:25.16	21:28.68	17:04.93	28:05.10	18.38	1:15:03.88	+9:16.96	 
+20.	15 Adam Gaedke	Men	45	M45-54	5	Kohler WI	8:51.79	20:53.40	17:10.04	28:50.21	18.21	1:15:45.45	+9:58.54	 
+21.	521 Victor Hernandez	Men	55	M55-64	1	Miami FL	8:09.76	20:44.30	16:39.05	30:12.64	18.21	1:15:45.76	+9:58.85	 
+22.	369 Jorg Decressin	Men	57	M55-64	2	Bethesda MD	8:49.01	21:40.30	17:14.22	28:17.61	18.15	1:16:01.14	+10:14.23	 
+23.	527 Richard Bowman	Men	35	M35-44	9	Morganton NC	8:10.15	20:42.81	17:23.40	29:50.78	18.12	1:16:07.15	+10:20.23	 
+24.	340 Thomas Wood	Men	40	M35-44	10	Ellamore WV	8:15.83	21:04.87	17:22.97	29:35.73	18.08	1:16:19.41	+10:32.49	 
+25.	168 Brice Long	Men	47	M45-54	6	Summerville SC	8:28.44	21:55.96	17:18.44	28:45.99	18.04	1:16:28.84	+10:41.92	 
+26.	580 Paul Capua	Men	56	M55-64	3	Asheville NC	8:12.48	21:31.12	17:04.67	29:55.85	17.98	1:16:44.14	+10:57.23	 
+27.	393 Jose Leonardo Sanchez	Men	31	M23-34	7	Davie FL	8:08.04	20:25.52	18:44.32	29:38.46	17.93	1:16:56.35	+11:09.43	 
+28.	2 Jennifer Thornton-Brooks	Women	40	W35-44	1	Boone NC	8:13.28	21:35.99	17:27.72	30:32.03	17.73	1:17:49.03	+12:02.11	 
+29.	487 Kyle Holloway	Men	37	M35-44	11	Atlanta GA	9:12.00	21:06.21	17:23.80	30:15.80	17.70	1:17:57.82	+12:10.90	 
+30.	272 Randal Warren	Men	62	M55-64	4	Asheville NC	8:27.02	22:19.22	17:12.11	30:28.02	17.59	1:18:26.39	+12:39.47	 
+31.	108 Andres Munera	Men	53	M45-54	7	Tampa FL	8:35.22	20:15.47	19:06.72	30:37.65	17.56	1:18:35.08	+12:48.16	 
+32.	332 Sean Burrows	Men	49	M45-54	8	Blacksburg VA	8:13.02	22:23.62	17:30.72	31:17.56	17.37	1:19:24.94	+13:38.02	 
+33.	452 Daniel Hernandez	Men	31	M23-34	8	Asheville NC	8:53.98	22:09.26	19:15.88	31:14.46	16.92	1:21:33.59	+15:46.67	 
+34.	425 Marin Usalj	Men	36	M35-44	12	Miami FL	8:11.14	21:20.71	19:10.75	33:03.45	16.87	1:21:46.06	+15:59.15	 
+35.	592 Philip Wikoff	Men	43	M35-44	13		8:19.86	24:39.15	17:35.27	31:13.82	16.87	1:21:48.11	+16:01.19	 
+36.	107 Carly George	Women	30	W23-34	1	Tampa FL	9:34.22	22:10.75	19:05.95	31:09.78	16.82	1:22:00.71	+16:13.80	 
+37.	513 Andrew Wilkerson	Men	21	M23-	2	Greenville SC	8:18.75	23:39.31	17:14.91	33:47.73	16.62	1:23:00.71	+17:13.79	 
+38.	226 John Bishop	Men	51	M45-54	9	Hixson TN	8:18.25	23:09.25	17:11.91	34:34.24	16.58	1:23:13.65	+17:26.74	 
+39.	199 Rob Downs	Men	49	M45-54	10	Atlanta GA	9:12.54	23:25.76	17:46.23	33:21.93	16.47	1:23:46.46	+17:59.55	 
+40.	492 Richard Inglis	Men	63	M55-64	5	Vienna VA	9:33.67	23:57.96	19:42.84	30:38.77	16.45	1:23:53.25	+18:06.33	 
+41.	384 Jacob Mcgahey	Men	49	M45-54	11	Asheville NC	8:32.51	23:54.64	18:47.03	33:27.87	16.29	1:24:42.07	+18:55.15	 
+42.	69 Georgi Stoychev	Men	39	M35-44	14	Ashburn VA	9:32.92	22:58.53	17:32.68	34:46.94	16.26	1:24:51.07	+19:04.16	 
+43.	463 Tom Olds	Men	60	M55-64	6	Coatesville PA	10:28.62	24:30.82	19:48.82	30:32.20	16.17	1:25:20.48	+19:33.56	 
+44.	573 Chris Warno	Men	20	M23-	3	Fairfax VA	9:02.71	23:17.46	19:25.28	34:20.27	16.02	1:26:05.73	+20:18.81	 
+45.	305 Paul Goepfert	Men	60	M55-64	7	Birmingham AL	9:12.17	23:09.10	20:02.00	34:07.64	15.95	1:26:30.92	+20:44.00	 
+46.	363 Kevin Mershon	Men	40	M35-44	15	Waynesville NC	9:24.94	24:05.00	20:40.26	32:27.59	15.92	1:26:37.81	+20:50.89	 
+47.	139 Windsor Fey	Men	25	M23-34	9	Woodstock GA	9:36.21	23:43.46	17:19.66	36:07.35	15.90	1:26:46.70	+20:59.79	 
+48.	427 Seager Wilson	Men	37	M35-44	16	Roanoke VA	8:43.03	21:26.91	17:25.60	39:50.62	15.78	1:27:26.17	+21:39.25	 
+49.	455 Joseph Bunch	Men	26	M23-34	10	Hardeeville SC	10:39.05	24:03.31	19:28.89	33:34.67	15.72	1:27:45.94	+21:59.03	 
+50.	76 Valentina Cummings	Women	30	W23-34	2	Asheville NC	9:49.54	24:11.05	19:34.15	34:39.34	15.64	1:28:14.10	+22:27.18	 
+51.	156 Paul Perrone	Men	56	M55-64	8	Durham NC	8:31.97	23:36.84	17:35.09	38:55.96	15.56	1:28:39.87	+22:52.96	 
+52.	58 Didier Benjumea	Men	42	M35-44	17	Bogota UNK	9:34.84	24:48.92	19:35.34	34:48.88	15.54	1:28:47.99	+23:01.07	 
+53.	399 Peter Shoemaker	Men	35	M35-44	18	Asheville NC	9:16.52	23:45.94	18:47.56	37:36.67	15.42	1:29:26.70	+23:39.78	 
+54.	50 Michael Egues	Men	26	M23-34	11	Asheville NC	10:35.48	25:12.14	21:13.92	32:29.95	15.41	1:29:31.51	+23:44.59	 
+55.	366 Jesse Barnett	Men	30	M23-34	12	Landrum SC	10:37.00	25:10.00	19:38.00	34:15.00	15.39	1:29:40.00	+23:53.08	 
+56.	239 Ricardo Serrano	Men	34	M23-34	13	Chicago IL	10:03.97	23:04.70	21:18.50	35:20.33	15.36	1:29:47.52	+24:00.60	 
+57.	574 Mark Warno	Men	52	M45-54	12	Fairfax VA	9:02.14	23:29.79	19:42.46	39:09.46	15.09	1:31:23.87	+25:36.95	 
+58.	502 Tate Coverdale	Men	58	M55-64	9	Mills River NC	9:36.22	26:58.79	19:00.66	36:09.09	15.04	1:31:44.78	+25:57.87	 
+59.	382 Gene Nuqui	Men	54	M45-54	13	Mansfield GA	10:01.53	25:58.52	18:23.67	37:23.39	15.03	1:31:47.13	+26:00.21	 
+60.	319 Blaire Mccurry	Women	47	W45-54	1	Birmingham AL	9:12.26	24:57.42	20:54.33	36:58.56	14.99	1:32:02.58	+26:15.66	 
+61.	153 Jeffrey Swenson	Men	37	M35-44	19	St. Paul Mn MN	10:00.00	26:45.67	20:11.33	35:18.59	14.95	1:32:15.59	+26:28.67	 
+62.	539 Justin Lowe	Men	47	M45-54	14	Dover TN	8:29.82	23:33.63	18:30.21	41:48.08	14.94	1:32:21.76	+26:34.85	 
+63.	257 John Sylvester	Men	58	M55-64	10	Arlington VA	9:43.61	26:20.99	20:22.37	36:03.17	14.91	1:32:30.15	+26:43.23	 
+64.	61 Jeff Green	Men	57	M55-64	11	Canton GA	9:46.98	26:23.55	18:25.21	38:21.83	14.84	1:32:57.58	+27:10.67	 
+65.	590 Todd Malefyt	Men	48	M45-54	15	Tyrone GA	10:01.30	26:16.85	21:26.86	35:13.38	14.84	1:32:58.40	+27:11.48	 
+66.	349 Philipp Hammond	Men	33	M23-34	14	Atlanta GA	10:01.09	25:38.57	19:49.58	37:29.50	14.84	1:32:58.75	+27:11.83	 
+67.	126 Daniel Jankowski	Men	28	M23-34	15	Hatfield PA	9:43.41	25:54.84	21:17.63	36:12.42	14.81	1:33:08.31	+27:21.39	 
+68.	413 Michael Galdo	Men	43	M35-44	20	Lovettsville VA	9:57.40	24:35.49	20:53.21	37:50.43	14.79	1:33:16.54	+27:29.62	 
+69.	308 Michael Chickene	Men	33	M23-34	16	Charlotte NC	10:19.89	25:17.00	21:11.46	36:46.42	14.74	1:33:34.79	+27:47.87	 
+70.	172 Greg Grossart	Men	50	M45-54	16	Indianapolis IN	9:59.76	24:47.37	21:37.54	37:57.04	14.62	1:34:21.72	+28:34.80	 
+71.	302 Ehsan Tafreshi	Men	41	M35-44	21	Charlotte NC	10:15.88	25:49.67	20:35.11	38:37.59	14.47	1:35:18.26	+29:31.34	 
+72.	298 Humberto Bruno	Men	42	M35-44	22	Buford GA	9:46.57	26:53.16	22:33.85	37:18.48	14.29	1:36:32.07	+30:45.15	 
+73.	320 Alex Christofalos	Women	28	W23-34	3	Leicester, North Carolina, Uni NC	10:02.16	26:12.65	23:55.99	36:44.73	14.23	1:36:55.54	+31:08.62	 
+74.	368 Rainero Rediang	Men	31	M23-34	17	Owings Mills MD	9:59.19	26:26.55	22:01.66	38:30.40	14.23	1:36:57.82	+31:10.90	 
+75.	192 Tony King	Men	64	M55-64	12	Newport KY	10:15.85	26:02.43	20:08.50	40:51.16	14.18	1:37:17.95	+31:31.03	 
+76.	303 Charles Rossmann	Men	61	M55-64	13	Birmingham AL	9:48.33	27:14.51	21:41.33	38:35.16	14.17	1:37:19.35	+31:32.44	 
+77.	472 Andreas Heuser	Men	57	M55-64	14	Key Biscayne FL	11:08.84	28:02.30	20:19.85	37:48.80	14.17	1:37:19.80	+31:32.88	 
+78.	251 Charlie Hutchens	Men	17	M23-	4	Herndon VA	9:53.65	24:45.54	22:49.48	40:05.54	14.14	1:37:34.22	+31:47.30	 
+79.	491 John Wojciechowski	Men	32	M23-34	18	Charlotte NC	10:43.55	25:42.10	21:52.89	39:19.82	14.13	1:37:38.36	+31:51.44	 
+80.	191 Shannon Scanlon	Women	52	W45-54	2	Annapolis MD	10:33.50	28:00.74	22:22.28	37:00.30	14.08	1:37:56.83	+32:09.91	 
+81.	498 Daniel Paniconi	Men	31	M23-34	19	Danielsville GA	9:52.44	28:02.27	21:24.30	38:42.12	14.07	1:38:01.15	+32:14.23	 
+82.	471 Vadim Khavinson	Men	44	M35-44	23	Key Biscayne FL	11:08.80	28:02.41	20:59.13	38:39.59	13.96	1:38:49.94	+33:03.02	 
+83.	219 Keven Aland	Men	53	M45-54	17	Nokomis FL	10:12.68	26:57.53	20:39.05	41:04.79	13.95	1:38:54.07	+33:07.15	 
+84.	347 Dirk Smets	Men	57	M55-64	15	Antwerp UNK	10:48.60	27:30.46	21:51.25	39:28.63	13.84	1:39:38.95	+33:52.03	 
+85.	220 Carla Bates	Women	33	W23-34	4	Kennesaw GA	10:07.40	27:02.22	23:59.83	38:33.01	13.84	1:39:42.48	+33:55.56	 
+86.	113 Christian Montoya	Men	30	M23-34	20	Central Falls RI	9:52.74	26:31.16	21:30.64	42:35.94	13.73	1:40:30.49	+34:43.58	 
+87.	142 Joshua King	Men	55	M55-64	16	Covington GA	11:29.09	27:03.79	21:40.22	40:31.80	13.69	1:40:44.92	+34:58.00	 
+88.	524 Ricardo Jimenez Fernandez	Men	56	M55-64	17	Miami FL	10:34.49	27:33.09	23:04.14	39:35.63	13.69	1:40:47.37	+35:00.45	 
+89.	11 Andres Tovar	Men	37	M35-44	24	Miami FL	10:32.67	28:11.19	23:46.55	38:42.03	13.63	1:41:12.46	+35:25.54	 
+90.	394 Alan Lesage	Men	70	M70+	1	Simpsonville SC	10:24.21	26:33.76	23:09.91	41:06.67	13.63	1:41:14.58	+35:27.66	 
+91.	398 Craig Natalis	Men	39	M35-44	25	Carlisle PA	10:32.83	26:46.35	24:31.23	39:30.86	13.61	1:41:21.29	+35:34.37	 
+92.	494 Alejandra Echeverri	Women	36	W35-44	2	Miami FL	10:51.46	30:08.16	21:57.35	38:41.26	13.57	1:41:38.24	+35:51.32	 
+93.	529 Iwona Martin	Women	50	W45-54	3	Atlanta GA	10:44.66	28:13.27	23:24.14	39:23.16	13.56	1:41:45.24	+35:58.32	 
+94.	481 Andy Leroy	Men	36	M35-44	26	Charlotte NC	9:54.12	24:26.96	22:55.29	45:13.05	13.46	1:42:29.43	+36:42.51	 
+95.	207 Matthew Huber	Men	43	M35-44	27	Simpsonville SC	9:45.28	25:07.29	21:07.87	46:45.21	13.42	1:42:45.68	+36:58.76	 
+96.	152 Anthony Baldoni	Men	39	M35-44	28	Roanoke VA	10:30.75	27:27.53	22:49.71	42:06.35	13.41	1:42:54.35	+37:07.43	 
+97.	98 Todd Whitman	Men	56	M55-64	18	Frederick MD	10:41.17	29:01.41	23:47.85	39:55.58	13.34	1:43:26.03	+37:39.11	 
+98.	475 Juan Arbelaez	Men	35	M35-44	29	Miami FL	10:18.39	28:51.46	22:06.91	42:35.15	13.28	1:43:51.92	+38:05.00	 
+99.	169 Michael Polakowski	Men	59	M55-64	19	Dayton OH	10:02.28	25:26.77	24:05.12	44:20.92	13.27	1:43:55.09	+38:08.17	 
+100.	247 Casey Connell	Men	33	M23-34	21	Columbus OH	9:48.91	25:30.26	23:17.85	45:18.84	13.27	1:43:55.87	+38:08.96	 
+101.	49 Nicholas Montoya	Men	25	M23-34	22	New York City NY	11:34.74	26:27.67	23:02.37	44:15.10	13.10	1:45:19.90	+39:32.99	 
+102.	93 Jesse Devlyn	Men	58	M55-64	20	Austin TX	10:03.32	24:38.05	21:20.80	49:42.57	13.05	1:45:44.75	+39:57.83	 
+103.	100 Charles Decrucq	Men	54	M45-54	18	Philadelphia PA	11:02.10	27:04.41	23:08.21	45:26.38	12.93	1:46:41.11	+40:54.19	 
+104.	355 Edward Groninger	Men	48	M45-54	19	Macomb MI	10:08.24	26:30.68	23:34.85	46:29.91	12.93	1:46:43.69	+40:56.77	 
+105.	559 Rose Saltzman	Women	42	W35-44	3	Concord NC	11:31.10	29:26.08	24:56.12	41:18.01	12.87	1:47:11.33	+41:24.42	 
+106.	164 Grace Plager	Women	66	W65-69	1	Naples FL	11:12.94	29:02.24	25:17.96	42:31.29	12.76	1:48:04.44	+42:17.53	 
+107.	275 Bryce Anderson	Men	45	M45-54	20	Sanford FL	12:14.78	29:12.82	23:18.69	43:27.37	12.75	1:48:13.67	+42:26.76	 
+108.	274 Gail Waldman	Women	66	W65-69	2	North Chesterfield VA	12:14.93	29:14.33	23:18.51	43:27.85	12.74	1:48:15.63	+42:28.71	 
+109.	362 Jeffrey Thomas	Men	37	M35-44	30	Asheville NC	11:18.01	30:00.16	25:48.47	41:51.26	12.66	1:48:57.92	+43:11.00	 
+110.	281 Thomas Sylvester	Men	61	M55-64	21	Bethesda MD	11:19.92	31:23.36	23:37.68	43:20.12	12.58	1:49:41.09	+43:54.17	 
+111.	254 Sean Healy	Men	27	M23-34	23	Summerville SC	10:36.02	27:17.96	22:56.28	49:12.26	12.54	1:50:02.53	+44:15.61	 
+112.	438 James Tiller	Men	32	M23-34	24	Morrisville NC	11:07.49	31:35.98	22:39.25	45:10.74	12.48	1:50:33.48	+44:46.56	 
+113.	396 Ray Flanery	Men	33	M23-34	25	Hoover AL	10:54.42	29:53.00	24:12.55	45:40.73	12.46	1:50:40.72	+44:53.80	 
+114.	354 Brian Vierling	Men	52	M45-54	21	Hickory NC	10:02.20	28:55.75	25:10.78	46:58.37	12.41	1:51:07.12	+45:20.20	 
+115.	507 Ryan Workman	Men	21	M23-	5	Miami Lakes FL	8:19.76	22:37.90	20:58.99	59:13.46	12.41	1:51:10.13	+45:23.21	 
+116.	137 Max Knipper	Men	43	M35-44	31	Cary NC	10:41.61	28:45.49	24:59.40	47:38.54	12.31	1:52:05.06	+46:18.14	 
+117.	326 Daniel Avella	Men	32	M23-34	26	Greensboro NC	11:07.73	26:50.77	26:04.17	48:14.42	12.29	1:52:17.10	+46:30.19	 
+118.	397 Justin Zollner	Men	45	M45-54	22	Anoka MN	12:25.70	31:17.24	24:01.34	45:10.36	12.22	1:52:54.65	+47:07.74	 
+119.	234 Matthew Stebbins	Men	21	M23-	6	Miamisburg OH	12:08.05	29:55.09	25:51.09	45:04.63	12.21	1:52:58.87	+47:11.96	 
+120.	198 Erich Neise	Men	56	M55-64	22	Flemington NJ	12:26.11	32:46.37	24:04.24	43:42.20	12.21	1:52:58.93	+47:12.01	 
+121.	361 Patrick Clerkin	Men	38	M35-44	32	Alexis NC	10:34.46	30:03.09	22:15.99	50:09.74	12.20	1:53:03.29	+47:16.37	 
+122.	295 Luis Fernando Adame	Men	18	M23-	7	Tucker GA	11:33.87	29:31.85	26:16.44	46:03.93	12.16	1:53:26.11	+47:39.19	 
+123.	371 Bill Bahret	Men	73	M70+	2	Brownsburg IN	11:25.94	32:42.75	22:45.89	46:52.05	12.12	1:53:46.64	+47:59.73	 
+124.	532 Carolyn Lowe-Thompson	Women	54	W45-54	4	Arden NC	11:31.83	31:03.16	23:33.15	48:01.26	12.08	1:54:09.41	+48:22.49	 
+125.	457 Gayle White	Women	48	W45-54	5	Birmingham AL	11:54.59	29:35.39	29:02.16	44:07.54	12.03	1:54:39.70	+48:52.78	 
+126.	431 Joshua Mckenna	Men	13	M23-	8	Toronto ON	10:56.45	29:42.39	26:17.09	47:44.61	12.03	1:54:40.56	+48:53.64	 
+127.	294 Victor Tepetate	Men	34	M23-34	27	Tucker GA	12:01.49	31:23.80	25:11.80	46:18.38	12.00	1:54:55.49	+49:08.57	 
+128.	543 Wells Burke	Men	48	M45-54	23	Atlanta GA	10:40.59	29:38.37	26:47.87	48:36.84	11.92	1:55:43.68	+49:56.77	 
+129.	348 Jonathan Wilfinger	Men	34	M23-34	28	St. Augustine FL	11:01.50	27:55.43	27:23.28	49:27.19	11.91	1:55:47.41	+50:00.49	 
+130.	86 David Holmes	Men	55	M55-64	23	Laurel MD	12:00.60	29:07.55	24:16.89	50:22.50	11.91	1:55:47.55	+50:00.64	 
+131.	440 Paul Rouse	Men	75	M70+	3	Morrow OH	11:55.21	30:02.68	25:33.23	48:29.42	11.89	1:56:00.55	+50:13.64	 
+132.	411 Phillip Darmstadt	Men	66	M65-69	1	Landrum SC	11:59.05	29:46.53	26:06.39	48:11.55	11.89	1:56:03.54	+50:16.62	 
+133.	10 Jessica Mayer	Women	41	W35-44	4	Miami FL	11:17.49	29:31.55	25:05.17	50:44.34	11.83	1:56:38.57	+50:51.65	 
+134.	22 Jordan Bailowitz	Men	59	M55-64	24	Baltimore MD	12:02.64	31:02.87	27:27.41	46:41.29	11.77	1:57:14.23	+51:27.31	 
+135.	390 Rolando Campos	Men	43	M35-44	33	Marietta GA	12:20.76	31:54.85	27:08.57	47:12.92	11.63	1:58:37.12	+52:50.20	 
+136.	143 Matthew Sherwood	Men	51	M45-54	24	New York NY	13:36.56	32:48.02	26:57.17	45:36.32	11.59	1:58:58.08	+53:11.16	 
+137.	478 Jill Trichon	Women	56	W55-64	1	Asheville NC	11:19.84	31:21.23	27:20.21	49:13.30	11.57	1:59:14.59	+53:27.68	 
+138.	318 Kevin Lowenhaupt	Men	30	M23-34	29	Palm Beach Gardens FL	13:11.52	32:19.66	23:44.58	50:08.53	11.55	1:59:24.31	+53:37.39	 
+139.	286 Bobby Terrell	Men	63	M55-64	25	Union City TN	12:31.45	32:56.33	29:58.96	44:42.56	11.48	2:00:09.31	+54:22.39	 
+140.	317 James Vornov	Men	67	M65-69	2	Pikesville MD	11:59.88	31:45.66	25:30.68	51:24.79	11.43	2:00:41.02	+54:54.10	 
+141.	9 Andres Barquero	Men	42	M35-44	34	Miami FL	11:09.74	29:26.75	23:47.78	57:13.89	11.34	2:01:38.17	+55:51.25	 
+142.	260 Mark Odonnell	Men	63	M55-64	26	Lakewood Ranch FL	12:41.11	31:40.41	28:49.61	48:37.82	11.32	2:01:48.96	+56:02.04	 
+143.	406 Francis Nascimento	Men	47	M45-54	25	Orlando FL	12:37.32	32:58.33	24:18.36	52:17.00	11.29	2:02:11.03	+56:24.11	 
+144.	367 Retzer Cariaga	Men	49	M45-54	26	Owings Mills MD	11:07.98	34:22.86	27:43.10	50:34.24	11.14	2:03:48.19	+58:01.27	 
+145.	103 Russell Holladay	Men	65	M65-69	3	Southport NC	12:09.69	33:02.06	27:52.86	51:04.65	11.11	2:04:09.27	+58:22.35	 
+146.	48 Ethan Manning	Men	36	M35-44	35	Candler NC	11:03.66	32:05.52	24:59.13	56:02.32	11.11	2:04:10.64	+58:23.73	 
+147.	163 Angelia Kniesly	Women	58	W55-64	2	Indianapolis IN	13:23.29	33:14.40	28:39.01	49:18.03	11.07	2:04:34.74	+58:47.83	 
+148.	21 Daniel Martin	Men	64	M55-64	27	Southport NC	13:05.19	33:02.22	28:13.27	52:14.79	10.90	2:06:35.49	+60:48.57	 
+149.	259 Butch Wabby	Men	71	M70+	4	Franklin TN	11:08.35	29:48.12	25:24.23	1:00:50.19	10.85	2:07:10.91	+61:24.00	 
+150.	341 Lloyd Maisonville	Men	64	M55-64	28	Pelham AL	11:04.04	32:18.76	27:08.54	56:48.50	10.83	2:07:19.86	+61:32.94	 
+151.	321 Tony Elliott	Men	66	M65-69	4	Hebron KY	12:23.27	31:53.66	27:58.78	55:34.87	10.79	2:07:50.59	+62:03.67	 
+152.	206 Kinge Mbella	Men	48	M45-54	27	Raleigh NC	11:35.99	31:15.09	32:02.29	53:00.20	10.79	2:07:53.58	+62:06.66	 
+153.	53 Tristan Gray-Le Coz	Men	42	M35-44	36	Washington DC	12:09.12	30:21.28	26:06.75	59:54.72	10.73	2:08:31.88	+62:44.96	 
+154.	71 Josh Decker	Men	54	M45-54	28	Matthews NC	10:57.81	31:26.97	31:11.37	55:01.14	10.72	2:08:37.30	+62:50.39	 
+155.	448 Katherine Dease	Women	46	W45-54	6	Vestavia Hills AL	11:51.46	31:07.30	29:41.00	56:07.91	10.71	2:08:47.68	+63:00.76	 
+156.	269 Tamara Splitter	Women	55	W55-64	3	Niagara Falls ON	12:37.06	34:21.83	28:31.05	53:37.29	10.68	2:09:07.24	+63:20.32	 
+157.	441 Andrew Mazur	Men	60	M55-64	29	Gainesville VA	11:44.79	30:37.02	29:59.09	56:54.02	10.67	2:09:14.93	+63:28.01	 
+158.	253 Macie Moore	Women	25	W23-34	5	Raleigh NC	13:17.27	36:21.91	29:20.97	50:36.31	10.64	2:09:36.48	+63:49.56	 
+159.	190 Den Scanlon	Men	69	M65-69	5	Annapolis MD	11:21.23	32:38.13	25:51.64	1:02:06.62	10.45	2:11:57.63	+66:10.72	 
+160.	415 Pedro Hernández	Men	55	M55-64	30	Sarasota FL	10:58.25	30:11.53	22:59.82	1:09:14.89	10.34	2:13:24.50	+67:37.59	 
+161.	90 Dan Dohmen	Men	62	M55-64	31	Hoover AL	12:01.06	32:50.48	28:40.22	1:01:00.38	10.25	2:14:32.16	+68:45.24	 
+162.	356 Terri Sullivan	Women	62	W55-64	4	Hoover AL	11:08.13	35:01.54	30:46.69	58:08.55	10.21	2:15:04.92	+69:18.00	 
+163.	120 Gary James Wade	Men	70	M70+	5	Pittsburgh PA	13:35.00	32:17.67	29:07.14	1:00:10.03	10.20	2:15:09.85	+69:22.93	 
+164.	506 Max Savin	Men	34	M23-34	30	Chattanooga TN	10:58.39	29:10.50	31:14.86	1:08:07.21	9.89	2:19:30.98	+73:44.06	 
+165.	116 Dustin Niles	Men	27	M23-34	31	Brooklyn NY	16:25.95	27:54.82	33:20.34	1:03:32.36	9.77	2:21:13.48	+75:26.56	 
+166.	402 Mike Evans	Men	59	M55-64	32	Spicewood TX	10:44.29	31:30.73	27:03.61	1:13:00.17	9.69	2:22:18.82	+76:31.90	 
+167.	283 Luciano Gonzalez	Men	58	M55-64	33	Fort Mitchell AL	14:00.94	33:24.03	29:44.21	1:05:19.84	9.68	2:22:29.03	+76:42.12	 
+168.	381 Victor Renteria	Men	43	M35-44	37	Marietta GA	11:20.50	31:49.18	28:38.59	1:11:25.65	9.63	2:23:13.93	+77:27.01	 
+169.	333 Norm Aranda	Men	63	M55-64	34	Loris SC	12:30.27	37:12.02	29:15.17	1:05:18.40	9.56	2:24:15.88	+78:28.96	 
+170.	19 Kevin Stephens	Men	67	M65-69	6	Southport NC	13:05.33	34:15.17	28:02.13	1:10:59.08	9.42	2:26:21.72	+80:34.80	 
+171.	178 James Hanlon	Men	54	M45-54	29	Zionsville IN	12:45.30	33:44.68	38:15.35	1:03:11.89	9.32	2:27:57.23	+82:10.31	 
+172.	480 Sandy Thompson	Women	60	W55-64	5	Raleigh NC	13:39.14	34:37.00	28:42.16	1:11:49.17	9.27	2:28:47.48	+83:00.57	 
+173.	80 Michael Ulasewich	Men	48	M45-54	30	Conway AR	12:54.23	35:22.16	32:27.69	1:11:10.76	9.08	2:31:54.86	+86:07.94	 
+174.	268 Ronni Ponek	Women	28	W23-34	6	Carrboro NC	16:25.27	38:39.44	33:20.70	1:03:33.14	9.08	2:31:58.57	+86:11.65	 
+175.	450 Brian N Hvid	Men	61	M55-64	35	Newnan GA	14:30.53	36:04.66	29:28.42	1:15:15.86	8.88	2:35:19.49	+89:32.57	 
+176.	237 Edgar Gomez	Men	40	M35-44	38	Asheville NC	14:32.07	36:52.90	37:08.76	1:11:00.53	8.64	2:39:34.28	+93:47.36	 
+177.	312 Yiyun Song	Women	29	W23-34	7	Pittsburgh PA	15:12.34	40:53.98	42:51.05	1:01:21.94	8.60	2:40:19.33	+94:32.41	 
+178.	52 Michael Johnson	Men	38	M35-44	39	Brooklyn NY	11:11.51	30:09.66	55:00.40	1:04:49.49	8.56	2:41:11.08	+95:24.16	 
+179.	244 Scott Murdoch	Men	32	M23-34	32	Charleston SC	12:08.00	28:22.19	32:24.91	1:29:44.78	8.48	2:42:39.89	+96:52.97	 
+180.	8 Jorge Negrin	Men	60	M55-64	36	Union City NJ	15:40.27	42:32.34	33:32.76	1:11:05.55	8.47	2:42:50.94	+97:04.02	 
+181.	262 Rod Bickel	Men	69	M65-69	7	Franklin TN	12:45.35	34:13.84	30:39.34	1:25:25.27	8.46	2:43:03.81	+97:16.90	 
+182.	159 Thiago Militao	Men	30	M23-34	33	Rock Hill SC	11:08.60	29:35.52	28:04.35	1:36:56.30	8.32	2:45:44.78	+99:57.86	 
+183.	563 John Desroches	Men	64	M55-64	37	Saint Petersburg FL	14:52.46	46:53.30	30:23.32	1:17:26.22	8.13	2:49:35.31	+103:48.39	 
+184.	233 John Stebbins	Men	60	M55-64	38	Miamisburg OH	15:06.29	40:05.57	35:27.54	1:19:19.07	8.11	2:49:58.49	+104:11.58	 
+185.	35 Tracy Achelis	Women	70	W70+	1	Mills River NC	14:52.53	38:13.87	34:51.67	1:26:20.69	7.91	2:54:18.78	+108:31.86	 
+*	16 Chris Norris	Men	50	M45-54	*	Alpharetta GA	13:37.01	 	26:20.48	1:06:55.75	0.00	 	 	 
+*	20 Chuck Roberson	Men	64	M55-64	*	Southport NC	13:05.80	33:18.43	29:24.53	 	0.00	 	 	 
+*	23 Daniel Bryant	Men	53	M45-54	*	Angier NC	12:12.10	34:17.67	31:24.86	 	0.00	 	 	 
+*	24 Jordan Plahn	Men	33	M23-34	*	Richmond VA	15:32.27	38:47.54	48:57.93	 	0.00	 	 	 
+*	25 Sheldon Plahn	Men	63	M55-64	*	Houston TX	14:52.20	34:58.96	32:02.59	 	0.00	 	 	 
+*	26 Matthew Shipp	Men	53	M45-54	*	Bristow VA	13:33.45	33:41.90	38:23.05	 	0.00	 	 	 
+*	33 Andrew Elliott	Men	46	M45-54	*	Annapolis MD	12:46.84	31:57.42	27:06.59	 	0.00	 	 	 
+*	81 Todd Huber	Men	51	M45-54	*	Nashville TN	10:46.56	 	20:06.10	40:17.66	0.00	 	 	 
+*	101 Thomas Hanlon	Men	40	M35-44	*	Knoxville TN	13:23.14	36:53.10	34:51.33	 	0.00	 	 	 
+*	114 Gary Wronker	Men	69	M65-69	*	Redding CT	11:04.52	28:40.85	23:38.43	 	0.00	 	 	 
+*	146 Chris Lillie	Men	43	M35-44	*	Franklin TN	12:57.59	 	26:31.74	1:00:55.02	0.00	 	 	 
+*	155 Dylan Rustemeyer	Men	39	M35-44	*	Marietta GA	12:36.87	35:06.02	40:39.22	 	0.00	 	 	 
+*	182 Amy Johnson	Women	59	W55-64	*	Pinehurst NC	12:41.62	 	25:59.53	55:15.67	0.00	 	 	 
+*	183 Alan Johnson	Men	63	M55-64	*	Pinehurst NC	12:36.97	 	20:54.82	42:41.87	0.00	 	 	 
+*	217 Sarah Godwin	Women	26	W23-34	*	Athens GA	10:40.48	28:23.22	26:32.92	 	0.00	 	 	 
+*	270 Rob Wilson	Men	58	M55-64	*	Niagara Falls ON	12:37.26	31:27.73	31:34.09	 	0.00	 	 	 
+*	285 Robert Garraway	Men	27	M23-34	*	Pasadena MD	10:18.32	26:14.91	46:19.37	 	0.00	 	 	 
+*	296 Osvaldo Lopez	Men	45	M45-54	*	Tucker GA	15:55.28	54:08.99	47:42.02	 	0.00	 	 	 
+*	299 Sean Brenner	Men	54	M45-54	*	Cincinnati OH	10:45.91	30:34.54	37:15.95	 	0.00	 	 	 
+*	307 Oscar Vargas	Men	69	M65-69	*	Sothport NC	12:16.35	29:01.50	26:48.72	 	0.00	 	 	 
+*	327 Zachary Beeksma	Men	36	M35-44	*	Greendale WI	10:47.06	29:11.00	28:50.19	 	0.00	 	 	 
+*	375 Oscar Flores	Men	47	M45-54	*	Miami FL	14:42.12	45:58.07	31:10.96	 	0.00	 	 	 
+*	376 Marianella Luces	Women	45	W45-54	*	North Miami FL	14:41.95	45:57.80	31:11.18	 	0.00	 	 	 
+*	389 Todd Kinkead	Men	53	M45-54	*	South Riding VA	11:36.18	32:12.89	24:36.02	 	0.00	 	 	 
+*	418 Earl Reed	Men	57	M55-64	*	Purcellville VA	13:09.84	 	28:50.94	56:58.82	0.00	 	 	 
+*	432 Andreas Felschow	Men	69	M65-69	*	Southport NC	12:50.30	36:04.46	28:13.12	 	0.00	 	 	 
+*	460 Daniel Gomez	Men	40	M35-44	*	Homestead FL	11:10.92	30:42.34	26:22.30	 	0.00	 	 	 
+*	479 Peter Basch	Men	31	M23-34	*	Chicago IL	13:26.46	32:11.63	31:14.21	 	0.00	 	 	 
+*	501 Claude Pariz	Men	44	M35-44	*	Raleigh NC	12:40.59	34:07.83	1:07:42.07	 	0.00	 	 	 
+*	505 Diego Mejia	Men	51	M45-54	*	Palmetto FL	11:32.34	 	21:31.74	41:19.47	0.00	 	 	 
+*	542 Sydney Dowd	Women	26	W23-34	*	Tallahassee FL	12:05.35	32:54.61	28:37.42	 	0.00	 	 	 
+*	549 Blake Andrews	Men	54	M45-54	*	Birmingham AL	12:52.98	38:10.48	33:27.10	 	0.00	 	 	 
+*	551 Will Gillen	Men	29	M23-34	*	Tallahassee FL	10:13.67	25:09.95	28:38.42	 	0.00	 	 	 
+*	556 Michael Scott	Men	37	M35-44	*	Loganville GA	12:41.57	35:46.46	32:09.49	 	0.00	 	 	 
+*	577 Paul Perez	Men	41	M35-44	*	Miami FL	11:41.93	29:24.70	25:51.95	 	0.00	 	 	 
+*	579 Allison Paul	Women	50	W45-54	*	Hillsborough NC	10:42.72	26:32.03	23:58.80	 	0.00	 	 	 
+*	589 Harrison Bade	Men	30	M23-34	*		11:51.69	33:11.38	33:27.53	 	0.00	 	 	 
+*	593 Bonifacio Hernandez	Men	54	M45-54	*		13:34.29	 	27:52.18	41:17.26	0.00	 	 	 
+*	41 James Thomas	Men	48	M45-54	*	Fort Liberty NC	16:43.39	42:48.38	 	 	0.00	 	 	 
+*	525 Corey Farmer	Men	46	M45-54	*	Bowman GA	14:04.39	37:28.35	 	 	0.00	 	 	 
+*	141 Conlan Kemmerer	Men	28	M23-34	*	Dallas TX	10:24.15	 	 	 	0.00	 	 	 
+*	517 Austin Walker	Men	49	M45-54	*	Asheville NC	 	 	 	34:47.27	0.00	 	 	 
+*	87 Steve Sharkey	Men	68	M65-69	*	Lutherville Timonium MD	14:45.80	38:23.29	19:29.64	 	0.00	 	 	 
+*	102 Peter Nelson	Men	46	M45-54	*	Charleston SC	14:32.49	42:23.69	16:26.93	 	0.00	 	 	 
+*	131 Tom Nagle	Men	71	M70+	*	Great Cacapon WV	12:55.15	33:04.12	30:06.00	 	0.00	 	 	 
+*	263 Richard Crenshaw	Men	66	M65-69	*	Cordova TN	12:44.87	35:26.63	31:20.92	 	0.00	 	 	 
+*	544 Ed Modzelewski	Men	59	M55-64	*	Charlotte NC	12:34.57	28:28.32	 	 	0.00	 	 	 
+*	117 Brian Gural	Men	28	M23-34	*	Chapel Hill NC	14:16.69	35:55.69	 	 	0.00	 	 	 
+*	300 Rachel Sharp	Women	26	W23-34	*	Chapel Hill NC	16:22.34	45:06.14	 	 	0.00	 	 	 
+*	467 Mike Lockwood	Men	56	M55-64	*	Cumming GA	9:36.83	24:54.99	 	 	0.00	 	 	 
+
+
+
+MARYLAND GF
+
+
+
+Pl	Name	Sex	Age	Div	DivPl	City	Section 1	Section 2	Section 3	Section 4	Speed	Time	Gap	 
+1.	905 Camilo Lopez	Men	44	M35-44	1	Arlington VA	20:48.36	4:17.19	13:16.43	32:29.96	19.72	1:10:51.96	--	 
+2.	721 John Dausch	Men	18	M23-	1	College Park MD	21:01.93	4:20.84	13:10.23	32:30.02	19.67	1:11:03.03	+0:11.06	 
+3.	908 Todd Hesel	Men	46	M45-54	1	Towson MD	21:33.31	4:17.84	13:15.24	32:28.96	19.52	1:11:35.36	+0:43.39	 
+4.	539 Aryeh Nirenberg	Men	29	M23-34	1	Pikesville MD	21:34.44	4:31.65	13:24.23	32:29.67	19.41	1:12:00.02	+1:08.05	 
+5.	903 Frederick Norton	Men	57	M55-64	1	Towson MD	21:54.20	4:26.47	13:20.91	32:33.86	19.34	1:12:15.45	+1:23.49	 
+6.	709 Cole Davis	Men	30	M23-34	2	Dallastown PA	21:47.07	4:26.43	13:30.26	34:12.56	18.90	1:13:56.32	+3:04.35	 
+7.	901 Raphaël Pourcelot	Men	28	M23-34	3	Baltimore MD	21:47.41	4:27.19	13:20.13	34:28.57	18.87	1:14:03.31	+3:11.34	 
+8.	438 Daniel Plasters	Men	37	M35-44	2	Fairfax VA	22:12.27	4:34.36	13:38.77	35:10.41	18.49	1:15:35.82	+4:43.86	 
+9.	810 Matthew Mason	Men	37	M35-44	3	Arlington VA	22:50.09	4:42.68	13:50.54	34:34.09	18.40	1:15:57.42	+5:05.45	 
+10.	870 Elmer Armijo	Men	36	M35-44	4	Baltimore MD	21:48.37	4:39.15	13:26.31	36:13.83	18.36	1:16:07.68	+5:15.72	 
+11.	892 Keith Papanicolas	Men	55	M55-64	2	Alexandrai VA	22:54.85	4:39.69	13:35.55	35:12.91	18.30	1:16:23.01	+5:31.04	 
+12.	880 Oscar van Rooy	Men	53	M45-54	2	Falls Church VA	22:11.37	4:45.41	15:03.98	34:35.66	18.24	1:16:36.43	+5:44.46	 
+13.	648 Austin Hayslett	Men	30	M23-34	4	Mount Airy MD	21:54.17	5:01.30	13:52.96	36:25.71	18.10	1:17:14.16	+6:22.19	 
+14.	847 Antonio Ortiz-Mena	Men	29	M23-34	5	Washington Dc DC	22:09.09	4:26.52	13:40.39	37:05.88	18.07	1:17:21.89	+6:29.93	 
+15.	458 Jacob Stein	Men	38	M35-44	5	Wyomissing PA	23:14.95	4:41.84	13:48.93	35:52.47	18.00	1:17:38.20	+6:46.23	 
+16.	500 Tony Roth	Men	42	M35-44	6	Wyomissing PA	23:14.28	4:42.10	14:08.51	36:03.46	17.89	1:18:08.36	+7:16.39	 
+17.	879 Logan Gemeinhart	Men	18	M23-	2	Orlando FL	23:45.68	4:50.09	13:39.36	36:18.08	17.79	1:18:33.23	+7:41.26	 
+18.	855 Eli Barr	Men	28	M23-34	6	Reston VA	23:53.64	4:49.24	13:49.85	36:01.40	17.79	1:18:34.15	+7:42.18	 
+19.	728 Michael Galdo	Men	43	M35-44	7	Lovettsville VA	22:45.54	4:46.16	15:17.01	36:18.37	17.66	1:19:07.09	+8:15.12	 
+20.	839 Dominic Genuario	Men	28	M23-34	7	New York NY	21:50.54	4:34.94	13:38.65	39:13.12	17.63	1:19:17.26	+8:25.30	 
+21.	815 Cory Donovan	Men	42	M35-44	8	Baltimore MD	23:17.33	5:05.81	14:35.14	36:22.17	17.62	1:19:20.46	+8:28.49	 
+22.	683 Matteo Venini	Men	46	M45-54	3	Washington DC	23:50.94	5:04.63	14:00.43	36:24.82	17.61	1:19:20.83	+8:28.86	 
+23.	841 Michael Vonhegel	Men	30	M23-34	8	Mclean VA	24:31.39	4:52.66	13:38.67	36:23.11	17.60	1:19:25.85	+8:33.88	 
+24.	634 Maurizio Arberi	Men	45	M45-54	4	Washington DC	23:59.43	5:07.81	14:00.98	36:21.91	17.58	1:19:30.15	+8:38.18	 
+25.	460 Michael Smith	Men	41	M35-44	9	Reading PA	24:10.58	4:52.92	14:06.94	36:30.77	17.54	1:19:41.23	+8:49.26	 
+26.	644 Paul Tarter	Men	43	M35-44	10	Catonsville MD	23:16.45	4:46.24	15:29.64	36:24.70	17.48	1:19:57.05	+9:05.08	 
+27.	740 Amit Grover	Men	45	M45-54	5	Ellicott City MD	22:55.78	5:08.34	15:05.17	37:29.27	17.33	1:20:38.57	+9:46.61	 
+28.	556 Anthony Viglietti	Men	44	M35-44	11	Montclair NJ	23:49.26	5:06.18	14:56.87	37:30.98	17.17	1:21:23.30	+10:31.34	 
+29.	827 Amilcar Samudio	Men	49	M45-54	6	Pikesville MD	26:01.81	5:00.80	14:02.92	36:18.58	17.17	1:21:24.13	+10:32.16	 
+30.	478 Kevin Heymann	Men	28	M23-34	9	Gaithersburg MD	23:21.92	4:51.81	14:17.01	38:58.68	17.15	1:21:29.44	+10:37.47	 
+31.	773 Ari Ebens	Men	13	M23-	3	New York NY	22:42.27	5:10.58	15:56.71	37:43.75	17.14	1:21:33.32	+10:41.35	 
+32.	571 Nick Ellis	Men	30	M23-34	10	Staunton VA	23:29.63	5:02.19	15:22.61	38:10.50	17.03	1:22:04.95	+11:12.98	 
+33.	371 Benjamin Hayes	Men	36	M35-44	12	Shelby Township MI	23:08.84	5:13.27	15:17.70	38:28.19	17.02	1:22:08.01	+11:16.04	 
+34.	474 Lucas Koach	Men	54	M45-54	7	Arlington VA	24:04.70	5:03.30	14:19.14	39:22.52	16.87	1:22:49.67	+11:57.71	 
+35.	771 Julian Borrero	Men	14	M23-	4	Oakland Gardens NY	23:30.94	5:18.15	15:55.02	38:18.13	16.83	1:23:02.25	+12:10.29	 
+36.	772 Daniel Borrero	Men	14	M23-	5	Oakland Gardens NY	23:30.23	5:08.01	16:11.00	38:16.12	16.82	1:23:05.38	+12:13.41	 
+37.	804 Michael Inman	Men	37	M35-44	13	Falls Church VA	24:30.33	5:20.87	14:15.34	39:00.37	16.81	1:23:06.93	+12:14.97	 
+38.	798 Ben Fred	Men	47	M45-54	8	Falls Church VA	23:58.55	5:18.38	14:50.39	39:13.09	16.77	1:23:20.43	+12:28.46	 
+39.	808 John Sylvester	Men	58	M55-64	3	Arlington VA	24:46.64	5:22.89	14:49.28	38:44.32	16.69	1:23:43.15	+12:51.18	 
+40.	541 Arsalan Mehmood	Men	44	M35-44	14	Arlington VA	25:17.88	5:24.56	14:09.83	39:04.13	16.65	1:23:56.42	+13:04.46	 
+41.	882 Robert Maple	Men	54	M45-54	9	Fredericksburg VA	25:07.50	5:05.42	14:11.31	39:55.19	16.57	1:24:19.44	+13:27.47	 
+42.	444 Erin Collins	Women	28	W23-34	1	Mount Joy PA	25:08.93	5:20.79	14:37.54	39:18.40	16.55	1:24:25.67	+13:33.71	 
+43.	517 Rainero Rediang Jr	Men	31	M23-34	11	Laurel MD	24:15.50	5:05.77	15:30.93	39:34.14	16.55	1:24:26.34	+13:34.38	 
+44.	681 Brett Clemons	Men	28	M23-34	12	Crofton MD	23:47.30	5:15.23	14:48.17	40:55.48	16.49	1:24:46.20	+13:54.23	 
+45.	582 Alec Mccallum	Men	28	M23-34	13	Indianapolis IN	24:35.64	5:23.46	14:01.52	40:57.33	16.45	1:24:57.96	+14:05.99	 
+46.	789 Shane Biesecker	Men	32	M23-34	14	Silver Spring MD	22:32.34	4:33.05	13:38.87	44:22.94	16.42	1:25:07.20	+14:15.24	 
+47.	564 Adam Sloan	Men	54	M45-54	10	Arlington VA	25:05.23	5:17.87	16:03.03	38:53.13	16.38	1:25:19.27	+14:27.31	 
+48.	373 Oscar Llorin	Men	59	M55-64	4	Catonsville MD	24:08.79	5:07.30	15:23.28	40:40.76	16.38	1:25:20.15	+14:28.18	 
+49.	432 Fredy Chaparro	Men	44	M35-44	15	Newtown Square PA	23:23.36	5:06.60	14:08.58	42:43.41	16.37	1:25:21.96	+14:30.00	 
+50.	744 Keil Brewer	Men	41	M35-44	16	San Jose CA	24:05.85	5:08.82	14:21.89	42:31.60	16.23	1:26:08.18	+15:16.22	 
+51.	603 David Fuentes	Men	51	M45-54	11	Herndon VA	24:33.23	5:51.00	14:27.90	41:25.89	16.19	1:26:18.02	+15:26.06	 
+52.	834 Juan Arbelaez	Men	35	M35-44	17	Miami FL	26:41.15	5:40.19	15:06.35	39:20.96	16.10	1:26:48.66	+15:56.69	 
+53.	727 Joseph Hoffman	Men	50	M45-54	12	Frederick MD	24:27.21	5:21.11	15:42.99	41:17.56	16.10	1:26:48.88	+15:56.91	 
+54.	863 Reed Hopwood	Men	36	M35-44	18	Arlington VA	24:29.12	5:16.16	14:13.70	42:56.89	16.08	1:26:55.88	+16:03.91	 
+55.	768 Paige Wooden	Women	41	W35-44	1	Leesburg VA	26:14.33	5:43.57	15:43.98	39:35.15	16.01	1:27:17.03	+16:25.07	 
+56.	379 Jeffrey Harnish	Men	66	M65-69	1	Round Hill VA	25:26.46	5:27.73	15:36.51	40:50.23	16.00	1:27:20.96	+16:28.99	 
+57.	887 Scott Peters	Men	35	M35-44	19	Reston VA	24:23.15	5:00.46	14:20.21	43:46.72	15.97	1:27:30.55	+16:38.58	 
+58.	399 Sebastian Valencia	Men	33	M23-34	15	Baltimore MD	24:40.17	5:35.35	16:30.23	40:55.23	15.94	1:27:40.99	+16:49.03	 
+59.	742 Connor Monahan	Men	20	M23-	6	Kensington MD	25:45.37	5:51.01	15:08.68	41:01.33	15.92	1:27:46.40	+16:54.44	 
+60.	896 Austin White	Men	34	M23-34	16	Leesburg VA	24:43.28	5:32.75	15:45.77	42:06.18	15.86	1:28:07.98	+17:16.02	 
+61.	805 Christian Taylor	Men	51	M45-54	13	New Holland PA	24:44.05	5:09.14	17:30.53	40:47.57	15.85	1:28:11.30	+17:19.34	 
+62.	540 Jonathan Tafel	Men	39	M35-44	20	New York NY	26:32.66	5:29.14	15:42.84	40:40.03	15.81	1:28:24.67	+17:32.71	 
+63.	695 Jeffrey Simpson	Men	44	M35-44	21	Windsor Mill MD	26:22.33	5:40.53	16:09.44	40:23.65	15.77	1:28:35.96	+17:44.00	 
+64.	919 Kien Nguyen	Men	38	M35-44	22		26:51.00	5:19.07	16:00.55	40:51.61	15.70	1:29:02.25	+18:10.28	 
+65.	656 Geoff Dewire	Men	44	M35-44	23	Wyomissing PA	23:54.58	5:23.08	14:21.97	45:45.32	15.63	1:29:24.96	+18:32.99	 
+66.	454 Cristhian Fajardo	Men	44	M35-44	24	Rockville MD	23:21.24	5:13.88	17:51.45	43:01.95	15.62	1:29:28.53	+18:36.57	 
+67.	562 Jack Cheng	Men	34	M23-34	17	Cedar Grove NJ	23:49.29	5:06.44	15:59.97	45:07.21	15.52	1:30:02.91	+19:10.95	 
+68.	502 Arthur Muchajer	Men	46	M45-54	14	Rockville MD	25:08.28	5:30.82	17:00.15	42:38.09	15.48	1:30:17.35	+19:25.39	 
+69.	408 Kevin Pagliaro	Men	53	M45-54	15	Middletown PA	23:41.96	5:10.53	17:25.19	44:23.65	15.41	1:30:41.34	+19:49.38	 
+70.	640 James Evans	Men	47	M45-54	16	Parkton MD	24:52.50	5:11.90	14:16.34	46:21.32	15.41	1:30:42.07	+19:50.10	 
+71.	700 Pete Grivas	Men	49	M45-54	17	Washington DC	26:17.93	5:51.11	16:24.38	42:18.54	15.38	1:30:51.97	+20:00.00	 
+72.	833 Christopher Ray	Men	39	M35-44	25	Suitland MD	27:35.03	5:23.01	15:20.50	42:34.52	15.38	1:30:53.08	+20:01.11	 
+73.	409 Joe Dugan	Men	53	M45-54	18	Fairfax VA	25:43.07	5:50.27	16:31.53	42:58.21	15.35	1:31:03.09	+20:11.12	 
+74.	769 Arnold Rojas	Men	44	M35-44	26	Woodbridge, Va VA	26:57.35	5:35.73	15:50.00	42:42.31	15.34	1:31:05.40	+20:13.43	 
+75.	780 James Kraybill	Men	41	M35-44	27	Wyomissing PA	25:22.43	5:23.40	14:41.89	45:41.92	15.33	1:31:09.66	+20:17.69	 
+76.	635 Michael Vaughn	Men	40	M35-44	28	Frederick MD	25:02.93	5:26.43	15:53.95	44:51.30	15.32	1:31:14.62	+20:22.66	 
+77.	914 Michael Southworth	Men	52	M45-54	19	Great Falls VA	24:29.84	5:44.06	15:54.17	45:13.26	15.30	1:31:21.35	+20:29.38	 
+78.	860 Jeff Trammell	Men	61	M55-64	5	Phoenix MD	25:37.39	5:14.87	14:36.21	45:53.25	15.30	1:31:21.74	+20:29.77	 
+79.	433 Javier Londono	Men	49	M45-54	20	Gaithersburg MD	26:15.68	5:56.07	15:49.11	43:48.23	15.22	1:31:49.10	+20:57.14	 
+80.	641 Lawrence Nurse	Men	35	M35-44	29	Brooklyn NY	27:05.89	5:57.91	16:28.23	42:23.49	15.20	1:31:55.53	+21:03.57	 
+81.	407 Zezhi Deng	Men	22	M23-	7	Washington DC	26:10.35	5:36.66	16:40.95	43:31.58	15.19	1:31:59.55	+21:07.59	 
+82.	897 Brad Bryant	Men	51	M45-54	21	Westerville OH	25:09.55	5:24.89	14:27.30	47:10.99	15.16	1:32:12.74	+21:20.78	 
+83.	667 Matt Weiner	Men	30	M23-34	18	Falls Church VA	25:26.07	5:44.80	16:15.19	44:51.67	15.14	1:32:17.75	+21:25.78	 
+84.	822 Viv Carlow	Men	13	M23-	8	Brooklyn NY	23:19.01	5:31.66	16:11.27	47:38.63	15.08	1:32:40.58	+21:48.61	 
+85.	762 Arsal Munawar	Men	31	M23-34	19	Ellicott City MD	25:37.06	5:20.27	17:09.52	44:39.46	15.06	1:32:46.32	+21:54.35	 
+86.	732 Peter van Deusen	Men	63	M55-64	6	Woodbridge VA	25:07.79	6:00.67	16:54.66	44:45.90	15.06	1:32:49.03	+21:57.06	 
+87.	719 Alexander Lotsch	Men	53	M45-54	22	Bethesda MD	27:15.83	5:50.75	16:09.83	43:35.05	15.05	1:32:51.46	+21:59.50	 
+88.	547 Michael Getter	Men	56	M55-64	7	Arlington VA	27:02.03	5:58.70	17:21.61	42:37.03	15.03	1:32:59.37	+22:07.41	 
+89.	692 Hernan Rodriguez	Men	50	M45-54	23	Rockville MD	23:43.64	5:24.59	15:21.24	48:46.28	14.98	1:33:15.76	+22:23.80	 
+90.	628 David Suelzle	Men	42	M35-44	30	London ON	24:53.23	5:30.09	16:42.21	46:12.30	14.98	1:33:17.85	+22:25.88	 
+91.	457 Pedro Diaz	Men	36	M35-44	31	Silver Spring MD	25:00.00	5:49.04	17:08.80	45:21.46	14.98	1:33:19.31	+22:27.34	 
+92.	369 Craig Farr	Men	54	M45-54	24	Aldie VA	25:56.84	6:19.09	15:52.54	45:19.21	14.95	1:33:27.69	+22:35.73	 
+93.	785 James Blodgett	Men	69	M65-69	2	Annandale VA	27:25.20	6:05.38	17:24.73	42:41.43	14.93	1:33:36.75	+22:44.78	 
+94.	402 Chris Looney	Men	33	M23-34	20	Washington, D.c. DC	25:59.00	5:40.51	15:52.87	46:05.11	14.93	1:33:37.51	+22:45.54	 
+95.	899 Zachary Lancaster	Men	42	M35-44	32	Atlanta GA	26:50.21	5:53.66	15:54.52	45:12.86	14.89	1:33:51.26	+22:59.29	 
+96.	741 Ron Tash	Men	55	M55-64	8	Columbia MD	25:15.12	5:17.79	16:21.42	47:07.30	14.86	1:34:01.65	+23:09.68	 
+97.	770 Austin Davis	Men	39	M35-44	33	Arlington VA	25:46.75	5:32.90	15:14.99	47:39.10	14.83	1:34:13.75	+23:21.79	 
+98.	391 Wei-Jian Guo	Men	29	M23-34	21	Wayne NJ	28:05.58	6:01.16	16:00.46	44:19.41	14.80	1:34:26.62	+23:34.65	 
+99.	377 Michael Fitzsimmons	Men	64	M55-64	9	Clarksburg MD	26:48.08	6:11.16	17:22.39	44:05.29	14.80	1:34:26.93	+23:34.96	 
+100.	776 Arnaldo Ruiz	Men	50	M45-54	25	Silver Spring MD	27:06.41	6:22.12	15:08.11	46:00.80	14.77	1:34:37.45	+23:45.49	 
+101.	797 Ben Tuffield	Men	39	M35-44	34	Leicester NC	30:03.59	5:36.93	16:25.22	42:36.22	14.76	1:34:41.98	+23:50.01	 
+102.	360 Noah Hawk	Men	46	M45-54	26	Frederick MD	26:04.88	6:20.52	17:43.80	45:06.71	14.67	1:35:15.93	+24:23.96	 
+103.	636 Joshua Moraczewski	Men	52	M45-54	27	Chevy Chase MD	24:56.12	5:37.27	17:28.58	47:16.45	14.66	1:35:18.44	+24:26.47	 
+104.	906 Dwayne Clacks	Men	56	M55-64	10	Hyattsville MD	26:22.35	5:46.30	16:30.73	47:00.87	14.61	1:35:40.26	+24:48.29	 
+105.	465 Yoni S	Men	45	M45-54	28	Olney MD	27:46.75	6:01.27	16:28.69	45:27.46	14.60	1:35:44.19	+24:52.22	 
+106.	655 Brad Tonnesen	Men	40	M35-44	35	Washington DC	26:36.05	6:07.53	17:08.56	45:59.73	14.58	1:35:51.88	+24:59.91	 
+107.	605 Carlos Cruz	Men	66	M65-69	3	Germantown MD	24:42.56	5:47.78	16:43.36	48:44.96	14.56	1:35:58.68	+25:06.71	 
+108.	673 Ken Rahaim	Men	58	M55-64	11	Alexandria VA	25:54.17	5:53.67	15:50.39	48:28.99	14.54	1:36:07.23	+25:15.26	 
+109.	572 Antonia Parra	Women	30	W23-34	2	Fairfax VA	28:31.87	6:19.93	15:32.61	46:00.11	14.50	1:36:24.54	+25:32.57	 
+110.	829 Johnny May	Men	56	M55-64	12	Baltimore MD	25:34.09	6:07.56	17:52.73	46:52.94	14.49	1:36:27.34	+25:35.37	 
+111.	627 Chris Camerlin	Men	47	M45-54	29	Sistersville WV	26:38.87	5:40.23	16:56.05	47:20.06	14.47	1:36:35.22	+25:43.25	 
+112.	777 Elliot Krause	Men	34	M23-34	22	Alexandria VA	23:36.80	4:54.18	30:04.16	38:16.39	14.43	1:36:51.54	+25:59.57	 
+113.	811 Mike Garbis	Men	56	M55-64	13	Forest Hill MD	26:25.84	5:55.03	16:38.80	47:54.39	14.42	1:36:54.08	+26:02.11	 
+114.	924 Tommee Yap	Men	41	M35-44	36		26:33.38	5:40.50	16:58.50	48:35.21	14.29	1:37:47.60	+26:55.63	 
+115.	424 Andres Gaviria	Men	45	M45-54	30	Washington DC	27:35.26	6:00.63	17:18.74	46:55.37	14.28	1:37:50.02	+26:58.05	 
+116.	864 Donald May	Men	49	M45-54	31	Mount Pleasant SC	26:49.32	5:51.65	17:02.15	48:41.52	14.20	1:38:24.65	+27:32.68	 
+117.	620 Antonio Guzman Dominguez	Men	31	M23-34	23	Manhasset NY	28:50.95	6:15.76	17:31.29	45:56.42	14.18	1:38:34.43	+27:42.47	 
+118.	497 Steve Willig	Men	52	M45-54	32	Lancaster PA	29:31.06	6:14.57	16:27.11	46:23.90	14.17	1:38:36.65	+27:44.68	 
+119.	532 Anatoliy Tishin	Men	55	M55-64	14	Herndon VA	27:01.96	5:56.96	18:20.05	47:23.98	14.16	1:38:42.97	+27:51.01	 
+120.	885 Adam Sidel	Men	52	M45-54	33	Cabin John MD	28:37.96	6:45.17	18:35.74	44:45.91	14.15	1:38:44.79	+27:52.82	 
+121.	888 Patrick Flavin	Men	40	M35-44	37	Glenelg MD	26:50.21	5:55.96	16:58.18	49:12.57	14.12	1:38:56.93	+28:04.96	 
+122.	528 Scott Cestone	Men	34	M23-34	24	Cortlandt Manor NY	25:36.78	6:20.83	18:50.34	48:18.68	14.10	1:39:06.65	+28:14.68	 
+123.	731 Andreas Blom	Men	51	M45-54	34	Bethesda MD	27:15.30	6:01.82	15:36.03	50:14.55	14.10	1:39:07.72	+28:15.75	 
+124.	767 David Baker	Men	51	M45-54	35	Silver Spring MD	26:52.02	5:32.61	18:03.12	48:41.41	14.09	1:39:09.17	+28:17.21	 
+125.	484 Jordan Bailowitz	Men	59	M55-64	15	Baltimore MD	27:16.39	6:14.81	17:13.64	48:30.38	14.08	1:39:15.24	+28:23.27	 
+126.	629 Dave Corey	Men	63	M55-64	16	Burlington NJ	27:01.73	6:03.88	19:50.84	46:33.35	14.05	1:39:29.82	+28:37.86	 
+127.	809 Wen-Wei Chang	Men	52	M45-54	36	Queens NY	27:22.27	5:50.58	16:58.14	49:23.03	14.04	1:39:34.04	+28:42.07	 
+128.	448 Steven Rabinowitz	Men	49	M45-54	37	Bowie MD	28:00.34	6:31.68	18:04.27	46:58.68	14.03	1:39:34.98	+28:43.02	 
+129.	598 Benjamin Pearce	Men	33	M23-34	25	Frederick MD	27:30.98	6:48.27	18:19.69	47:01.32	14.02	1:39:40.27	+28:48.30	 
+130.	415 Anthony Vitti	Men	33	M23-34	26	Ellicott City MD	27:27.14	5:41.48	17:49.56	48:55.03	13.99	1:39:53.22	+29:01.26	 
+131.	693 Simon Andrews	Men	57	M55-64	17	Chevy Chase MD	28:28.61	6:12.14	17:41.49	47:36.29	13.98	1:39:58.54	+29:06.57	 
+132.	898 Idelfonso Elias	Men	44	M35-44	38	Resterstown MD	27:18.81	6:20.04	15:27.02	50:55.07	13.97	1:40:00.96	+29:09.00	 
+133.	781 Michael Nystrom	Men	39	M35-44	39	Stephenson VA	26:37.53	5:02.92	18:17.25	50:11.32	13.95	1:40:09.04	+29:17.07	 
+134.	675 Andrew Valdesuso	Men	26	M23-34	27	Clarksville MD	27:13.30	6:42.17	17:47.95	48:27.77	13.95	1:40:11.21	+29:19.24	 
+135.	819 Victor Cretella	Men	54	M45-54	38	New Market MD	28:34.77	6:14.47	18:26.15	47:00.84	13.94	1:40:16.24	+29:24.27	 
+136.	664 Ven Sheppard	Men	31	M23-34	28	Brooklyn NY	31:27.53	6:23.74	17:33.32	44:57.19	13.92	1:40:21.79	+29:29.82	 
+137.	738 Erin Fulton	Women	45	W45-54	1	Whitehouse Station NJ	28:35.03	6:25.50	18:01.41	47:20.66	13.92	1:40:22.62	+29:30.65	 
+138.	617 Ian Rivere	Men	27	M23-34	29	Nottingham MD	26:35.92	6:08.38	17:55.64	49:51.27	13.90	1:40:31.22	+29:39.25	 
+139.	488 Andrew Eckert	Men	44	M35-44	40	Olney MD	25:25.90	6:14.91	17:48.27	51:18.51	13.87	1:40:47.60	+29:55.63	 
+140.	601 Todd Sinclair	Men	62	M55-64	18	Stony Point NY	25:05.67	6:01.34	16:10.16	53:33.05	13.86	1:40:50.24	+29:58.27	 
+141.	677 John Stanton	Men	56	M55-64	19	Falls Church VA	33:20.25	6:34.75	17:45.17	43:20.33	13.84	1:41:00.52	+30:08.55	 
+142.	657 Mauricio Villafane	Men	44	M35-44	41	North Bethesda MD	28:12.34	6:02.14	17:46.49	49:01.62	13.83	1:41:02.60	+30:10.63	 
+143.	536 Paul Narkunas	Men	55	M55-64	20	Montclair NJ	31:21.83	6:30.46	16:36.35	46:50.48	13.79	1:41:19.13	+30:27.16	 
+144.	691 Grady Willson	Men	24	M23-34	30	Harwood MD	28:44.31	6:30.07	17:48.90	48:25.67	13.77	1:41:28.96	+30:37.00	 
+145.	786 Nathan Shonk	Men	47	M45-54	39	Oakton VA	30:43.05	6:28.60	17:46.96	46:41.82	13.74	1:41:40.45	+30:48.48	 
+146.	550 Joseph Bahsoon	Men	37	M35-44	42	Leesburg VA	26:38.81	5:57.64	17:08.43	52:00.85	13.73	1:41:45.74	+30:53.77	 
+147.	698 Thomas Sylvester	Men	61	M55-64	21	Bethesda MD	29:35.81	6:27.55	18:06.88	47:41.08	13.72	1:41:51.34	+30:59.37	 
+148.	435 David Paul	Men	63	M55-64	22	Pittsburgh PA	29:45.64	6:21.89	18:00.20	48:09.05	13.66	1:42:16.79	+31:24.83	 
+149.	787 Ian Choi	Men	15	M23-	9	Flushing NY	27:23.76	5:31.68	17:46.06	51:59.80	13.61	1:42:41.32	+31:49.36	 
+150.	553 Derrick Wettstein	Men	43	M35-44	43	Freeland MD	26:13.92	5:48.10	15:16.52	55:25.73	13.60	1:42:44.29	+31:52.32	 
+151.	511 Marni Harker	Women	63	W55-64	1	Washington DC	31:54.05	6:47.42	18:02.71	46:26.18	13.55	1:43:10.36	+32:18.39	 
+152.	513 Kristy Fleek	Women	55	W55-64	2	Cincinnati OH	26:51.76	6:35.62	18:43.03	51:00.61	13.54	1:43:11.03	+32:19.07	 
+153.	625 Lincoln Crane	Men	59	M55-64	23	New York NY	31:27.64	6:43.04	17:21.73	47:40.73	13.54	1:43:13.16	+32:21.20	 
+154.	823 Sadie Skinner	Women	20	W23-	1	Annapolis MD	30:01.88	6:59.27	19:17.74	46:55.56	13.54	1:43:14.47	+32:22.50	 
+155.	672 Darinel Ureña	Men	43	M35-44	44	Bowie MD	27:01.04	6:37.15	15:07.97	54:38.15	13.51	1:43:24.32	+32:32.35	 
+156.	910 Barbara Haney	Women	66	W65-69	1	Arlington VA	28:57.72	6:18.63	19:03.92	49:16.20	13.49	1:43:36.49	+32:44.53	 
+157.	849 Ereberto Manalad	Men	43	M35-44	45	Waldorf MD	26:41.98	6:11.92	19:39.78	51:05.99	13.48	1:43:39.69	+32:47.72	 
+158.	455 Jake Fishman	Men	36	M35-44	46	Baltimore MD	27:08.25	6:05.69	18:46.55	51:48.06	13.46	1:43:48.57	+32:56.60	 
+159.	518 Retzer Cariaga	Men	49	M45-54	40	Owings Mills MD	29:47.39	6:29.01	19:26.23	48:07.55	13.46	1:43:50.19	+32:58.23	 
+160.	530 Patricia Butcher	Women	64	W55-64	3	Langhorne PA	29:48.03	7:08.35	18:07.48	48:57.74	13.43	1:44:01.62	+33:09.65	 
+161.	579 Victor Salcedo	Men	33	M23-34	31	Arlington VA	27:12.37	6:11.98	22:17.11	48:20.49	13.43	1:44:01.97	+33:10.01	 
+162.	774 Max Ebens	Men	11	M23-	10	New York NY	27:23.15	5:40.34	18:23.73	52:48.45	13.40	1:44:15.69	+33:23.72	 
+163.	778 Dustin Story	Men	30	M23-34	32	Joppa MD	24:47.35	5:11.95	29:59.12	44:48.26	13.34	1:44:46.70	+33:54.73	 
+164.	387 Ian Minnes	Men	32	M23-34	33	Washington DC	28:24.85	6:22.04	18:17.09	51:59.87	13.30	1:45:03.86	+34:11.89	 
+165.	496 Philippe Brunet	Men	40	M35-44	47	Washington DC	30:17.02	7:05.68	18:39.59	49:11.95	13.28	1:45:14.24	+34:22.28	 
+166.	775 Josiah Wat	Men	15	M23-	11	Bellerose NY	27:22.71	5:47.45	18:42.96	53:32.26	13.26	1:45:25.39	+34:33.42	 
+167.	569 David Kneale	Men	53	M45-54	41	Sunderland MD	30:25.21	6:34.95	18:30.20	50:04.70	13.24	1:45:35.08	+34:43.12	 
+168.	619 Alfredo Guzman	Men	59	M55-64	24	Manhasset NY	29:47.85	6:42.82	18:10.72	50:59.40	13.22	1:45:40.81	+34:48.84	 
+169.	508 Jim Curry	Men	47	M45-54	42	Bethesda MD	27:13.72	6:04.92	18:46.38	53:45.10	13.20	1:45:50.13	+34:58.16	 
+170.	830 Phillip Darmstadt	Men	66	M65-69	4	Landrum SC	29:37.87	6:33.95	18:52.76	51:11.43	13.15	1:46:16.02	+35:24.05	 
+171.	576 Timothy Bouck	Men	50	M45-54	43	Winchester VA	29:03.56	6:32.12	19:15.79	51:40.62	13.12	1:46:32.11	+35:40.14	 
+172.	385 Adam Henson	Men	52	M45-54	44	Frederick MD	27:56.30	6:31.45	17:47.27	54:33.06	13.08	1:46:48.09	+35:56.12	 
+173.	581 Dylan Volk	Men	34	M23-34	34	Fairfax VA	30:32.49	6:12.39	16:38.34	53:34.37	13.07	1:46:57.61	+36:05.65	 
+174.	858 Demetrios Manolis	Men	56	M55-64	25	Baldwin MD	30:41.36	6:57.67	18:54.27	51:39.77	12.91	1:48:13.09	+37:21.12	 
+175.	874 David Stern	Men	65	M65-69	5	Chevy Chase MD	30:27.19	6:56.88	19:28.43	51:23.02	12.91	1:48:15.53	+37:23.56	 
+176.	701 Joseph Valdesuso	Men	59	M55-64	26	Clarksville MD	27:49.61	7:10.06	20:15.50	53:40.21	12.83	1:48:55.40	+38:03.44	 
+177.	668 Tim Wisner	Men	52	M45-54	45	Palm Beach Gardens FL	29:48.59	6:53.82	20:38.22	51:41.84	12.82	1:49:02.49	+38:10.52	 
+178.	483 Paul Headland	Men	56	M55-64	27	Frederick MD	31:04.34	6:45.74	18:44.33	52:39.33	12.79	1:49:13.75	+38:21.78	 
+179.	801 Samuel Lopez-Benitez	Men	20	M23-	12	Greenville SC	29:46.92	7:05.31	20:04.76	52:29.46	12.77	1:49:26.47	+38:34.50	 
+180.	464 Patrick Miller	Men	23	M23-34	35	Pittsburgh PA	29:32.57	6:37.39	19:43.93	53:36.94	12.76	1:49:30.84	+38:38.87	 
+181.	386 Tristan Gray-Le Coz	Men	42	M35-44	48	Washington DC	33:05.87	6:41.19	19:21.26	50:42.23	12.72	1:49:50.56	+38:58.60	 
+182.	729 Robert Del M Castillo	Men	53	M45-54	46	Hilliard OH	31:12.86	7:25.59	19:02.28	52:43.03	12.66	1:50:23.77	+39:31.80	 
+183.	708 Jaime Pelayo	Men	40	M35-44	49	Springfield VA	31:44.82	7:21.25	20:36.53	50:45.75	12.65	1:50:28.37	+39:36.40	 
+184.	20 Kenneth Woodrow	Men	58	M55-64	28	Arlington VA	31:02.07	6:58.98	18:31.92	53:55.98	12.65	1:50:28.96	+39:37.00	 
+185.	468 Jeffrey Schnug	Men	50	M45-54	47	Malvern PA	29:08.71	6:57.28	19:32.21	55:00.36	12.63	1:50:38.57	+39:46.61	 
+186.	427 Eli Medvescek	Men	31	M23-34	36	Silver Spring MD	27:47.03	6:44.89	20:59.98	55:22.21	12.60	1:50:54.13	+40:02.16	 
+187.	418 Manolo Quintanilla	Men	44	M35-44	50	Germantown MD	29:48.28	6:30.32	20:10.46	55:04.36	12.53	1:51:33.44	+40:41.48	 
+188.	375 Edward Macdonald	Men	38	M35-44	51	Arlington VA	31:48.71	6:32.43	19:18.95	54:45.73	12.43	1:52:25.84	+41:33.88	 
+189.	630 Nick Oskirko	Men	42	M35-44	52	London ON	30:11.26	7:27.34	20:11.89	54:39.52	12.42	1:52:30.02	+41:38.05	 
+190.	565 Mike Licea	Men	45	M45-54	48	Baltimore MD	30:07.41	6:44.90	19:21.43	56:41.58	12.38	1:52:55.32	+42:03.35	 
+191.	836 Mike Stepanek	Men	62	M55-64	29	Edwards CO	30:31.42	7:44.50	20:03.61	54:47.84	12.35	1:53:07.39	+42:15.43	 
+192.	890 Philip Hall	Men	55	M55-64	30	Washington WA	30:55.62	6:54.65	17:59.12	57:31.68	12.33	1:53:21.09	+42:29.12	 
+193.	412 Bobby Chen	Men	22	M23-	13	Poolesville MD	34:47.22	7:27.16	17:08.34	54:15.30	12.30	1:53:38.04	+42:46.08	 
+194.	753 David Laws	Men	57	M55-64	31	Nokesville VA	28:27.58	7:16.56	19:36.39	58:33.89	12.27	1:53:54.44	+43:02.47	 
+195.	696 Alan Liu	Men	31	M23-34	37	Fairfax VA	29:07.46	6:47.92	19:26.65	58:32.95	12.27	1:53:54.99	+43:03.03	 
+196.	413 Mark Wright	Men	58	M55-64	32	Westville IN	30:58.50	6:43.27	21:31.84	55:28.50	12.18	1:54:42.11	+43:50.15	 
+197.	812 Eric Hamano	Men	44	M35-44	53	Washington DC	29:00.02	6:49.91	21:12.11	57:51.42	12.16	1:54:53.47	+44:01.51	 
+198.	913 Daniel Fowler	Men	47	M45-54	49	Monkton MD	33:57.65	7:21.79	20:50.44	52:43.87	12.16	1:54:53.77	+44:01.81	 
+199.	559 Borris Verdan	Men	52	M45-54	50	St Albert AB	31:44.58	7:13.36	21:31.34	54:37.84	12.14	1:55:07.13	+44:15.16	 
+200.	470 Stephen Comello	Men	46	M45-54	51	Washington DC	30:26.27	7:14.48	20:43.06	57:13.64	12.09	1:55:37.46	+44:45.49	 
+201.	795 Dominick Barnes	Men	46	M45-54	52	Harrisburg PA	32:18.64	7:41.79	20:07.13	55:41.29	12.07	1:55:48.86	+44:56.89	 
+202.	583 Jason Farkas	Men	42	M35-44	54	Berlin MD	33:43.98	7:17.17	19:43.76	56:15.68	11.94	1:57:00.62	+46:08.65	 
+203.	651 Colin Shaw	Men	62	M55-64	33	Washington DC	33:17.78	7:06.34	20:20.12	56:29.07	11.92	1:57:13.33	+46:21.36	 
+204.	512 Ryan Woock	Men	26	M23-34	38	Mclean VA	34:18.07	7:21.02	19:35.06	56:09.28	11.90	1:57:23.43	+46:31.47	 
+205.	456 George French	Men	44	M35-44	55	Baltimore MD	33:39.09	7:22.60	20:37.78	55:49.65	11.89	1:57:29.14	+46:37.17	 
+206.	499 Brian Curtin	Men	45	M45-54	53	Washington DC	29:32.96	7:04.62	19:50.41	1:01:10.10	11.88	1:57:38.11	+46:46.15	 
+207.	802 Leah Maloney	Women	21	W23-	2	Annapolis MD	32:39.09	7:42.53	21:32.56	56:21.70	11.82	1:58:15.90	+47:23.93	 
+208.	490 Jonathan Young	Men	22	M23-	14	Potomac MD	29:32.50	7:27.44	20:36.96	1:01:04.75	11.77	1:58:41.66	+47:49.69	 
+209.	362 Young Choi	Men	52	M45-54	54	Baltimore MD	25:34.28	6:15.27	21:29.51	1:06:02.07	11.71	1:59:21.14	+48:29.18	 
+210.	848 Zeb Congdon	Men	45	M45-54	55	Philadelphia PA	34:10.27	7:55.60	19:33.41	57:52.17	11.69	1:59:31.46	+48:39.49	 
+211.	871 Gregory Butler	Men	57	M55-64	34	Arlington VA	26:36.12	6:14.26	14:35.92	1:12:10.02	11.68	1:59:36.33	+48:44.36	 
+212.	621 Beth Maloney	Women	49	W45-54	2	Hanover PA	34:33.48	8:25.29	21:41.96	54:59.63	11.68	1:59:40.38	+48:48.41	 
+213.	443 Luke Bradish	Men	34	M23-34	39	Kensington MD	28:31.01	6:46.44	33:59.12	50:37.73	11.65	1:59:54.31	+49:02.34	 
+214.	622 Malik Obeidallah	Men	25	M23-34	40	Washington DC	34:06.26	8:05.09	20:51.81	57:06.81	11.63	2:00:09.98	+49:18.02	 
+215.	900 Christian Baez	Men	49	M45-54	56	Miami FL	30:36.84	7:08.97	23:32.34	1:00:54.62	11.43	2:02:12.78	+51:20.81	 
+216.	661 Maynor Corea	Men	40	M35-44	56	Silver Spring MD	33:48.63	7:45.44	21:36.17	59:40.74	11.37	2:02:50.99	+51:59.02	 
+217.	437 Mark Tuno	Men	45	M45-54	57	Logan Township NJ	34:26.15	8:07.27	22:50.95	57:30.03	11.37	2:02:54.41	+52:02.44	 
+218.	837 Michael Brown	Men	31	M23-34	41	Bala Cynwyd PA	32:40.75	7:29.05	21:14.55	1:01:39.20	11.36	2:03:03.56	+52:11.59	 
+219.	558 Irene Fainza	Women	51	W45-54	3	Gaithersburg MD	36:57.01	8:49.26	22:33.49	54:46.60	11.35	2:03:06.37	+52:14.41	 
+220.	676 Benjamin Simon	Men	23	M23-34	42	Woodbridge CT	33:19.50	7:28.05	22:03.78	1:01:22.54	11.25	2:04:13.89	+53:21.92	 
+221.	723 Dennis Archer	Men	36	M35-44	57	Phoenixville PA	35:49.61	8:42.07	21:13.75	59:06.14	11.19	2:04:51.59	+53:59.62	 
+222.	891 James Mcternan	Men	66	M65-69	6	Sandy Spring MD	44:40.38	7:52.50	20:58.71	51:46.93	11.15	2:05:18.53	+54:26.56	 
+223.	397 Joel Niesche	Men	33	M23-34	43	Alexandria VA	33:15.71	7:58.35	21:21.00	1:03:18.25	11.10	2:05:53.33	+55:01.36	 
+224.	462 Tom Bailey	Men	36	M35-44	58	Arlington VA	33:08.87	7:15.18	23:14.30	1:02:19.83	11.09	2:05:58.19	+55:06.23	 
+225.	449 Michael Jacobsen	Men	24	M23-34	44	Rockville MD	32:49.25	6:50.76	23:42.54	1:03:11.76	11.04	2:06:34.33	+55:42.36	 
+226.	835 John Young	Men	72	M70+	1	Ridge NY	34:18.48	8:21.24	24:31.64	59:36.59	11.02	2:06:47.96	+55:55.99	 
+227.	884 Konstantinos Manolis	Men	24	M23-34	45	Baltimore MD	33:03.08	7:24.15	22:21.30	1:04:09.88	11.01	2:06:58.43	+56:06.46	 
+228.	736 Ethan Lincoln	Men	52	M45-54	58	Silver Spring MD	36:28.48	8:45.26	23:09.07	1:00:15.85	10.86	2:08:38.68	+57:46.71	 
+229.	846 Michael Servito	Men	39	M35-44	59	Washington DC	42:33.61	9:35.65	22:38.30	54:35.82	10.80	2:09:23.40	+58:31.43	 
+230.	757 Andy Vogel	Men	43	M35-44	60	Mechanicsburg PA	28:46.59	6:36.78	19:41.34	1:15:41.76	10.69	2:10:46.47	+59:54.51	 
+231.	807 V Kwao Magloire	Men	57	M55-64	35	Upper Marlboro MD	38:00.67	8:29.75	21:43.93	1:03:14.96	10.63	2:11:29.33	+60:37.36	 
+232.	388 Simon Sandoval-Moshenberg	Men	45	M45-54	59	Annandale VA	34:32.70	8:26.98	24:38.36	1:04:06.57	10.61	2:11:44.63	+60:52.66	 
+233.	461 Lance Marshall	Men	39	M35-44	61	Frederick MD	37:54.23	8:23.16	21:40.61	1:06:02.60	10.43	2:14:00.62	+63:08.65	 
+234.	243 Rick Dennis	Men	59	M55-64	36	Marlborough CT	39:07.58	8:38.80	23:13.18	1:03:57.92	10.35	2:14:57.48	+64:05.52	 
+235.	453 Brad Blesie	Men	64	M55-64	37	Westport CT	39:55.93	9:31.44	24:59.87	1:02:31.41	10.20	2:16:58.65	+66:06.69	 
+236.	716 Romel Campbell	Men	64	M55-64	38	Dumont NJ	46:13.23	8:08.10	24:42.82	59:28.33	10.09	2:18:32.49	+67:40.52	 
+237.	405 Anastasia Perkowski	Women	61	W55-64	4	Cream Ridge NJ	40:33.72	8:53.37	23:47.92	1:06:01.98	10.03	2:19:17.01	+68:25.04	 
+238.	504 John Culhane	Men	61	M55-64	39	Milton ON	34:54.88	26:56.48	20:25.10	57:22.50	10.01	2:19:38.97	+68:47.00	 
+239.	881 Han Zhang	Men	41	M35-44	62	Princeton NJ	52:51.39	8:25.98	21:33.51	59:29.55	9.82	2:22:20.45	+71:28.49	 
+240.	755 Oscar Baquero	Men	64	M55-64	40	Damascus MD	33:21.16	8:05.14	36:05.46	1:10:07.12	9.46	2:27:38.89	+76:46.92	 
+241.	825 David Jiang	Men	49	M45-54	60	Washington DC	38:59.38	10:20.09	23:36.52	1:16:28.97	9.35	2:29:24.97	+78:33.00	 
+*	428 Matthew Brown	Men	27	M23-34	*	Brooklyn NY	30:14.28	6:58.16	 	50:07.62	0.00	 	 	 
+*	430 Adam Brown	Men	29	M23-34	*	Philadelphia PA	26:50.66	6:58.17	 	43:04.28	0.00	 	 	 
+*	451 Jonathan Parks	Men	52	M45-54	*	Manassas VA	26:51.50	 	17:14.64	47:32.02	0.00	 	 	 
+*	743 Marvin Poindexter	Men	57	M55-64	*	Clarksville MD	35:16.36	8:21.01	 	1:02:40.71	0.00	 	 	 
+*	352 Daraius Irani	Men	60	M55-64	*	Ellicott City MD	35:28.00	 	 	55:29.35	0.00	 	 	 
+*	376 Thomas Wood	Men	39	M35-44	*	Arlington VA	40:36.02	 	 	1:02:59.60	0.00	 	 	 
+*	380 Glen Stirrat	Men	39	M35-44	*	Arlington VA	33:29.53	 	 	1:02:51.39	0.00	 	 	 
+*	390 Andrew Elliott	Men	46	M45-54	*	Annapolis MD	32:03.04	 	 	51:57.77	0.00	 	 	 
+*	561 Eun Lee	Women	51	W45-54	*	Burke VA	34:28.12	 	 	48:57.28	0.00	 	 	 
+*	626 Rob Virelli	Men	55	M55-64	*	Exton PA	28:57.71	 	 	48:49.92	0.00	 	 	 
+*	705 Lawrence Heller	Men	30	M23-34	*	Bethesda MD	22:15.51	4:42.88	 	 	0.00	 	 	 
+*	784 David Deschryver	Men	52	M45-54	*	Washington DC	24:21.76	 	 	39:52.23	0.00	 	 	 
+*	813 Mariano Luna	Men	34	M23-34	*	North Bergen NJ	30:22.19	 	 	57:46.19	0.00	 	 	 
+*	853 Joel Frushone	Men	57	M55-64	*	Washington DC	25:44.25	 	 	44:39.84	0.00	 	 	 
+*	904 Gabe Fairfax	Men	38	M35-44	*	Frederick MD	38:08.16	 	 	57:26.27	0.00	 	 	 
+*	493 Greg Williams	Men	65	M65-69	*	Mendham NJ	54:52.24	 	 	 	0.00	 	 	 
+*	792 Ihan Kim	Men	51	M45-54	*	Washington DC	35:21.09	 	 	 	0.00	 	 	 
+*	828 Augusto Valls	Men	32	M23-34	*	North Bergen NJ	48:43.89	 	 	 	0.00	 	 	 
+*	921 Dustyin Sanders	Men	46	M45-54	*		25:58.05	 	 	 	0.00	 	 	 
+*	818 Mike Spinnler	Men	66	M65-69	*	Hagerstown MD	 	 	 	 	0.00	 	 	 
+*	389 Scott Foster	Men	40	M35-44	*	Alexandria VA	34:10.23	7:43.57	21:20.64	1:20:57.46	9.69	2:24:11.91	 	 
+*	503 Philip Boyer	Men	65	M65-69	*	Wilmington DE	25:41.87	5:57.02	18:43.86	29:37.92	17.47	1:20:00.68	 	 
+*	361 Joel Morris	Men	54	M45-54	*	Louisville KY	41:24.84	7:33.96	21:13.34	 	0.00	 	 	 
+*	440 Charlie E. Samboy	Men	39	M35-44	*	Bronx NY	47:42.29	10:06.45	25:28.65	 	0.00	 	 	 
+*	441 David Montesdeoca	Men	39	M35-44	*	North Bergen NJ	40:03.73	10:37.21	24:49.86	 	0.00	 	 	 
+*	557 Jeremiah Downie	Men	52	M45-54	*	Hagerstown MD	29:33.90	6:52.00	22:42.89	 	0.00	 	 	 
+*	660 Barry Worster	Men	46	M45-54	*	Fredericksburg VA	34:18.57	8:56.05	26:46.16	 	0.00	 	 	 
+*	704 David Zerba	Men	26	M23-34	*	Arlington VA	31:27.37	7:23.74	19:49.96	 	0.00	 	 	 
+*	814 Patrick Mcdeed	Men	29	M23-34	*	Washington DC	25:19.66	5:42.26	17:14.19	 	0.00	 	 	 
+*	840 Sloane Tilley	Women	31	W23-34	*	Hyattsville MD	25:59.53	5:45.53	 	 	0.00	 	 	 
+*	912 Erik Simonsen	Men	56	M55-64	*	Cape May NJ	35:12.69	8:11.94	22:02.04	 	0.00	 	 	 
+*	481 William Chase	Men	38	M35-44	*	Arlington VA	22:12.20	4:51.21	 	 	0.00	 	 	 
+*	429 Mike Driesen	Men	28	M23-34	*	Brooklyn NY	30:11.60	 	 	 	0.00	 	 	 
+*	533 James Bush	Men	67	M65-69	*	Waynesburg PA	40:52.67	 	 	 	0.00	 	 	 
+
+
+
+SELECT r.*
+FROM "Rider" r
+JOIN "Result" res1 ON res1."riderId" = r.id AND res1."eventId" = 502
+JOIN "Result" res2 ON res2."riderId" = r.id AND res2."eventId" = 501;

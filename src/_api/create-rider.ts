@@ -15,12 +15,25 @@ export interface CreateRiderData {
   about: string;
 }
 
+export interface CreateRiderReturnData {
+  id: number;
+  firstName: string;
+  lastName: string;
+  dob: string;
+  country: string;
+  hometown: string;
+  photo: string;
+  strava: string;
+  insta: string;
+  about: string;
+}
+
 export const createRider = async (riderData: CreateRiderData) => {
   const result = await postResponse(
     createRiderRequestUrl(),
-    async (response: Response): Promise<any> => {
-      const parsedResponse: any = await response.json();
-      return { riderInfo: parsedResponse };
+    async (response: Response): Promise<CreateRiderReturnData> => {
+      const parsedResponse: CreateRiderReturnData = await response.json();
+      return parsedResponse;
     },
     JSON.stringify(riderData)
   );

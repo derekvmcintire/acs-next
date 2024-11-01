@@ -1,4 +1,4 @@
-type ResultObject = Record<string, string | number | Date | undefined>;
+export type PreparedResult = Record<string, string | number | Date | undefined>;
 
 const verifiedHeaders = {
   category: ['category', 'div', 'division', 'cat', 'ctgry'],
@@ -6,7 +6,7 @@ const verifiedHeaders = {
   hometown: ['hometown', 'city', 'hmtwn', 'town'],
   gap: ['gap'],
   time: ['time'],
-  name: ['name', 'rider'],
+  name: ['name', 'rider', 'bib & name'],
 } as const;
 
 const getHeader = (header: string): string | null => {
@@ -17,11 +17,10 @@ const getHeader = (header: string): string | null => {
       return key;
     }
   }
-
   return null;
 };
 
-export const prepareResults = (data: string): ResultObject[] => {
+export const prepareResults = (data: string): PreparedResult[] => {
   // Split the data into rows
   const rows = data.trim().split('\n');
 
@@ -32,12 +31,19 @@ export const prepareResults = (data: string): ResultObject[] => {
   const result = rows.slice(1).map((row) => {
     const values = row.split('\t');
 
-    return headers.reduce<ResultObject>((obj, header, index) => {
+    return headers.reduce<PreparedResult>((obj, header, index) => {
       if (!header.trim()) {
         return obj;
       }
       const verifiedHeader = getHeader(header.toLowerCase());
+
       if (!verifiedHeader) {
+        return obj;
+      }
+
+      if (verifiedHeader === 'name') {
+        const preparedName = values[index] ? values[index].replace(/\d+/g, '').trim() : '';
+        obj[verifiedHeader] = preparedName;
         return obj;
       }
       obj[verifiedHeader] = values[index] || undefined;
