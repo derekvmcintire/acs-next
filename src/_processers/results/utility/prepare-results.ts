@@ -1,19 +1,12 @@
+import { VERIFIED_HEADERS } from '../constants';
+
 export type PreparedResult = Record<string, string | number | Date | undefined>;
 
-const verifiedHeaders = {
-  category: ['category', 'div', 'division', 'cat', 'ctgry'],
-  place: ['place', 'pl', 'p', 'pos', 'position', 'plc'],
-  hometown: ['hometown', 'city', 'hmtwn', 'town'],
-  gap: ['gap'],
-  time: ['time'],
-  name: ['name', 'rider', 'bib & name'],
-} as const;
-
 const getHeader = (header: string): string | null => {
-  const headerKeys = Object.keys(verifiedHeaders) as Array<keyof typeof verifiedHeaders>;
+  const headerKeys = Object.keys(VERIFIED_HEADERS) as Array<keyof typeof VERIFIED_HEADERS>;
 
   for (const key of headerKeys) {
-    if ((verifiedHeaders[key] as readonly string[]).includes(header as string)) {
+    if ((VERIFIED_HEADERS[key] as readonly string[]).includes(header as string)) {
       return key;
     }
   }
@@ -21,13 +14,9 @@ const getHeader = (header: string): string | null => {
 };
 
 export const prepareResults = (data: string): PreparedResult[] => {
-  // Split the data into rows
   const rows = data.trim().split('\n');
-
-  // Extract headers
   const headers = rows[0].split('\t');
 
-  // Convert rows to objects
   const result = rows.slice(1).map((row) => {
     const values = row.split('\t');
 

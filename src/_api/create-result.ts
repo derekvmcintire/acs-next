@@ -14,11 +14,23 @@ export interface CreateResultData {
   points: number;
 }
 
+export interface CreateResultReturnData {
+  id: number;
+  eventId: number;
+  riderId: number;
+  resultTypeId: number;
+  noPlaceCodeTypeId: number;
+  lap: number;
+  place: number;
+  time: string | null;
+  points: number;
+}
+
 export const createResult = async (resultData: CreateResultData) => {
   const createdResult = await postResponse(
     createResultRequestUrl(),
-    async (response: Response): Promise<any> => {
-      const parsedResponse: any = await response.json();
+    async (response: Response): Promise<CreateResultReturnData> => {
+      const parsedResponse: CreateResultReturnData = await response.json();
       return parsedResponse;
     },
     JSON.stringify(resultData)

@@ -1,9 +1,15 @@
-import { PreparedResult, prepareResults } from '@/src/_processers/results/prepare';
+import { CreateResultReturnData } from '@/src/_api/create-result';
+import { PreparedResult, prepareResults } from '@/src/_processers/results/utility/prepare-results';
 import { ResultFormData } from '@/src/app/results/upload/page';
 import { createRace, CreateRaceReturnData } from '../../_api/create-race';
-import { processPreparedResult } from './utility';
+import { processPreparedResult } from './utility/process-prepared-results';
 
-export const processResults = async (data: ResultFormData): Promise<CreateRaceReturnData> => {
+export type ProcessResultsReturnData = {
+  race: CreateRaceReturnData;
+  resultsCreated: CreateResultReturnData[];
+};
+
+export const processResults = async (data: ResultFormData): Promise<ProcessResultsReturnData> => {
   const { name, startDate, location, results } = data;
   const raceData = {
     name,
@@ -19,13 +25,16 @@ export const processResults = async (data: ResultFormData): Promise<CreateRaceRe
   }
 
   if (!results) {
-    return Promise.resolve(race);
+    return Promise.resolve({ race, resultsCreated: [] });
   }
 
-  const parsedResults = prepareResults(results);
-  parsedResults.forEach(async (result: PreparedResult) => {
-    processPreparedResult(result, race);
-  });
+  const preparedResults = prepareResults(results);
+  const finalizedResults = await Promise.all(
+    preparedResults.map(async (result: PreparedResult) => {
+      const finalizedResult = await processPreparedResult(result, race);
+      return finalizedResult;
+    })
+  );
 
-  return Promise.resolve(race);
+  return Promise.resolve({ race, resultsCreated: finalizedResults });
 };

@@ -3,7 +3,7 @@ import { postResponse } from './helpers';
 
 export const createRaceRequestUrl = () => `${API_BASE_URL}${API_RACE_PATH}`;
 
-interface CreateRaceData {
+export interface CreateRaceData {
   name: string;
   raceTypeId: number;
   startDate: string;
