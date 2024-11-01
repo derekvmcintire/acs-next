@@ -8,7 +8,7 @@ import CategoryBadges from '../CategoryBadges/CategoryBadges';
 import { getCurrentTeam } from '../utils';
 import classes from '../rider.module.css';
 
-const TEAM_PLACEHOLDER_TEXT = 'n/a';
+const TEAM_PLACEHOLDER_TEXT = 'Unattached';
 const NAME_PLACEHOLDER_TEXT = 'Rider Not Found';
 
 export const NAME_HEADING_TEST_ID = 'name-heading';

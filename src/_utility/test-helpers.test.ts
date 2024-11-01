@@ -35,7 +35,7 @@ describe('Test Helpers', () => {
     });
 
     it('should log a warning when fetching an unmocked URL', async () => {
-      console.log = jest.fn();
+      console.warn = jest.fn();
       const mockPackages: mockResponsePackage[] = [
         { expectedUrl: 'https://example.com/endpoint1', mockResponse: { data: 'response1' } },
       ];
@@ -44,7 +44,7 @@ describe('Test Helpers', () => {
       const response = await fetch('https://example.com/unknown');
       await response.json();
 
-      expect(console.log).toHaveBeenCalledWith(
+      expect(console.warn).toHaveBeenCalledWith(
         expect.stringContaining("Uh oh, couldn't find the expected mock response"),
         expect.objectContaining({
           input: 'https://example.com/unknown',
