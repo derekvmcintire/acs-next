@@ -18,14 +18,12 @@
 ;
 }
 
-
 .formSection {
-  width: 39%;
+  margin-bottom: 8px;
 }
 
 .textArea {
   width: 80%;
   margin-bottom: 16px;
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-
 }

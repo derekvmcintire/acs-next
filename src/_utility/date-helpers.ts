@@ -9,6 +9,7 @@ export const getFormattedYearString = (date: Date) => {
   return `${year}`;
 };
 
-export const yearTrunc = (year: number) => {
-  return Math.abs(year).toString().slice(-2);
+export const yearTrunc = (year: number, useFourDigitFormat: boolean = false) => {
+  const stringDate = Math.abs(year).toString();
+  return useFourDigitFormat ? stringDate.slice(-4) : stringDate.slice(-2);
 };

@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Button, Center, Container, Flex, Select, Textarea } from '@mantine/core';
+import { Button, Center, Container, Flex, Select, Text, Textarea } from '@mantine/core';
 import { CreateRaceReturnData } from '@/src/_api/create-race';
+import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { processResults } from '@/src/_processers/results';
 import Loader from '@/src/app/loading';
 import Instructions from '../Instructions';
@@ -54,6 +55,8 @@ function ResultForm() {
   const [race, setRace] = React.useState<CreateRaceReturnData | undefined>(undefined);
   const [success, setSuccess] = React.useState<boolean>(false);
 
+  const { selectedRace, setSelectedRace } = useUploaderContext();
+
   const { control, handleSubmit, resetField } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
   });
@@ -77,6 +80,10 @@ function ResultForm() {
     handleSubmitResults(data);
   };
 
+  const handleChangeRace = () => {
+    setSelectedRace('');
+  };
+
   return (
     <Container>
       {success && <div>Results successfully created</div>}
@@ -87,6 +94,14 @@ function ResultForm() {
           <Flex>
             <form onSubmit={handleSubmit(onSubmit)} className={classes.resultsForm}>
               <Instructions />
+              <Flex justify="center">
+                <Text fw="700" className={classes.formSection}>
+                  {`*Uploading Results for ${selectedRace.event.name} - ${selectedRace.startDate}*`}
+                </Text>
+              </Flex>
+              <Flex justify="center" className={classes.formSection}>
+                <Button onClick={handleChangeRace}>Select a Different Race</Button>
+              </Flex>
               <Flex align="center" justify="center" gap="md">
                 {/* Category Field */}
                 <Controller
@@ -95,7 +110,6 @@ function ResultForm() {
                   rules={{ required: 'Category is required' }}
                   render={({ field }) => (
                     <Select
-                      className={classes.formSection}
                       withAsterisk
                       size="xs"
                       label="Category"
@@ -117,6 +131,7 @@ function ResultForm() {
                   control={control}
                   render={({ field }) => (
                     <Textarea
+                      withAsterisk
                       className={classes.textArea}
                       autosize
                       label="Results"

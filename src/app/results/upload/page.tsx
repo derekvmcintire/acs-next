@@ -1,26 +1,21 @@
 'use client';
 
 import React from 'react';
-// import { useForm } from 'react-hook-form';
-import { Center, Flex } from '@mantine/core';
-// import { CreateRaceReturnData } from '@/src/_api/create-race';
+import { Center } from '@mantine/core';
 import PageLayout from '@/src/_components/shared/PageLayout/PageLayout';
-import RaceForm from '@/src/_components/Uploader/RaceForm';
-import ResultForm from '@/src/_components/Uploader/ResultForm';
-import SideSearch from '@/src/_components/Uploader/SideSearch';
-import classes from './styles/page.module.css';
+import UploadForm from '@/src/_components/Uploader/UploadForm';
+import { UploaderContextProvider } from '@/src/_contexts/Uploader/UploaderContext';
 
-function UploadFormPage() {
+function RaceUpload() {
   return (
     <PageLayout>
-      <Center className={classes.pageCenter}>
-        <Flex justify="center" className={classes.raceSearchContainer}>
-          <SideSearch />
-          {true ? <ResultForm /> : <RaceForm />}
-        </Flex>
+      <Center>
+        <UploaderContextProvider>
+          <UploadForm />
+        </UploaderContextProvider>
       </Center>
     </PageLayout>
   );
 }
 
-export default UploadFormPage;
+export default RaceUpload;
