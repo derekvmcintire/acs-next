@@ -40,7 +40,7 @@ function RaceForm() {
 
   const handleSubmitResults = async (data: ResultFormData) => {
     setIsLoading(true);
-    const response = await processResults(data);
+    const response = await processResults(race, data);
     if (!response) {
       setIsLoading(false);
     } else {
