@@ -33,8 +33,9 @@ const DEFAULT_FORM_VALUES = {
 function RaceForm() {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [race, setRace] = React.useState<CreateRaceReturnData | undefined>(undefined);
+  const [success, setSuccess] = React.useState<boolean>(false);
 
-  const { control, handleSubmit, reset } = useForm({
+  const { control, handleSubmit, resetField } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
   });
 
@@ -45,8 +46,10 @@ function RaceForm() {
       setIsLoading(false);
     } else {
       setIsLoading(false);
-      reset();
+      resetField('results');
+      resetField('category');
       setRace(response.race);
+      setSuccess(true);
     }
     setIsLoading(false);
   };
@@ -57,7 +60,7 @@ function RaceForm() {
 
   return (
     <PageLayout>
-      {race && <div>Results successfully created</div>}
+      {success && <div>Results successfully created</div>}
 
       {isLoading ? (
         <Loader />
