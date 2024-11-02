@@ -28,7 +28,6 @@ export default function SideSearch() {
 
   React.useEffect(() => {
     const search = async () => {
-      console.log(debouncedSearchValue);
       if (!debouncedSearchValue || debouncedSearchValue === '') {
         setOptions([]);
         return;
@@ -63,11 +62,8 @@ export default function SideSearch() {
   }, []);
 
   const handleOptionSubmit = (option: string) => {
-    console.log('option: ', option);
     const fullRace = findAvailableRaceFromId(Number(option));
     setSelectedRace(fullRace);
-    console.log('availableRaces be: ', availableRaces);
-    console.log('full race: ', fullRace);
   };
 
   return (

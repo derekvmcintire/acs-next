@@ -4,9 +4,9 @@ import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { Button, Center, Container, Flex, Select, TextInput } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
-import { CreateRaceReturnData } from '@/src/_api/create-race';
 import Instructions from '@/src/_components/Uploader/Instructions';
-import { processResults } from '@/src/_processers/results';
+import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
+import { createRaceBeforeResults } from '@/src/_processers/results';
 import Loader from '@/src/app/loading';
 import classes from './race-form.module.css';
 
@@ -30,7 +30,7 @@ import classes from './race-form.module.css';
     }
 */
 
-export interface ResultFormData {
+export interface RaceFormData {
   name: string;
   raceType: string;
   startDate?: Date;
@@ -52,30 +52,39 @@ const DEFAULT_FORM_VALUES = {
 
 function RaceForm() {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const [race, setRace] = React.useState<CreateRaceReturnData | undefined>(undefined);
   const [success, setSuccess] = React.useState<boolean>(false);
 
-  const { control, handleSubmit, resetField } = useForm({
+  const { setSelectedRace } = useUploaderContext();
+
+  const { control, handleSubmit, reset } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
   });
 
-  const handleSubmitResults = async (data: ResultFormData) => {
+  const handleSubmitRace = async (data: RaceFormData) => {
     setIsLoading(true);
-    const response = await processResults(race, data);
-    if (!response) {
-      setIsLoading(false);
-    } else {
-      setIsLoading(false);
-      resetField('results');
-      resetField('category');
-      setRace(response.race);
-      setSuccess(true);
-    }
-    setIsLoading(false);
+    // const response = await createRaceBeforeResults(data)
+
+    createRaceBeforeResults(data)
+      .then((response) => {
+        if (!response) {
+          setIsLoading(false);
+          // TODO: set error
+        } else {
+          setSelectedRace(response);
+          setSuccess(true);
+          reset();
+          setIsLoading(false);
+        }
+        setIsLoading(false);
+      })
+      .catch(() => {
+        // TODO set error
+        setIsLoading(false);
+      });
   };
 
-  const onSubmit = (data: ResultFormData) => {
-    handleSubmitResults(data);
+  const onSubmit = (data: RaceFormData) => {
+    handleSubmitRace(data);
   };
 
   return (

@@ -3,32 +3,11 @@
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { Button, Center, Container, Flex, Select, Text, Textarea } from '@mantine/core';
-import { CreateRaceReturnData } from '@/src/_api/create-race';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { processResults } from '@/src/_processers/results';
 import Loader from '@/src/app/loading';
 import Instructions from '../Instructions';
 import classes from './result-form.module.css';
-
-/*
- {
-        "id": 39,
-        "eventId": 39,
-        "raceTypeId": 1,
-        "startDate": "Fri Sep 27 2024",
-        "endDate": null,
-        "location": "Volta Ciclista a Florence",
-        "event": {
-            "id": 39,
-            "name": "Volta Ciclista a Florence"
-        },
-        "raceType": {
-            "id": 1,
-            "name": "Road",
-            "description": "Road Race Type"
-        }
-    }
-*/
 
 export interface ResultFormData {
   name: string;
@@ -52,26 +31,23 @@ const DEFAULT_FORM_VALUES = {
 
 function ResultForm() {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const [race, setRace] = React.useState<CreateRaceReturnData | undefined>(undefined);
   const [success, setSuccess] = React.useState<boolean>(false);
 
   const { selectedRace, setSelectedRace } = useUploaderContext();
 
-  const { control, handleSubmit, resetField } = useForm({
+  const { control, handleSubmit, reset } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
   });
 
   const handleSubmitResults = async (data: ResultFormData) => {
     setIsLoading(true);
-    const response = await processResults(race, data);
+    const response = await processResults(selectedRace, data);
     if (!response) {
       setIsLoading(false);
     } else {
       setIsLoading(false);
-      resetField('results');
-      resetField('category');
-      setRace(response.race);
       setSuccess(true);
+      reset();
     }
     setIsLoading(false);
   };
