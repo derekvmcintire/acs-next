@@ -15,3 +15,7 @@ export interface IGetHistoryResponse extends INetworkResponse {
 export interface IGetRidersByTeamResponse extends INetworkResponse {
   riders?: IRiderInfo[] | null;
 }
+
+export interface IGetRacesByNameResonse extends INetworkResponse {
+  races?: any; // TODO update any
+}

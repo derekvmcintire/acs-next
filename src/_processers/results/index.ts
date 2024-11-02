@@ -1,6 +1,6 @@
 import { CreateResultReturnData } from '@/src/_api/create-result';
+import { ResultFormData } from '@/src/_components/Uploader/ResultForm';
 import { parseResults, PreparedResult } from '@/src/_processers/results/utility/parse-results';
-import { ResultFormData } from '@/src/app/results/upload/page';
 import { createRace, CreateRaceReturnData } from '../../_api/create-race';
 import { processPreparedResult } from './utility/process-prepared-results';
 
@@ -24,11 +24,9 @@ export const createRaceBeforeResults = async (data: ResultFormData) => {
 };
 
 export const processResults = async (
-  existingRace: CreateRaceReturnData | undefined,
+  race: CreateRaceReturnData,
   data: ResultFormData
 ): Promise<ProcessResultsReturnData> => {
-  const race = existingRace || (await createRaceBeforeResults(data));
-
   if (!race || 'error' in race) {
     throw new Error(String('Error creating race'));
   }
