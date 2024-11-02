@@ -2,7 +2,7 @@ import { CreateRaceReturnData } from '@/src/_api/create-race';
 import { createResult, CreateResultData, CreateResultReturnData } from '@/src/_api/create-result';
 import { CreateRiderReturnData } from '@/src/_api/create-rider';
 import { IRiderInfo } from '@/src/_types';
-import { PreparedResult } from './prepare-results';
+import { PreparedResult } from './parse-results';
 import { createNewRiderFromPreparedResult, fetchRiderFromResult } from './process-new-rider';
 
 export const createResultForRace = async (

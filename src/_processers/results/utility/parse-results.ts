@@ -13,7 +13,7 @@ const getHeader = (header: string): string | null => {
   return null;
 };
 
-export const prepareResults = (data: string): PreparedResult[] => {
+export const parseResults = (data: string): PreparedResult[] => {
   const rows = data.trim().split('\n');
   const isTabSeparated = rows[0].includes('\t');
   const isCommaSeparated = rows[0].includes(',');

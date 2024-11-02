@@ -33,20 +33,23 @@ const DEFAULT_FORM_VALUES = {
 function RaceForm() {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [race, setRace] = React.useState<CreateRaceReturnData | undefined>(undefined);
+  const [success, setSuccess] = React.useState<boolean>(false);
 
-  const { control, handleSubmit, reset } = useForm({
+  const { control, handleSubmit, resetField } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
   });
 
   const handleSubmitResults = async (data: ResultFormData) => {
     setIsLoading(true);
-    const response = await processResults(data);
+    const response = await processResults(race, data);
     if (!response) {
       setIsLoading(false);
     } else {
       setIsLoading(false);
-      reset();
+      resetField('results');
+      resetField('category');
       setRace(response.race);
+      setSuccess(true);
     }
     setIsLoading(false);
   };
@@ -57,7 +60,7 @@ function RaceForm() {
 
   return (
     <PageLayout>
-      {race && <div>Results successfully created</div>}
+      {success && <div>Results successfully created</div>}
 
       {isLoading ? (
         <Loader />
@@ -67,6 +70,25 @@ function RaceForm() {
             <section>
               <Flex mb={16} align="center" justify="center" gap="md">
                 <Text fw="700">Results Upload Form</Text>
+              </Flex>
+              <Flex align="center" justify="center">
+                <Text size="sm" className={classes.textFlex}>
+                  To upload results to ACS, you can paste tab or comma separated values into the
+                  text area below. If your data is space separated, this uploader will not work. The
+                  first line must be the headers, ideally in the following format:
+                </Text>
+              </Flex>
+              <Flex align="center" justify="center">
+                <Text size="sm" className={classes.textFlex}>
+                  “place,name,category,hometown,lap,time,gap”.{' '}
+                </Text>
+              </Flex>
+              <Flex align="center" justify="center">
+                <Text size="sm" className={classes.textFlex}>
+                  Any columns that are not integrated into the database schema,or have a blank or
+                  empty header will be ignored. Tips: you can try copying data straight from results
+                  tables on web pages, or pdf documents.
+                </Text>
               </Flex>
             </section>
             <Flex align="center" justify="center" gap="md">

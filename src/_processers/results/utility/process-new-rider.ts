@@ -3,7 +3,7 @@ import { getRidersByName } from '@/src/_api/get-riders-by-name';
 import { IGetRidersResponse } from '@/src/_api/types';
 import { IRiderInfo } from '@/src/_types';
 import { splitName } from './helper-functions';
-import { PreparedResult } from './prepare-results';
+import { PreparedResult } from './parse-results';
 
 // fetch rider if they already exist
 export const fetchRiderFromResult = async (result: PreparedResult): Promise<IRiderInfo | null> => {
