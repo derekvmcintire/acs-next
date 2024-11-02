@@ -31,7 +31,7 @@ export const DEFAULT_RIDER_NOT_FOUND: IRiderInfo = {
   categories: [],
   hometown: { country: '', city: '' },
   dob: '',
-  photo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png',
+  photo: '/shadowbarn.jpeg',
 };
 
 export const GF_AGE_GROUPS: IAgeGroup[] = [
