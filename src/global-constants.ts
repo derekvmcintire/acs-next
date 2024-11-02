@@ -17,6 +17,7 @@ export const ACS_COLOR_LIGHT_SILVER = '#C0C0C0';
 export const ACS_COLOR_BRONZE = '#CD7F32';
 export const ACS_COLOR_ORANGE = '#FC8D14';
 export const ACS_COLOR_BLUE = '#1B9BE0';
+export const ACS_COLOR_FORM = '#7D98A3';
 
 // Pick lists and default data
 export const DEFAULT_RIDER_NOT_FOUND: IRiderInfo = {
