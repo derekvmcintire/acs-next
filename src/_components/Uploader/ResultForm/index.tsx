@@ -2,9 +2,18 @@
 
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Button, Center, Container, Flex, Select, Text, Textarea } from '@mantine/core';
+import {
+  Button,
+  Center,
+  Container,
+  Flex,
+  MultiSelect,
+  Text,
+  Textarea,
+} from '@mantine/core';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { processResults } from '@/src/_processers/results';
+import { ICategory } from '@/src/_types';
 import Loader from '@/src/app/loading';
 import Instructions from '../Instructions';
 import classes from './result-form.module.css';
@@ -15,7 +24,7 @@ export interface ResultFormData {
   startDate?: Date;
   endDate?: Date;
   location?: string;
-  category?: string;
+  category?: string[];
   results?: string;
 }
 
@@ -25,7 +34,7 @@ const DEFAULT_FORM_VALUES = {
   startDate: undefined,
   endDate: undefined,
   location: '',
-  category: '',
+  category: [],
   results: '',
 };
 
@@ -33,7 +42,15 @@ function ResultForm() {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [success, setSuccess] = React.useState<boolean>(false);
 
-  const { selectedRace, setSelectedRace } = useUploaderContext();
+  const { selectedRace, setSelectedRace, categoryOptions } = useUploaderContext();
+
+  const categorySelectOptions = () =>
+    categoryOptions.map((option: ICategory) => {
+      return {
+        value: String(option?.id) || '1',
+        label: option?.name || 'category name missing',
+      };
+    });
 
   const { control, handleSubmit, reset } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
@@ -85,16 +102,14 @@ function ResultForm() {
                   control={control}
                   rules={{ required: 'Category is required' }}
                   render={({ field }) => (
-                    <Select
+                    <MultiSelect
                       withAsterisk
+                      className={classes.categoryOptions}
                       size="xs"
+                      clearable
                       label="Category"
                       placeholder="Select category"
-                      data={[
-                        { value: 'type1', label: 'Type 1' },
-                        { value: 'type2', label: 'Type 2' },
-                        { value: 'type3', label: 'Type 3' },
-                      ]}
+                      data={categorySelectOptions()}
                       {...field}
                     />
                   )}

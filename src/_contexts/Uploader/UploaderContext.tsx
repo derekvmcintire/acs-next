@@ -1,8 +1,13 @@
-import React, { createContext, ReactNode, useContext, useState } from 'react';
+'use client';
 
-interface IUploaderContext {
+import React, { createContext, ReactNode, useContext, useState } from 'react';
+import { ICategory } from '@/src/_types';
+
+export interface IUploaderContext {
   selectedRace: any;
   setSelectedRace: (selectedRace: any) => void;
+  categoryOptions: ICategory[];
+  setCategoryOptions: (categoryOptions: ICategory[]) => void;
   isLoading: boolean;
   setIsLoading: (isLoading: boolean) => void;
   errors: string[];
@@ -14,6 +19,8 @@ interface IUploaderContext {
 export const defaultUploaderContextValue: IUploaderContext = {
   selectedRace: '',
   setSelectedRace: () => {},
+  categoryOptions: [],
+  setCategoryOptions: () => {},
   isLoading: false,
   setIsLoading: () => {},
   errors: [],
@@ -34,6 +41,7 @@ export const UploaderContextProvider: React.FC<UploaderContextProviderProps> = (
   initialValue = defaultUploaderContextValue,
 }) => {
   const [selectedRace, setSelectedRace] = useState<any>(initialValue.selectedRace);
+  const [categoryOptions, setCategoryOptions] = useState<ICategory[]>(initialValue.categoryOptions);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errors, setErrors] = useState<string[]>(initialValue.errors);
   const [successMessage, setSuccessMessage] = useState<string>(initialValue.successMessage);
@@ -43,6 +51,8 @@ export const UploaderContextProvider: React.FC<UploaderContextProviderProps> = (
       value={{
         selectedRace,
         setSelectedRace,
+        categoryOptions,
+        setCategoryOptions,
         isLoading,
         setIsLoading,
         errors,
