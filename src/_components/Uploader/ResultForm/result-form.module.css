@@ -1,7 +1,6 @@
 .resultsForm {
   width: 90%;
   padding: 26px;
-  margin-left: 16px;
   background-color: light-dark(#7D98A3, #343637);
   background-image: linear-gradient(to bottom right, light-dark(#d7eefa, #1e282e), light-dark(#d7eefa, #1e282e), light-dark(#fcddbb, #6e5424));
   border-radius: 8px;

@@ -1,37 +1,39 @@
-import { NO_PLACE_CODE, RACE_TYPES } from './constants';
+import { Dayjs } from 'dayjs';
 
 export interface INetworkResponse {
   error?: string | null;
 }
 
-interface IBaseRaceData {
+interface IPickType {
+  id: number;
   name: string;
-  type: string;
-  startDate: string;
-  place: number;
-  racers: number;
-  points: number;
-  upgPoints: number;
-  noPlaceCode:
-    | typeof NO_PLACE_CODE.DNF
-    | typeof NO_PLACE_CODE.DSQ
-    | typeof NO_PLACE_CODE.DNS
-    | null;
+  description: string;
 }
 
-export interface IStageData extends IBaseRaceData {
-  stageNumber: number;
+interface IBaseEvent {
+  name: string;
 }
 
-export interface IRaceData extends IBaseRaceData {
-  endDate: string | null;
-  category: string;
-  stages: IStageData[] | null;
+interface IExistingEvent extends IBaseEvent {
+  id: number;
+}
+
+interface IBaseRace {
+  startDate: Dayjs | string;
+  endDate?: Dayjs | string | null;
+  location?: string;
+}
+
+export interface IExistingRace extends IBaseRace {
+  id: number;
+  eventId: number;
+  event: IExistingEvent;
+  raceType: IPickType;
 }
 
 export interface IRaceYear {
   year: number;
-  races: IRaceData[];
+  races: IResult[];
 }
 
 export interface IRacerHistory {
@@ -68,6 +70,29 @@ export interface IHometown {
   city: string | null;
 }
 
+// name: 'Mock Race',
+// type: 'road',
+// startDate: 'Tue Aug 13 2024',
+// endDate: null,
+// category: 'Cat 2',
+// place: 1,
+// racers: 1,
+// points: 719,
+// upgPoints: 7,
+// stages: null,
+// noPlaceCode: null,
+
+export interface IResult extends IBaseEvent, IBaseRace {
+  type: string;
+  category: string;
+  place: number;
+  racers: number;
+  points: number;
+  upgPoints: number;
+  stages?: null;
+  noPlaceCode?: string | null;
+}
+
 export interface IRiderInfo {
   id: number;
   currentTeam?: string;
@@ -79,23 +104,8 @@ export interface IRiderInfo {
   dob: string;
   photo: string;
   wins?: number;
-  topResults?: IRaceData[];
+  topResults?: IResult[];
 }
-
-export type RaceType =
-  | typeof RACE_TYPES.HILL
-  | typeof RACE_TYPES.ROAD
-  | typeof RACE_TYPES.CX
-  | typeof RACE_TYPES.XC
-  | typeof RACE_TYPES.TT
-  | typeof RACE_TYPES.STAGE;
-
-export type StageType =
-  | typeof RACE_TYPES.HILL
-  | typeof RACE_TYPES.ROAD
-  | typeof RACE_TYPES.CX
-  | typeof RACE_TYPES.XC
-  | typeof RACE_TYPES.TT;
 
 export interface IAgeGroup {
   start: number;

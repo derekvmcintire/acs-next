@@ -1,4 +1,4 @@
-import { ICategory, INetworkResponse, IRaceYear, IRiderInfo } from '../_types';
+import { ICategory, IExistingRace, INetworkResponse, IRaceYear, IRiderInfo } from '../_types';
 
 export interface IGetSingleRiderResponse extends INetworkResponse {
   riderInfo?: IRiderInfo | null;
@@ -16,8 +16,8 @@ export interface IGetRidersByTeamResponse extends INetworkResponse {
   riders?: IRiderInfo[] | null;
 }
 
-export interface IGetRacesByNameResonse extends INetworkResponse {
-  races?: any; // TODO update any
+export interface IGetRacesResponse extends INetworkResponse {
+  races?: IExistingRace[];
 }
 
 export interface IGetCategoriesResponse extends INetworkResponse {

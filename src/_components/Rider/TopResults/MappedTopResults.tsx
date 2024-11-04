@@ -1,5 +1,5 @@
 import { useMantineColorScheme } from '@mantine/core';
-import { IRaceData } from '@/src/_types';
+import { IResult } from '@/src/_types';
 import { getFormattedYearString } from '@/src/_utility/date-helpers';
 import { stringTrunc } from '@/src/_utility/string-helpers';
 import LabeledText from '../../ui/LabeledText/LabeledText';
@@ -9,7 +9,7 @@ import classes from '../rider.module.css';
 export const MAPPED_TOP_RESULTS_TEST_ID = 'mapped-results';
 
 interface MappedTopResultsProps {
-  topResults: IRaceData[];
+  topResults: IResult[];
 }
 
 export const MappedTopResults = ({ topResults }: MappedTopResultsProps) => {
@@ -23,7 +23,7 @@ export const MappedTopResults = ({ topResults }: MappedTopResultsProps) => {
             size="xs"
             color={getTopResultPlaceColor(result.place, colorScheme)}
             label={`${getOrdinal(result.place)}`}
-            text={`${stringTrunc(result.name)} (${getFormattedYearString(new Date(result.startDate))})`}
+            text={`${stringTrunc(result.name)} (${getFormattedYearString(new Date(String(result.startDate)))})`}
             hasColon={false}
           />
         </div>

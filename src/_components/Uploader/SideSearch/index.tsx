@@ -1,12 +1,16 @@
 'use client';
 
+import dayjs from 'dayjs';
 import React from 'react';
 import { GoSearch } from 'react-icons/go';
-import { Autocomplete, Container } from '@mantine/core';
+import { Autocomplete, Button, Container, ScrollArea } from '@mantine/core';
+import { getRaces } from '@/src/_api/get-races';
 import { getRacesByName } from '@/src/_api/get-races-by-name';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import useDebounce from '@/src/_hooks/use-debounce';
+import { IExistingRace } from '@/src/_types';
 import { getFormattedYearString, yearTrunc } from '@/src/_utility/date-helpers';
+import { ACS_COLOR_ORANGE } from '@/src/global-constants';
 import InfoBlock from '../../ui/InfoBlock/InfoBlock';
 import SectionLabel from '../../ui/SectionLabel/SectionLabel';
 import classes from './side-search.module.css';
@@ -19,12 +23,26 @@ type SearchOptionType = {
 };
 
 export default function SideSearch() {
+  const [suggestedRaces, setSuggestedRaces] = React.useState<IExistingRace[]>([]);
   const [options, setOptions] = React.useState<SearchOptionType[]>([]);
   const [availableRaces, setAvailableRaces] = React.useState<any[]>([]);
   const [searchValue, setSearchValue] = React.useState<string>('');
   const debouncedSearchValue = useDebounce(searchValue, 300); // 300ms debounce
 
   const { setSelectedRace } = useUploaderContext();
+
+  React.useEffect(() => {
+    const getRecentRaces = async () => {
+      const now = dayjs().format('YYYY-MM-DD');
+      const oneMonthAgo = dayjs().subtract(2, 'year').format('YYYY-MM-DD');
+      const response = await getRaces({ dateRange: { from: oneMonthAgo, to: now } });
+      const races = response?.races || [];
+      races.length = 30;
+      setSuggestedRaces(response?.races || []);
+    };
+
+    getRecentRaces();
+  }, []);
 
   React.useEffect(() => {
     const search = async () => {
@@ -66,6 +84,10 @@ export default function SideSearch() {
     setSelectedRace(fullRace);
   };
 
+  const handleSelectSuggestedRace = (race: IExistingRace) => {
+    setSelectedRace(race);
+  };
+
   return (
     <InfoBlock leftHanded className={classes.raceSearchInfoBlock} title="Search for a Race">
       <Container mb="36px">
@@ -81,6 +103,28 @@ export default function SideSearch() {
           onOptionSubmit={handleOptionSubmit}
         />
       </Container>
+      {suggestedRaces && (
+        <Container mb="36px" className={classes.scrollArea}>
+          <SectionLabel text="Suggested Races" />
+          <ScrollArea h={250}>
+            {suggestedRaces.map((race: IExistingRace) => (
+              <div>
+                <Button
+                  size="compact-sm"
+                  variant="subtle"
+                  className={classes.suggestedRaceButton}
+                  color={ACS_COLOR_ORANGE}
+                  onClick={() => {
+                    handleSelectSuggestedRace(race);
+                  }}
+                >
+                  {`${race?.event && race.event?.name.slice(0, 20)}...`}
+                </Button>
+              </div>
+            ))}
+          </ScrollArea>
+        </Container>
+      )}
     </InfoBlock>
   );
 }
