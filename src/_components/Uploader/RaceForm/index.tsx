@@ -50,22 +50,18 @@ function RaceForm() {
     }
 
     setIsSubmitting(true);
-    createRaceBeforeResults(data)
-      .then((response) => {
-        if (!response) {
-          setErrors([...errors, 'Form Submission Failed']);
-          setIsSubmitting(false);
-        } else {
-          setSelectedRace(response);
-          setSuccessMessage('Successfully Created Race');
-          reset();
-        }
-        setIsSubmitting(false);
-      })
-      .catch((error: string) => {
-        setErrors([...errors, error]);
-        setIsSubmitting(false);
-      });
+
+    const response = await createRaceBeforeResults(data);
+
+    if (!response) {
+      setErrors([...errors, 'Form Submission Failed']);
+    } else {
+      setSelectedRace(response);
+      setSuccessMessage('Successfully Created Race');
+      reset();
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
