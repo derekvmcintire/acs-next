@@ -28,12 +28,14 @@ function ResultForm() {
     useUploaderContext();
 
   const categorySelectOptions = () =>
-    categoryOptions.map((option: ICategory) => {
-      return {
-        value: String(option?.id) || '1',
-        label: option?.name || 'categories name missing',
-      };
-    });
+    categoryOptions
+      .map((option: ICategory) => {
+        return {
+          value: String(option?.id || '1'), // Default to '1' if option.id is falsy
+          label: option?.name || 'categories name missing', // Default label if option.name is missing
+        };
+      })
+      .sort((a, b) => a.label.localeCompare(b.label)); // Use localeCompare for string sorting
 
   const { control, handleSubmit, reset } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
