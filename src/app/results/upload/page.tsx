@@ -15,7 +15,6 @@ async function RaceUpload() {
 
   categoriesResponse?.error && errors.push(categoriesResponse.error);
   const categories = categoriesResponse?.categories || [];
-  console.log('should have categories now: ', categories);
 
   const uploaderContextValue: IUploaderContext = {
     ...defaultUploaderContextValue,

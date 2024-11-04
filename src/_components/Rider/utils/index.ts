@@ -1,5 +1,5 @@
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import { IAgeGroup, IRaceData, IRaceYear, ITeam } from '@/src/_types';
+import { IAgeGroup, IRaceYear, IResult, ITeam } from '@/src/_types';
 import {
   ACS_COLOR_BRONZE,
   ACS_COLOR_DARK_GOLD,
@@ -62,8 +62,10 @@ export const getTopResultPlaceColor = (place: number, colorScheme: string) => {
 };
 
 /********************** */
-const _sortRacesByYear = (races: IRaceData[]) =>
-  races.sort((x, y) => new Date(y.startDate).getTime() - new Date(x.startDate).getTime());
+const _sortResultsByYear = (results: IResult[]) =>
+  results.sort(
+    (x, y) => new Date(String(y.startDate)).getTime() - new Date(String(x.startDate)).getTime()
+  );
 
 /********************** */
 const _sortHistoryByYear = (history: IRaceYear[]): IRaceYear[] =>
@@ -73,7 +75,7 @@ const _sortHistoryByYear = (history: IRaceYear[]): IRaceYear[] =>
 export const sortRacingDataByYear = (history: IRaceYear[]): IRaceYear[] => {
   return _sortHistoryByYear(history).map((year) => ({
     ...year,
-    races: _sortRacesByYear(year.races),
+    races: _sortResultsByYear(year.races),
   }));
 };
 
@@ -90,26 +92,26 @@ export const getOrdinal = (n: number) => {
 };
 
 /********************** */
-export const consolidateResults = (history: IRaceYear[]): IRaceData[] => {
+export const consolidateResults = (history: IRaceYear[]): IResult[] => {
   if (history.length < 1) {
     return [];
   }
-  return history.reduce((acc: IRaceData[], year: IRaceYear) => {
+  return history.reduce((acc: IResult[], year: IRaceYear) => {
     const racesWithPlaces = year.races.filter((race) => race.place > 0);
     return [...acc, ...racesWithPlaces];
   }, []);
 };
 
 /********************** */
-export const getTopTenResults = (history: IRaceYear[] = []): IRaceData[] => {
-  const reducedResults: IRaceData[] = consolidateResults(history);
+export const getTopTenResults = (history: IRaceYear[] = []): IResult[] => {
+  const reducedResults: IResult[] = consolidateResults(history);
   return reducedResults.sort((a, b) => a.place - b.place).slice(0, 8);
 };
 
 /********************** */
 export const getCareerWins = (history: IRaceYear[] = []): number => {
-  const reducedResults: IRaceData[] = consolidateResults(history);
-  return reducedResults.filter((r: IRaceData) => r.place === 1).length;
+  const reducedResults: IResult[] = consolidateResults(history);
+  return reducedResults.filter((r: IResult) => r.place === 1).length;
 };
 
 /********************** */

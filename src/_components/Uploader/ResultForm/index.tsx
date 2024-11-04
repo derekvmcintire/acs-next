@@ -2,15 +2,16 @@
 
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Button, Center, Container, Flex, MultiSelect, Text, Textarea } from '@mantine/core';
+import { Button, Flex, MultiSelect, Text, Textarea } from '@mantine/core';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { processResults } from '@/src/_processers/results';
 import { ICategory } from '@/src/_types';
-import Loader from '@/src/app/loading';
+import { ACS_DARK_GREY } from '@/src/global-constants';
+import FormWrapper from '../FormWrapper';
 import Instructions from '../Instructions';
 import classes from './result-form.module.css';
 
-export interface ResultFormData {
+interface ResultFormData {
   categories: string[];
   results: string;
 }
@@ -21,21 +22,28 @@ const DEFAULT_FORM_VALUES = {
 };
 
 function ResultForm() {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const [success, setSuccess] = React.useState<boolean>(false);
-
-  const { selectedRace, setSelectedRace, categoryOptions, errors, setErrors } =
+  const [isSubmitting, setIsSubmitting] = React.useState<boolean>(false);
+  const { selectedRace, setSelectedRace, categoryOptions, errors, setErrors, setSuccessMessage } =
     useUploaderContext();
+
+  type Option = {
+    value: string;
+    label: string;
+  };
 
   const categorySelectOptions = () =>
     categoryOptions
-      .map((option: ICategory) => {
-        return {
-          value: String(option?.id || '1'), // Default to '1' if option.id is falsy
-          label: option?.name || 'categories name missing', // Default label if option.name is missing
+      .reduce((acc: Option[], option: ICategory) => {
+        if (!option?.id || !option?.name) {
+          return acc;
+        }
+        const newOption = {
+          value: String(option.id),
+          label: option.name,
         };
-      })
-      .sort((a, b) => a.label.localeCompare(b.label)); // Use localeCompare for string sorting
+        return [...acc, newOption];
+      }, [])
+      .sort((a, b) => a.label.localeCompare(b.label));
 
   const { control, handleSubmit, reset } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
@@ -52,23 +60,23 @@ function ResultForm() {
   };
 
   const handleSubmitResults = async (data: ResultFormData) => {
-    setIsLoading(true);
+    setIsSubmitting(true);
 
     if (!isFormValid(data)) {
-      setIsLoading(false);
+      setIsSubmitting(false);
       return;
     }
 
     const { results, categories } = data;
     const response = await processResults(selectedRace, results, categories);
     if (!response) {
-      setIsLoading(false);
+      setIsSubmitting(false);
     } else {
-      setIsLoading(false);
-      setSuccess(true);
+      setIsSubmitting(false);
+      setSuccessMessage('Successfully Created Results');
       reset();
     }
-    setIsLoading(false);
+    setIsSubmitting(false);
   };
 
   const onSubmit = (data: ResultFormData) => {
@@ -80,73 +88,69 @@ function ResultForm() {
   };
 
   return (
-    <Container>
-      {success && <div>Results successfully created</div>}
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <Center>
-          <Flex>
-            <form onSubmit={handleSubmit(onSubmit)} className={classes.resultsForm}>
-              <Instructions />
-              <Flex justify="center">
-                <Text fw="700" className={classes.formSection}>
-                  {`*Uploading Results for ${selectedRace.event.name} - ${selectedRace.startDate}*`}
-                </Text>
-              </Flex>
-              <Flex justify="center" className={classes.formSection}>
-                <Button onClick={handleChangeRace}>Select a Different Race</Button>
-              </Flex>
-              <Flex align="center" justify="center" gap="md">
-                {/* Category Field */}
-                <Controller
-                  name="categories"
-                  control={control}
-                  rules={{ required: 'Category is required' }}
-                  render={({ field }) => (
-                    <MultiSelect
-                      withAsterisk
-                      className={classes.categoryOptions}
-                      size="xs"
-                      clearable
-                      label="Category"
-                      placeholder="Select categories"
-                      data={categorySelectOptions()}
-                      {...field}
-                    />
-                  )}
-                />
-              </Flex>
-              <Flex align="center" justify="center" gap="md">
-                {/* Results Field */}
-                <Controller
-                  name="results"
-                  control={control}
-                  render={({ field }) => (
-                    <Textarea
-                      withAsterisk
-                      className={classes.textArea}
-                      autosize
-                      label="Results"
-                      placeholder="Enter results"
-                      minRows={8}
-                      maxRows={20}
-                      {...field}
-                    />
-                  )}
-                />
-              </Flex>
-              <Flex align="center" justify="center" gap="md">
-                {/* Submit Button */}
-                <Button disabled={isLoading} type="submit">
-                  Submit
-                </Button>
-              </Flex>
-            </form>
-          </Flex>
-        </Center>
-      )}
-    </Container>
+    <FormWrapper>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Instructions />
+        <Flex justify="center">
+          <Text fw="700" className={classes.formSection}>
+            {`*Uploading Results for ${selectedRace.event.name} - ${selectedRace.startDate}*`}
+          </Text>
+        </Flex>
+        <Flex justify="center" className={classes.formSection}>
+          <Button color={ACS_DARK_GREY} variant="subtle" onClick={handleChangeRace}>
+            Select a Different Race
+          </Button>
+        </Flex>
+        <Flex align="center" justify="center" gap="md">
+          {/* Category Field */}
+          <Controller
+            name="categories"
+            control={control}
+            rules={{ required: 'Category is required' }}
+            render={({ field }) => (
+              <MultiSelect
+                withAsterisk
+                disabled={isSubmitting}
+                className={classes.categoryOptions}
+                size="xs"
+                clearable
+                searchable
+                label="Category"
+                placeholder="Select categories"
+                data={categorySelectOptions()}
+                {...field}
+              />
+            )}
+          />
+        </Flex>
+        <Flex align="center" justify="center" gap="md">
+          {/* Results Field */}
+          <Controller
+            name="results"
+            control={control}
+            render={({ field }) => (
+              <Textarea
+                withAsterisk
+                disabled={isSubmitting}
+                className={classes.textArea}
+                autosize
+                label="Results"
+                placeholder="Enter results"
+                minRows={8}
+                maxRows={20}
+                {...field}
+              />
+            )}
+          />
+        </Flex>
+        <Flex align="center" justify="center" gap="md">
+          {/* Submit Button */}
+          <Button disabled={isSubmitting} type="submit">
+            Submit
+          </Button>
+        </Flex>
+      </form>
+    </FormWrapper>
   );
 }
 

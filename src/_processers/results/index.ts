@@ -1,5 +1,5 @@
 import { CreateResultReturnData } from '@/src/_api/create-result';
-import { RaceFormData } from '@/src/_components/Uploader/RaceForm';
+import { RaceFormData } from '@/src/_components/Uploader/RaceForm/index';
 import { parseResults, PreparedResult } from '@/src/_processers/results/utility/parse-results';
 import { createRace, CreateRaceReturnData } from '../../_api/create-race';
 import { processPreparedResult } from './utility/process-prepared-results';
