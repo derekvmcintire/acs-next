@@ -31,36 +31,41 @@ const DEFAULT_FORM_VALUES = {
 
 function RaceForm() {
   const [isSubmitting, setIsSubmitting] = React.useState<boolean>(false);
-  const { setSelectedRace, setSuccessMessage } = useUploaderContext();
+  const { setSelectedRace, setSuccessMessage, errors, setErrors } = useUploaderContext();
 
-  const { control, handleSubmit, reset } = useForm({
+  const { control, handleSubmit, reset, watch } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
   });
 
-  const handleSubmitRace = async (data: RaceFormData) => {
-    setIsSubmitting(true);
+  const name = watch('name');
+  const raceType = watch('raceType');
+  const startDate = watch('startDate');
 
+  const isSubmitDisabled = !name || !raceType || !startDate || isSubmitting;
+
+  const onSubmit = async (data: RaceFormData) => {
+    if (isSubmitDisabled) {
+      setErrors([...errors, 'Form Validation Failed']);
+      return;
+    }
+
+    setIsSubmitting(true);
     createRaceBeforeResults(data)
       .then((response) => {
         if (!response) {
+          setErrors([...errors, 'Form Submission Failed']);
           setIsSubmitting(false);
-          // TODO: set error
         } else {
           setSelectedRace(response);
           setSuccessMessage('Successfully Created Race');
           reset();
-          setIsSubmitting(false);
         }
         setIsSubmitting(false);
       })
-      .catch(() => {
-        // TODO set error
+      .catch((error: string) => {
+        setErrors([...errors, error]);
         setIsSubmitting(false);
       });
-  };
-
-  const onSubmit = (data: RaceFormData) => {
-    handleSubmitRace(data);
   };
 
   return (
@@ -79,7 +84,7 @@ function RaceForm() {
                 className={classes.formSection}
                 withAsterisk
                 size="xs"
-                label="Name"
+                label="Race Name"
                 placeholder="Enter name"
                 {...field}
               />
@@ -100,9 +105,9 @@ function RaceForm() {
                 label="Race Type"
                 placeholder="Select race type"
                 data={[
-                  { value: 'type1', label: 'Category 1' },
-                  { value: 'type2', label: 'Category 2' },
-                  { value: 'type3', label: 'Category 3' },
+                  { value: 'type1', label: 'Gran Fondo' },
+                  { value: 'type2', label: 'Road Race' },
+                  { value: 'type3', label: 'Hill Climb' },
                 ]}
                 {...field}
               />
@@ -163,7 +168,7 @@ function RaceForm() {
         </Flex>
         <Flex align="center" justify="center" gap="md">
           {/* Submit Button */}
-          <Button disabled={isSubmitting} mt="16" type="submit">
+          <Button disabled={isSubmitDisabled} mt="16" type="submit">
             Submit
           </Button>
         </Flex>

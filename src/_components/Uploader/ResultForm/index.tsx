@@ -9,12 +9,8 @@ import { ICategory } from '@/src/_types';
 import { ACS_DARK_GREY } from '@/src/global-constants';
 import FormWrapper from '../FormWrapper';
 import Instructions from '../Instructions';
+import { RESULTS_PLACEHOLDER_TEXT } from './placeholder-text.mjs';
 import classes from './result-form.module.css';
-
-interface ResultFormData {
-  categories: string[];
-  results: string;
-}
 
 const DEFAULT_FORM_VALUES = {
   categories: [],
@@ -45,42 +41,33 @@ function ResultForm() {
       }, [])
       .sort((a, b) => a.label.localeCompare(b.label));
 
-  const { control, handleSubmit, reset } = useForm({
+  const { control, handleSubmit, reset, watch } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
   });
 
-  const isFormValid = (data: ResultFormData): boolean => {
-    const { results, categories } = data;
-    if (!results || !categories) {
-      //does not pass validation
-      setErrors([...errors, 'Must select at least one category and provide results']);
-      return false;
-    }
-    return true;
-  };
+  const categories = watch('categories');
+  const results = watch('results');
 
-  const handleSubmitResults = async (data: ResultFormData) => {
-    setIsSubmitting(true);
+  const isSubmitDisabled = !categories.length || !results || isSubmitting;
 
-    if (!isFormValid(data)) {
-      setIsSubmitting(false);
+  const onSubmit = async () => {
+    if (isSubmitDisabled) {
+      setErrors([...errors, 'Form Validation Failed']);
       return;
     }
 
-    const { results, categories } = data;
+    setIsSubmitting(true);
+
     const response = await processResults(selectedRace, results, categories);
+
     if (!response) {
+      setErrors([...errors, 'Form Submission Failed']);
       setIsSubmitting(false);
     } else {
-      setIsSubmitting(false);
       setSuccessMessage('Successfully Created Results');
       reset();
     }
     setIsSubmitting(false);
-  };
-
-  const onSubmit = (data: ResultFormData) => {
-    handleSubmitResults(data);
   };
 
   const handleChangeRace = () => {
@@ -90,7 +77,7 @@ function ResultForm() {
   return (
     <FormWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Instructions />
+        <Instructions isResults />
         <Flex justify="center">
           <Text fw="700" className={classes.formSection}>
             {`*Uploading Results for ${selectedRace.event.name} - ${selectedRace.startDate}*`}
@@ -98,7 +85,7 @@ function ResultForm() {
         </Flex>
         <Flex justify="center" className={classes.formSection}>
           <Button color={ACS_DARK_GREY} variant="subtle" onClick={handleChangeRace}>
-            Select a Different Race
+            Create a New Race
           </Button>
         </Flex>
         <Flex align="center" justify="center" gap="md">
@@ -116,7 +103,7 @@ function ResultForm() {
                 clearable
                 searchable
                 label="Category"
-                placeholder="Select categories"
+                placeholder="You Must Manually Select Categories"
                 data={categorySelectOptions()}
                 {...field}
               />
@@ -135,7 +122,7 @@ function ResultForm() {
                 className={classes.textArea}
                 autosize
                 label="Results"
-                placeholder="Enter results"
+                placeholder={RESULTS_PLACEHOLDER_TEXT}
                 minRows={8}
                 maxRows={20}
                 {...field}
@@ -145,7 +132,7 @@ function ResultForm() {
         </Flex>
         <Flex align="center" justify="center" gap="md">
           {/* Submit Button */}
-          <Button disabled={isSubmitting} type="submit">
+          <Button disabled={isSubmitDisabled} type="submit">
             Submit
           </Button>
         </Flex>

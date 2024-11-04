@@ -1,4 +1,8 @@
 .textFlex {
   width: 80%;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.validHeaders {
+  cursor: pointer;
 }
