@@ -13,7 +13,7 @@ export interface GetRacesFilters {
   id?: number;
 }
 
-export const getRacesByNameRequestUrl = (filters: GetRacesFilters) => {
+export const getRacesRequestUrl = (filters: GetRacesFilters) => {
   const url = `${API_BASE_URL}${API_RACE_PATH}?`;
 
   const queryParams = [
@@ -32,7 +32,7 @@ export const getRacesByNameRequestUrl = (filters: GetRacesFilters) => {
 
 export const getRaces = async (filters: GetRacesFilters): Promise<IGetRacesResponse> => {
   const result = await getResponse(
-    getRacesByNameRequestUrl(filters),
+    getRacesRequestUrl(filters),
     async (response: Response): Promise<IGetRacesResponse> => {
       const parsedResponse: IExistingRace[] = await response.json();
       return { races: parsedResponse };

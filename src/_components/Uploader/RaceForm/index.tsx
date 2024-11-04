@@ -13,7 +13,7 @@ import '@mantine/dates/styles.css';
 
 import FormWrapper from '../FormWrapper';
 
-interface RaceFormData {
+export interface RaceFormData {
   name: string;
   raceType: string;
   startDate?: Date;
@@ -65,7 +65,7 @@ function RaceForm() {
 
   return (
     <FormWrapper>
-      <form onSubmit={handleSubmit(onSubmit)} className={classes.raceForm}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Instructions />
         <Flex align="center" justify="center" gap="md">
           {/* Name Field */}
