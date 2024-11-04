@@ -11,8 +11,6 @@ import {
 
 async function RaceUpload() {
   const errors: string[] = [];
-  // get category options and put them in context
-  console.log('should get categories now');
   const categoriesResponse = await getCategories();
 
   categoriesResponse?.error && errors.push(categoriesResponse.error);

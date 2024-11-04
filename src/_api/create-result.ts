@@ -12,6 +12,7 @@ export interface CreateResultData {
   place: number;
   time: string;
   points: number;
+  categories: string[];
 }
 
 export interface CreateResultReturnData {

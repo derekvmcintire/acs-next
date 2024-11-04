@@ -1,60 +1,43 @@
 import { CreateRaceReturnData } from '@/src/_api/create-race';
 import { createResult, CreateResultData, CreateResultReturnData } from '@/src/_api/create-result';
-import { CreateRiderReturnData } from '@/src/_api/create-rider';
-import { IRiderInfo } from '@/src/_types';
 import { PreparedResult } from './parse-results';
-import { createNewRiderFromPreparedResult, fetchRiderFromResult } from './process-new-rider';
+import { createNewRiderIdFromResult, fetchRiderIdFromResult } from './process-new-rider';
 
 export const createResultForRace = async (
   rawResult: PreparedResult,
   race: CreateRaceReturnData,
-  rider: CreateRiderReturnData | IRiderInfo
+  riderId: number,
+  categories: string[]
 ): Promise<CreateResultReturnData> => {
-  if (!race?.eventId || !rider?.id) {
+  if (!race?.eventId || !riderId) {
     throw new Error('Missing Event or Rider Id');
   }
   const data: CreateResultData = {
     eventId: race.eventId,
-    riderId: rider.id,
+    riderId,
     resultTypeId: 1,
     noPlaceCodeTypeId: 1,
     lap: 1,
     place: Number(rawResult.place),
     time: String(rawResult.time),
     points: 1,
+    categories,
   };
+
   const createdResult = await createResult(data);
   if (!createdResult || 'error' in createdResult) {
-    throw new Error(String('Error creating race'));
+    throw new Error(String('Error creating result'));
   }
   return createdResult;
 };
 
-const processResultForNewRider = async (
-  result: PreparedResult,
-  race: CreateRaceReturnData
-): Promise<CreateResultReturnData> => {
-  const createdRider = await createNewRiderFromPreparedResult(result);
-
-  if (!createdRider) {
-    throw new Error('Error creating rider');
-  }
-
-  const createdResult = await createResultForRace(result, race, createdRider);
-
-  if (!createdResult) {
-    throw new Error('Error creating result');
-  }
-
-  return Promise.resolve(createdResult);
-};
-
-const processResultForExistingRider = async (
+const processResult = async (
   result: PreparedResult,
   race: CreateRaceReturnData,
-  rider: IRiderInfo
+  riderId: number,
+  categories: string[]
 ): Promise<CreateResultReturnData> => {
-  const createdResult = await createResultForRace(result, race, rider);
+  const createdResult = await createResultForRace(result, race, riderId, categories);
 
   if (!createdResult) {
     throw new Error('Error creating result');
@@ -65,13 +48,15 @@ const processResultForExistingRider = async (
 
 export const processPreparedResult = async (
   result: PreparedResult,
-  race: CreateRaceReturnData
+  race: CreateRaceReturnData,
+  categories: string[]
 ): Promise<CreateResultReturnData> => {
-  const rider = await fetchRiderFromResult(result);
+  const riderId =
+    (await fetchRiderIdFromResult(result)) || (await createNewRiderIdFromResult(result));
 
-  if (!rider) {
-    return Promise.resolve(processResultForNewRider(result, race));
+  if (!riderId) {
+    throw new Error('Problem getting rider id');
   }
 
-  return Promise.resolve(processResultForExistingRider(result, race, rider));
+  return Promise.resolve(processResult(result, race, riderId, categories));
 };
