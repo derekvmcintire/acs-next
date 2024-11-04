@@ -10,7 +10,7 @@ import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import useDebounce from '@/src/_hooks/use-debounce';
 import { IExistingRace } from '@/src/_types';
 import { getFormattedYearString, yearTrunc } from '@/src/_utility/date-helpers';
-import { ACS_COLOR_ORANGE, ACS_DARK_GREY } from '@/src/global-constants';
+import { ACS_DARK_GREY } from '@/src/global-constants';
 import InfoBlock from '../../ui/InfoBlock/InfoBlock';
 import SectionLabel from '../../ui/SectionLabel/SectionLabel';
 import classes from './side-search.module.css';

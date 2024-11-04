@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Button, Container, Flex, MultiSelect, Text, Textarea } from '@mantine/core';
+import { Button, Flex, MultiSelect, Text, Textarea } from '@mantine/core';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { processResults } from '@/src/_processers/results';
 import { ICategory } from '@/src/_types';
