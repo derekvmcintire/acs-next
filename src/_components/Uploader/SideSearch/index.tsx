@@ -10,7 +10,7 @@ import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import useDebounce from '@/src/_hooks/use-debounce';
 import { IExistingRace } from '@/src/_types';
 import { getFormattedYearString, yearTrunc } from '@/src/_utility/date-helpers';
-import { ACS_COLOR_ORANGE } from '@/src/global-constants';
+import { ACS_COLOR_ORANGE, ACS_DARK_GREY } from '@/src/global-constants';
 import InfoBlock from '../../ui/InfoBlock/InfoBlock';
 import SectionLabel from '../../ui/SectionLabel/SectionLabel';
 import classes from './side-search.module.css';
@@ -106,19 +106,19 @@ export default function SideSearch() {
       {suggestedRaces && (
         <Container mb="36px" className={classes.scrollArea}>
           <SectionLabel text="Suggested Races" />
-          <ScrollArea h={250}>
+          <ScrollArea h={250} w={170}>
             {suggestedRaces.map((race: IExistingRace) => (
               <div>
                 <Button
-                  size="compact-sm"
+                  size="xs"
                   variant="subtle"
                   className={classes.suggestedRaceButton}
-                  color={ACS_COLOR_ORANGE}
+                  color={ACS_DARK_GREY}
                   onClick={() => {
                     handleSelectSuggestedRace(race);
                   }}
                 >
-                  {`${race?.event && race.event?.name.slice(0, 20)}...`}
+                  {race?.event && race.event?.name}
                 </Button>
               </div>
             ))}

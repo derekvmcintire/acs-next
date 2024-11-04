@@ -1,5 +1,5 @@
 .resultsForm {
-  width: 90%;
+  width: 100%;
   padding: 26px;
   background-color: light-dark(#7D98A3, #343637);
   background-image: linear-gradient(to bottom right, light-dark(#d7eefa, #1e282e), light-dark(#d7eefa, #1e282e), light-dark(#fcddbb, #6e5424));

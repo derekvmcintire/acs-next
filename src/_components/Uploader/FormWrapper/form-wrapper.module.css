@@ -1,15 +1,4 @@
-.formSection {
-  width: 39%;
-}
-
-.textArea {
-  width: 80%;
-  margin-bottom: 16px;
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-
-}
-
-.raceForm {
+.uploadForm {
   width: 100%;
   padding: 26px;
   background-color: light-dark(#7D98A3, #343637);
@@ -23,5 +12,3 @@
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 49px 30px rgba(0, 0, 0, 0.12);
 }
-
-
