@@ -56,7 +56,10 @@ export interface ISocials {
 
 export interface ICategory {
   discipline: string;
-  category: number;
+  category?: number;
+  name?: string;
+  description?: string;
+  id?: number;
 }
 
 export interface IHometown {
@@ -98,4 +101,8 @@ export interface IAgeGroup {
   start: number;
   end: number;
   text: string;
+}
+
+export interface IGFCategory extends IAgeGroup {
+  gender: 'M' | 'F' | 'NB';
 }

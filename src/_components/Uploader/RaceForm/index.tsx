@@ -10,34 +10,12 @@ import { createRaceBeforeResults } from '@/src/_processers/results';
 import Loader from '@/src/app/loading';
 import classes from './race-form.module.css';
 
-/*
- {
-        "id": 39,
-        "eventId": 39,
-        "raceTypeId": 1,
-        "startDate": "Fri Sep 27 2024",
-        "endDate": null,
-        "location": "Volta Ciclista a Florence",
-        "event": {
-            "id": 39,
-            "name": "Volta Ciclista a Florence"
-        },
-        "raceType": {
-            "id": 1,
-            "name": "Road",
-            "description": "Road Race Type"
-        }
-    }
-*/
-
 export interface RaceFormData {
   name: string;
   raceType: string;
   startDate?: Date;
   endDate?: Date;
   location?: string;
-  category?: string;
-  results?: string;
 }
 
 const DEFAULT_FORM_VALUES = {
@@ -46,8 +24,6 @@ const DEFAULT_FORM_VALUES = {
   startDate: undefined,
   endDate: undefined,
   location: '',
-  category: '',
-  results: '',
 };
 
 function RaceForm() {

@@ -2,30 +2,21 @@
 
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Button, Center, Container, Flex, Select, Text, Textarea } from '@mantine/core';
+import { Button, Center, Container, Flex, MultiSelect, Text, Textarea } from '@mantine/core';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { processResults } from '@/src/_processers/results';
+import { ICategory } from '@/src/_types';
 import Loader from '@/src/app/loading';
 import Instructions from '../Instructions';
 import classes from './result-form.module.css';
 
 export interface ResultFormData {
-  name: string;
-  raceType: string;
-  startDate?: Date;
-  endDate?: Date;
-  location?: string;
-  category?: string;
-  results?: string;
+  categories: string[];
+  results: string;
 }
 
 const DEFAULT_FORM_VALUES = {
-  name: '',
-  raceType: '',
-  startDate: undefined,
-  endDate: undefined,
-  location: '',
-  category: '',
+  categories: [],
   results: '',
 };
 
@@ -33,15 +24,41 @@ function ResultForm() {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [success, setSuccess] = React.useState<boolean>(false);
 
-  const { selectedRace, setSelectedRace } = useUploaderContext();
+  const { selectedRace, setSelectedRace, categoryOptions, errors, setErrors } =
+    useUploaderContext();
+
+  const categorySelectOptions = () =>
+    categoryOptions.map((option: ICategory) => {
+      return {
+        value: String(option?.id) || '1',
+        label: option?.name || 'categories name missing',
+      };
+    });
 
   const { control, handleSubmit, reset } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
   });
 
+  const isFormValid = (data: ResultFormData): boolean => {
+    const { results, categories } = data;
+    if (!results || !categories) {
+      //does not pass validation
+      setErrors([...errors, 'Must select at least one category and provide results']);
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmitResults = async (data: ResultFormData) => {
     setIsLoading(true);
-    const response = await processResults(selectedRace, data);
+
+    if (!isFormValid(data)) {
+      setIsLoading(false);
+      return;
+    }
+
+    const { results, categories } = data;
+    const response = await processResults(selectedRace, results, categories);
     if (!response) {
       setIsLoading(false);
     } else {
@@ -81,20 +98,18 @@ function ResultForm() {
               <Flex align="center" justify="center" gap="md">
                 {/* Category Field */}
                 <Controller
-                  name="category"
+                  name="categories"
                   control={control}
                   rules={{ required: 'Category is required' }}
                   render={({ field }) => (
-                    <Select
+                    <MultiSelect
                       withAsterisk
+                      className={classes.categoryOptions}
                       size="xs"
+                      clearable
                       label="Category"
-                      placeholder="Select category"
-                      data={[
-                        { value: 'type1', label: 'Type 1' },
-                        { value: 'type2', label: 'Type 2' },
-                        { value: 'type3', label: 'Type 3' },
-                      ]}
+                      placeholder="Select categories"
+                      data={categorySelectOptions()}
                       {...field}
                     />
                   )}

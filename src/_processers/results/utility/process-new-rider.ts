@@ -1,12 +1,10 @@
-import { createRider, CreateRiderData, CreateRiderReturnData } from '@/src/_api/create-rider';
+import { createRider, CreateRiderData } from '@/src/_api/create-rider';
 import { getRidersByName } from '@/src/_api/get-riders-by-name';
 import { IGetRidersResponse } from '@/src/_api/types';
-import { IRiderInfo } from '@/src/_types';
 import { splitName } from './helper-functions';
 import { PreparedResult } from './parse-results';
 
-// fetch rider if they already exist
-export const fetchRiderFromResult = async (result: PreparedResult): Promise<IRiderInfo | null> => {
+export const fetchRiderIdFromResult = async (result: PreparedResult): Promise<number | null> => {
   const riderName = result?.name;
   if (!riderName) {
     return null;
@@ -16,13 +14,12 @@ export const fetchRiderFromResult = async (result: PreparedResult): Promise<IRid
     throw new Error(String(matches.error));
   }
   const riderMatches = Array.isArray(matches?.riders) ? matches?.riders : [];
-  return riderMatches.length > 1 ? riderMatches[0] : null;
+  return riderMatches.length > 1 ? riderMatches[0].Id : null;
 };
 
-// create a new rider from a prepared result
-export const createNewRiderFromPreparedResult = async (
+export const createNewRiderIdFromResult = async (
   result: PreparedResult
-): Promise<CreateRiderReturnData | void> => {
+): Promise<number | void> => {
   if (!result?.name) {
     return Promise.resolve();
   }
@@ -42,5 +39,5 @@ export const createNewRiderFromPreparedResult = async (
   if (!createdRider || 'error' in createdRider) {
     throw new Error(String('Error creating race'));
   }
-  return createdRider;
+  return createdRider.id;
 };

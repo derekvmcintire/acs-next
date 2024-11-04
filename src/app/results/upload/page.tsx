@@ -1,16 +1,31 @@
-'use client';
-
 import React from 'react';
 import { Center } from '@mantine/core';
+import { getCategories } from '@/src/_api/get-categories';
 import PageLayout from '@/src/_components/shared/PageLayout/PageLayout';
 import UploadForm from '@/src/_components/Uploader/UploadForm';
-import { UploaderContextProvider } from '@/src/_contexts/Uploader/UploaderContext';
+import {
+  defaultUploaderContextValue,
+  IUploaderContext,
+  UploaderContextProvider,
+} from '@/src/_contexts/Uploader/UploaderContext';
 
-function RaceUpload() {
+async function RaceUpload() {
+  const errors: string[] = [];
+  const categoriesResponse = await getCategories();
+
+  categoriesResponse?.error && errors.push(categoriesResponse.error);
+  const categories = categoriesResponse?.categories || [];
+  console.log('should have categories now: ', categories);
+
+  const uploaderContextValue: IUploaderContext = {
+    ...defaultUploaderContextValue,
+    categoryOptions: categories,
+  };
+
   return (
     <PageLayout>
       <Center>
-        <UploaderContextProvider>
+        <UploaderContextProvider initialValue={uploaderContextValue}>
           <UploadForm />
         </UploaderContextProvider>
       </Center>
