@@ -5,6 +5,7 @@
 }
 
 .infoBlockLeftHandedOuter {
+  border-radius: 4px 4px 0 0;
   border-left: 5px solid;
   border-color: light-dark(#d8dfe3, #343637);
 }
@@ -18,7 +19,7 @@
 
   .infoBlockHeader {
     background-color: light-dark(#d8dfe3, #343637);
-    border-radius: 4px 0px 0px;
+    
     width: 100%;
     padding: 4px;
     justify-content: center;
