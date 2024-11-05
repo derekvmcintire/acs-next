@@ -19,7 +19,10 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
+          # Modify the cache-dependency-path key to add a version or unique ID
           cache-dependency-path: '**/package-lock.json'
+          # Add a unique cache key to force cache refresh if needed
+          cache-key: npm-cache-${{ github.workflow }}-${{ github.run_id }} # or use github.sha
 
       - name: Install dependencies
         run: npm install
