@@ -1,13 +1,13 @@
-import React from 'react';
 import { Center } from '@mantine/core';
+import React from 'react';
 import { getCategories } from '@/src/_api/get/categories/get-categories';
+import PageLayout from '@/src/_components/shared/PageLayout';
 import UploadForm from '@/src/_components/Uploader/UploadForm';
 import {
   defaultUploaderContextValue,
   IUploaderContext,
   UploaderContextProvider,
 } from '@/src/_contexts/Uploader/UploaderContext';
-import PageLayout from '@/src/_components/Shared/PageLayout';
 
 async function RaceUpload() {
   const errors: string[] = [];

@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
 import { Button, Flex, Select, TextInput } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
+import React from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import Instructions from '@/src/_components/Uploader/Instructions';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { createRaceBeforeResults } from '@/src/_processers/results';

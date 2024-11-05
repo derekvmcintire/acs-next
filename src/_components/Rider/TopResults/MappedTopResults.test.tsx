@@ -1,18 +1,18 @@
-import React from 'react';
 import { MantineProvider, useMantineColorScheme } from '@mantine/core';
+import React from 'react';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import { stringTrunc } from '@/src/_utility/string-helpers';
 import { render, screen } from '@/test-utils';
+import { LabeledTextProps } from '../../ui/LabeledText';
 import { getTopResultPlaceColor } from '../utils';
 import { MAPPED_TOP_RESULTS_TEST_ID, MappedTopResults } from './MappedTopResults';
-import { LabeledTextProps } from '../../Ui/LabeledText';
 
 jest.mock('@mantine/core', () => ({
   ...jest.requireActual('@mantine/core'),
   useMantineColorScheme: jest.fn(),
 }));
 
-jest.mock('../../ui/LabeledText/LabeledText', () => {
+jest.mock('../../ui/LabeledText', () => {
   return function MockedLabeledText(props: LabeledTextProps) {
     return (
       <div data-testid="labeled-text">

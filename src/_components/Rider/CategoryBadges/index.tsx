@@ -2,11 +2,10 @@
 
 import React from 'react';
 import { GetCategoriesResponse } from '@/src/_api/get/categories/get-categories-response-type';
+import InfoBadge from '@/src/_components/ui/InfoBadge';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
-import InfoBadge from '../../Ui/InfoBadge';
 import { calculateAgeGroupFromDob } from '../utils';
 
-// @TODO Update this. Should use category.name field, not category.category, but will need to update how this data is returned from get rider
 const mapCategories = (categories: GetCategoriesResponse[]): React.ReactNode => {
   return categories.map((c: GetCategoriesResponse) => (
     <span key={c.disicpline}>

@@ -15,9 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-- uses: actions/setup-node@v3
-  with:
-    node-version-file: '.nvmrc'
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          # whitespace to test with no cache
+
       - name: Install dependencies
         run: npm install
 

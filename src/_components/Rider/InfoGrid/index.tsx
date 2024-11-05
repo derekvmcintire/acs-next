@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
 import { Flex, Grid } from '@mantine/core';
+import React from 'react';
 import ProfileImage from '../ProfileImage';
 import RiderDetails from '../RiderDetails';
 import TBD from '../TBD';

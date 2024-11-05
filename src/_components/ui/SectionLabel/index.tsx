@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
 import { Container, Divider, Text } from '@mantine/core';
+import React from 'react';
 import classes from '../styles/section-label.module.css';
 
 interface SectionLabelProps {

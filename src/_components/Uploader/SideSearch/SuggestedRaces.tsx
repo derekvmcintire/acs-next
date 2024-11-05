@@ -1,13 +1,13 @@
 'use client';
 
+import { Button, Container, ScrollArea } from '@mantine/core';
 import dayjs from 'dayjs';
 import React from 'react';
-import { Button, Container, ScrollArea } from '@mantine/core';
 import { getRaces } from '@/src/_api/get/races/get-races';
 import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { ACS_DARK_GREY } from '@/src/global-constants';
-import SectionLabel from '../../Ui/SectionLabel';
+import SectionLabel from '../../ui/SectionLabel';
 import classes from './side-search.module.css';
 
 export default function SuggestedRaces() {

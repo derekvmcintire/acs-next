@@ -4,11 +4,11 @@ import { Anchor, Container, Divider, Flex, Image, Text } from '@mantine/core';
 import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
-import SectionLabel from '../../Ui/SectionLabel';
+import InfoBlock from '../../ui/InfoBlock';
+import SectionLabel from '../../ui/SectionLabel';
 import { calculateAge, getCurrentTeam } from '../utils';
 import TeamQuickStats from './TeamQuickStats';
 import classes from '../rider.module.css';
-import InfoBlock from '../../Ui/InfoBlock';
 
 interface TeamMemberProps {
   rider: GetRiderResponse;

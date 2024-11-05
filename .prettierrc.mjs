@@ -5,22 +5,23 @@ const config = {
   trailingComma: 'es5',
   plugins: ['@ianvs/prettier-plugin-sort-imports'],
   importOrder: [
+    '^@mantine/(.*)$',
+    '^@mantinex/(.*)$',
+    '^@mantine-tests/(.*)$',
     '.*styles.css$',
-    '',
     'dayjs',
     '^react$',
     '^next$',
     '^next/.*$',
     '<BUILTIN_MODULES>',
     '<THIRD_PARTY_MODULES>',
-    '^@mantine/(.*)$',
-    '^@mantinex/(.*)$',
-    '^@mantine-tests/(.*)$',
+  
     '^@docs/(.*)$',
     '^@/.*$',
     '^../(?!.*.css$).*$',
     '^./(?!.*.css$).*$',
     '\\.css$',
+    '',
   ],
   overrides: [
     {
