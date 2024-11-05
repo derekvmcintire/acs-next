@@ -1,4 +1,4 @@
-import { BaseEvent, PickType } from '@/src/_types';
+import { BaseEvent, PickType } from '@/src/_types/base-types';
 
 export interface CreateRaceReturn {
   id: number;

@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 import { GetRaceResultsResponse } from '@/src/_api/get/race/get-race-results-response-type';
-import { ExtendedRace } from '@/src/_types';
+import { ExtendedRace } from '@/src/_types/extended-types';
 
 interface RaceContextType {
   race?: ExtendedRace | undefined;

@@ -1,4 +1,5 @@
-import { BaseResult, ExtendedEvent, PickType, TransformedRider } from '@/src/_types';
+import { BaseResult, PickType } from '@/src/_types/base-types';
+import { ExtendedEvent, TransformedRider } from '@/src/_types/extended-types';
 
 export interface GetRaceResultsResponse extends BaseResult {
   id: number;

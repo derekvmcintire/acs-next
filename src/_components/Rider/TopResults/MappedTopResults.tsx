@@ -1,5 +1,5 @@
 import { useMantineColorScheme } from '@mantine/core';
-import { RiderResult } from '@/src/_types';
+import { RiderResult } from '@/src/_types/extended-types';
 import { getFormattedYearString } from '@/src/_utility/date-helpers';
 import { stringTrunc } from '@/src/_utility/string-helpers';
 import LabeledText from '../../ui/LabeledText';

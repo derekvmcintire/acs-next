@@ -1,4 +1,5 @@
-import { Hometown, RiderName, RiderResult, Socials, Team } from '@/src/_types';
+import { Hometown, RiderName, Socials, Team } from '@/src/_types/base-types';
+import { RiderResult } from '@/src/_types/extended-types';
 import { GetCategoriesResponse } from '../categories/get-categories-response-type';
 
 export interface GetRiderResponse {

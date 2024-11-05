@@ -1,7 +1,7 @@
 'use client';
 
 import InfoBlock from '@/src/_components/ui/InfoBlock';
-import { Team } from '@/src/_types';
+import { Team } from '@/src/_types/base-types';
 import { yearTrunc } from '@/src/_utility/date-helpers';
 import { stringTrunc } from '@/src/_utility/string-helpers';
 import { useRider } from '../../../_contexts/Rider/RiderContext';

@@ -1,4 +1,4 @@
-import { BaseEvent, BaseRace, PickType } from '@/src/_types';
+import { BaseEvent, BaseRace, PickType } from '@/src/_types/base-types';
 
 export interface GetRacesResponse extends BaseRace {
   id: number;

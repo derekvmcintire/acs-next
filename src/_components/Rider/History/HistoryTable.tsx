@@ -1,7 +1,7 @@
 'use client';
 
 import { Flex, Table, Text } from '@mantine/core';
-import { RiderResult } from '@/src/_types';
+import { RiderResult } from '@/src/_types/extended-types';
 import classes from '../rider.module.css';
 
 const getFormattedDateString = (date: Date) => {
