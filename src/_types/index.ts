@@ -1,48 +1,14 @@
 import { Dayjs } from 'dayjs';
 
-export interface INetworkResponse {
-  error?: string | null;
+// Base Types
+export interface IGFCategory extends AgeGroup {
+  gender: 'Men' | 'Women' | 'Non Binary';
 }
 
 export interface PickType {
   id: number;
   name: string;
   description: string;
-}
-
-export interface BaseEvent {
-  id?: number;
-  name: string;
-}
-
-export interface BaseRace {
-  id?: number;
-  startDate: Dayjs | string;
-  endDate?: Dayjs | string | null;
-  location?: string;
-}
-
-export interface IRace extends BaseRace {
-  eventId: number;
-  raceTypeId?: number;
-  raceType?: PickType;
-  event?: BaseEvent;
-}
-
-export interface BaseRider {
-  id?: number;
-  dob?: string;
-  photo?: string;
-  about?: string;
-}
-
-export interface TransformedRider extends BaseRider {
-  firstName: string;
-  lastName: string;
-  country?: string;
-  hometown?: string;
-  strava?: string;
-  insta?: string;
 }
 
 export interface RiderName {
@@ -74,32 +40,67 @@ export interface AgeGroup {
   text: string;
 }
 
-export interface RiderResult {
+export interface BaseEvent {
+  id?: number;
   name: string;
+}
+
+export interface BaseRace {
+  id?: number;
+  startDate: Dayjs | string;
+  endDate?: Dayjs | string | null;
+  location?: string;
+}
+
+export interface BaseRider {
+  id?: number;
+  dob?: string;
+  photo?: string;
+  about?: string;
+}
+
+export interface BaseResult {
   place: number;
-  time?: string;
   points?: number;
+  time?: string;
+  eventId?: number;
+  lap?: number;
+}
+
+// Extended Types
+export interface ExtendedRace extends BaseRace {
+  eventId: number;
+  raceTypeId?: number;
+  raceType?: PickType;
+  event?: BaseEvent;
+}
+
+export interface TransformedRider extends BaseRider {
+  firstName: string;
+  lastName: string;
+  country?: string;
+  hometown?: string;
+  strava?: string;
+  insta?: string;
+}
+
+export interface ExtendedEvent extends BaseEvent {
+  Race: ExtendedRace[];
+}
+
+export interface RiderResult extends BaseResult {
+  name: string;
   noPlaceCode?: string | null;
   resultType?: string;
-  eventId?: number;
   category?: string;
   racers: number;
   type: string;
   startDate: string;
   endDate?: string | null;
   location?: string;
-  lap?: number;
 }
 
 export interface YearlyResults {
   year: number;
   races: RiderResult[];
-}
-
-export interface IGFCategory extends AgeGroup {
-  gender: 'Men' | 'Women' | 'Non Binary';
-}
-
-export interface EventWithRace extends BaseEvent {
-  Race: IRace[];
 }

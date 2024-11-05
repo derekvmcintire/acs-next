@@ -1,9 +1,12 @@
-import { INetworkResponse } from '../_types';
 import { GetCategoriesResponse } from './get/categories/get-categories-response-type';
 import { GetHistoryResponse } from './get/history/get-history-response-type';
 import { GetRaceResultsResponse } from './get/race/get-race-results-response-type';
 import { GetRacesResponse } from './get/races/get-races-response-type';
 import { GetRiderResponse } from './get/riders/get-riders-response-type';
+
+export interface INetworkResponse {
+  error?: string | null;
+}
 
 export interface IGetSingleRiderResponse extends INetworkResponse {
   riderInfo?: GetRiderResponse | null;

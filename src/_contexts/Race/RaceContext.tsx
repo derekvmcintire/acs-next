@@ -1,9 +1,9 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 import { GetRaceResultsResponse } from '@/src/_api/get/race/get-race-results-response-type';
-import { IRace } from '@/src/_types';
+import { ExtendedRace } from '@/src/_types';
 
 interface RaceContextType {
-  race?: IRace | undefined;
+  race?: ExtendedRace | undefined;
   setRace: (race: any) => void;
   results: GetRaceResultsResponse[];
   setResults: (result: any) => void;
@@ -24,7 +24,7 @@ const RaceContext = createContext<RaceContextType>(defaultValue);
 
 interface RaceProviderProps {
   children: ReactNode;
-  initialRace?: IRace;
+  initialRace?: ExtendedRace;
   initialResults?: GetRaceResultsResponse[];
 }
 
@@ -33,7 +33,7 @@ export const RaceProvider: React.FC<RaceProviderProps> = ({
   initialRace = defaultValue.race,
   initialResults = defaultValue.results,
 }) => {
-  const [race, setRace] = useState<IRace | undefined>(initialRace);
+  const [race, setRace] = useState<ExtendedRace | undefined>(initialRace);
   const [results, setResults] = useState<GetRaceResultsResponse[]>(initialResults);
   const [errors, setErrors] = useState<string[]>([]);
 

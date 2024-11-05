@@ -1,17 +1,12 @@
-import { EventWithRace, PickType, TransformedRider } from '@/src/_types';
+import { BaseResult, ExtendedEvent, PickType, TransformedRider } from '@/src/_types';
 
-export interface GetRaceResultsResponse {
+export interface GetRaceResultsResponse extends BaseResult {
   id: number;
-  eventId: number;
   riderId: number;
   resultTypeId: number;
   noPlaceCodeTypeId: number;
-  lap: number | null;
-  place: number;
-  time: string;
-  points: number | null;
   rider: TransformedRider;
-  event: EventWithRace;
+  event: ExtendedEvent;
   resultType: PickType;
   noPlaceCodeType: PickType;
 }
