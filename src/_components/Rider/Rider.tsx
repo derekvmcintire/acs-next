@@ -6,12 +6,12 @@ import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type
 import { RiderHistoryProvider } from '@/src/_contexts/Rider/RiderHistoryContext';
 import { YearlyResults } from '@/src/_types';
 import { RiderProvider } from '../../_contexts/Rider/RiderContext';
-import PageLayout from '../Shared/PageLayout';
 import History from './History';
 import { NameHeading } from './NameHeading';
 import TeamList from './TeamList';
 import classes from './rider.module.css';
 import InfoGrid from './InfoGrid';
+import PageLayout from '../Shared/PageLayout';
 
 export const RIDER_INFO_TEST_ID = 'rider-info';
 
