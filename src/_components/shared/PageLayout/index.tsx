@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
 import { Container } from '@mantine/core';
+import React from 'react';
 import { ColorSchemeToggle } from '../ColorSchemeToggle';
 import TopNav from '../TopNav';
 

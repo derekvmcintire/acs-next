@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
 import { Container, Divider } from '@mantine/core';
+import React from 'react';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import LabeledText from '../../ui/LabeledText';
 import SectionLabel from '../../ui/SectionLabel';

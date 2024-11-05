@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
 import { Center, Flex } from '@mantine/core';
+import React from 'react';
 import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import PageLayout from '@/src/_components/shared/PageLayout';
 import { RiderHistoryProvider } from '@/src/_contexts/Rider/RiderHistoryContext';

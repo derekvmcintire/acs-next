@@ -1,8 +1,8 @@
 'use client';
 
+import { Autocomplete, Container } from '@mantine/core';
 import React from 'react';
 import { GoSearch } from 'react-icons/go';
-import { Autocomplete, Container } from '@mantine/core';
 import { getRaces } from '@/src/_api/get/races/get-races';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import useDebounce from '@/src/_hooks/use-debounce';

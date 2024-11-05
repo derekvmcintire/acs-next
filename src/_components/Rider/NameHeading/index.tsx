@@ -1,7 +1,7 @@
 'use client';
 
-import { MdArrowForwardIos } from 'react-icons/md';
 import { Flex, Text, Title } from '@mantine/core';
+import { MdArrowForwardIos } from 'react-icons/md';
 import { ACS_COLOR_ORANGE } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import CategoryBadges from '../CategoryBadges';

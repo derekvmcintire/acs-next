@@ -1,5 +1,5 @@
-import React from 'react';
 import { MantineProvider, useMantineColorScheme } from '@mantine/core';
+import React from 'react';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import { stringTrunc } from '@/src/_utility/string-helpers';
 import { render, screen } from '@/test-utils';

@@ -1,6 +1,6 @@
 import { Text } from '@mantine/core';
-import { render, screen } from '../../../../test-utils';
 import InfoBlock from '.';
+import { render, screen } from '../../../../test-utils';
 
 describe('InfoBlock', () => {
   test('renders its children', () => {

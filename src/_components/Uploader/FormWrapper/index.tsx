@@ -1,7 +1,7 @@
 'use client';
 
-import React, { PropsWithChildren } from 'react';
 import { Center, Container, Flex } from '@mantine/core';
+import React, { PropsWithChildren } from 'react';
 import Loader from '@/src/app/loading';
 import classes from './form-wrapper.module.css';
 

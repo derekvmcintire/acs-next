@@ -1,8 +1,8 @@
 'use client';
 
+import { Anchor } from '@mantine/core';
 import React from 'react';
 import { FaStrava } from 'react-icons/fa';
-import { Anchor } from '@mantine/core';
 import InfoBlock from '@/src/_components/ui/InfoBlock';
 import LabeledText from '@/src/_components/ui/LabeledText';
 import { ACS_COLOR_ORANGE, STRAVA_BASE_URL } from '@/src/global-constants';
