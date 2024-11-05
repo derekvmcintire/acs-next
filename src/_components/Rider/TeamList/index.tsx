@@ -20,7 +20,7 @@ const TeamMember = ({ rider }: TeamMemberProps) => {
   return (
     <>
       <Flex align="flex-end" justify="space-between">
-        <Image h={30} src={photo} mr={16}></Image>
+        {photo && <Image h={30} src={photo} mr={16}></Image>}
         <Text size="sm">
           <Anchor
             className={classes.teamListAnchor}
