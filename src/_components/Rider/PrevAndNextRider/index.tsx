@@ -1,7 +1,7 @@
 'use client';
 
-import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
 import { Anchor, Divider, Flex } from '@mantine/core';
+import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import classes from '../rider.module.css';

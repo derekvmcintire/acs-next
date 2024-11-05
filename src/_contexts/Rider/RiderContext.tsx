@@ -1,12 +1,12 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
-import { IRiderInfo } from '@/src/_types';
+import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import { DEFAULT_RIDER_NOT_FOUND } from '@/src/global-constants';
 
 interface RiderContextType {
-  riderInfo: IRiderInfo;
-  setRiderInfo: (info: IRiderInfo) => void;
-  riderTeamMembers: IRiderInfo[];
-  setRiderTeamMembers: (members: IRiderInfo[]) => void;
+  riderInfo: GetRiderResponse;
+  setRiderInfo: (info: GetRiderResponse) => void;
+  riderTeamMembers: GetRiderResponse[];
+  setRiderTeamMembers: (members: GetRiderResponse[]) => void;
   errors: string[];
   setErrors: (errors: string[]) => void;
 }
@@ -24,8 +24,8 @@ const RiderContext = createContext<RiderContextType>(defaultRiderContext);
 
 interface RiderProviderProps {
   children: ReactNode;
-  initialRiderInfo: IRiderInfo;
-  initialRiderTeamMembers: IRiderInfo[];
+  initialRiderInfo: GetRiderResponse;
+  initialRiderTeamMembers: GetRiderResponse[];
 }
 
 export const RiderProvider: React.FC<RiderProviderProps> = ({
@@ -33,8 +33,9 @@ export const RiderProvider: React.FC<RiderProviderProps> = ({
   initialRiderInfo = DEFAULT_RIDER_NOT_FOUND,
   initialRiderTeamMembers,
 }) => {
-  const [riderInfo, setRiderInfo] = useState<IRiderInfo>(initialRiderInfo);
-  const [riderTeamMembers, setRiderTeamMembers] = useState<IRiderInfo[]>(initialRiderTeamMembers);
+  const [riderInfo, setRiderInfo] = useState<GetRiderResponse>(initialRiderInfo);
+  const [riderTeamMembers, setRiderTeamMembers] =
+    useState<GetRiderResponse[]>(initialRiderTeamMembers);
   const [errors, setErrors] = useState<string[]>([]);
 
   return (

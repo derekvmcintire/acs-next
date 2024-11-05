@@ -3,7 +3,7 @@
 import { Flex, Text } from '@mantine/core';
 import { ACS_COLOR_ORANGE } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
-import InfoBlock from '../../UI/InfoBlock/InfoBlock';
+import InfoBlock from '../../ui/InfoBlock';
 import { MappedTopResults } from './MappedTopResults';
 import classes from '../rider.module.css';
 

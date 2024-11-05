@@ -1,7 +1,7 @@
 import { API_BASE_URL, API_RACE_PATH } from '@/src/_api/constants';
-import { IExistingRace } from '@/src/_types';
-import { getResponse } from './helpers';
-import { IGetRacesResponse } from './types';
+import { getResponse } from '../../helpers';
+import { IGetRacesResponse } from '../../types';
+import { GetRacesResponse } from './get-races-response-type';
 
 export interface GetRacesFilters {
   name?: string;
@@ -34,7 +34,7 @@ export const getRaces = async (filters: GetRacesFilters): Promise<IGetRacesRespo
   const result = await getResponse(
     getRacesRequestUrl(filters),
     async (response: Response): Promise<IGetRacesResponse> => {
-      const parsedResponse: IExistingRace[] = await response.json();
+      const parsedResponse: GetRacesResponse[] = await response.json();
       return { races: parsedResponse };
     }
   );

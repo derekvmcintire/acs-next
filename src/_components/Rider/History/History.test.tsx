@@ -1,3 +1,4 @@
+import History from '.';
 import { RiderHistoryProvider } from '@/src/_contexts/Rider/RiderHistoryContext';
 import {
   mockRacingHistoryEmpty,
@@ -5,7 +6,6 @@ import {
   mockRacingHistoryMissingYear,
 } from '@/src/_db/mock-data/mock-race-history';
 import { render, screen } from '../../../../test-utils';
-import History from './History';
 
 describe('History', () => {
   it('renders all years provided, even with no races in that year', () => {

@@ -1,12 +1,13 @@
-import { CreateResultReturnData } from '@/src/_api/create-result';
+import { CreateRaceReturn } from '@/src/_api/post/races/create-race-return-type';
+import { CreateResultReturn } from '@/src/_api/post/results/create-result-return-type';
 import { RaceFormData } from '@/src/_components/Uploader/RaceForm/index';
 import { parseResults, PreparedResult } from '@/src/_processers/results/utility/parse-results';
-import { createRace, CreateRaceReturnData } from '../../_api/create-race';
+import { createRace } from '../../_api/post/races/create-race';
 import { processPreparedResult } from './utility/process-prepared-results';
 
 export type ProcessResultsReturnData = {
-  race: CreateRaceReturnData;
-  resultsCreated: CreateResultReturnData[];
+  race: CreateRaceReturn;
+  resultsCreated: CreateResultReturn[];
 };
 
 export const createRaceBeforeResults = async (data: RaceFormData) => {
@@ -24,7 +25,7 @@ export const createRaceBeforeResults = async (data: RaceFormData) => {
 };
 
 export const processResults = async (
-  race: CreateRaceReturnData,
+  race: CreateRaceReturn,
   results: string,
   categories: string[]
 ): Promise<ProcessResultsReturnData> => {

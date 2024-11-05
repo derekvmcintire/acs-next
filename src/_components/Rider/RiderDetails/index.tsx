@@ -1,13 +1,13 @@
 'use client';
 
+import { Anchor } from '@mantine/core';
 import React from 'react';
 import { FaStrava } from 'react-icons/fa';
-import { Anchor } from '@mantine/core';
+import InfoBlock from '@/src/_components/ui/InfoBlock';
+import LabeledText from '@/src/_components/ui/LabeledText';
 import { ACS_COLOR_ORANGE, STRAVA_BASE_URL } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
-import InfoBlock from '../../UI/InfoBlock/InfoBlock';
-import LabeledText from '../../UI/LabeledText/LabeledText';
-import { PrevAndNextRider } from '../PrevAndNextRider/PrevAndNextRider';
+import { PrevAndNextRider } from '../PrevAndNextRider';
 import { calculateAge } from '../utils';
 import classes from '../rider.module.css';
 
@@ -16,25 +16,22 @@ const RIDER_DETAILS_TEST_ID = 'rider-details';
 export default function RiderDetails() {
   const { riderInfo } = useRider();
   const { socials, dob, hometown } = riderInfo;
-  const { country, city, state } = hometown;
+  const country = hometown?.country || '';
+  const city = hometown?.city || '';
 
-  const birthDate: Date = new Date(dob);
-  const age = calculateAge(birthDate);
+  const birthDate: Date | undefined = dob ? new Date(dob) : undefined;
+  const age = birthDate ? calculateAge(birthDate) : undefined;
 
-  const { strava } = socials;
+  const strava = socials?.strava;
   const stravaUrl = strava ? `${STRAVA_BASE_URL}${strava}` : '';
 
   return (
     <section className={classes.details} data-testid={RIDER_DETAILS_TEST_ID}>
       <InfoBlock title="Rider Details">
-        <LabeledText label="Birthday" text={birthDate.toLocaleDateString()} />
-        <LabeledText label="Age" text={age.toString()} />
+        {birthDate && <LabeledText label="Birthday" text={birthDate.toLocaleDateString()} />}
+        {age && <LabeledText label="Age" text={age.toString()} />}
         <LabeledText label="Nationality" text={country?.toUpperCase() || ''} />
-        <LabeledText
-          size="sm"
-          label="Hometown"
-          text={`${city || ''}${state ? `, ${state.toUpperCase()}` : ''}`}
-        />
+        <LabeledText size="sm" label="Hometown" text={`${city || ''}`} />
         <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>
           <FaStrava color={ACS_COLOR_ORANGE} />
         </Anchor>

@@ -1,8 +1,8 @@
+import PageLayout from '.';
 import { render, screen } from '@/test-utils';
-import { COLOR_SCHEME_TOGGLE_TEST_ID } from '../ColorSchemeToggle/ColorSchemeToggle';
+import { COLOR_SCHEME_TOGGLE_TEST_ID } from '../ColorSchemeToggle';
+import { TOP_NAV_TEST_ID } from '../TopNav';
 import { RIDER_SEARCH_DATA_TEST_ID } from '../TopNav/Search';
-import { TOP_NAV_TEST_ID } from '../TopNav/TopNav';
-import PageLayout from './PageLayout';
 
 jest.mock('../TopNav/Search', () => {
   return function MockSearch() {

@@ -1,5 +1,5 @@
+import InfoBadge from '.';
 import { render, screen } from '../../../../test-utils';
-import InfoBadge from './InfoBadge';
 
 describe('InfoBlock', () => {
   test('renders its children', () => {

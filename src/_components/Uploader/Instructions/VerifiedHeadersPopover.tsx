@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
 import { Flex, List, Mark, Popover, Text } from '@mantine/core';
+import React from 'react';
 import { VERIFIED_HEADERS } from '@/src/_processers/results/constants';
 import classes from './instructions.module.css';
 

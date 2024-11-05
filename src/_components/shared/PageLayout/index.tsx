@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
 import { Container } from '@mantine/core';
-import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
-import TopNav from '../TopNav/TopNav';
+import React from 'react';
+import { ColorSchemeToggle } from '../ColorSchemeToggle';
+import TopNav from '../TopNav';
 
 interface PageLayoutProps {
   children: React.ReactNode;

@@ -1,7 +1,5 @@
-import React from 'react';
 import { MantineProvider } from '@mantine/core';
-import { render, screen } from '@/test-utils';
-import { useRider } from '../../../_contexts/Rider/RiderContext';
+import React from 'react';
 import {
   NEXT_RIDER_ANCHOR_TEST_ID,
   NEXT_RIDER_BUTTON_TEXT,
@@ -9,7 +7,9 @@ import {
   PREV_RIDER_BUTTON_TEXT,
   PrevAndNextRider,
   RIDER_URL,
-} from './PrevAndNextRider';
+} from '.';
+import { render, screen } from '@/test-utils';
+import { useRider } from '../../../_contexts/Rider/RiderContext';
 
 jest.mock('../../../_contexts/Rider/RiderContext', () => ({
   useRider: jest.fn(),

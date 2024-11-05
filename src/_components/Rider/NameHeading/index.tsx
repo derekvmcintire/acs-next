@@ -1,10 +1,10 @@
 'use client';
 
-import { MdArrowForwardIos } from 'react-icons/md';
 import { Flex, Text, Title } from '@mantine/core';
+import { MdArrowForwardIos } from 'react-icons/md';
 import { ACS_COLOR_ORANGE } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
-import CategoryBadges from '../CategoryBadges/CategoryBadges';
+import CategoryBadges from '../CategoryBadges';
 import { getCurrentTeam } from '../utils';
 import classes from '../rider.module.css';
 
@@ -17,7 +17,7 @@ export const NameHeading = () => {
   const { riderInfo } = useRider();
   const { name, teams } = riderInfo;
 
-  const team = getCurrentTeam(teams);
+  const team = getCurrentTeam(teams || []);
 
   return (
     <div className={classes.nameHeading} data-testid={NAME_HEADING_TEST_ID}>

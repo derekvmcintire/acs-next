@@ -1,13 +1,13 @@
 'use client';
 
+import { Autocomplete } from '@mantine/core';
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { GoSearch } from 'react-icons/go';
-import { Autocomplete } from '@mantine/core';
-import { getRidersByName } from '@/src/_api/get-riders-by-name';
+import { getRidersByName } from '@/src/_api/get/riders/get-riders-by-name';
+import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import { IGetRidersResponse } from '@/src/_api/types';
 import useDebounce from '@/src/_hooks/use-debounce';
-import { IRiderInfo } from '@/src/_types';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 
 const icon = <GoSearch />;
@@ -34,7 +34,7 @@ export default function Search() {
       } else {
         const riders = Array.isArray(response?.riders) ? response?.riders : [];
 
-        const riderNames = riders.map((rider: IRiderInfo) => ({
+        const riderNames = riders.map((rider: GetRiderResponse) => ({
           value: String(rider.id),
           label: `${rider.name.first} ${rider.name.last}`,
         }));

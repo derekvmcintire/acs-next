@@ -1,7 +1,7 @@
 'use client';
 
 import { Flex, Table, Text } from '@mantine/core';
-import { IResult } from '@/src/_types';
+import { RiderResult } from '@/src/_types';
 import classes from '../rider.module.css';
 
 const getFormattedDateString = (date: Date) => {
@@ -11,7 +11,7 @@ const getFormattedDateString = (date: Date) => {
 };
 
 interface HistoryTableProps {
-  results: IResult[];
+  results: RiderResult[];
 }
 
 export default function HistoryTable({ results }: HistoryTableProps) {
@@ -22,7 +22,7 @@ export default function HistoryTable({ results }: HistoryTableProps) {
   }
 
   const rows = results.map(({ name, category, startDate, place, racers, type, points }, i) => (
-    <Table.Tr key={i + category}>
+    <Table.Tr key={i + place}>
       <Table.Td>{getFormattedDateString(new Date(String(startDate)))}</Table.Td>
       <Table.Td className={classes.result}>{place || 'DNF'}</Table.Td>
       <Table.Td>{racers}</Table.Td>

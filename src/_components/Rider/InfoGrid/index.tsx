@@ -1,11 +1,11 @@
 'use client';
 
-import React from 'react';
 import { Flex, Grid } from '@mantine/core';
-import ProfileImage from '../ProfileImage/ProfileImage';
-import RiderDetails from '../RiderDetails/RiderDetails';
-import TBD from '../TBD/TBD';
-import TopResults from '../TopResults/TopResults';
+import React from 'react';
+import ProfileImage from '../ProfileImage';
+import RiderDetails from '../RiderDetails';
+import TBD from '../TBD';
+import TopResults from '../TopResults';
 import classes from '../rider.module.css';
 
 const INFO_GRID_TEST_ID = 'info-grid';

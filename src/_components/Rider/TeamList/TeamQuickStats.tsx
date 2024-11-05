@@ -1,10 +1,10 @@
 'use client';
 
-import React from 'react';
 import { Container, Divider } from '@mantine/core';
+import React from 'react';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import LabeledText from '../../UI/LabeledText/LabeledText';
-import SectionLabel from '../../UI/SectionLabel/SectionLabel';
+import LabeledText from '../../ui/LabeledText';
+import SectionLabel from '../../ui/SectionLabel';
 import classes from '../rider.module.css';
 
 const TEAM_QUICK_STATS_TEST_ID = 'team-quick-stats';
