@@ -9,7 +9,7 @@ import {
   PREV_RIDER_BUTTON_TEXT,
   PrevAndNextRider,
   RIDER_URL,
-} from './PrevAndNextRider';
+} from '.';
 
 jest.mock('../../../_contexts/Rider/RiderContext', () => ({
   useRider: jest.fn(),

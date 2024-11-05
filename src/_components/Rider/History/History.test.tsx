@@ -5,7 +5,7 @@ import {
   mockRacingHistoryMissingYear,
 } from '@/src/_db/mock-data/mock-race-history';
 import { render, screen } from '../../../../test-utils';
-import History from './History';
+import History from '.';
 
 describe('History', () => {
   it('renders all years provided, even with no races in that year', () => {

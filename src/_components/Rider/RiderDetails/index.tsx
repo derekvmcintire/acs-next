@@ -7,7 +7,7 @@ import { ACS_COLOR_ORANGE, STRAVA_BASE_URL } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import InfoBlock from '../../Ui/InfoBlock';
 import LabeledText from '../../Ui/LabeledText';
-import { PrevAndNextRider } from '../PrevAndNextRider/PrevAndNextRider';
+import { PrevAndNextRider } from '../PrevAndNextRider';
 import { calculateAge } from '../utils';
 import classes from '../rider.module.css';
 
