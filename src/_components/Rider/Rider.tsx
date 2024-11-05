@@ -11,7 +11,7 @@ import { NameHeading } from './NameHeading';
 import TeamList from './TeamList';
 import classes from './rider.module.css';
 import InfoGrid from './InfoGrid';
-import PageLayout from '../Shared/PageLayout';
+import PageLayout from '@/src/_components/Shared/PageLayout';
 
 export const RIDER_INFO_TEST_ID = 'rider-info';
 

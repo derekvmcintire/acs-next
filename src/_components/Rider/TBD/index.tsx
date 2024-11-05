@@ -5,7 +5,7 @@ import { yearTrunc } from '@/src/_utility/date-helpers';
 import { stringTrunc } from '@/src/_utility/string-helpers';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import classes from '../rider.module.css';
-import InfoBlock from '../../Ui/InfoBlock';
+import InfoBlock from '@/src/_components/Ui/InfoBlock';
 
 export const TOP_RESULTS_TEST_ID = 'tbd';
 
