@@ -1,10 +1,10 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
+import { YearlyResults } from '@/src/_api/get/history/get-history-response-type';
 import { sortRacingDataByYear } from '../../_components/Rider/utils';
-import { IRaceYear } from '../../_types';
 
 interface IRiderHistoryContext {
-  history: IRaceYear[];
-  setHistory: (history: IRaceYear[]) => void;
+  history: YearlyResults[];
+  setHistory: (history: YearlyResults[]) => void;
 }
 
 const defaultRiderHistory: IRiderHistoryContext = {
@@ -16,7 +16,7 @@ const RiderHistoryContext = createContext<IRiderHistoryContext>(defaultRiderHist
 
 interface RiderHistoryProviderProps {
   children: ReactNode;
-  initialHistory: IRaceYear[];
+  initialHistory: YearlyResults[];
 }
 
 export const RiderHistoryProvider: React.FC<RiderHistoryProviderProps> = ({
@@ -24,7 +24,7 @@ export const RiderHistoryProvider: React.FC<RiderHistoryProviderProps> = ({
   initialHistory = defaultRiderHistory.history,
 }) => {
   const sortedHistory = sortRacingDataByYear(initialHistory);
-  const [history, setHistory] = useState<IRaceYear[]>(sortedHistory);
+  const [history, setHistory] = useState<YearlyResults[]>(sortedHistory);
 
   return (
     <RiderHistoryContext.Provider value={{ history, setHistory }}>

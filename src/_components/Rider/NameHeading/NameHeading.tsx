@@ -17,7 +17,7 @@ export const NameHeading = () => {
   const { riderInfo } = useRider();
   const { name, teams } = riderInfo;
 
-  const team = getCurrentTeam(teams);
+  const team = getCurrentTeam(teams || []);
 
   return (
     <div className={classes.nameHeading} data-testid={NAME_HEADING_TEST_ID}>

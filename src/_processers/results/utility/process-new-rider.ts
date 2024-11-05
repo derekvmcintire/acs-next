@@ -1,5 +1,6 @@
-import { createRider, CreateRiderData } from '@/src/_api/create-rider';
-import { getRidersByName } from '@/src/_api/get-riders-by-name';
+import { getRidersByName } from '@/src/_api/get/riders/get-riders-by-name';
+import { createRider } from '@/src/_api/post/riders/create-rider';
+import { CreateRiderRequest } from '@/src/_api/post/riders/create-rider-request-type';
 import { IGetRidersResponse } from '@/src/_api/types';
 import { splitName } from './helper-functions';
 import { PreparedResult } from './parse-results';
@@ -14,7 +15,7 @@ export const fetchRiderIdFromResult = async (result: PreparedResult): Promise<nu
     throw new Error(String(matches.error));
   }
   const riderMatches = Array.isArray(matches?.riders) ? matches?.riders : [];
-  return riderMatches.length > 1 ? riderMatches[0].Id : null;
+  return riderMatches.length > 1 ? riderMatches[0].id : null;
 };
 
 export const createNewRiderIdFromResult = async (
@@ -24,7 +25,7 @@ export const createNewRiderIdFromResult = async (
     return Promise.resolve();
   }
   const { firstName, lastName } = splitName(result.name.toString());
-  const riderData: CreateRiderData = {
+  const riderData: CreateRiderRequest = {
     firstName,
     lastName,
     dob: '',

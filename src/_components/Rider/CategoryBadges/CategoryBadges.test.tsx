@@ -6,8 +6,9 @@ import CategoryBadges from './CategoryBadges';
 
 const { categories, dob } = mockRider;
 const c = categories[0];
-const categoryString = new RegExp(`${c.discipline}: cat ${c.category}`, 'i');
-const gfCategoryString = new RegExp(`GF: ${calculateAgeGroupFromDob(dob).text}`, 'i');
+const categoryString = new RegExp(`${c.disicpline}: cat ${c.name}`, 'i');
+const ageGroupText = dob ? calculateAgeGroupFromDob(dob).text : '';
+const gfCategoryString = new RegExp(`GF: ${ageGroupText}`, 'i');
 
 describe('CategoryBadges', () => {
   it('renders category badges', () => {

@@ -1,14 +1,14 @@
 import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
 
-import { getRiderHistoryRequestUrl } from '@/src/_api/get-history';
-import { getSingleRiderRequestUrl } from '@/src/_api/get-rider';
-import { getRidersByTeamRequestUrl } from '@/src/_api/get-riders-by-team';
+import { getRiderHistoryRequestUrl } from '@/src/_api/get/history/get-history';
+import { getSingleRiderRequestUrl } from '@/src/_api/get/riders/get-rider';
+import { getRidersByTeamRequestUrl } from '@/src/_api/get/riders/get-riders-by-team';
 import { HISTORY_TEST_ID } from '@/src/_components/Rider/History/History';
 import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider/Rider';
-import { COLOR_SCHEME_TOGGLE_TEST_ID } from '@/src/_components/shared/ColorSchemeToggle/ColorSchemeToggle';
-import { RIDER_SEARCH_DATA_TEST_ID } from '@/src/_components/shared/TopNav/Search';
-import { TOP_NAV_TEST_ID } from '@/src/_components/shared/TopNav/TopNav';
+import { COLOR_SCHEME_TOGGLE_TEST_ID } from '@/src/_components/Shared/ColorSchemeToggle';
+import { TOP_NAV_TEST_ID } from '@/src/_components/Shared/TopNav';
+import { RIDER_SEARCH_DATA_TEST_ID } from '@/src/_components/Shared/TopNav/Search';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider, mockTeamMembers, TEAM_B2C2_CONTES } from '@/src/_db/mock-data/mock-racer';
 import { mockMultiGlobalFetch, mockResponsePackage } from '@/src/_utility/test-helpers';

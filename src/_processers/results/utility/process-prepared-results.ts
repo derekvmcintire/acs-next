@@ -1,18 +1,20 @@
-import { CreateRaceReturnData } from '@/src/_api/create-race';
-import { createResult, CreateResultData, CreateResultReturnData } from '@/src/_api/create-result';
+import { CreateRaceReturn } from '@/src/_api/post/races/create-race-return-type';
+import { createResult } from '@/src/_api/post/results/create-result';
+import { CreateResultRequest } from '@/src/_api/post/results/create-result-request-type';
+import { CreateResultReturn } from '@/src/_api/post/results/create-result-return-type';
 import { PreparedResult } from './parse-results';
 import { createNewRiderIdFromResult, fetchRiderIdFromResult } from './process-new-rider';
 
 export const createResultForRace = async (
   rawResult: PreparedResult,
-  race: CreateRaceReturnData,
+  race: CreateRaceReturn,
   riderId: number,
   categories: string[]
-): Promise<CreateResultReturnData> => {
+): Promise<CreateResultReturn> => {
   if (!race?.eventId || !riderId) {
     throw new Error('Missing Event or Rider Id');
   }
-  const data: CreateResultData = {
+  const data: CreateResultRequest = {
     eventId: race.eventId,
     riderId,
     resultTypeId: 1,
@@ -33,10 +35,10 @@ export const createResultForRace = async (
 
 const processResult = async (
   result: PreparedResult,
-  race: CreateRaceReturnData,
+  race: CreateRaceReturn,
   riderId: number,
   categories: string[]
-): Promise<CreateResultReturnData> => {
+): Promise<CreateResultReturn> => {
   const createdResult = await createResultForRace(result, race, riderId, categories);
 
   if (!createdResult) {
@@ -48,9 +50,9 @@ const processResult = async (
 
 export const processPreparedResult = async (
   result: PreparedResult,
-  race: CreateRaceReturnData,
+  race: CreateRaceReturn,
   categories: string[]
-): Promise<CreateResultReturnData> => {
+): Promise<CreateResultReturn> => {
   const riderId =
     (await fetchRiderIdFromResult(result)) || (await createNewRiderIdFromResult(result));
 

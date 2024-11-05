@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import InfoBlock from '../../ui/InfoBlock/InfoBlock';
+import InfoBlock from '../../UI/InfoBlock';
 import RaceSearch from './RaceSearch';
 import SuggestedRaces from './SuggestedRaces';
 import classes from './side-search.module.css';

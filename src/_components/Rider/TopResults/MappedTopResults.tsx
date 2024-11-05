@@ -1,15 +1,15 @@
 import { useMantineColorScheme } from '@mantine/core';
-import { IResult } from '@/src/_types';
 import { getFormattedYearString } from '@/src/_utility/date-helpers';
 import { stringTrunc } from '@/src/_utility/string-helpers';
-import LabeledText from '../../ui/LabeledText/LabeledText';
+import LabeledText from '../../UI/LabeledText';
 import { getOrdinal, getTopResultPlaceColor } from '../utils';
 import classes from '../rider.module.css';
+import { RiderResult } from '@/src/_api/get/history/get-history-response-type';
 
 export const MAPPED_TOP_RESULTS_TEST_ID = 'mapped-results';
 
 interface MappedTopResultsProps {
-  topResults: IResult[];
+  topResults: RiderResult[];
 }
 
 export const MappedTopResults = ({ topResults }: MappedTopResultsProps) => {

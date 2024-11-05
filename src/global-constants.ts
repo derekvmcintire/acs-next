@@ -1,4 +1,5 @@
-import { IAgeGroup, IRiderInfo } from './_types';
+import { GetRiderResponse } from './_api/get/riders/get-riders-response-type';
+import { IAgeGroup } from './_types';
 
 // External re-direct URLs
 export const STRAVA_BASE_URL = 'http://strava.com/athletes/';
@@ -21,14 +22,13 @@ export const ACS_COLOR_FORM = '#7D98A3';
 export const ACS_DARK_GREY = '#343637';
 
 // Pick lists and default data
-export const DEFAULT_RIDER_NOT_FOUND: IRiderInfo = {
+export const DEFAULT_RIDER_NOT_FOUND: GetRiderResponse = {
   id: 0,
   name: {
     first: 'Rider',
     last: 'Not Found',
   },
   teams: [],
-  socials: {},
   categories: [],
   hometown: { country: '', city: '' },
   dob: '',

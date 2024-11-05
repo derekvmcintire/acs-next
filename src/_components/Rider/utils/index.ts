@@ -1,5 +1,6 @@
+import { RiderResult, YearlyResults } from '@/src/_api/get/history/get-history-response-type';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import { IAgeGroup, IRaceYear, IResult, ITeam } from '@/src/_types';
+import { IAgeGroup, ITeam } from '@/src/_types';
 import {
   ACS_COLOR_BRONZE,
   ACS_COLOR_DARK_GOLD,
@@ -62,17 +63,17 @@ export const getTopResultPlaceColor = (place: number, colorScheme: string) => {
 };
 
 /********************** */
-const _sortResultsByYear = (results: IResult[]) =>
+const _sortResultsByYear = (results: RiderResult[]) =>
   results.sort(
     (x, y) => new Date(String(y.startDate)).getTime() - new Date(String(x.startDate)).getTime()
   );
 
 /********************** */
-const _sortHistoryByYear = (history: IRaceYear[]): IRaceYear[] =>
+const _sortHistoryByYear = (history: YearlyResults[]): YearlyResults[] =>
   history.sort((a, b) => b.year - a.year);
 
 /********************** */
-export const sortRacingDataByYear = (history: IRaceYear[]): IRaceYear[] => {
+export const sortRacingDataByYear = (history: YearlyResults[]): YearlyResults[] => {
   return _sortHistoryByYear(history).map((year) => ({
     ...year,
     races: _sortResultsByYear(year.races),
@@ -80,8 +81,8 @@ export const sortRacingDataByYear = (history: IRaceYear[]): IRaceYear[] => {
 };
 
 /********************** */
-export const getRaceYears = (raceHistory: IRaceYear[]): number[] =>
-  raceHistory.length < 1 ? [] : raceHistory.map((raceYear: IRaceYear) => raceYear.year);
+export const getRaceYears = (raceHistory: YearlyResults[]): number[] =>
+  raceHistory.length < 1 ? [] : raceHistory.map((raceYear: YearlyResults) => raceYear.year);
 
 /********************** */
 export const getOrdinal = (n: number) => {
@@ -92,28 +93,28 @@ export const getOrdinal = (n: number) => {
 };
 
 /********************** */
-export const consolidateResults = (history: IRaceYear[]): IResult[] => {
+export const consolidateResults = (history: YearlyResults[]): RiderResult[] => {
   if (history.length < 1) {
     return [];
   }
-  return history.reduce((acc: IResult[], year: IRaceYear) => {
+  return history.reduce((acc: RiderResult[], year: YearlyResults) => {
     const racesWithPlaces = year.races.filter((race) => race.place > 0);
     return [...acc, ...racesWithPlaces];
   }, []);
 };
 
 /********************** */
-export const getTopTenResults = (history: IRaceYear[] = []): IResult[] => {
-  const reducedResults: IResult[] = consolidateResults(history);
+export const getTopTenResults = (history: YearlyResults[] = []): RiderResult[] => {
+  const reducedResults: RiderResult[] = consolidateResults(history);
   return reducedResults.sort((a, b) => a.place - b.place).slice(0, 8);
 };
 
 /********************** */
-export const getCareerWins = (history: IRaceYear[] = []): number => {
-  const reducedResults: IResult[] = consolidateResults(history);
-  return reducedResults.filter((r: IResult) => r.place === 1).length;
+export const getCareerWins = (history: YearlyResults[] = []): number => {
+  const reducedResults: RiderResult[] = consolidateResults(history);
+  return reducedResults.filter((r: RiderResult) => r.place === 1).length;
 };
 
 /********************** */
-export const getResultsForSingleYear = (year: number, history: IRaceYear[]) =>
+export const getResultsForSingleYear = (year: number, history: YearlyResults[]) =>
   history.find((raceYear) => raceYear.year === year)?.races || [];

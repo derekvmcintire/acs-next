@@ -22,15 +22,15 @@ export const buildMockRacerInfo = (racerInfo = {}, teamName) => {
     dob: dob || getRandomBirthday(),
     categories: categories || [
       {
-        discipline: 'road',
+        disicpline: 'road',
         category: generateRandomNumber(4),
       },
       {
-        discipline: 'cx',
+        disicpline: 'cx',
         category: generateRandomNumber(4),
       },
       {
-        discipline: 'xc',
+        disicpline: 'xc',
         category: generateRandomNumber(2),
       },
     ],

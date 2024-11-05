@@ -1,6 +1,6 @@
 import { mockRaces } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import { IAgeGroup, IRaceYear, ITeam } from '@/src/_types';
+import { IAgeGroup, ITeam } from '@/src/_types';
 import {
   ACS_COLOR_BRONZE,
   ACS_COLOR_DARK_GOLD,
@@ -20,6 +20,7 @@ import {
   getTopTenResults,
   sortRacingDataByYear,
 } from './index';
+import { YearlyResults } from '@/src/_api/get/history/get-history-response-type';
 
 describe('Utility Functions', () => {
   it('getMockRiderInfo returns the mock rider', () => {
@@ -67,7 +68,7 @@ describe('Utility Functions', () => {
   });
 
   it('sortRacingDataByYear sorts race years correctly', () => {
-    const history: IRaceYear[] = [
+    const history: YearlyResults[] = [
       { year: 2023, races: [] },
       { year: 2022, races: [] },
     ];
@@ -76,7 +77,7 @@ describe('Utility Functions', () => {
   });
 
   it('getRaceYears returns the years from race history', () => {
-    const raceHistory: IRaceYear[] = [{ year: 2023, races: [] }];
+    const raceHistory: YearlyResults[] = [{ year: 2023, races: [] }];
     expect(getRaceYears(raceHistory)).toEqual([2023]);
   });
 
@@ -94,7 +95,7 @@ describe('Utility Functions', () => {
       { ...mockRaces[0], place: 2 },
     ];
 
-    const history: IRaceYear[] = [
+    const history: YearlyResults[] = [
       {
         year: 2023,
         races: mockResults,
@@ -111,7 +112,7 @@ describe('Utility Functions', () => {
       { ...mockRaces[0], place: 2 },
     ];
 
-    const history: IRaceYear[] = [
+    const history: YearlyResults[] = [
       {
         year: 2023,
         races: mockResults,
@@ -127,7 +128,7 @@ describe('Utility Functions', () => {
       { ...mockRaces[0], place: 2 },
     ];
 
-    const history: IRaceYear[] = [
+    const history: YearlyResults[] = [
       {
         year: 2023,
         races: mockResults,
@@ -143,7 +144,7 @@ describe('Utility Functions', () => {
       { ...mockRaces[0], place: 2 },
     ];
 
-    const history: IRaceYear[] = [
+    const history: YearlyResults[] = [
       {
         year: 2023,
         races: mockResults,

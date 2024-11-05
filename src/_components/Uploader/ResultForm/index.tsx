@@ -3,9 +3,9 @@
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { Button, Flex, MultiSelect, Text, Textarea } from '@mantine/core';
+import { GetCategoriesResponse } from '@/src/_api/get/categories/get-categories-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { processResults } from '@/src/_processers/results';
-import { ICategory } from '@/src/_types';
 import { ACS_DARK_GREY } from '@/src/global-constants';
 import FormWrapper from '../FormWrapper';
 import Instructions from '../Instructions';
@@ -29,7 +29,7 @@ function ResultForm() {
 
   const categorySelectOptions = () =>
     categoryOptions
-      .reduce((acc: Option[], option: ICategory) => {
+      .reduce((acc: Option[], option: GetCategoriesResponse) => {
         if (!option?.id || !option?.name) {
           return acc;
         }

@@ -1,16 +1,16 @@
 'use client';
 
 import React from 'react';
-import { ICategory } from '@/src/_types';
+import { GetCategoriesResponse } from '@/src/_api/get/categories/get-categories-response-type';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
-import InfoBadge from '../../ui/InfoBadge/InfoBadge';
+import InfoBadge from '../../UI/InfoBadge';
 import { calculateAgeGroupFromDob } from '../utils';
 
 // @TODO Update this. Should use category.name field, not category.category, but will need to update how this data is returned from get rider
-const mapCategories = (categories: ICategory[]): React.ReactNode => {
-  return categories.map((c: ICategory) => (
-    <span key={c.discipline}>
-      <InfoBadge>{`${c.discipline}: cat ${c.category}`}</InfoBadge>
+const mapCategories = (categories: GetCategoriesResponse[]): React.ReactNode => {
+  return categories.map((c: GetCategoriesResponse) => (
+    <span key={c.disicpline}>
+      <InfoBadge>{`${c.disicpline}: cat ${c.name}`}</InfoBadge>
     </span>
   ));
 };
@@ -24,7 +24,7 @@ export default function CategoryBadges() {
   return (
     <div data-testid={CATEGORY_BADGE_TEST_ID}>
       {mapCategories(categories)}
-      <InfoBadge>{`GF: ${calculateAgeGroupFromDob(dob).text}`}</InfoBadge>
+      {dob && <InfoBadge>{`GF: ${calculateAgeGroupFromDob(dob).text}`}</InfoBadge>}
     </div>
   );
 }

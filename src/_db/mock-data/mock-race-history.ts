@@ -1,16 +1,16 @@
-import { IRacerHistory } from '../../_types';
+import { GetHistoryResponse } from '@/src/_api/get/history/get-history-response-type';
 import { buildMockRacesForSingleYear } from './generators/results/build-results-history.mjs';
 
 export const FIRST_NAME_OUT_OF_ORDER = 'Ascutney Hillclimb';
 export const FIRST_NAME_IN_ORDER = 'BOSSCROSS';
 
-export const mockRacingHistoryEmpty: IRacerHistory = {
-  racerId: 2,
+export const mockRacingHistoryEmpty: GetHistoryResponse = {
+  riderId: 2,
   results: [],
 };
 
-export const mockRacingHistoryEmptyYear: IRacerHistory = {
-  racerId: 2,
+export const mockRacingHistoryEmptyYear: GetHistoryResponse = {
+  riderId: 2,
   results: [
     {
       year: 2024,
@@ -27,8 +27,8 @@ export const mockRacingHistoryEmptyYear: IRacerHistory = {
   ],
 };
 
-export const mockRacingHistoryMissingYear: IRacerHistory = {
-  racerId: 2,
+export const mockRacingHistoryMissingYear: GetHistoryResponse = {
+  riderId: 2,
   results: [
     {
       year: 2024,
@@ -45,8 +45,8 @@ export const mockRacingHistoryMissingYear: IRacerHistory = {
   ],
 };
 
-export const mockRacingHistory: IRacerHistory = {
-  racerId: 1,
+export const mockRacingHistory: GetHistoryResponse = {
+  riderId: 1,
   results: [
     {
       year: 2024,
@@ -60,9 +60,6 @@ export const mockRacingHistory: IRacerHistory = {
           place: 9,
           racers: 65,
           points: 329.38,
-          upgPoints: 0,
-          stages: null,
-          noPlaceCode: null,
         },
         {
           name: 'Green Mountain Stage Race Road Race',
@@ -73,8 +70,6 @@ export const mockRacingHistory: IRacerHistory = {
           place: 28,
           racers: 85,
           points: 350.6,
-          upgPoints: 0,
-          noPlaceCode: null,
         },
         {
           name: 'Kilowatt Cross Day 1',
@@ -85,9 +80,6 @@ export const mockRacingHistory: IRacerHistory = {
           place: 1,
           racers: 19,
           points: 323.65,
-          upgPoints: 4,
-          stages: null,
-          noPlaceCode: null,
         },
         {
           name: 'Kilowatt Cross Day 2',
@@ -98,9 +90,6 @@ export const mockRacingHistory: IRacerHistory = {
           place: 4,
           racers: 31,
           points: 437.5,
-          upgPoints: 2,
-          stages: null,
-          noPlaceCode: null,
         },
         {
           name: FIRST_NAME_IN_ORDER,
@@ -111,9 +100,6 @@ export const mockRacingHistory: IRacerHistory = {
           place: 8,
           racers: 67,
           points: 424.03,
-          upgPoints: 2,
-          stages: null,
-          noPlaceCode: null,
         },
       ],
     },
@@ -129,9 +115,6 @@ export const mockRacingHistory: IRacerHistory = {
           place: 6,
           racers: 10,
           points: 451.76,
-          upgPoints: 0,
-          stages: null,
-          noPlaceCode: null,
         },
         {
           name: 'Ascutney Hillclimb',
@@ -142,9 +125,6 @@ export const mockRacingHistory: IRacerHistory = {
           place: 11,
           racers: 50,
           points: 409.5,
-          upgPoints: 0,
-          stages: null,
-          noPlaceCode: null,
         },
         {
           name: 'Mt Washington Hillclimb',
@@ -155,9 +135,6 @@ export const mockRacingHistory: IRacerHistory = {
           place: 21,
           racers: 328,
           points: 390.73,
-          upgPoints: 0,
-          stages: null,
-          noPlaceCode: null,
         },
         {
           name: 'NCC Greylock Hill Climb',
@@ -168,9 +145,6 @@ export const mockRacingHistory: IRacerHistory = {
           place: 9,
           racers: 94,
           points: 363.65,
-          upgPoints: 0,
-          stages: null,
-          noPlaceCode: null,
         },
       ],
     },
@@ -186,9 +160,6 @@ export const mockRacingHistory: IRacerHistory = {
           place: 9,
           racers: 94,
           points: 363.65,
-          upgPoints: 0,
-          stages: null,
-          noPlaceCode: null,
         },
       ],
     },
@@ -204,9 +175,5 @@ export const mockRaces = [
     category: 'Overall Men',
     place: 1,
     racers: 65,
-    points: 329.38,
-    upgPoints: 0,
-    stages: null,
-    noPlaceCode: null,
   },
 ];
