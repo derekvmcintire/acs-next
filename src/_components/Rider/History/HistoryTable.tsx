@@ -1,8 +1,8 @@
 'use client';
 
 import { Flex, Table, Text } from '@mantine/core';
+import { RiderResult } from '@/src/_types';
 import classes from '../rider.module.css';
-import { RiderResult } from '@/src/_api/get/history/get-history-response-type';
 
 const getFormattedDateString = (date: Date) => {
   const month = date.getMonth() + 1;

@@ -1,6 +1,6 @@
 import { mockRaces } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import { IAgeGroup, ITeam } from '@/src/_types';
+import { AgeGroup, Team, YearlyResults } from '@/src/_types';
 import {
   ACS_COLOR_BRONZE,
   ACS_COLOR_DARK_GOLD,
@@ -20,7 +20,6 @@ import {
   getTopTenResults,
   sortRacingDataByYear,
 } from './index';
-import { YearlyResults } from '@/src/_api/get/history/get-history-response-type';
 
 describe('Utility Functions', () => {
   it('getMockRiderInfo returns the mock rider', () => {
@@ -28,7 +27,7 @@ describe('Utility Functions', () => {
   });
 
   it('getCurrentTeam returns the current team based on year', () => {
-    const teams: ITeam[] = [
+    const teams: Team[] = [
       { name: 'Team A', year: 2022 },
       { name: 'Team B', year: 2023 },
     ];
@@ -55,7 +54,7 @@ describe('Utility Functions', () => {
 
   it('getGFAgeGroup returns the correct age group', () => {
     const age = 25;
-    const group: IAgeGroup = getGFAgeGroup(age);
+    const group: AgeGroup = getGFAgeGroup(age);
     expect(group.start).toBeLessThanOrEqual(age);
     expect(group.end).toBeGreaterThanOrEqual(age);
   });

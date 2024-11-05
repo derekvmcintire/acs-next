@@ -1,5 +1,5 @@
 export interface GetCategoriesResponse {
-  id: number;
+  id?: number;
   disicpline: string;
   name: string;
   description?: string;

@@ -4,6 +4,7 @@ import React from 'react';
 import { Center, Flex } from '@mantine/core';
 import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import { RiderHistoryProvider } from '@/src/_contexts/Rider/RiderHistoryContext';
+import { YearlyResults } from '@/src/_types';
 import { RiderProvider } from '../../_contexts/Rider/RiderContext';
 import PageLayout from '../Shared/PageLayout';
 import History from './History/History';
@@ -11,7 +12,6 @@ import InfoGrid from './InfoGrid/InfoGrid';
 import { NameHeading } from './NameHeading/NameHeading';
 import TeamList from './TeamList/TeamList';
 import classes from './rider.module.css';
-import { YearlyResults } from '@/src/_api/get/history/get-history-response-type';
 
 export const RIDER_INFO_TEST_ID = 'rider-info';
 

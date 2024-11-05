@@ -1,24 +1,4 @@
-export interface RiderResult {
-  name: string;
-  place: number;
-  time?: string;
-  points?: number;
-  noPlaceCode?: string | null;
-  resultType?: string;
-  eventId?: number;
-  category?: string;
-  racers: number;
-  type: string;
-  startDate: string;
-  endDate?: string | null;
-  location?: string;
-  lap?: number;
-}
-
-export interface YearlyResults {
-  year: number;
-  races: RiderResult[];
-}
+import { YearlyResults } from '@/src/_types';
 
 export interface GetHistoryResponse {
   riderId: number;

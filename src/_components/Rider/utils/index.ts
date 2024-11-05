@@ -1,6 +1,5 @@
-import { RiderResult, YearlyResults } from '@/src/_api/get/history/get-history-response-type';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import { IAgeGroup, ITeam } from '@/src/_types';
+import { AgeGroup, RiderResult, Team, YearlyResults } from '@/src/_types';
 import {
   ACS_COLOR_BRONZE,
   ACS_COLOR_DARK_GOLD,
@@ -13,7 +12,7 @@ import {
 
 export const getMockRiderInfo = () => mockRider;
 
-export const getCurrentTeam = (teams: ITeam[]): string => {
+export const getCurrentTeam = (teams: Team[]): string => {
   if (!teams || teams?.length < 1) {
     return '';
   }
@@ -33,8 +32,8 @@ export const calculateAge = (dob: Date) => {
   return age;
 };
 
-export const getGFAgeGroup = (age: number): IAgeGroup => {
-  return GF_AGE_GROUPS.reduce((acc: IAgeGroup, group: IAgeGroup) => {
+export const getGFAgeGroup = (age: number): AgeGroup => {
+  return GF_AGE_GROUPS.reduce((acc: AgeGroup, group: AgeGroup) => {
     const { start, end } = group;
     if (age >= start && age <= end) {
       return group;
@@ -43,7 +42,7 @@ export const getGFAgeGroup = (age: number): IAgeGroup => {
   }, GF_AGE_GROUPS[0]);
 };
 
-export const calculateAgeGroupFromDob = (dob: string): IAgeGroup => {
+export const calculateAgeGroupFromDob = (dob: string): AgeGroup => {
   const birthDate = new Date(dob);
   const age = calculateAge(birthDate);
   return getGFAgeGroup(age);

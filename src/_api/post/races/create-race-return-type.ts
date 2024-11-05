@@ -1,13 +1,4 @@
-export interface Event {
-  id?: number;
-  name: string;
-}
-
-export interface PickType {
-  id?: number;
-  name: string;
-  description?: string;
-}
+import { BaseEvent, PickType } from '@/src/_types';
 
 export interface CreateRaceReturn {
   id: number;
@@ -16,7 +7,7 @@ export interface CreateRaceReturn {
   startDate: string;
   endDate: string | null;
   location: string;
-  event: Event;
+  event: BaseEvent;
   raceType: PickType;
 }
 

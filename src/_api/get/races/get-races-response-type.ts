@@ -1,30 +1,14 @@
-export interface Event {
-  id: number;
-  name: string;
-}
+import { BaseEvent, BaseRace, PickType } from '@/src/_types';
 
-export interface PickType {
-  id: number;
-  name: string;
-  description: string;
-}
-
-export interface GetRacesResponse {
+export interface GetRacesResponse extends BaseRace {
   id: number;
   eventId: number;
-  raceTypeId: number;
+  raceTypeId?: number;
   startDate: string;
   endDate: string | null;
   location: string;
-  event: {
-    id: number;
-    name: string;
-  };
-  raceType: {
-    id: number;
-    name: string;
-    description: string;
-  };
+  event: BaseEvent;
+  raceType: PickType;
 }
 
 export const mockGetRacesResponse: GetRacesResponse[] = [

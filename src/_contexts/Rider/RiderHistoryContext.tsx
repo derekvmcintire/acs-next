@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
-import { YearlyResults } from '@/src/_api/get/history/get-history-response-type';
+import { YearlyResults } from '@/src/_types';
 import { sortRacingDataByYear } from '../../_components/Rider/utils';
 
 interface IRiderHistoryContext {

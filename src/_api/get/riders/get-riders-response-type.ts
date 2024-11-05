@@ -1,38 +1,14 @@
+import { Hometown, RiderName, RiderResult, Socials, Team } from '@/src/_types';
 import { GetCategoriesResponse } from '../categories/get-categories-response-type';
-import { RiderResult } from '../history/get-history-response-type';
-
-export interface Team {
-  year: number;
-  name: string;
-  id?: number;
-  url?: string;
-  description?: string;
-}
-
-export interface SocialMedia {
-  strava: string;
-  insta: string;
-}
-
-export interface Category {
-  disicpline: string;
-  name: string;
-}
 
 export interface GetRiderResponse {
   id: number;
   currentTeam?: string;
-  name: {
-    first: string;
-    last: string;
-  };
+  name: RiderName;
   teams?: Team[];
-  socials?: SocialMedia;
+  socials?: Socials;
   categories: GetCategoriesResponse[];
-  hometown?: {
-    country?: string;
-    city?: string;
-  };
+  hometown?: Hometown;
   dob?: string;
   photo?: string;
   wins?: number;
