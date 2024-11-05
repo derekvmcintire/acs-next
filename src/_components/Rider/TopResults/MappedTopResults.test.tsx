@@ -12,7 +12,7 @@ jest.mock('@mantine/core', () => ({
   useMantineColorScheme: jest.fn(),
 }));
 
-jest.mock('../../ui/LabeledText/LabeledText', () => {
+jest.mock('../../ui/LabeledText', () => {
   return function MockedLabeledText(props: LabeledTextProps) {
     return (
       <div data-testid="labeled-text">
