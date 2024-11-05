@@ -1,18 +1,19 @@
 'use client';
 
-import React from 'react';
 import { Center } from '@mantine/core';
+import React from 'react';
+import { GetRaceResultsResponse } from '@/src/_api/get/race/get-race-results-response-type';
 import { RaceProvider } from '@/src/_contexts/Race/RaceContext';
-import { IExistingRace, IResult } from '@/src/_types';
-import PageLayout from '../Shared/PageLayout/PageLayout';
+import { IRace } from '@/src/_types';
+import PageLayout from '../shared/PageLayout';
 import RaceNameHeading from './Results/RaceNameHeading';
 import ResultTable from './Results/ResultTable';
 
 export const RACE_INFO_TEST_ID = 'race-info';
 
 interface RaceProps {
-  race?: IExistingRace;
-  results?: IResult[];
+  race?: IRace;
+  results?: GetRaceResultsResponse[];
 }
 export default function Race({ race, results }: RaceProps) {
   return (

@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
 import { Anchor, Container, Flex, Table, Text } from '@mantine/core';
+import React from 'react';
+import { RIDER_URL } from '@/src/_components/Rider/PrevAndNextRider';
 import { useRaceContext } from '@/src/_contexts/Race/RaceContext';
-import { RIDER_URL } from '../../../Rider/PrevAndNextRider/PrevAndNextRider';
 
 export default function ResultTable() {
   const { results } = useRaceContext();

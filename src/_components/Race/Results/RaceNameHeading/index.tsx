@@ -1,8 +1,8 @@
 'use client';
 
+import { Container, Flex, Text, Title } from '@mantine/core';
 import React from 'react';
 import { MdArrowForwardIos, MdLocationOn } from 'react-icons/md';
-import { Container, Flex, Text, Title } from '@mantine/core';
 import { useRaceContext } from '@/src/_contexts/Race/RaceContext';
 import { ACS_COLOR_ORANGE } from '@/src/global-constants';
 import classes from '../../styles/race-results.module.css';

@@ -16,9 +16,33 @@ export interface BaseEvent {
 }
 
 export interface BaseRace {
+  id?: number;
   startDate: Dayjs | string;
   endDate?: Dayjs | string | null;
   location?: string;
+}
+
+export interface IRace extends BaseRace {
+  eventId: number;
+  raceTypeId?: number;
+  raceType?: PickType;
+  event?: BaseEvent;
+}
+
+export interface BaseRider {
+  id?: number;
+  dob?: string;
+  photo?: string;
+  about?: string;
+}
+
+export interface TransformedRider extends BaseRider {
+  firstName: string;
+  lastName: string;
+  country?: string;
+  hometown?: string;
+  strava?: string;
+  insta?: string;
 }
 
 export interface RiderName {
@@ -76,18 +100,6 @@ export interface IGFCategory extends AgeGroup {
   gender: 'Men' | 'Women' | 'Non Binary';
 }
 
-export interface BaseRider {
-  id?: number;
-  dob: string;
-  photo: string;
-}
-
-export interface TransformedRider extends BaseRider {
-  firstName: string;
-  lastName: string;
-  country: string;
-  hometown: string;
-  strava: string;
-  insta: string;
-  about: string;
+export interface EventWithRace extends BaseEvent {
+  Race: IRace[];
 }

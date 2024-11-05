@@ -1,9 +1,9 @@
 import { Container } from '@mantine/core';
-import { getRaceResults } from '@/src/_api/get-race-results';
-import { getRaces } from '@/src/_api/get-races';
+import { getRaceResults } from '@/src/_api/get/race/get-race-results';
+import { getRaces } from '@/src/_api/get/races/get-races';
 import { IGetRaceResultsResponse } from '@/src/_api/types';
 import Race from '@/src/_components/Race';
-import NetworkError from '@/src/_components/UI/NetworkError/NetworkError';
+import NetworkError from '@/src/_components/ui/NetworkError';
 
 interface RacePageParams {
   id: number;

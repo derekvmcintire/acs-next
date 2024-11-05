@@ -1,10 +1,11 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
-import { IExistingRace, IResult } from '@/src/_types';
+import { GetRaceResultsResponse } from '@/src/_api/get/race/get-race-results-response-type';
+import { IRace } from '@/src/_types';
 
 interface RaceContextType {
-  race?: IExistingRace | undefined;
+  race?: IRace | undefined;
   setRace: (race: any) => void;
-  results: IResult[];
+  results: GetRaceResultsResponse[];
   setResults: (result: any) => void;
   errors: string[];
   setErrors: (errors: string[]) => void;
@@ -23,8 +24,8 @@ const RaceContext = createContext<RaceContextType>(defaultValue);
 
 interface RaceProviderProps {
   children: ReactNode;
-  initialRace?: IExistingRace;
-  initialResults?: IResult[];
+  initialRace?: IRace;
+  initialResults?: GetRaceResultsResponse[];
 }
 
 export const RaceProvider: React.FC<RaceProviderProps> = ({
@@ -32,8 +33,8 @@ export const RaceProvider: React.FC<RaceProviderProps> = ({
   initialRace = defaultValue.race,
   initialResults = defaultValue.results,
 }) => {
-  const [race, setRace] = useState<IExistingRace | undefined>(initialRace);
-  const [results, setResults] = useState<IResult[]>(initialResults);
+  const [race, setRace] = useState<IRace | undefined>(initialRace);
+  const [results, setResults] = useState<GetRaceResultsResponse[]>(initialResults);
   const [errors, setErrors] = useState<string[]>([]);
 
   return (

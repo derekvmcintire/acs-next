@@ -8,7 +8,7 @@ import { calculateAgeGroupFromDob } from '../utils';
 
 const mapCategories = (categories: GetCategoriesResponse[]): React.ReactNode => {
   return categories.map((c: GetCategoriesResponse) => (
-    <span key={c.disicpline}>
+    <span key={c.id}>
       <InfoBadge>{`${c.disicpline}: cat ${c.name}`}</InfoBadge>
     </span>
   ));
