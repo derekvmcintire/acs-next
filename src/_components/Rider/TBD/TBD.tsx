@@ -4,7 +4,7 @@ import { Team } from '@/src/_types';
 import { yearTrunc } from '@/src/_utility/date-helpers';
 import { stringTrunc } from '@/src/_utility/string-helpers';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
-import InfoBlock from '../../UI/InfoBlock';
+import InfoBlock from '../../Ui/InfoBlock';
 import classes from '../rider.module.css';
 
 export const TOP_RESULTS_TEST_ID = 'tbd';

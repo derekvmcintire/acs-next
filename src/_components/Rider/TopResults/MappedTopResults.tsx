@@ -2,7 +2,7 @@ import { useMantineColorScheme } from '@mantine/core';
 import { RiderResult } from '@/src/_types';
 import { getFormattedYearString } from '@/src/_utility/date-helpers';
 import { stringTrunc } from '@/src/_utility/string-helpers';
-import LabeledText from '../../UI/LabeledText';
+import LabeledText from '../../Ui/LabeledText';
 import { getOrdinal, getTopResultPlaceColor } from '../utils';
 import classes from '../rider.module.css';
 

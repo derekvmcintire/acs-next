@@ -3,8 +3,8 @@
 import React from 'react';
 import { Container, Divider } from '@mantine/core';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import LabeledText from '../../UI/LabeledText';
-import SectionLabel from '../../UI/SectionLabel';
+import LabeledText from '../../Ui/LabeledText';
+import SectionLabel from '../../Ui/SectionLabel';
 import classes from '../rider.module.css';
 
 const TEAM_QUICK_STATS_TEST_ID = 'team-quick-stats';
