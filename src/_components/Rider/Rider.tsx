@@ -3,15 +3,15 @@
 import React from 'react';
 import { Center, Flex } from '@mantine/core';
 import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
+import PageLayout from '@/src/_components/shared/PageLayout';
 import { RiderHistoryProvider } from '@/src/_contexts/Rider/RiderHistoryContext';
 import { YearlyResults } from '@/src/_types';
 import { RiderProvider } from '../../_contexts/Rider/RiderContext';
 import History from './History';
+import InfoGrid from './InfoGrid';
 import { NameHeading } from './NameHeading';
 import TeamList from './TeamList';
 import classes from './rider.module.css';
-import InfoGrid from './InfoGrid';
-import PageLayout from '@/src/_components/shared/PageLayout';
 
 export const RIDER_INFO_TEST_ID = 'rider-info';
 

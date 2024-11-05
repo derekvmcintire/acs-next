@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
+import InfoBlock from '../../ui/InfoBlock';
 import RaceSearch from './RaceSearch';
 import SuggestedRaces from './SuggestedRaces';
 import classes from './side-search.module.css';
-import InfoBlock from '../../ui/InfoBlock';
 
 export default function SideSearch() {
   return (

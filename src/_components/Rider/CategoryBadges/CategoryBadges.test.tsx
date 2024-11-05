@@ -1,8 +1,8 @@
+import CategoryBadges from '.';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import { RiderProvider } from '../../../_contexts/Rider/RiderContext';
 import { render, screen } from '../../../../test-utils';
 import { calculateAgeGroupFromDob } from '../utils';
-import CategoryBadges from '.';
 
 const { categories, dob } = mockRider;
 const c = categories[0];

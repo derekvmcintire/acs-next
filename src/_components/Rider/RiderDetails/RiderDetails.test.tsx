@@ -1,8 +1,8 @@
+import RiderDetails from '.';
 import { RiderProvider } from '../../../_contexts/Rider/RiderContext';
 import { MOCK_COUNTRY, MOCK_DOB, mockRider } from '../../../_db/mock-data/mock-racer';
 import { render, screen } from '../../../../test-utils';
 import { calculateAge } from '../utils';
-import RiderDetails from '.';
 
 const country = new RegExp(`${MOCK_COUNTRY}`, 'i');
 
