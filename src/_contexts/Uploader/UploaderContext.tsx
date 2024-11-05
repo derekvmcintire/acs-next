@@ -1,13 +1,13 @@
 'use client';
 
 import React, { createContext, ReactNode, useContext, useState } from 'react';
-import { ICategory } from '@/src/_types';
+import { GetCategoriesResponse } from '@/src/_api/get/categories/get-categories-response-type';
 
 export interface IUploaderContext {
   selectedRace: any;
   setSelectedRace: (selectedRace: any) => void;
-  categoryOptions: ICategory[];
-  setCategoryOptions: (categoryOptions: ICategory[]) => void;
+  categoryOptions: GetCategoriesResponse[];
+  setCategoryOptions: (categoryOptions: GetCategoriesResponse[]) => void;
   isLoading: boolean;
   setIsLoading: (isLoading: boolean) => void;
   errors: string[];
@@ -41,7 +41,9 @@ export const UploaderContextProvider: React.FC<UploaderContextProviderProps> = (
   initialValue = defaultUploaderContextValue,
 }) => {
   const [selectedRace, setSelectedRace] = useState<any>(initialValue.selectedRace);
-  const [categoryOptions, setCategoryOptions] = useState<ICategory[]>(initialValue.categoryOptions);
+  const [categoryOptions, setCategoryOptions] = useState<GetCategoriesResponse[]>(
+    initialValue.categoryOptions
+  );
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errors, setErrors] = useState<string[]>(initialValue.errors);
   const [successMessage, setSuccessMessage] = useState<string>(initialValue.successMessage);

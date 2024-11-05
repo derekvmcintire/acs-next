@@ -1,5 +1,5 @@
+import { ColorSchemeToggle } from '.';
 import { render, screen } from '../../../../test-utils';
-import { ColorSchemeToggle } from './ColorSchemeToggle';
 
 describe('InfoBlock', () => {
   test('renders its children', () => {

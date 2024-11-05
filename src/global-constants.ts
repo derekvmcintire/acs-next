@@ -1,4 +1,5 @@
-import { IAgeGroup, IRiderInfo } from './_types';
+import { GetRiderResponse } from './_api/get/riders/get-riders-response-type';
+import { AgeGroup } from './_types';
 
 // External re-direct URLs
 export const STRAVA_BASE_URL = 'http://strava.com/athletes/';
@@ -21,21 +22,20 @@ export const ACS_COLOR_FORM = '#7D98A3';
 export const ACS_DARK_GREY = '#343637';
 
 // Pick lists and default data
-export const DEFAULT_RIDER_NOT_FOUND: IRiderInfo = {
+export const DEFAULT_RIDER_NOT_FOUND: GetRiderResponse = {
   id: 0,
   name: {
     first: 'Rider',
     last: 'Not Found',
   },
   teams: [],
-  socials: {},
   categories: [],
   hometown: { country: '', city: '' },
   dob: '',
   photo: '/shadowbarn.jpeg',
 };
 
-export const GF_AGE_GROUPS: IAgeGroup[] = [
+export const GF_AGE_GROUPS: AgeGroup[] = [
   { start: 1, end: 13, text: 'Under 14' },
   { start: 14, end: 16, text: '14-16' },
   { start: 17, end: 18, text: '17-18' },

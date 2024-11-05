@@ -4,115 +4,74 @@ export interface INetworkResponse {
   error?: string | null;
 }
 
-interface IPickType {
+export interface PickType {
   id: number;
   name: string;
   description: string;
 }
 
-interface IBaseEvent {
+export interface BaseEvent {
+  id?: number;
   name: string;
 }
 
-interface IExistingEvent extends IBaseEvent {
-  id: number;
-}
-
-interface IBaseRace {
+export interface BaseRace {
   startDate: Dayjs | string;
   endDate?: Dayjs | string | null;
   location?: string;
 }
 
-export interface IExistingRace extends IBaseRace {
-  id: number;
-  eventId: number;
-  event: IExistingEvent;
-  raceType: IPickType;
-}
-
-export interface IRaceYear {
-  year: number;
-  races: IResult[];
-}
-
-export interface IRacerHistory {
-  racerId: number;
-  results: IRaceYear[];
-}
-
-export interface IRiderName {
+export interface RiderName {
   first: string;
   last: string;
 }
 
-export interface ITeam {
+export interface Team {
   year: number;
   name: string;
+  id?: number;
+  url?: string;
+  description?: string;
 }
 
-export interface ISocials {
+export interface Socials {
   strava?: string;
   insta?: string;
 }
 
-export interface ICategory {
-  discipline: string;
-  category?: number;
-  name?: string;
-  description?: string;
-  id?: number;
-}
-
-export interface IHometown {
+export interface Hometown {
   country: string | null;
-  state?: string | null;
   city: string | null;
 }
 
-// name: 'Mock Race',
-// type: 'road',
-// startDate: 'Tue Aug 13 2024',
-// endDate: null,
-// category: 'Cat 2',
-// place: 1,
-// racers: 1,
-// points: 719,
-// upgPoints: 7,
-// stages: null,
-// noPlaceCode: null,
-
-export interface IResult extends IBaseEvent, IBaseRace {
-  type: string;
-  category: string;
-  place: number;
-  racers: number;
-  points: number;
-  upgPoints: number;
-  stages?: null;
-  noPlaceCode?: string | null;
-}
-
-export interface IRiderInfo {
-  id: number;
-  currentTeam?: string;
-  name: IRiderName;
-  teams: ITeam[];
-  socials: ISocials;
-  categories: ICategory[];
-  hometown: IHometown;
-  dob: string;
-  photo: string;
-  wins?: number;
-  topResults?: IResult[];
-}
-
-export interface IAgeGroup {
+export interface AgeGroup {
   start: number;
   end: number;
   text: string;
 }
 
-export interface IGFCategory extends IAgeGroup {
-  gender: 'M' | 'F' | 'NB';
+export interface RiderResult {
+  name: string;
+  place: number;
+  time?: string;
+  points?: number;
+  noPlaceCode?: string | null;
+  resultType?: string;
+  eventId?: number;
+  category?: string;
+  racers: number;
+  type: string;
+  startDate: string;
+  endDate?: string | null;
+  location?: string;
+  lap?: number;
+}
+
+export interface YearlyResults {
+  year: number;
+  races: RiderResult[];
+}
+
+export interface IGFCategory extends AgeGroup {
+  gender: 'Men' | 'Women' | 'Non Binary';
 }

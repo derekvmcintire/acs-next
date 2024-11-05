@@ -1,17 +1,17 @@
 'use client';
 
 import { Anchor, Container, Divider, Flex, Image, Text } from '@mantine/core';
-import { IRiderInfo } from '@/src/_types';
+import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
-import InfoBlock from '../../ui/InfoBlock/InfoBlock';
-import SectionLabel from '../../ui/SectionLabel/SectionLabel';
+import SectionLabel from '../../Ui/SectionLabel';
 import { calculateAge, getCurrentTeam } from '../utils';
 import TeamQuickStats from './TeamQuickStats';
 import classes from '../rider.module.css';
+import InfoBlock from '../../Ui/InfoBlock';
 
 interface TeamMemberProps {
-  rider: IRiderInfo;
+  rider: GetRiderResponse;
 }
 
 const TeamMember = ({ rider }: TeamMemberProps) => {
@@ -41,9 +41,9 @@ const RIDER_INFO_TEAM_TEST_ID = 'team-list';
 export default function TeamList() {
   const { riderTeamMembers, riderInfo } = useRider();
   const { id } = riderInfo;
-  const team = riderTeamMembers ? getCurrentTeam(riderTeamMembers[0]?.teams) : [];
+  const team = riderTeamMembers ? getCurrentTeam(riderTeamMembers[0]?.teams || []) : [];
   const hasTeamMembers = riderTeamMembers && riderTeamMembers.length > 0;
-  const isNotCurrentRider = (rider: IRiderInfo) => rider.id !== id;
+  const isNotCurrentRider = (rider: GetRiderResponse) => rider.id !== id;
   const truncatedTeamMembers = [...riderTeamMembers];
   truncatedTeamMembers.length = 20;
 
@@ -53,7 +53,7 @@ export default function TeamList() {
         <Container mb="36px">
           <SectionLabel text="Riders" />
           {hasTeamMembers &&
-            truncatedTeamMembers.map((rider: IRiderInfo) => {
+            truncatedTeamMembers.map((rider: GetRiderResponse) => {
               return isNotCurrentRider(rider) ? (
                 <div key={`${rider.id}${rider.dob}`} className={classes.teamListRider}>
                   <TeamMember rider={rider} />

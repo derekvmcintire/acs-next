@@ -3,11 +3,11 @@
 import React from 'react';
 import { GoSearch } from 'react-icons/go';
 import { Autocomplete, Container } from '@mantine/core';
-import { getRaces } from '@/src/_api/get-races';
+import { getRaces } from '@/src/_api/get/races/get-races';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import useDebounce from '@/src/_hooks/use-debounce';
 import { getFormattedYearString, yearTrunc } from '@/src/_utility/date-helpers';
-import SectionLabel from '../../ui/SectionLabel/SectionLabel';
+import SectionLabel from '../../Ui/SectionLabel';
 
 const icon = <GoSearch />;
 

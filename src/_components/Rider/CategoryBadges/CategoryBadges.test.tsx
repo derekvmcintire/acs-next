@@ -2,12 +2,13 @@ import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import { RiderProvider } from '../../../_contexts/Rider/RiderContext';
 import { render, screen } from '../../../../test-utils';
 import { calculateAgeGroupFromDob } from '../utils';
-import CategoryBadges from './CategoryBadges';
+import CategoryBadges from '.';
 
 const { categories, dob } = mockRider;
 const c = categories[0];
-const categoryString = new RegExp(`${c.discipline}: cat ${c.category}`, 'i');
-const gfCategoryString = new RegExp(`GF: ${calculateAgeGroupFromDob(dob).text}`, 'i');
+const categoryString = new RegExp(`${c.disicpline}: cat ${c.name}`, 'i');
+const ageGroupText = dob ? calculateAgeGroupFromDob(dob).text : '';
+const gfCategoryString = new RegExp(`GF: ${ageGroupText}`, 'i');
 
 describe('CategoryBadges', () => {
   it('renders category badges', () => {

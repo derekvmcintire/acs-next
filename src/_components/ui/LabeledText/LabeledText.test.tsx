@@ -1,5 +1,5 @@
+import LabeledText from '.';
 import { render, screen } from '../../../../test-utils';
-import LabeledText from './LabeledText';
 
 describe('InfoBlock', () => {
   test('renders its children without colon', () => {

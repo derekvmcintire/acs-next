@@ -3,15 +3,15 @@
 import dayjs from 'dayjs';
 import React from 'react';
 import { Button, Container, ScrollArea } from '@mantine/core';
-import { getRaces } from '@/src/_api/get-races';
+import { getRaces } from '@/src/_api/get/races/get-races';
+import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
-import { IExistingRace } from '@/src/_types';
 import { ACS_DARK_GREY } from '@/src/global-constants';
-import SectionLabel from '../../ui/SectionLabel/SectionLabel';
+import SectionLabel from '../../Ui/SectionLabel';
 import classes from './side-search.module.css';
 
 export default function SuggestedRaces() {
-  const [suggestedRaces, setSuggestedRaces] = React.useState<IExistingRace[]>([]);
+  const [suggestedRaces, setSuggestedRaces] = React.useState<GetRacesResponse[]>([]);
   const { setSelectedRace } = useUploaderContext();
 
   React.useEffect(() => {
@@ -27,7 +27,7 @@ export default function SuggestedRaces() {
     getRecentRaces();
   }, []);
 
-  const handleSelectSuggestedRace = (race: IExistingRace) => {
+  const handleSelectSuggestedRace = (race: GetRacesResponse) => {
     setSelectedRace(race);
   };
 
@@ -37,7 +37,7 @@ export default function SuggestedRaces() {
         <Container mb="36px" className={classes.scrollArea}>
           <SectionLabel text="Suggested Races" />
           <ScrollArea h={250} w={170}>
-            {suggestedRaces.map((race: IExistingRace) => (
+            {suggestedRaces.map((race: GetRacesResponse) => (
               <div>
                 <Button
                   size="xs"

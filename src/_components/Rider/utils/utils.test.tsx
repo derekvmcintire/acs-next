@@ -1,6 +1,6 @@
 import { mockRaces } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import { IAgeGroup, IRaceYear, ITeam } from '@/src/_types';
+import { AgeGroup, Team, YearlyResults } from '@/src/_types';
 import {
   ACS_COLOR_BRONZE,
   ACS_COLOR_DARK_GOLD,
@@ -27,7 +27,7 @@ describe('Utility Functions', () => {
   });
 
   it('getCurrentTeam returns the current team based on year', () => {
-    const teams: ITeam[] = [
+    const teams: Team[] = [
       { name: 'Team A', year: 2022 },
       { name: 'Team B', year: 2023 },
     ];
@@ -54,7 +54,7 @@ describe('Utility Functions', () => {
 
   it('getGFAgeGroup returns the correct age group', () => {
     const age = 25;
-    const group: IAgeGroup = getGFAgeGroup(age);
+    const group: AgeGroup = getGFAgeGroup(age);
     expect(group.start).toBeLessThanOrEqual(age);
     expect(group.end).toBeGreaterThanOrEqual(age);
   });
@@ -67,7 +67,7 @@ describe('Utility Functions', () => {
   });
 
   it('sortRacingDataByYear sorts race years correctly', () => {
-    const history: IRaceYear[] = [
+    const history: YearlyResults[] = [
       { year: 2023, races: [] },
       { year: 2022, races: [] },
     ];
@@ -76,7 +76,7 @@ describe('Utility Functions', () => {
   });
 
   it('getRaceYears returns the years from race history', () => {
-    const raceHistory: IRaceYear[] = [{ year: 2023, races: [] }];
+    const raceHistory: YearlyResults[] = [{ year: 2023, races: [] }];
     expect(getRaceYears(raceHistory)).toEqual([2023]);
   });
 
@@ -94,7 +94,7 @@ describe('Utility Functions', () => {
       { ...mockRaces[0], place: 2 },
     ];
 
-    const history: IRaceYear[] = [
+    const history: YearlyResults[] = [
       {
         year: 2023,
         races: mockResults,
@@ -111,7 +111,7 @@ describe('Utility Functions', () => {
       { ...mockRaces[0], place: 2 },
     ];
 
-    const history: IRaceYear[] = [
+    const history: YearlyResults[] = [
       {
         year: 2023,
         races: mockResults,
@@ -127,7 +127,7 @@ describe('Utility Functions', () => {
       { ...mockRaces[0], place: 2 },
     ];
 
-    const history: IRaceYear[] = [
+    const history: YearlyResults[] = [
       {
         year: 2023,
         races: mockResults,
@@ -143,7 +143,7 @@ describe('Utility Functions', () => {
       { ...mockRaces[0], place: 2 },
     ];
 
-    const history: IRaceYear[] = [
+    const history: YearlyResults[] = [
       {
         year: 2023,
         races: mockResults,

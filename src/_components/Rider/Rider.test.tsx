@@ -4,11 +4,11 @@ import '@testing-library/jest-dom';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider, mockTeamMembers } from '../../_db/mock-data/mock-racer';
 import { render, screen } from '../../../test-utils';
-import { RIDER_SEARCH_DATA_TEST_ID } from '../shared/TopNav/Search';
-import { NAME_HEADING_TEST_ID } from './NameHeading/NameHeading';
-import { RACER_PROFILE_IMAGE_TEST_ID } from './ProfileImage/ProfileImage';
+import { RIDER_SEARCH_DATA_TEST_ID } from '../Shared/TopNav/Search';
+import { NAME_HEADING_TEST_ID } from './NameHeading';
+import { RACER_PROFILE_IMAGE_TEST_ID } from './ProfileImage';
 import Rider from './Rider';
-import { TOP_RESULTS_TEST_ID } from './TopResults/TopResults';
+import { TOP_RESULTS_TEST_ID } from './TopResults';
 
 const mockHistory = mockRacingHistory.results;
 

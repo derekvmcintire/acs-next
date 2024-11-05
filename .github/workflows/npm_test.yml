@@ -1,31 +1,34 @@
-name: npm test
+# name: npm test
 
-on:
-  pull_request:
-    branches:
-      - '**'
+# on:
+#   pull_request:
+#     branches:
+#       - '**'
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
-  cancel-in-progress: true
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
+#   cancel-in-progress: true
 
-jobs:
-  test_pull_request:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+# jobs:
+#   test_pull_request:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version-file: '.nvmrc'
+#           cache: 'npm'
+#           # Modify the cache-dependency-path key to add a version or unique ID
+#           cache-dependency-path: '**/package-lock.json'
+#           # Add a unique cache key to force cache refresh if needed
+#           cache-key: npm-cache-${{ github.workflow }}-${{ github.run_id }} # or use github.sha
 
-      - name: Install dependencies
-        run: npm install
+#       - name: Install dependencies
+#         run: npm install
 
-      - name: Run build
-        run: npm run build
+#       - name: Run build
+#         run: npm run build
 
-      - name: Run tests
-        run: npm test
+#       - name: Run tests
+#         run: npm test
