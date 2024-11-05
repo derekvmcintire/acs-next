@@ -60,6 +60,7 @@ export interface BaseRider {
 }
 
 export interface BaseResult {
+  id?: number;
   place: number;
   points?: number;
   time?: string;
