@@ -7,7 +7,7 @@ import { getRaces } from '@/src/_api/get-races';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { IExistingRace } from '@/src/_types';
 import { ACS_DARK_GREY } from '@/src/global-constants';
-import SectionLabel from '../../ui/SectionLabel/SectionLabel';
+import SectionLabel from '../../UI/SectionLabel/SectionLabel';
 import classes from './side-search.module.css';
 
 export default function SuggestedRaces() {

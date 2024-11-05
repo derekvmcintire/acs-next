@@ -3,7 +3,7 @@
 import React from 'react';
 import { ICategory } from '@/src/_types';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
-import InfoBadge from '../../ui/InfoBadge/InfoBadge';
+import InfoBadge from '../../UI/InfoBadge/InfoBadge';
 import { calculateAgeGroupFromDob } from '../utils';
 
 // @TODO Update this. Should use category.name field, not category.category, but will need to update how this data is returned from get rider

@@ -5,7 +5,7 @@ import { Center, Flex } from '@mantine/core';
 import { RiderHistoryProvider } from '@/src/_contexts/Rider/RiderHistoryContext';
 import { IRaceYear, IRiderInfo } from '@/src/_types';
 import { RiderProvider } from '../../_contexts/Rider/RiderContext';
-import PageLayout from '../shared/PageLayout/PageLayout';
+import PageLayout from '../Shared/PageLayout/PageLayout';
 import History from './History/History';
 import InfoGrid from './InfoGrid/InfoGrid';
 import { NameHeading } from './NameHeading/NameHeading';

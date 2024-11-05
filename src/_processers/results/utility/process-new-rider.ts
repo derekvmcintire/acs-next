@@ -24,12 +24,13 @@ export const createNewRiderIdFromResult = async (
     return Promise.resolve();
   }
   const { firstName, lastName } = splitName(result.name.toString());
+  const hometown = typeof result?.hometown === 'string' ? result?.hometown : '';
   const riderData: CreateRiderData = {
     firstName,
     lastName,
     dob: '',
     country: '',
-    hometown: String(result.hometowm || ''),
+    hometown,
     photo: '',
     strava: '',
     insta: '',

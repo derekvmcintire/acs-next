@@ -29,6 +29,7 @@ export interface IExistingRace extends IBaseRace {
   eventId: number;
   event: IExistingEvent;
   raceType: IPickType;
+  raceTypeId?: number;
 }
 
 export interface IRaceYear {
@@ -70,19 +71,8 @@ export interface IHometown {
   city: string | null;
 }
 
-// name: 'Mock Race',
-// type: 'road',
-// startDate: 'Tue Aug 13 2024',
-// endDate: null,
-// category: 'Cat 2',
-// place: 1,
-// racers: 1,
-// points: 719,
-// upgPoints: 7,
-// stages: null,
-// noPlaceCode: null,
-
 export interface IResult extends IBaseEvent, IBaseRace {
+  id?: number;
   type: string;
   category: string;
   place: number;
@@ -91,6 +81,8 @@ export interface IResult extends IBaseEvent, IBaseRace {
   upgPoints: number;
   stages?: null;
   noPlaceCode?: string | null;
+  rider?: TransformedRider;
+  time?: string;
 }
 
 export interface IRiderInfo {
@@ -115,4 +107,20 @@ export interface IAgeGroup {
 
 export interface IGFCategory extends IAgeGroup {
   gender: 'M' | 'F' | 'NB';
+}
+
+export interface BaseRider {
+  id?: number;
+  dob: string;
+  photo: string;
+}
+
+export interface TransformedRider extends BaseRider {
+  firstName: string;
+  lastName: string;
+  country: string;
+  hometown: string;
+  strava: string;
+  insta: string;
+  about: string;
 }

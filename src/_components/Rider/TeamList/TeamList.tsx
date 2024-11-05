@@ -4,8 +4,8 @@ import { Anchor, Container, Divider, Flex, Image, Text } from '@mantine/core';
 import { IRiderInfo } from '@/src/_types';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
-import InfoBlock from '../../ui/InfoBlock/InfoBlock';
-import SectionLabel from '../../ui/SectionLabel/SectionLabel';
+import InfoBlock from '../../UI/InfoBlock/InfoBlock';
+import SectionLabel from '../../UI/SectionLabel/SectionLabel';
 import { calculateAge, getCurrentTeam } from '../utils';
 import TeamQuickStats from './TeamQuickStats';
 import classes from '../rider.module.css';
@@ -20,7 +20,7 @@ const TeamMember = ({ rider }: TeamMemberProps) => {
   return (
     <>
       <Flex align="flex-end" justify="space-between">
-        <Image h={30} src={photo} mr={16}></Image>
+        {photo && <Image h={30} src={photo} mr={16}></Image>}
         <Text size="sm">
           <Anchor
             className={classes.teamListAnchor}

@@ -7,7 +7,7 @@ import { getRaces } from '@/src/_api/get-races';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import useDebounce from '@/src/_hooks/use-debounce';
 import { getFormattedYearString, yearTrunc } from '@/src/_utility/date-helpers';
-import SectionLabel from '../../ui/SectionLabel/SectionLabel';
+import SectionLabel from '../../UI/SectionLabel/SectionLabel';
 
 const icon = <GoSearch />;
 

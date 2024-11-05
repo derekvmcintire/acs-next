@@ -1,7 +1,7 @@
 import React from 'react';
 import { Center } from '@mantine/core';
 import { getCategories } from '@/src/_api/get-categories';
-import PageLayout from '@/src/_components/shared/PageLayout/PageLayout';
+import PageLayout from '@/src/_components/Shared/PageLayout/PageLayout';
 import UploadForm from '@/src/_components/Uploader/UploadForm';
 import {
   defaultUploaderContextValue,

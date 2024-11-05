@@ -3,7 +3,7 @@ import { MantineProvider, useMantineColorScheme } from '@mantine/core';
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
 import { stringTrunc } from '@/src/_utility/string-helpers';
 import { render, screen } from '@/test-utils';
-import { LabeledTextProps } from '../../ui/LabeledText/LabeledText';
+import { LabeledTextProps } from '../../UI/LabeledText/LabeledText';
 import { getTopResultPlaceColor } from '../utils';
 import { MAPPED_TOP_RESULTS_TEST_ID, MappedTopResults } from './MappedTopResults';
 
