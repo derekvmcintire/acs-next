@@ -1,4 +1,4 @@
-import { YearlyResults } from '@/src/_types';
+import { YearlyResults } from '@/src/_types/extended-types';
 
 export interface GetHistoryResponse {
   riderId: number;

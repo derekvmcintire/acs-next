@@ -1,5 +1,5 @@
 import { GetRiderResponse } from './_api/get/riders/get-riders-response-type';
-import { AgeGroup } from './_types';
+import { AgeGroup } from './_types/base-types';
 
 // External re-direct URLs
 export const STRAVA_BASE_URL = 'http://strava.com/athletes/';

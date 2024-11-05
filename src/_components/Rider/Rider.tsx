@@ -5,7 +5,7 @@ import React from 'react';
 import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import PageLayout from '@/src/_components/shared/PageLayout';
 import { RiderHistoryProvider } from '@/src/_contexts/Rider/RiderHistoryContext';
-import { YearlyResults } from '@/src/_types';
+import { YearlyResults } from '@/src/_types/extended-types';
 import { RiderProvider } from '../../_contexts/Rider/RiderContext';
 import History from './History';
 import InfoGrid from './InfoGrid';

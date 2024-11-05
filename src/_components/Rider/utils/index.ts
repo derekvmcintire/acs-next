@@ -1,5 +1,6 @@
 import { mockRider } from '@/src/_db/mock-data/mock-racer';
-import { AgeGroup, RiderResult, Team, YearlyResults } from '@/src/_types';
+import { AgeGroup, Team } from '@/src/_types/base-types';
+import { RiderResult, YearlyResults } from '@/src/_types/extended-types';
 import {
   ACS_COLOR_BRONZE,
   ACS_COLOR_DARK_GOLD,
