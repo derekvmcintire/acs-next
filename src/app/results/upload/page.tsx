@@ -7,7 +7,7 @@ import {
   IUploaderContext,
   UploaderContextProvider,
 } from '@/src/_contexts/Uploader/UploaderContext';
-import PageLayout from '@/src/_components/Shared/PageLayout';
+import PageLayout from '@/src/_components/shared/PageLayout';
 
 async function RaceUpload() {
   const errors: string[] = [];

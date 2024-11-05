@@ -8,8 +8,8 @@ import { useRider } from '../../../_contexts/Rider/RiderContext';
 import { PrevAndNextRider } from '../PrevAndNextRider';
 import { calculateAge } from '../utils';
 import classes from '../rider.module.css';
-import InfoBlock from '@/src/_components/Ui/InfoBlock';
-import LabeledText from '@/src/_components/Ui/LabeledText';
+import InfoBlock from '@/src/_components/ui/InfoBlock';
+import LabeledText from '@/src/_components/ui/LabeledText';
 
 const RIDER_DETAILS_TEST_ID = 'rider-details';
 

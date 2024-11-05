@@ -5,7 +5,7 @@ import { stringTrunc } from '@/src/_utility/string-helpers';
 import { render, screen } from '@/test-utils';
 import { getTopResultPlaceColor } from '../utils';
 import { MAPPED_TOP_RESULTS_TEST_ID, MappedTopResults } from './MappedTopResults';
-import { LabeledTextProps } from '../../Ui/LabeledText';
+import { LabeledTextProps } from '../../ui/LabeledText';
 
 jest.mock('@mantine/core', () => ({
   ...jest.requireActual('@mantine/core'),

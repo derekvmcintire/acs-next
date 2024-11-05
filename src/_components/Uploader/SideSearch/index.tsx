@@ -4,7 +4,7 @@ import React from 'react';
 import RaceSearch from './RaceSearch';
 import SuggestedRaces from './SuggestedRaces';
 import classes from './side-search.module.css';
-import InfoBlock from '../../Ui/InfoBlock';
+import InfoBlock from '../../ui/InfoBlock';
 
 export default function SideSearch() {
   return (

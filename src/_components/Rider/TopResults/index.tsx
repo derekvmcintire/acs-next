@@ -5,7 +5,7 @@ import { ACS_COLOR_ORANGE } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import { MappedTopResults } from './MappedTopResults';
 import classes from '../rider.module.css';
-import InfoBlock from '../../Ui/InfoBlock';
+import InfoBlock from '../../ui/InfoBlock';
 
 export const TOP_RESULTS_TEST_ID = 'top-results';
 

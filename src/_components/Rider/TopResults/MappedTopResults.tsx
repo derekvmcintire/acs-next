@@ -4,7 +4,7 @@ import { getFormattedYearString } from '@/src/_utility/date-helpers';
 import { stringTrunc } from '@/src/_utility/string-helpers';
 import { getOrdinal, getTopResultPlaceColor } from '../utils';
 import classes from '../rider.module.css';
-import LabeledText from '../../Ui/LabeledText';
+import LabeledText from '../../ui/LabeledText';
 
 export const MAPPED_TOP_RESULTS_TEST_ID = 'mapped-results';
 
