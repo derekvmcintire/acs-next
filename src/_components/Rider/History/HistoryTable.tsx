@@ -1,6 +1,6 @@
 'use client';
 
-import { Flex, Table, Text } from '@mantine/core';
+import { Anchor, Flex, Table, Text } from '@mantine/core';
 import { RiderResult } from '@/src/_types/extended-types';
 import classes from '../rider.module.css';
 
@@ -21,14 +21,14 @@ export default function HistoryTable({ results }: HistoryTableProps) {
     return <Text>No results available</Text>;
   }
 
-  const rows = results.map(({ name, category, startDate, place, racers, type, points }, i) => (
+  const rows = results.map(({ name, category, startDate, place, racers, type, points, id }, i) => (
     <Table.Tr key={i + place}>
       <Table.Td>{getFormattedDateString(new Date(String(startDate)))}</Table.Td>
       <Table.Td className={classes.result}>{place || 'DNF'}</Table.Td>
       <Table.Td>{racers}</Table.Td>
       <Table.Td>
         <Text size="xs" className={classes.raceNameText}>
-          {name}
+          <Anchor href={`/race/${id}`}>{name}</Anchor>
         </Text>
       </Table.Td>
       <Table.Td>{type}</Table.Td>
