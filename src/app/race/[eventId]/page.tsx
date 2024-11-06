@@ -7,7 +7,7 @@ import Race from '@/src/_components/Race';
 import NetworkError from '@/src/_components/ui/NetworkError';
 
 interface RacePageParams {
-  id: number;
+  eventId: number;
 }
 
 interface RacePageProps {
@@ -23,34 +23,37 @@ function sortByPlace(results: any[]) {
 }
 
 export default async function RacePage({ params }: RacePageProps) {
-  const { id } = params;
+  const { eventId } = params;
   const errors: string[] = [];
-  const raceSearch = await getRaces({ id });
-
+  console.log('looking for race with eventId: ', eventId);
+  const raceSearch = await getRaces({ eventId });
   raceSearch?.error && errors.push(raceSearch.error);
-
   const raceInfo = raceSearch?.races && raceSearch.races[0];
 
   if (!raceInfo) {
     throw new Error('Failed to Get Race Info');
   }
 
-  const raceResults: IGetRaceResultsResponse = await getRaceResults(id);
+  console.log('raceInfo is: ', raceInfo);
+  const raceResults: IGetRaceResultsResponse = await getRaceResults(raceInfo.id);
   raceResults?.error && errors.push(raceResults.error);
   const results = raceResults?.results || [];
-
   const sortedResults = sortByPlace(results);
 
   const winningResult = sortedResults[0];
-  const winnerRiderId = winningResult.riderId;
-  const winnerResponse: IGetSingleRiderResponse = await getSingleRider(winnerRiderId);
-  winnerResponse?.error && errors.push(winnerResponse.error);
-  const winner = winnerResponse?.riderInfo;
+  const winnerRiderId = winningResult?.riderId;
+  let winner;
+
+  if (winnerRiderId) {
+    const winnerResponse: IGetSingleRiderResponse = await getSingleRider(winnerRiderId);
+    winnerResponse?.error && errors.push(winnerResponse.error);
+    winner = winnerResponse?.riderInfo || undefined;
+  }
 
   return (
     <Container>
       <NetworkError errors={errors} />
-      <Race race={raceInfo} results={sortedResults} winner={winner || undefined} />
+      <Race race={raceInfo} results={sortedResults} winner={winner} />
     </Container>
   );
 }

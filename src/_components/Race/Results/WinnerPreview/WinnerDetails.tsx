@@ -24,12 +24,14 @@ export default function WinnerDetails({ winner }: WinnerDetailsProps) {
       <Text size="sm">{currentTeam}</Text>
       <LabeledText size="sm" label="Nationality" text={hometown?.country || ''} />
       <LabeledText size="sm" label="Hometown" text={hometown?.city || ''} />
-      <Flex align="center">
-        <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>
-          <FaStrava color={ACS_COLOR_ORANGE} />
-        </Anchor>
-        <Text size="xs" span>{` Career Wins: ${wins}`}</Text>
-      </Flex>
+      {stravaUrl && (
+        <Flex align="center">
+          <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>
+            <FaStrava color={ACS_COLOR_ORANGE} />
+          </Anchor>
+          <Text size="xs" span>{` Career Wins: ${wins}`}</Text>
+        </Flex>
+      )}
     </Container>
   );
 }
