@@ -7,7 +7,7 @@ import Race from '@/src/_components/Race';
 import NetworkError from '@/src/_components/ui/NetworkError';
 
 interface RacePageParams {
-  id: number;
+  eventId: number;
 }
 
 interface RacePageProps {
@@ -23,9 +23,10 @@ function sortByPlace(results: any[]) {
 }
 
 export default async function RacePage({ params }: RacePageProps) {
-  const { id } = params;
+  const { eventId } = params;
   const errors: string[] = [];
-  const raceSearch = await getRaces({ id });
+  console.log('looking for race with eventId: ', eventId);
+  const raceSearch = await getRaces({ eventId });
   raceSearch?.error && errors.push(raceSearch.error);
   const raceInfo = raceSearch?.races && raceSearch.races[0];
 
@@ -33,7 +34,8 @@ export default async function RacePage({ params }: RacePageProps) {
     throw new Error('Failed to Get Race Info');
   }
 
-  const raceResults: IGetRaceResultsResponse = await getRaceResults(id);
+  console.log('raceInfo is: ', raceInfo);
+  const raceResults: IGetRaceResultsResponse = await getRaceResults(raceInfo.id);
   raceResults?.error && errors.push(raceResults.error);
   const results = raceResults?.results || [];
   const sortedResults = sortByPlace(results);
