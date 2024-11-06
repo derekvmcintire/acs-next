@@ -15,6 +15,10 @@ const getHeader = (header: string): string | null => {
 
 export const parseResults = (data: string): PreparedResult[] => {
   const rows = data.trim().split('\n');
+
+  if (!rows || rows.length < 1) {
+    return [];
+  }
   const isTabSeparated = rows[0].includes('\t');
   const isCommaSeparated = rows[0].includes(',');
 
