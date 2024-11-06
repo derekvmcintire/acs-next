@@ -1,10 +1,7 @@
 import RaceDetailsGrid from '.';
 import { mockGetRaceResultsResponse } from '@/src/_api/get/race/get-race-results-response-type';
 import { mockGetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
-import {
-  defaultRaceContextValue,
-  RaceProvider,
-} from '@/src/_contexts/Race/RaceContext';
+import { defaultRaceContextValue, RaceProvider } from '@/src/_contexts/Race/RaceContext';
 import { render, screen } from '@/test-utils';
 
 const winnerMock = mockGetRiderResponse;
