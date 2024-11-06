@@ -23,6 +23,12 @@
   border-radius: 4px;
 }
 
+.defaultRiderPhoto {
+  margin-top: 8px;
+  border-radius: 4px;
+  filter: brightness(40%);
+}
+
 .courseMap {
   width: 90%;
 }

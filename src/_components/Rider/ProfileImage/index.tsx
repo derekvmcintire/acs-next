@@ -7,7 +7,8 @@ import classes from '../rider.module.css';
 // const PLACEHOLDER_IMG =
 //   'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
 
-export const PLACEHOLDER_IMG = '/shadowbarn.jpeg';
+export const PLACEHOLDER_IMG =
+  'https://www.procyclingstats.com/images/riders/bp/ae/marianne-vos-2024.png';
 
 export const RACER_PROFILE_IMAGE_TEST_ID = 'racerProfileTestId';
 
