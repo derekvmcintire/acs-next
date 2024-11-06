@@ -6,7 +6,6 @@ import React from 'react';
 import { getRaces } from '@/src/_api/get/races/get-races';
 import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
-import { ACS_DARK_GREY } from '@/src/global-constants';
 import SectionLabel from '../../ui/SectionLabel';
 import classes from './side-search.module.css';
 
@@ -41,9 +40,8 @@ export default function SuggestedRaces() {
               <div>
                 <Button
                   size="xs"
-                  variant="subtle"
+                  variant="transparent"
                   className={classes.suggestedRaceButton}
-                  color={ACS_DARK_GREY}
                   onClick={() => {
                     handleSelectSuggestedRace(race);
                   }}

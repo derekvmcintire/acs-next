@@ -1,5 +1,6 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 import { GetRaceResultsResponse } from '@/src/_api/get/race/get-race-results-response-type';
+import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import { ExtendedRace } from '@/src/_types/extended-types';
 
 interface RaceContextType {
@@ -7,6 +8,8 @@ interface RaceContextType {
   setRace: (race: any) => void;
   results: GetRaceResultsResponse[];
   setResults: (result: any) => void;
+  winner?: GetRiderResponse;
+  setWinner: (winner: GetRiderResponse) => void;
   errors: string[];
   setErrors: (errors: string[]) => void;
 }
@@ -16,6 +19,8 @@ const defaultValue: RaceContextType = {
   setRace: () => {},
   results: [],
   setResults: () => {},
+  winner: undefined,
+  setWinner: () => {},
   errors: [],
   setErrors: () => {},
 };
@@ -26,19 +31,24 @@ interface RaceProviderProps {
   children: ReactNode;
   initialRace?: ExtendedRace;
   initialResults?: GetRaceResultsResponse[];
+  initialWinner?: GetRiderResponse;
 }
 
 export const RaceProvider: React.FC<RaceProviderProps> = ({
   children,
   initialRace = defaultValue.race,
   initialResults = defaultValue.results,
+  initialWinner = defaultValue.winner,
 }) => {
   const [race, setRace] = useState<ExtendedRace | undefined>(initialRace);
   const [results, setResults] = useState<GetRaceResultsResponse[]>(initialResults);
+  const [winner, setWinner] = useState<GetRiderResponse | undefined>(initialWinner);
   const [errors, setErrors] = useState<string[]>([]);
 
   return (
-    <RaceContext.Provider value={{ race, setRace, results, setResults, errors, setErrors }}>
+    <RaceContext.Provider
+      value={{ race, setRace, results, setResults, errors, setErrors, winner, setWinner }}
+    >
       {children}
     </RaceContext.Provider>
   );

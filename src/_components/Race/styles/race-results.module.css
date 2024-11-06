@@ -4,3 +4,25 @@
   width: 100%;
   margin-bottom: 8px;
 }
+
+.winnerDetails {
+  width: 100%;
+}
+
+.raceDetailsLeft {
+  width: 40%;
+
+}
+
+.raceDetailsRight {
+  width: 60%;
+}
+
+.riderPhoto {
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+.courseMap {
+  width: 90%;
+}

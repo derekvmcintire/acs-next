@@ -1,6 +1,6 @@
 'use client';
 
-import { Anchor, Container, Flex, Table, Text } from '@mantine/core';
+import { Anchor, Container, Table, Text } from '@mantine/core';
 import React from 'react';
 import { RIDER_URL } from '@/src/_components/Rider/PrevAndNextRider';
 import { useRaceContext } from '@/src/_contexts/Race/RaceContext';
@@ -32,10 +32,7 @@ export default function ResultTable() {
   });
 
   return (
-    <Container>
-      <Flex justify="right">
-        <Text fs="italic" fw={700} pr={12} pt={8}>{`${results.length} racers`}</Text>
-      </Flex>
+    <Container mt="16">
       <Table striped horizontalSpacing="xs">
         <Table.Thead>
           <Table.Tr>
