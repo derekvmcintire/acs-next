@@ -14,6 +14,14 @@
   margin: 8px;
 }
 
+.defaultProfileImage {
+  width: 100%;
+  max-width: 128px;
+  min-width: 64px;
+  margin: 8px;
+  filter: brightness(40%);
+}
+
 .details {
   width: 100%;
 }

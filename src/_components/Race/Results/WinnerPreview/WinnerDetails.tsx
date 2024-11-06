@@ -22,7 +22,7 @@ export default function WinnerDetails({ winner }: WinnerDetailsProps) {
         <Anchor href={`${APP_RIDER_PATH}/${winner.id}`}>{winnerName}</Anchor>
       </Text>
       <Text size="sm">{currentTeam}</Text>
-      <LabeledText label="Hometown" text={hometown?.city || ''} />
+      <LabeledText size="sm" label="Nationality" text={hometown?.country || ''} />
       <LabeledText size="sm" label="Hometown" text={hometown?.city || ''} />
       <Flex align="center">
         <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>

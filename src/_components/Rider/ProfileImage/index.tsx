@@ -17,7 +17,10 @@ export default function ProfileImage() {
   const { photo } = riderInfo;
 
   return (
-    <div className={classes.profileImage} data-testid={RACER_PROFILE_IMAGE_TEST_ID}>
+    <div
+      className={photo ? classes.profileImage : classes.defaultProfileImage}
+      data-testid={RACER_PROFILE_IMAGE_TEST_ID}
+    >
       <Image
         src={photo || PLACEHOLDER_IMG}
         alt="solid grey silhouette of a person on a white background"
