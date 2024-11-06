@@ -12,17 +12,17 @@ export interface GetRaceResultsResponse extends BaseResult {
   noPlaceCodeType: PickType;
 }
 
-export const mockGetRaceResultsResponse = [
+export const mockGetRaceResultsResponse: GetRaceResultsResponse[] = [
   {
     id: 484,
     eventId: 15,
     riderId: 24,
     resultTypeId: 1,
     noPlaceCodeTypeId: 1,
-    lap: null,
+    lap: undefined,
     place: 2,
     time: '',
-    points: null,
+    points: undefined,
     rider: {
       id: 24,
       firstName: 'Biniam',
@@ -63,6 +63,58 @@ export const mockGetRaceResultsResponse = [
       id: 1,
       name: 'NA',
       description: 'Participant Placed',
+    },
+  },
+  {
+    id: 485,
+    eventId: 15,
+    riderId: 25,
+    resultTypeId: 1,
+    noPlaceCodeTypeId: 1,
+    lap: undefined,
+    place: 0,
+    time: '',
+    points: undefined,
+    rider: {
+      id: 25,
+      firstName: 'Borum',
+      lastName: 'Madening',
+      dob: 'Mon Mar 17 1987',
+      country: 'Switzerland',
+      hometown: 'Dorchester',
+      photo: 'https://www.procyclingstats.com/images/riders/bp/eb/jens-keukeleire-2023.jpeg',
+      strava: '5315467',
+      insta: 'ptwtieyqnowd',
+      about: "They think I'm just some dumb hick. They said that to me, at a dinner!",
+    },
+    event: {
+      id: 15,
+      name: 'Keren Championship',
+      Race: [
+        {
+          id: 15,
+          eventId: 15,
+          raceTypeId: 1,
+          startDate: '2020-06-02',
+          endDate: null,
+          location: 'Keren Championship',
+          raceType: {
+            id: 1,
+            name: 'Road',
+            description: 'Road Race Type',
+          },
+        },
+      ],
+    },
+    resultType: {
+      id: 1,
+      name: 'default',
+      description: 'Default Result Type',
+    },
+    noPlaceCodeType: {
+      id: 2,
+      name: 'DNF',
+      description: 'Participant Did Not Finish',
     },
   },
 ];
