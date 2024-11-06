@@ -14,7 +14,7 @@ interface RaceContextType {
   setErrors: (errors: string[]) => void;
 }
 
-const defaultValue: RaceContextType = {
+export const defaultRaceContextValue: RaceContextType = {
   race: undefined,
   setRace: () => {},
   results: [],
@@ -25,7 +25,7 @@ const defaultValue: RaceContextType = {
   setErrors: () => {},
 };
 
-const RaceContext = createContext<RaceContextType>(defaultValue);
+const RaceContext = createContext<RaceContextType>(defaultRaceContextValue);
 
 interface RaceProviderProps {
   children: ReactNode;
@@ -36,9 +36,9 @@ interface RaceProviderProps {
 
 export const RaceProvider: React.FC<RaceProviderProps> = ({
   children,
-  initialRace = defaultValue.race,
-  initialResults = defaultValue.results,
-  initialWinner = defaultValue.winner,
+  initialRace = defaultRaceContextValue.race,
+  initialResults = defaultRaceContextValue.results,
+  initialWinner = defaultRaceContextValue.winner,
 }) => {
   const [race, setRace] = useState<ExtendedRace | undefined>(initialRace);
   const [results, setResults] = useState<GetRaceResultsResponse[]>(initialResults);

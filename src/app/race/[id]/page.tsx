@@ -26,9 +26,7 @@ export default async function RacePage({ params }: RacePageProps) {
   const { id } = params;
   const errors: string[] = [];
   const raceSearch = await getRaces({ id });
-
   raceSearch?.error && errors.push(raceSearch.error);
-
   const raceInfo = raceSearch?.races && raceSearch.races[0];
 
   if (!raceInfo) {
@@ -38,19 +36,22 @@ export default async function RacePage({ params }: RacePageProps) {
   const raceResults: IGetRaceResultsResponse = await getRaceResults(id);
   raceResults?.error && errors.push(raceResults.error);
   const results = raceResults?.results || [];
-
   const sortedResults = sortByPlace(results);
 
   const winningResult = sortedResults[0];
-  const winnerRiderId = winningResult.riderId;
-  const winnerResponse: IGetSingleRiderResponse = await getSingleRider(winnerRiderId);
-  winnerResponse?.error && errors.push(winnerResponse.error);
-  const winner = winnerResponse?.riderInfo;
+  const winnerRiderId = winningResult?.riderId;
+  let winner;
+
+  if (winnerRiderId) {
+    const winnerResponse: IGetSingleRiderResponse = await getSingleRider(winnerRiderId);
+    winnerResponse?.error && errors.push(winnerResponse.error);
+    winner = winnerResponse?.riderInfo || undefined;
+  }
 
   return (
     <Container>
       <NetworkError errors={errors} />
-      <Race race={raceInfo} results={sortedResults} winner={winner || undefined} />
+      <Race race={raceInfo} results={sortedResults} winner={winner} />
     </Container>
   );
 }
