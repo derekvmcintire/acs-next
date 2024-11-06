@@ -1,7 +1,8 @@
 import { Container } from '@mantine/core';
 import { getRaceResults } from '@/src/_api/get/race/get-race-results';
 import { getRaces } from '@/src/_api/get/races/get-races';
-import { IGetRaceResultsResponse } from '@/src/_api/types';
+import { getSingleRider } from '@/src/_api/get/riders/get-rider';
+import { IGetRaceResultsResponse, IGetSingleRiderResponse } from '@/src/_api/types';
 import Race from '@/src/_components/Race';
 import NetworkError from '@/src/_components/ui/NetworkError';
 
@@ -40,10 +41,16 @@ export default async function RacePage({ params }: RacePageProps) {
 
   const sortedResults = sortByPlace(results);
 
+  const winningResult = sortedResults[0];
+  const winnerRiderId = winningResult.riderId;
+  const winnerResponse: IGetSingleRiderResponse = await getSingleRider(winnerRiderId);
+  winnerResponse?.error && errors.push(winnerResponse.error);
+  const winner = winnerResponse?.riderInfo;
+
   return (
     <Container>
       <NetworkError errors={errors} />
-      <Race race={raceInfo} results={sortedResults} />
+      <Race race={raceInfo} results={sortedResults} winner={winner || undefined} />
     </Container>
   );
 }

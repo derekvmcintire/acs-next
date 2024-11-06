@@ -6,7 +6,6 @@ import { Controller, useForm } from 'react-hook-form';
 import { GetCategoriesResponse } from '@/src/_api/get/categories/get-categories-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { processResults } from '@/src/_processers/results';
-import { ACS_DARK_GREY } from '@/src/global-constants';
 import FormWrapper from '../FormWrapper';
 import Instructions from '../Instructions';
 import { RESULTS_PLACEHOLDER_TEXT } from './placeholder-text.mjs';
@@ -84,7 +83,7 @@ function ResultForm() {
           </Text>
         </Flex>
         <Flex justify="center" className={classes.formSection}>
-          <Button color={ACS_DARK_GREY} variant="subtle" onClick={handleChangeRace}>
+          <Button variant="transparent" onClick={handleChangeRace}>
             Create a New Race
           </Button>
         </Flex>
