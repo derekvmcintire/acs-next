@@ -11,6 +11,7 @@ export interface GetRacesFilters {
   };
   location?: string;
   id?: number;
+  eventId?: number;
 }
 
 export const getRacesRequestUrl = (filters: GetRacesFilters) => {
@@ -20,6 +21,7 @@ export const getRacesRequestUrl = (filters: GetRacesFilters) => {
     filters.name ? `name=${encodeURIComponent(filters.name)}` : '',
     filters.location ? `location=${encodeURIComponent(filters.location)}` : '',
     filters.id ? `id=${filters.id}` : '',
+    filters.eventId ? `eventid=${filters.eventId}` : '',
     filters.dateRange
       ? `from=${encodeURIComponent(filters.dateRange.from)}&to=${encodeURIComponent(filters.dateRange.to)}`
       : '',

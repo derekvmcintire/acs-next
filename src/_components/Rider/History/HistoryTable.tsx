@@ -21,21 +21,23 @@ export default function HistoryTable({ results }: HistoryTableProps) {
     return <Text>No results available</Text>;
   }
 
-  const rows = results.map(({ name, category, startDate, place, racers, type, points, id }, i) => (
-    <Table.Tr key={i + place}>
-      <Table.Td>{getFormattedDateString(new Date(String(startDate)))}</Table.Td>
-      <Table.Td className={classes.result}>{place || 'DNF'}</Table.Td>
-      <Table.Td>{racers}</Table.Td>
-      <Table.Td>
-        <Text size="xs" className={classes.raceNameText}>
-          <Anchor href={`/race/${id}`}>{name}</Anchor>
-        </Text>
-      </Table.Td>
-      <Table.Td>{type}</Table.Td>
-      <Table.Td>{category}</Table.Td>
-      <Table.Td>{points}</Table.Td>
-    </Table.Tr>
-  ));
+  const rows = results.map(
+    ({ name, category, startDate, place, racers, type, points, eventId }, i) => (
+      <Table.Tr key={i + place}>
+        <Table.Td>{getFormattedDateString(new Date(String(startDate)))}</Table.Td>
+        <Table.Td className={classes.result}>{place || 'DNF'}</Table.Td>
+        <Table.Td>{racers}</Table.Td>
+        <Table.Td>
+          <Text size="xs" className={classes.raceNameText}>
+            <Anchor href={`/race/${eventId}`}>{name}</Anchor>
+          </Text>
+        </Table.Td>
+        <Table.Td>{type}</Table.Td>
+        <Table.Td>{category}</Table.Td>
+        <Table.Td>{points}</Table.Td>
+      </Table.Tr>
+    )
+  );
 
   return (
     <div className={classes.tableWrap}>
