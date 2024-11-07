@@ -10,7 +10,7 @@ export interface INetworkResponse {
 }
 
 export interface IGetSingleRiderResponse extends INetworkResponse {
-  riderInfo?: GetRiderResponse | null;
+  riderInfo: GetRiderResponse | null;
 }
 
 export interface IGetRidersResponse extends INetworkResponse {

@@ -25,7 +25,6 @@ function sortByPlace(results: any[]) {
 export default async function RacePage({ params }: RacePageProps) {
   const { eventId } = params;
   const errors: string[] = [];
-  console.log('looking for race with eventId: ', eventId);
   const raceSearch = await getRaces({ eventId });
   raceSearch?.error && errors.push(raceSearch.error);
   const raceInfo = raceSearch?.races && raceSearch.races[0];
@@ -34,7 +33,6 @@ export default async function RacePage({ params }: RacePageProps) {
     throw new Error('Failed to Get Race Info');
   }
 
-  console.log('raceInfo is: ', raceInfo);
   const raceResults: IGetRaceResultsResponse = await getRaceResults(raceInfo.id);
   raceResults?.error && errors.push(raceResults.error);
   const results = raceResults?.results || [];
