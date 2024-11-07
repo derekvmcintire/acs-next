@@ -2,6 +2,7 @@
 
 import { Anchor, Flex, Table, Text } from '@mantine/core';
 import { RiderResult } from '@/src/_types/extended-types';
+import LabeledText from '../../ui/LabeledText';
 import classes from '../rider.module.css';
 
 const getFormattedDateString = (date: Date) => {
@@ -10,12 +11,15 @@ const getFormattedDateString = (date: Date) => {
   return `${month}/${day}`;
 };
 
+export const TOTAL_POINTS_TEST_ID = 'total-points-text';
+
 interface HistoryTableProps {
   results: RiderResult[];
 }
 
 export default function HistoryTable({ results }: HistoryTableProps) {
   const hasResults = results && results?.length > 0;
+  const totalPoints = results.reduce((acc, result) => acc + (result?.points || 0), 0);
 
   if (!hasResults) {
     return <Text>No results available</Text>;
@@ -39,10 +43,29 @@ export default function HistoryTable({ results }: HistoryTableProps) {
     )
   );
 
+  const TotalPointsText = () => (
+    <div data-testid={TOTAL_POINTS_TEST_ID}>
+      <LabeledText
+        size="xs"
+        isSpan
+        hasColon={false}
+        text="ACS Points"
+        label={String(totalPoints)}
+      />
+    </div>
+  );
+  const NumberOfRacesText = () => (
+    <LabeledText size="xs" isSpan hasColon={false} text="Races" label={String(results.length)} />
+  );
+
   return (
     <div className={classes.tableWrap}>
       <Flex justify="right">
-        <Text fs="italic" fw={700} pr={12} pt={8}>{`${results.length} races`}</Text>
+        <Text span size="xs" fw={500} pr={12} pt={8}>
+          <NumberOfRacesText />
+          <Text span>{' | '}</Text>
+          <TotalPointsText />
+        </Text>
       </Flex>
       <Table className={classes.historyTable} striped horizontalSpacing="xs">
         <Table.Thead>
@@ -53,7 +76,7 @@ export default function HistoryTable({ results }: HistoryTableProps) {
             <Table.Th>Race Name</Table.Th>
             <Table.Th>Discipline</Table.Th>
             <Table.Th>Category</Table.Th>
-            <Table.Th>Points</Table.Th>
+            <Table.Th>ACS Points</Table.Th>
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>{rows}</Table.Tbody>

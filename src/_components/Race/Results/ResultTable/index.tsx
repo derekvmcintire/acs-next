@@ -14,7 +14,7 @@ export default function ResultTable() {
   }
 
   const rows = results.map((result, i) => {
-    const { place, rider, time } = result;
+    const { place, rider, time, points } = result;
     const name = `${rider?.firstName} ${rider?.lastName}`;
     const hometown = `${rider?.hometown}`;
     const riderUrl = `${RIDER_URL}/${rider?.id || 0}`;
@@ -27,6 +27,7 @@ export default function ResultTable() {
         </Table.Td>
         <Table.Td>{hometown}</Table.Td>
         <Table.Td>{time || '--'}</Table.Td>
+        <Table.Td>{points || 0}</Table.Td>
       </Table.Tr>
     );
   });
@@ -40,6 +41,7 @@ export default function ResultTable() {
             <Table.Th>Rider Name</Table.Th>
             <Table.Th>Hometown</Table.Th>
             <Table.Th>Time</Table.Th>
+            <Table.Th>ACS Points</Table.Th>
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>{rows}</Table.Tbody>
