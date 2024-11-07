@@ -11,6 +11,8 @@ const getFormattedDateString = (date: Date) => {
   return `${month}/${day}`;
 };
 
+export const TOTAL_POINTS_TEST_ID = 'total-points-text';
+
 interface HistoryTableProps {
   results: RiderResult[];
 }
@@ -42,7 +44,15 @@ export default function HistoryTable({ results }: HistoryTableProps) {
   );
 
   const TotalPointsText = () => (
-    <LabeledText size="xs" isSpan hasColon={false} text="ACS Points" label={String(totalPoints)} />
+    <div data-testid={TOTAL_POINTS_TEST_ID}>
+      <LabeledText
+        size="xs"
+        isSpan
+        hasColon={false}
+        text="ACS Points"
+        label={String(totalPoints)}
+      />
+    </div>
   );
   const NumberOfRacesText = () => (
     <LabeledText size="xs" isSpan hasColon={false} text="Races" label={String(results.length)} />

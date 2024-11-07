@@ -1,6 +1,6 @@
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { render, screen } from '../../../../test-utils';
-import HistoryTable from './HistoryTable';
+import HistoryTable, { TOTAL_POINTS_TEST_ID } from './HistoryTable';
 
 describe('RaceTable Component', () => {
   const history = mockRacingHistory.results;
@@ -13,7 +13,7 @@ describe('RaceTable Component', () => {
     expect(screen.getByText(/Starters/i)).toBeInTheDocument();
     expect(screen.getByText(/Race Name/i)).toBeInTheDocument();
     expect(screen.getByText(/Category/i)).toBeInTheDocument();
-    expect(screen.getByText(/Points/i)).toBeInTheDocument();
+    expect(screen.getByTestId(TOTAL_POINTS_TEST_ID)).toBeInTheDocument();
   });
 
   it('renders the mock races', () => {
