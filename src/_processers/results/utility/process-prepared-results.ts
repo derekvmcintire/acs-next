@@ -22,7 +22,7 @@ export const createResultForRace = async (
     lap: 1,
     place: Number(rawResult.place),
     time: String(rawResult.time),
-    points: 1,
+    points: Number(rawResult.points),
     categories,
   };
 
