@@ -3,19 +3,22 @@
 import { Anchor } from '@mantine/core';
 import React from 'react';
 import { FaStrava } from 'react-icons/fa';
+import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import InfoBlock from '@/src/_components/ui/InfoBlock';
 import LabeledText from '@/src/_components/ui/LabeledText';
 import { ACS_COLOR_ORANGE, STRAVA_BASE_URL } from '@/src/global-constants';
-import { useRider } from '../../../_contexts/Rider/RiderContext';
 import { PrevAndNextRider } from '../PrevAndNextRider';
 import { calculateAge } from '../utils';
 import classes from '../rider.module.css';
 
 const RIDER_DETAILS_TEST_ID = 'rider-details';
 
-export default function RiderDetails() {
-  const { riderInfo } = useRider();
-  const { socials, dob, hometown } = riderInfo;
+type RiderDetailsProps = {
+  rider: GetRiderResponse;
+};
+
+export default function RiderDetails({ rider }: RiderDetailsProps) {
+  const { socials, dob, hometown } = rider;
   const country = hometown?.country || '';
   const city = hometown?.city || '';
 
