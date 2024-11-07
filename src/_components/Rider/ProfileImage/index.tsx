@@ -1,6 +1,6 @@
 'use client';
 
-import { Image } from '@mantine/core';
+import { Container, Image } from '@mantine/core';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import classes from '../rider.module.css';
 
@@ -17,7 +17,7 @@ export default function ProfileImage() {
   const { photo } = riderInfo;
 
   return (
-    <div
+    <Container
       className={photo ? classes.profileImage : classes.defaultProfileImage}
       data-testid={RACER_PROFILE_IMAGE_TEST_ID}
     >
@@ -25,6 +25,6 @@ export default function ProfileImage() {
         src={photo || PLACEHOLDER_IMG}
         alt="solid grey silhouette of a person on a white background"
       />
-    </div>
+    </Container>
   );
 }
