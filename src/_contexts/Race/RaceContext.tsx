@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
-import { GetRaceResultsResponse } from '@/src/_api/get/race/get-race-results-response-type';
+import { GetRaceResultsResponse } from '@/src/_api/get/results/get-race-results-response-type';
 import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import { ExtendedRace } from '@/src/_types/extended-types';
 
