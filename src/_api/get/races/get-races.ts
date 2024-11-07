@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_RACE_PATH } from '@/src/_api/constants';
+import { API_BASE_URL, API_RACES_PATH } from '@/src/_api/constants';
 import { getResponse } from '../../helpers';
 import { IGetRacesResponse } from '../../types';
 import { GetRacesResponse } from './get-races-response-type';
@@ -15,7 +15,7 @@ export interface GetRacesFilters {
 }
 
 export const getRacesRequestUrl = (filters: GetRacesFilters) => {
-  const url = `${API_BASE_URL}${API_RACE_PATH}?`;
+  const url = `${API_BASE_URL}${API_RACES_PATH}?`;
 
   const queryParams = [
     filters.name ? `name=${encodeURIComponent(filters.name)}` : '',

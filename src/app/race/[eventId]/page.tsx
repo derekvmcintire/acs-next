@@ -1,6 +1,6 @@
 import { Container } from '@mantine/core';
-import { getRaceResults } from '@/src/_api/get/race/get-race-results';
 import { getRaces } from '@/src/_api/get/races/get-races';
+import { getRaceResults } from '@/src/_api/get/results/get-race-results';
 import { getSingleRider } from '@/src/_api/get/riders/get-rider';
 import { IGetRaceResultsResponse, IGetSingleRiderResponse } from '@/src/_api/types';
 import Race from '@/src/_components/Race';

@@ -1,9 +1,9 @@
-import { API_BASE_URL, API_CATEGORIES_PATH, API_RACE_PATH } from '@/src/_api/constants';
+import { API_BASE_URL, API_CATEGORIES_PATH, API_RACES_PATH } from '@/src/_api/constants';
 import { getResponse } from '../../helpers';
 import { IGetCategoriesResponse } from '../../types';
 import { GetCategoriesResponse } from './get-categories-response-type';
 
-export const getCategoriesUrl = () => `${API_BASE_URL}${API_RACE_PATH}${API_CATEGORIES_PATH}`;
+export const getCategoriesUrl = () => `${API_BASE_URL}${API_RACES_PATH}${API_CATEGORIES_PATH}`;
 
 export const getCategories = async (): Promise<IGetCategoriesResponse> => {
   const result = await getResponse(

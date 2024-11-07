@@ -1,7 +1,8 @@
 import { GetCategoriesResponse } from './get/categories/get-categories-response-type';
 import { GetHistoryResponse } from './get/history/get-history-response-type';
-import { GetRaceResultsResponse } from './get/race/get-race-results-response-type';
 import { GetRacesResponse } from './get/races/get-races-response-type';
+import { GetRankingsResponse } from './get/rankings/get-rankings-response-type';
+import { GetRaceResultsResponse } from './get/results/get-race-results-response-type';
 import { GetRiderResponse } from './get/riders/get-riders-response-type';
 
 export interface INetworkResponse {
@@ -34,4 +35,8 @@ export interface IGetCategoriesResponse extends INetworkResponse {
 
 export interface IGetRaceResultsResponse extends INetworkResponse {
   results?: GetRaceResultsResponse[] | null;
+}
+
+export interface IGetRankingsResponse extends INetworkResponse {
+  rankings?: GetRankingsResponse[] | null;
 }
