@@ -7,6 +7,7 @@ import PageLayout from '../shared/PageLayout';
 import SectionLabel from '../ui/SectionLabel';
 import RankPreview from './RankPreview';
 import classes from './styles/home.module.css';
+import ResultsReport from '../Race/Results/ResultsReport';
 
 export const HOME_TEST_ID = 'home';
 
@@ -29,6 +30,7 @@ export default async function ACSHome({ recentRaces, rankings }: ACSHomeProps) {
             </Container>
           </Stack>
           <Stack className={classes.stackRight}>
+            <ResultsReport />
             {recentRaces && <RecentRaces races={recentRaces} />}
           </Stack>
         </Flex>
