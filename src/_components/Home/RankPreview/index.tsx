@@ -1,6 +1,6 @@
 'use client';
 
-import { Container, Flex } from '@mantine/core';
+import { Flex } from '@mantine/core';
 import React from 'react';
 import { GetRankingsResponse } from '@/src/_api/get/rankings/get-rankings-response-type';
 import { getSingleRider } from '@/src/_api/get/riders/get-rider';
@@ -51,7 +51,7 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
   }, [rankings]);
 
   return (
-    <Container>
+    <div>
       {errors && errors.map((error: string) => <div>{error}</div>)}
 
       {ranksWithRiders.map(async (rank, i) => {
@@ -67,6 +67,6 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
           </Flex>
         );
       })}
-    </Container>
+    </div>
   );
 }
