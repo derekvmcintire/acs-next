@@ -38,6 +38,7 @@ export const getRacesRequestUrl = (filters: GetRacesFilters) => {
   return `${url}${queryParams}`;
 };
 
+// @TODO replace with function below
 export const getRaces = async (filters: GetRacesFilters): Promise<IGetRacesResponse> => {
   const result = await getResponse(
     getRacesRequestUrl(filters),
