@@ -34,7 +34,7 @@ export interface RiderResult extends BaseResult {
   noPlaceCode?: string | null;
   resultType?: string;
   category?: string;
-  racers: number;
+  racers: number; // @TODO update this to be more specific i.e. "numberOfRacers"
   type: string;
   startDate: string;
   endDate?: string | null;

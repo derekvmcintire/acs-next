@@ -10,17 +10,21 @@ import SectionLabel from '../../ui/SectionLabel';
 import ResultPreview from '../Results/ResultPreview';
 import classes from '../styles/race-results.module.css';
 
-interface RecentRacesProps {
+interface ResultPreviewListProps {
   races: GetRacesResponse[];
 }
-export default function RecentRaces({ races }: RecentRacesProps) {
-  const [recentTopFives, setRecentTopFives] = React.useState<RiderResult[][]>([]);
+
+type ResultsList = RiderResult[];
+
+export default function ResultPreviewList({ races }: ResultPreviewListProps) {
+  const [raceResults, setRaceResults] = React.useState<ResultsList[]>([]);
   const [errors, setErrors] = React.useState<string[]>([]);
 
   React.useEffect(() => {
-    const getRacesResults = async () => {
+    const getTopResults = async () => {
+      const NUMBER_OF_RESULTS = 10;
       try {
-        const topFiveResults: RiderResult[][] = await Promise.all(
+        const topResultsResponses: RiderResult[][] = await Promise.all(
           races.map(async (race: GetRacesResponse) => {
             const response = await getRecentRaceResults(race.id);
 
@@ -30,42 +34,38 @@ export default function RecentRaces({ races }: RecentRacesProps) {
 
             const results = response.results || [];
             const racers = results.length || 0;
-            results.length = 10;
+            results.length = NUMBER_OF_RESULTS;
 
-            const topFive = results.map((result: GetRaceResultsResponse) => {
+            return results.map((result: GetRaceResultsResponse) => {
               return {
                 place: result.place,
                 points: result.points,
                 name: race.event.name,
-                racers,
+                racers, // @TODO numberOfRacers is probably better than "racers" here
                 type: result.resultType.name,
                 startDate: race.startDate,
                 location: race.location,
                 rider: result.rider,
               };
             });
-
-            return topFive;
           })
         );
 
-        setRecentTopFives(topFiveResults);
+        setRaceResults(topResultsResponses);
       } catch (error) {
         setErrors((prev) => [...prev, String(error)]);
       }
     };
 
-    getRacesResults();
+    getTopResults();
   }, [races]);
 
   return (
     <Container className={classes.resultsPreviewContainer}>
       {errors && errors.map((error: string) => <div>{`${error}`}</div>)}
       <SectionLabel text="Recent Results" />
-      {recentTopFives &&
-        recentTopFives.map((raceResults: RiderResult[]) => (
-          <ResultPreview raceResults={raceResults} />
-        ))}
+      {raceResults &&
+        raceResults.map((result: RiderResult[]) => <ResultPreview raceResults={result} />)}
     </Container>
   );
 }

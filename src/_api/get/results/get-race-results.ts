@@ -6,6 +6,7 @@ import { GetRaceResultsResponse } from './get-race-results-response-type';
 export const getRaceResultsRequestUrl = (id: number) =>
   `${API_BASE_URL}${API_RACES_PATH}/${id}${API_RESULT_PATH}`;
 
+// @TODO replace with function below
 export const getRaceResults = async (id: number): Promise<IGetRaceResultsResponse> => {
   const result = await getResponse(
     getRaceResultsRequestUrl(id),
