@@ -65,9 +65,7 @@ export default function ResultPreviewList({ races }: ResultPreviewListProps) {
       {errors && errors.map((error: string) => <div>{`${error}`}</div>)}
       <SectionLabel text="Recent Results" />
       {raceResults &&
-        raceResults.map((result: RiderResult[]) => (
-          <ResultPreview raceResults={result} />
-        ))}
+        raceResults.map((result: RiderResult[]) => <ResultPreview raceResults={result} />)}
     </Container>
   );
 }
