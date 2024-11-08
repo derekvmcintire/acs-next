@@ -12,7 +12,7 @@ export default function TopNav() {
     <Container data-testid={TOP_NAV_TEST_ID}>
       <Flex justify="center" align="center" pt={10}>
         <Group mr={20}>
-          <Anchor className={classes.topNavAnchor} href="/rider/1">
+          <Anchor className={classes.topNavAnchor} href="/">
             Home
           </Anchor>
           <Divider orientation="vertical" />
@@ -20,13 +20,13 @@ export default function TopNav() {
             Upload
           </Anchor>
           <Divider size="sm" orientation="vertical" />
-          <Text>Results</Text>
+          <Anchor className={classes.topNavAnchor} href="/rider/1">
+            Riders
+          </Anchor>
           <Divider size="sm" orientation="vertical" />
-          <Text>Calendar</Text>
-          <Divider size="sm" orientation="vertical" />
-          <Text>Series</Text>
-          <Divider size="sm" orientation="vertical" />
-          <Text>Rankings</Text>
+          <Anchor className={classes.topNavAnchor} href="/race/1">
+            Results
+          </Anchor>
         </Group>
         <Search />
         <Title className={classes.title} ta="right" pl={20} pr={40}>
