@@ -12,6 +12,9 @@ export interface GetRacesFilters {
   location?: string;
   id?: number;
   eventId?: number;
+  limit?: number;
+  orderBy?: 'id' | 'startDate' | 'eventId';
+  direction?: 'asc' | 'desc';
 }
 
 export const getRacesRequestUrl = (filters: GetRacesFilters) => {
@@ -25,6 +28,9 @@ export const getRacesRequestUrl = (filters: GetRacesFilters) => {
     filters.dateRange
       ? `from=${encodeURIComponent(filters.dateRange.from)}&to=${encodeURIComponent(filters.dateRange.to)}`
       : '',
+    filters.limit ? `limit=${filters.limit}` : '',
+    filters.orderBy ? `orderby=${filters.orderBy}` : '',
+    filters.direction ? `direction=${filters.direction}` : '',
   ]
     .filter(Boolean) // Remove empty strings
     .join('&');
@@ -46,4 +52,19 @@ export const getRaces = async (filters: GetRacesFilters): Promise<IGetRacesRespo
   }
 
   return result;
+};
+
+export const getRecentRaces = async (filters: GetRacesFilters): Promise<IGetRacesResponse> => {
+  try {
+    const response = await fetch(getRacesRequestUrl(filters));
+
+    if (!response.ok) {
+      return { races: null, error: `Error ${response.status}: ${response.statusText}` };
+    }
+
+    const parsedResponse: GetRacesResponse[] = await response.json();
+    return { races: parsedResponse, error: null };
+  } catch (error) {
+    return { races: null, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
 };

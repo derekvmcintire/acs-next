@@ -20,9 +20,17 @@ export interface TransformedRider extends BaseRider {
 export interface ExtendedEvent extends BaseEvent {
   Race: ExtendedRace[];
 }
+/**
+ *   id?: number;
 
+  place: number;
+  points?: number;
+  time?: string;
+  eventId?: number;
+  lap?: number;
+ */
 export interface RiderResult extends BaseResult {
-  name: string;
+  name: string; //@TODO Update this to be more specific i.e. "eventName"
   noPlaceCode?: string | null;
   resultType?: string;
   category?: string;
@@ -31,6 +39,7 @@ export interface RiderResult extends BaseResult {
   startDate: string;
   endDate?: string | null;
   location?: string;
+  rider?: TransformedRider;
 }
 
 export interface YearlyResults {

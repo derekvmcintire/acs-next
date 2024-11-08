@@ -6,7 +6,7 @@ import { FaStrava } from 'react-icons/fa';
 import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import InfoBlock from '@/src/_components/ui/InfoBlock';
 import LabeledText from '@/src/_components/ui/LabeledText';
-import { ACS_COLOR_ORANGE, STRAVA_BASE_URL } from '@/src/global-constants';
+import { ACS_COLOR_ORANGE, APP_RIDER_PATH, STRAVA_BASE_URL } from '@/src/global-constants';
 import { PrevAndNextRider } from '../PrevAndNextRider';
 import { calculateAge } from '../utils';
 import classes from '../rider.module.css';
@@ -38,7 +38,11 @@ export default function RiderDetails({
     <section className={classes.details} data-testid={RIDER_DETAILS_TEST_ID}>
       <InfoBlock title={label}>
         <Container>
-          {mini && <Text fw={600}>{`${rider.name.first} ${rider.name.last}`}</Text>}
+          {mini && (
+            <Anchor href={`${APP_RIDER_PATH}/${rider.id}`}>
+              <Text fw={600}>{`${rider.name.first} ${rider.name.last}`}</Text>
+            </Anchor>
+          )}
           {!mini && birthDate && (
             <LabeledText label="Birthday" text={birthDate.toLocaleDateString()} />
           )}

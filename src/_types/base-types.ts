@@ -61,6 +61,7 @@ export interface BaseRider {
 
 export interface BaseResult {
   id?: number;
+  riderId?: number;
   place: number;
   points?: number;
   time?: string;

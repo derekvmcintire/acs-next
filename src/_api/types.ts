@@ -26,7 +26,7 @@ export interface IGetRidersByTeamResponse extends INetworkResponse {
 }
 
 export interface IGetRacesResponse extends INetworkResponse {
-  races?: GetRacesResponse[];
+  races?: GetRacesResponse[] | null;
 }
 
 export interface IGetCategoriesResponse extends INetworkResponse {
