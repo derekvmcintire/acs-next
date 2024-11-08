@@ -9,7 +9,7 @@ import {
 import { getCareerWins, getCurrentTeam, getTopTenResults } from '@/src/_components/Rider/utils';
 import NetworkError from '@/src/_components/ui/NetworkError';
 import { DEFAULT_RIDER_NOT_FOUND } from '@/src/global-constants';
-import Rider from '../../../_components/Rider/Rider';
+import Rider from '../../../_components/Rider';
 
 interface RiderPageParams {
   id: number;

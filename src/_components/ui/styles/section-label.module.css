@@ -1,5 +1,15 @@
-.teamQuickStatsLabel {
+.sectionLabel {
   margin: 16px 0px;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  background-color: light-dark(#343637, #d8dfe3);
+  color: light-dark(var(--mantine-color-white), var(--mantine-color-black));
+  border-radius: 4px 4px 0px 0px;
+}
+
+.slimSectionlabel {
+  margin: 16px 0 8px;
   font-weight: 500;
   text-align: center;
   width: 100%;

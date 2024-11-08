@@ -15,7 +15,7 @@ describe('RacerInfoBlock', () => {
   test('renders the racer details component as expected', () => {
     render(
       <RiderProvider initialRiderInfo={mockRider} initialRiderTeamMembers={[]}>
-        <RiderDetails />
+        <RiderDetails rider={mockRider} />
       </RiderProvider>
     );
 

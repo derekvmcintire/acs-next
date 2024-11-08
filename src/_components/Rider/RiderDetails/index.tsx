@@ -1,21 +1,30 @@
 'use client';
 
-import { Anchor } from '@mantine/core';
+import { Anchor, Container, Text } from '@mantine/core';
 import React from 'react';
 import { FaStrava } from 'react-icons/fa';
+import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import InfoBlock from '@/src/_components/ui/InfoBlock';
 import LabeledText from '@/src/_components/ui/LabeledText';
 import { ACS_COLOR_ORANGE, STRAVA_BASE_URL } from '@/src/global-constants';
-import { useRider } from '../../../_contexts/Rider/RiderContext';
 import { PrevAndNextRider } from '../PrevAndNextRider';
 import { calculateAge } from '../utils';
 import classes from '../rider.module.css';
 
 const RIDER_DETAILS_TEST_ID = 'rider-details';
 
-export default function RiderDetails() {
-  const { riderInfo } = useRider();
-  const { socials, dob, hometown } = riderInfo;
+type RiderDetailsProps = {
+  rider: GetRiderResponse;
+  mini?: boolean;
+  label?: string;
+};
+
+export default function RiderDetails({
+  rider,
+  mini = false,
+  label = 'Rider Details',
+}: RiderDetailsProps) {
+  const { socials, dob, hometown } = rider;
   const country = hometown?.country || '';
   const city = hometown?.city || '';
 
@@ -27,16 +36,21 @@ export default function RiderDetails() {
 
   return (
     <section className={classes.details} data-testid={RIDER_DETAILS_TEST_ID}>
-      <InfoBlock title="Rider Details">
-        {birthDate && <LabeledText label="Birthday" text={birthDate.toLocaleDateString()} />}
-        {age && <LabeledText label="Age" text={age.toString()} />}
-        <LabeledText label="Nationality" text={country?.toUpperCase() || ''} />
-        <LabeledText size="sm" label="Hometown" text={`${city || ''}`} />
-        <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>
-          <FaStrava color={ACS_COLOR_ORANGE} />
-        </Anchor>
+      <InfoBlock title={label}>
+        <Container>
+          {mini && <Text fw={600}>{`${rider.name.first} ${rider.name.last}`}</Text>}
+          {!mini && birthDate && (
+            <LabeledText label="Birthday" text={birthDate.toLocaleDateString()} />
+          )}
+          {age && <LabeledText label="Age" text={age.toString()} />}
+          <LabeledText label="Nationality" text={country?.toUpperCase() || ''} />
+          {!mini && <LabeledText size="sm" label="Hometown" text={`${city || ''}`} />}
+          <Anchor href={stravaUrl} aria-label={`Strava profile of ${strava}`}>
+            <FaStrava color={ACS_COLOR_ORANGE} />
+          </Anchor>
+        </Container>
       </InfoBlock>
-      <PrevAndNextRider />
+      {!mini && <PrevAndNextRider />}
     </section>
   );
 }

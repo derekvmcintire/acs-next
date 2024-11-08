@@ -10,8 +10,6 @@
 .profileImage {
   width: 100%;
   max-width: 128px;
-  min-width: 64px;
-  margin: 8px;
 }
 
 .defaultProfileImage {
@@ -23,6 +21,15 @@
 }
 
 .details {
+  width: 100%;
+  margin-left: 8px;
+}
+
+.miniRiderPreview {
+  width: 100%;
+}
+
+.riderPreview {
   width: 100%;
 }
 

@@ -1,7 +1,6 @@
 .infoBlockOuter {
   border-right: 5px solid;
   border-color: light-dark(#d8dfe3, #343637);
-
 }
 
 .infoBlockLeftHandedOuter {
@@ -11,15 +10,14 @@
 }
 
 .infoBlock {
-    height: 100%;
-    width: 100%;
-    font-size: rem(12px);
-    font-weight: 600;
+  height: 100%;
+  width: 100%;
+  font-size: rem(12px);
+  font-weight: 600;
   }
 
   .infoBlockHeader {
     background-color: light-dark(#d8dfe3, #343637);
-    
     width: 100%;
     padding: 4px;
     justify-content: center;
