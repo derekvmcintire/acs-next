@@ -54,7 +54,7 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
     <div>
       {errors && errors.map((error: string) => <div>{error}</div>)}
 
-      {ranksWithRiders.map(async (rank, i) => {
+      {ranksWithRiders.map(async (rank: RankWithRider, i) => {
         const { rider } = rank;
 
         if (!rider) {
@@ -63,7 +63,12 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
 
         return (
           <Flex mt={16} className={classes.rankPreview}>
-            <RiderPreview mini key={rank.riderId} rider={rider} label={`#${i + 1} Ranked Rider`} />
+            <RiderPreview
+              mini
+              key={rank.riderId}
+              rider={rider}
+              label={`#${i + 1} Ranked Rider: ${rank.totalPoints} Points`}
+            />
           </Flex>
         );
       })}

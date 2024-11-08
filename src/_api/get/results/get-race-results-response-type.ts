@@ -10,6 +10,7 @@ export interface GetRaceResultsResponse extends BaseResult {
   event: ExtendedEvent;
   resultType: PickType;
   noPlaceCodeType: PickType;
+  startDate?: string;
 }
 
 export const mockGetRaceResultsResponse: GetRaceResultsResponse[] = [

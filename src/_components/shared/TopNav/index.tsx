@@ -9,8 +9,8 @@ export const TOP_NAV_TEST_ID = 'top-nav';
 
 export default function TopNav() {
   return (
-    <Container data-testid={TOP_NAV_TEST_ID}>
-      <Flex justify="center" align="center" pt={10}>
+    <Container data-testid={TOP_NAV_TEST_ID} className={classes.topNavContainer}>
+      <Flex justify="space-between" align="center" pt={10}>
         <Group mr={20}>
           <Anchor className={classes.topNavAnchor} href="/">
             Home
@@ -28,17 +28,19 @@ export default function TopNav() {
             Results
           </Anchor>
         </Group>
-        <Search />
-        <Title className={classes.title} ta="right" pl={20} pr={40}>
-          <Text
-            inherit
-            variant="gradient"
-            component="span"
-            gradient={{ from: ACS_COLOR_BLUE, to: ACS_COLOR_ORANGE }}
-          >
-            ACS
-          </Text>
-        </Title>
+        <Group>
+          <Search />
+          <Title className={classes.title} ta="right">
+            <Text
+              inherit
+              variant="gradient"
+              component="span"
+              gradient={{ from: ACS_COLOR_BLUE, to: ACS_COLOR_ORANGE }}
+            >
+              ACS
+            </Text>
+          </Title>
+        </Group>
       </Flex>
     </Container>
   );

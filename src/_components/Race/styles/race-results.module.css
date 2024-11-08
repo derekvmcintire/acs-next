@@ -38,3 +38,17 @@
   height: 100%;
   border-radius: 8px;
 }
+
+.resultsPreviewContainer {
+  width: 100%;
+}
+
+.resultsPreview {
+  background-color: light-dark(#343637, #242424);
+  color: var(--mantine-color-white);
+
+  border-radius: 4px;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+}

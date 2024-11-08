@@ -11,6 +11,8 @@ export const APP_RIDER_PATH = '/rider';
 // Global Colors
 export const LIGHT_COLOR_SCHEME = 'light';
 export const DARK_COLOR_SCHEME = 'dark';
+export const ACS_DARK_COLOR_BACKGROUND = '#242424';
+export const ACS_LIGHT_COLOR_BACKGROUND = '#FFFFFF';
 export const ACS_COLOR_DARK_GOLD = '#B59410';
 export const ACS_COLOR_LIGHT_GOLD = '#FFD700';
 export const ACS_COLOR_DARK_SILVER = '#71706E';

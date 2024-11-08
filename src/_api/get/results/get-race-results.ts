@@ -16,3 +16,18 @@ export const getRaceResults = async (id: number): Promise<IGetRaceResultsRespons
   );
   return result;
 };
+
+export const getRecentRaceResults = async (id: number): Promise<IGetRaceResultsResponse> => {
+  try {
+    const response = await fetch(getRaceResultsRequestUrl(id));
+
+    if (!response.ok) {
+      return { results: null, error: `Error ${response.status}: ${response.statusText}` };
+    }
+
+    const parsedResponse: GetRaceResultsResponse[] = await response.json();
+    return { results: parsedResponse, error: null };
+  } catch (error) {
+    return { results: null, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
+};

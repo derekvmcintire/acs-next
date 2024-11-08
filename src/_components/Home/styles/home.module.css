@@ -1,3 +1,19 @@
+.acsHome {
+  width: 100%;
+}
+
 .rankPreview {
   border-radius: 1px;
+}
+
+.stackLeft {
+  width: 50%;
+}
+
+.stackRight {
+  background-color: light-dark(#d8dfe3, #343637);
+  border-radius: 4px;
+  width: 50%;
+  margin-top: 16px;
+  padding-top: 16px;
 }
