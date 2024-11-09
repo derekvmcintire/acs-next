@@ -13,25 +13,25 @@ export const HOME_TEST_ID = 'home';
 
 interface ACSHomeProps {
   rankings: GetRankingsResponse[];
-  recentRaces?: GetRacesResponse[] | null;
+  recentRaces?: GetRacesResponse[];
 }
 
-export default async function ACSHome({ recentRaces, rankings }: ACSHomeProps) {
-  const year = dayjs().year();
+const currentYear = dayjs().year();
 
+export default function ACSHome({ recentRaces = [], rankings }: ACSHomeProps) {
   return (
     <Center data-testid={HOME_TEST_ID} className={classes.acsHome}>
       <PageLayout>
         <Flex justify="space-between">
           <Stack className={classes.stackLeft}>
             <Container>
-              <SectionLabel slim text={`${year} ACS Rankings Top Five`} />
-              <RankPreview rankings={rankings} year={year} />
+              <SectionLabel slim text={`${currentYear} ACS Rankings Top Five`} />
+              {rankings.length > 0 && <RankPreview rankings={rankings} year={currentYear} />}
             </Container>
           </Stack>
           <Stack className={classes.stackRight}>
             <ResultsReport />
-            {recentRaces && <RecentRaces races={recentRaces} />}
+            {recentRaces.length > 0 && <RecentRaces races={recentRaces} />}
           </Stack>
         </Flex>
       </PageLayout>

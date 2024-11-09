@@ -12,5 +12,10 @@ export default async function HomePage() {
   };
   const recentRaces = await getRecentRaces(getRecentRacesFilters);
 
-  return <ACSHome recentRaces={recentRaces.races} rankings={rankingResponse.rankings || []} />;
+  return (
+    <ACSHome
+      recentRaces={recentRaces.races || undefined}
+      rankings={rankingResponse.rankings || []}
+    />
+  );
 }
