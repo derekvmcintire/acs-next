@@ -23,7 +23,7 @@ export default function WinnerPreview() {
                 className={photo ? classes.riderPhoto : classes.defaultRiderPhoto}
                 w="70"
                 src={photo || PLACEHOLDER_IMG}
-                alt="solid grey silhouette of a person on a white background"
+                alt="silhouette of a person posing with hands behind their back on a white background"
               />
               <WinnerDetails winner={winner} />
             </Flex>

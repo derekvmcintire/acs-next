@@ -7,7 +7,7 @@ import { useRaceContext } from '@/src/_contexts/Race/RaceContext';
 
 export default function ResultTable() {
   const { results } = useRaceContext();
-  const hasResults = results && results?.length > 0;
+  const hasResults = results?.length > 0;
 
   if (!hasResults) {
     return <Text>No results available</Text>;
@@ -17,13 +17,14 @@ export default function ResultTable() {
     const { place, rider, time, points } = result;
     const name = `${rider?.firstName} ${rider?.lastName}`;
     const hometown = `${rider?.hometown}`;
-    const riderUrl = `${RIDER_URL}/${rider?.id || 0}`;
+    const riderId = rider?.id || 0;
+    const riderUrl = `${RIDER_URL}/${riderId}`;
 
     return (
       <Table.Tr key={i + place}>
         <Table.Td>{place || 'DNF'}</Table.Td>
         <Table.Td>
-          <Anchor href={riderUrl}>{name}</Anchor>
+          {riderId ? <Anchor href={riderUrl}>{name}</Anchor> : <Text>{name}</Text>}
         </Table.Td>
         <Table.Td>{hometown}</Table.Td>
         <Table.Td>{time || '--'}</Table.Td>
