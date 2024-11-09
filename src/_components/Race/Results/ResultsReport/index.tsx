@@ -4,55 +4,38 @@ import dayjs from 'dayjs';
 import React from 'react';
 import { GetRacesFilters, getRecentRaces } from '@/src/_api/get/races/get-races';
 import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
-import { getRecentRaceResults } from '@/src/_api/get/results/get-race-results';
 import { IGetRacesResponse } from '@/src/_api/types';
-import { MonthlyRaceData, TempRace } from './results-report-types';
+import { fetchResultsForReport } from './fetch-results-for-report';
+import { MonthlyRaceData, PreliminaryRace } from './results-report-types';
 import ResultsReportChart from './ResultsReportChart';
 import { groupRacesByMonth } from './utility';
 
 export default function ResultsReport() {
   const [races, setRaces] = React.useState<GetRacesResponse[]>([]);
-  const [allRaceData, setAllRaceData] = React.useState<any[]>([]);
   const [chartData, setChartData] = React.useState<MonthlyRaceData[]>([]);
 
-  React.useEffect(() => {
-    setChartData(groupRacesByMonth(allRaceData));
-  }, [allRaceData]);
+  const validateRaceData = (data: (PreliminaryRace | null)[]) =>
+    data.filter((result): result is PreliminaryRace => result !== null);
 
   React.useEffect(() => {
-    const getResultsForAllRaces = async () => {
-      const racesWithResults: TempRace[] = await Promise.all(
+    const fetchResults = async () => {
+      const preliminaryRaceResults: (PreliminaryRace | null)[] = await Promise.all(
         races.map(async (race: GetRacesResponse) => {
-          const response = await getRecentRaceResults(race.id);
-
-          if (response && response?.error) {
-            throw new Error(`Error getting results for race with id: ${race.id}`);
-          }
-
-          const results = response.results || [];
-          const numberOfRiders = results.length || 0;
-
-          // Temporary data shape until we can aggregate by month
-          const data: TempRace = {
-            raceId: race.id,
-            raceStartDate: race.startDate,
-            numberOfRiders,
-          };
-
-          return data;
+          const results = await fetchResultsForReport(race);
+          return results;
         })
       );
 
-      setAllRaceData(racesWithResults);
+      const validData = validateRaceData(preliminaryRaceResults);
+      setChartData(groupRacesByMonth(validData));
     };
 
-    getResultsForAllRaces();
+    fetchResults();
   }, [races]);
 
   React.useEffect(() => {
-    const getRaces = async () => {
-      // build filters for getting races
-      const getRecentRacesFilters: GetRacesFilters = {
+    const fetchRaces = async () => {
+      const filters: GetRacesFilters = {
         dateRange: {
           from: dayjs().subtract(5, 'month').format('YYYY-MM-DD'),
           to: dayjs().format('YYYY-MM-DD'),
@@ -61,16 +44,15 @@ export default function ResultsReport() {
         direction: 'desc',
       };
 
-      // get all races in last four months
-      const recentRacesResponse: IGetRacesResponse = await getRecentRaces(getRecentRacesFilters);
+      // fetch all races in last four months
+      const recentRacesResponse: IGetRacesResponse = await getRecentRaces(filters);
 
-      // if we got races...
       if (recentRacesResponse && recentRacesResponse?.races) {
         setRaces(recentRacesResponse.races);
       }
     };
 
-    getRaces();
+    fetchRaces();
   }, []);
 
   return <ResultsReportChart chartData={chartData} />;
