@@ -1,9 +1,7 @@
-'use client';
-
 import { Button, Flex, Select, TextInput } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
 import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import Instructions from '@/src/_components/Uploader/Instructions';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { createRaceBeforeResults } from '@/src/_processers/results';
@@ -21,7 +19,7 @@ export interface RaceFormData {
   location?: string;
 }
 
-const DEFAULT_FORM_VALUES = {
+const DEFAULT_FORM_VALUES: RaceFormData = {
   name: '',
   raceType: '',
   startDate: undefined,
@@ -33,7 +31,7 @@ function RaceForm() {
   const [isSubmitting, setIsSubmitting] = React.useState<boolean>(false);
   const { setSelectedRace, setSuccessMessage, errors, setErrors } = useUploaderContext();
 
-  const { control, handleSubmit, reset, watch } = useForm({
+  const { control, handleSubmit, reset, watch } = useForm<RaceFormData>({
     defaultValues: DEFAULT_FORM_VALUES,
   });
 
@@ -43,7 +41,7 @@ function RaceForm() {
 
   const isSubmitDisabled = !name || !raceType || !startDate || isSubmitting;
 
-  const onSubmit = async (data: RaceFormData) => {
+  const onSubmit: SubmitHandler<RaceFormData> = async (data) => {
     if (isSubmitDisabled) {
       setErrors([...errors, 'Form Validation Failed']);
       return;
