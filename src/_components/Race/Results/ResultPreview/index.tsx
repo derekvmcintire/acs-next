@@ -1,10 +1,11 @@
 'use client';
 
-import { Container, Spoiler, Text } from '@mantine/core';
+import { Anchor, Container, Spoiler, Text } from '@mantine/core';
 import dayjs from 'dayjs';
 import React from 'react';
 import LabeledText from '@/src/_components/ui/LabeledText';
 import { RiderResult } from '@/src/_types/extended-types';
+import { APP_RACE_PATH } from '@/src/global-constants';
 import RemainingTopTen from './RemainingTopTen';
 import classes from '../../styles/race-results.module.css';
 
@@ -21,8 +22,10 @@ export default function ResultPreview({ raceResults }: ResultPreviewProps) {
 
   return (
     <Container className={classes.resultsPreview}>
-      <LabeledText isSpan label={dayjs(startDate).format('M/D')} text={name} />
-      <Text fs="italic" span>{` - ${location}`}</Text>
+      <Anchor c="black" href={`${APP_RACE_PATH}/${firstResult?.eventId || 0}`}>
+        <LabeledText isSpan label={dayjs(startDate).format('M/D')} text={name} />
+        <Text fs="italic" span>{` - ${location}`}</Text>
+      </Anchor>
       <Spoiler
         maxHeight={5}
         showLabel="Show Top Ten"

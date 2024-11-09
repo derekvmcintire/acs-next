@@ -7,6 +7,7 @@ export const STRAVA_BASE_URL = 'http://strava.com/athletes/';
 // App paths
 export const APP_BASE_URL = 'http://localhost:3000';
 export const APP_RIDER_PATH = '/rider';
+export const APP_RACE_PATH = '/race';
 
 // Global Colors
 export const LIGHT_COLOR_SCHEME = 'light';
@@ -22,6 +23,7 @@ export const ACS_COLOR_ORANGE = '#FC8D14';
 export const ACS_COLOR_BLUE = '#1B9BE0';
 export const ACS_COLOR_FORM = '#7D98A3';
 export const ACS_DARK_GREY = '#343637';
+export const ACS_INPUT_BACKGROUND = '#999999';
 
 // Pick lists and default data
 export const DEFAULT_RIDER_NOT_FOUND: GetRiderResponse = {
@@ -54,3 +56,5 @@ export const GF_AGE_GROUPS: AgeGroup[] = [
   { start: 70, end: 74, text: '70-74' },
   { start: 75, end: 10000, text: '75 and Over' },
 ];
+
+export const DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';

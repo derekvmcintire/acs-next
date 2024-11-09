@@ -45,8 +45,8 @@
 }
 
 .resultsPreview {
-  background-color: light-dark(#343637, #242424);
-  color: var(--mantine-color-white);
+  background-color: light-dark(#FFF, #242424);
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 
   border-radius: 4px;
   width: 100%;

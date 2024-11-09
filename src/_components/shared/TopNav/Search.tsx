@@ -1,16 +1,13 @@
 'use client';
 
-import { Autocomplete } from '@mantine/core';
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { GoSearch } from 'react-icons/go';
 import { getRidersByName } from '@/src/_api/get/riders/get-riders-by-name';
 import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
 import { IGetRidersResponse } from '@/src/_api/types';
 import useDebounce from '@/src/_hooks/use-debounce';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
-
-const icon = <GoSearch />;
+import SearchAutoComplete from '../SearchAutocomplete';
 
 type SearchOptionType = {
   value: string;
@@ -55,9 +52,7 @@ export default function Search() {
 
   return (
     <div data-testid={RIDER_SEARCH_DATA_TEST_ID}>
-      <Autocomplete
-        leftSectionPointerEvents="none"
-        leftSection={icon}
+      <SearchAutoComplete
         placeholder="Search for Riders"
         data={data}
         limit={15}

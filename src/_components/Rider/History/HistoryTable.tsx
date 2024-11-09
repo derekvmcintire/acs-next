@@ -2,6 +2,7 @@
 
 import { Anchor, Flex, Table, Text } from '@mantine/core';
 import { RiderResult } from '@/src/_types/extended-types';
+import { APP_RACE_PATH } from '@/src/global-constants';
 import LabeledText from '../../ui/LabeledText';
 import classes from '../rider.module.css';
 
@@ -33,7 +34,7 @@ export default function HistoryTable({ results }: HistoryTableProps) {
         <Table.Td>{racers}</Table.Td>
         <Table.Td>
           <Text size="xs" className={classes.raceNameText}>
-            <Anchor href={`/race/${eventId}`}>{name}</Anchor>
+            <Anchor href={`${APP_RACE_PATH}/${eventId}`}>{name}</Anchor>
           </Text>
         </Table.Td>
         <Table.Td>{type}</Table.Td>

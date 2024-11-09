@@ -5,6 +5,7 @@ import React from 'react';
 import { GetRacesFilters, getRecentRaces } from '@/src/_api/get/races/get-races';
 import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
 import { IGetRacesResponse } from '@/src/_api/types';
+import { DEFAULT_DATE_FORMAT } from '@/src/global-constants';
 import { fetchResultsForReport } from './fetch-results-for-report';
 import { MonthlyRaceData, PreliminaryRace } from './results-report-types';
 import ResultsReportChart from './ResultsReportChart';
@@ -37,8 +38,8 @@ export default function ResultsReport() {
     const fetchRaces = async () => {
       const filters: GetRacesFilters = {
         dateRange: {
-          from: dayjs().subtract(5, 'month').format('YYYY-MM-DD'),
-          to: dayjs().format('YYYY-MM-DD'),
+          from: dayjs().subtract(5, 'month').format(DEFAULT_DATE_FORMAT),
+          to: dayjs().format(DEFAULT_DATE_FORMAT),
         },
         orderBy: 'startDate',
         direction: 'desc',
