@@ -1,9 +1,7 @@
-'use client';
-
 import { Button, Flex, Select, TextInput } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
 import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import Instructions from '@/src/_components/Uploader/Instructions';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { createRaceBeforeResults } from '@/src/_processers/results';
@@ -21,7 +19,7 @@ export interface RaceFormData {
   location?: string;
 }
 
-const DEFAULT_FORM_VALUES = {
+const DEFAULT_FORM_VALUES: RaceFormData = {
   name: '',
   raceType: '',
   startDate: undefined,
@@ -30,10 +28,9 @@ const DEFAULT_FORM_VALUES = {
 };
 
 function RaceForm() {
-  const [isSubmitting, setIsSubmitting] = React.useState<boolean>(false);
   const { setSelectedRace, setSuccessMessage, errors, setErrors } = useUploaderContext();
 
-  const { control, handleSubmit, reset, watch } = useForm({
+  const { control, handleSubmit, reset, watch, formState } = useForm<RaceFormData>({
     defaultValues: DEFAULT_FORM_VALUES,
   });
 
@@ -41,15 +38,13 @@ function RaceForm() {
   const raceType = watch('raceType');
   const startDate = watch('startDate');
 
-  const isSubmitDisabled = !name || !raceType || !startDate || isSubmitting;
+  const isSubmitDisabled = !name || !raceType || !startDate || formState.isSubmitting;
 
-  const onSubmit = async (data: RaceFormData) => {
+  const onSubmit: SubmitHandler<RaceFormData> = async (data) => {
     if (isSubmitDisabled) {
       setErrors([...errors, 'Form Validation Failed']);
       return;
     }
-
-    setIsSubmitting(true);
 
     const response = await createRaceBeforeResults(data);
 
@@ -60,8 +55,6 @@ function RaceForm() {
       setSuccessMessage('Successfully Created Race');
       reset();
     }
-
-    setIsSubmitting(false);
   };
 
   return (
@@ -76,7 +69,7 @@ function RaceForm() {
             rules={{ required: 'Name is required' }}
             render={({ field }) => (
               <TextInput
-                disabled={isSubmitting}
+                disabled={formState.isSubmitting}
                 className={classes.formSection}
                 withAsterisk
                 size="xs"
@@ -94,7 +87,7 @@ function RaceForm() {
             rules={{ required: 'Race type is required' }}
             render={({ field }) => (
               <Select
-                disabled={isSubmitting}
+                disabled={formState.isSubmitting}
                 className={classes.formSection}
                 withAsterisk
                 size="xs"
@@ -118,7 +111,7 @@ function RaceForm() {
             rules={{ required: 'Start date is required' }}
             render={({ field }) => (
               <DateInput
-                disabled={isSubmitting}
+                disabled={formState.isSubmitting}
                 className={classes.formSection}
                 withAsterisk
                 size="xs"
@@ -135,7 +128,7 @@ function RaceForm() {
             control={control}
             render={({ field }) => (
               <DateInput
-                disabled={isSubmitting}
+                disabled={formState.isSubmitting}
                 className={classes.formSection}
                 size="xs"
                 label="End Date"
@@ -152,7 +145,7 @@ function RaceForm() {
             control={control}
             render={({ field }) => (
               <TextInput
-                disabled={isSubmitting}
+                disabled={formState.isSubmitting}
                 className={classes.formSection}
                 size="xs"
                 label="Location"
