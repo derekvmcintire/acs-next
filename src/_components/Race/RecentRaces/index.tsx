@@ -7,14 +7,12 @@ import { getRecentRaceResults } from '@/src/_api/get/results/get-race-results';
 import { GetRaceResultsResponse } from '@/src/_api/get/results/get-race-results-response-type';
 import { RiderResult } from '@/src/_types/extended-types';
 import SectionLabel from '../../ui/SectionLabel';
-import ResultsPreviewList from './ResultsPreviewsList';
+import ResultsPreviewList, { ResultsList } from './ResultsPreviewsList';
 import classes from '../styles/race-results.module.css';
 
 interface ResultPreviewListProps {
   races: GetRacesResponse[];
 }
-
-export type ResultsList = RiderResult[];
 
 export default function ResultPreviewList({ races }: ResultPreviewListProps) {
   const [raceResults, setRaceResults] = React.useState<ResultsList[]>([]);
