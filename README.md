@@ -9,6 +9,7 @@ ACS is built with the following features:
 - [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
 - [React](https://www.react.dev)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Recharts](https://www.recharts.org)
 - [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
 
