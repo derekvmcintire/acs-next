@@ -161,7 +161,6 @@ function RaceForm() {
           />
         </Flex>
         <Flex align="center" justify="center" gap="md">
-          {/* Submit Button */}
           <Button disabled={isSubmitDisabled} mt="16" type="submit">
             Submit
           </Button>
