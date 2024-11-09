@@ -54,3 +54,5 @@ export const GF_AGE_GROUPS: AgeGroup[] = [
   { start: 70, end: 74, text: '70-74' },
   { start: 75, end: 10000, text: '75 and Over' },
 ];
+
+export const DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';

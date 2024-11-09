@@ -6,6 +6,7 @@ import React from 'react';
 import { getRaces } from '@/src/_api/get/races/get-races';
 import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
+import { DEFAULT_DATE_FORMAT } from '@/src/global-constants';
 import SectionLabel from '../../ui/SectionLabel';
 import classes from './side-search.module.css';
 
@@ -15,12 +16,13 @@ export default function SuggestedRaces() {
 
   React.useEffect(() => {
     const getRecentRaces = async () => {
-      const now = dayjs().format('YYYY-MM-DD');
-      const oneMonthAgo = dayjs().subtract(2, 'year').format('YYYY-MM-DD');
-      const response = await getRaces({ dateRange: { from: oneMonthAgo, to: now } });
-      const races = response?.races || [];
-      races.length = 30;
-      setSuggestedRaces(response?.races || []);
+      const now = dayjs().format(DEFAULT_DATE_FORMAT);
+      const numberOfMonthsBack = 3;
+      const fromDate = dayjs().subtract(numberOfMonthsBack, 'month').format(DEFAULT_DATE_FORMAT);
+      const response = await getRaces({ dateRange: { from: fromDate, to: now } });
+      const maxNumberOfRaces = 30;
+      const races = (response?.races || []).slice(0, maxNumberOfRaces);
+      setSuggestedRaces(races);
     };
 
     getRecentRaces();
