@@ -1,32 +1,44 @@
 'use client';
 
-import { Flex, List, Mark, Popover, Text } from '@mantine/core';
+import { Flex, List, Popover, Text } from '@mantine/core';
 import React from 'react';
 import { VERIFIED_HEADERS } from '@/src/_processers/results/constants';
 import classes from './instructions.module.css';
 
-const ValidHeaders = () => (
+const ValidHeaders = React.memo(() => (
   <List>
-    {(Object.keys(VERIFIED_HEADERS) as Array<keyof typeof VERIFIED_HEADERS>).map((key) => {
-      const aliases = VERIFIED_HEADERS[key];
-      return <List.Item>{`${key} - accepted aliases: "${aliases.join('"/"')}"`}</List.Item>;
-    })}
+    {(Object.keys(VERIFIED_HEADERS) as Array<keyof typeof VERIFIED_HEADERS>).map((key) => (
+      <List.Item key={key}>
+        {`${key} - accepted aliases: "${VERIFIED_HEADERS[key].join('"/"')}"`}
+      </List.Item>
+    ))}
   </List>
-);
+));
 
 export default function VerifiedHeadersPopover() {
   return (
     <Flex align="center" justify="center">
       <Text component="span" size="sm" className={classes.textFlex}>
         Results must be in tab or comma separated format, with{' '}
-        <Popover middlewares={{ flip: true, shift: true, inline: true }} position="bottom">
+        <Popover position="bottom">
           <Popover.Target>
-            <Mark className={classes.validHeaders}>eligible headers only.</Mark>
+            <Text
+              span
+              fw={600}
+              td="underline"
+              c="orange"
+              className={classes.eligibleHeadersText}
+              aria-label="Click to view eligible headers"
+            >
+              eligible headers
+            </Text>
           </Popover.Target>
           <Popover.Dropdown>
             <ValidHeaders />
           </Popover.Dropdown>
         </Popover>
+        {'. '}
+        Ineligible headers will be ignored.
       </Text>
     </Flex>
   );
