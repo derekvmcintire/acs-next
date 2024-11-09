@@ -4,6 +4,7 @@ import { Autocomplete, Container } from '@mantine/core';
 import React from 'react';
 import { GoSearch } from 'react-icons/go';
 import { getRaces } from '@/src/_api/get/races/get-races';
+import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import useDebounce from '@/src/_hooks/use-debounce';
 import { getFormattedYearString, yearTrunc } from '@/src/_utility/date-helpers';
@@ -11,14 +12,18 @@ import SectionLabel from '../../ui/SectionLabel';
 
 const icon = <GoSearch />;
 
-type SearchOptionType = {
+type SearchOption = {
   value: string;
   label: string;
 };
 
-export default function Component() {
-  const [options, setOptions] = React.useState<SearchOptionType[]>([]);
-  const [availableRaces, setAvailableRaces] = React.useState<any[]>([]);
+type RaceSearchProps = {
+  setError: Function;
+};
+
+export default function RaceSearch({ setError }: RaceSearchProps) {
+  const [options, setOptions] = React.useState<SearchOption[]>([]);
+  const [availableRaces, setAvailableRaces] = React.useState<GetRacesResponse[]>([]);
   const [searchValue, setSearchValue] = React.useState<string>('');
   const debouncedSearchValue = useDebounce(searchValue, 300); // 300ms debounce
 
@@ -32,12 +37,12 @@ export default function Component() {
       }
       const response = await getRaces({ name: debouncedSearchValue });
       if (response && response?.error) {
-        throw new Error(String(response.error));
+        setError(String(response.error));
       } else {
         const races = Array.isArray(response?.races) ? response?.races : [];
         setAvailableRaces(races);
 
-        const raceOptions = races.map((race: any) => {
+        const raceOptions = races.map((race: GetRacesResponse) => {
           const year = getFormattedYearString(new Date(race.startDate));
           const useFourDigitFormat = true;
           return {
@@ -51,16 +56,19 @@ export default function Component() {
     search();
   }, [debouncedSearchValue]);
 
-  const findAvailableRaceFromId = (id: number) => {
-    return availableRaces.find((race) => race.id === id);
-  };
+  const findRaceById = React.useCallback(
+    (id: number) => {
+      return availableRaces.find((race) => race.id === id);
+    },
+    [availableRaces]
+  );
 
   const handleChange = React.useCallback((input: string) => {
     setSearchValue(input);
   }, []);
 
   const handleOptionSubmit = (option: string) => {
-    const fullRace = findAvailableRaceFromId(Number(option));
+    const fullRace = findRaceById(Number(option));
     setSelectedRace(fullRace);
   };
 
