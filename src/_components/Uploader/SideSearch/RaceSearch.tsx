@@ -9,7 +9,6 @@ import useDebounce from '@/src/_hooks/use-debounce';
 import { getFormattedYearString, yearTrunc } from '@/src/_utility/date-helpers';
 import SearchAutoComplete from '../../shared/SearchAutocomplete';
 import SectionLabel from '../../ui/SectionLabel';
-import classes from './side-search.module.css';
 
 type SearchOption = {
   value: string;
@@ -72,7 +71,7 @@ export default function RaceSearch({ setError }: RaceSearchProps) {
   };
 
   return (
-    <Container mb="36px" className={classes.raceSearchContainer}>
+    <Container mb="36px">
       <SectionLabel text="Select a Race" />
       <SearchAutoComplete
         leftSectionPointerEvents="none"
