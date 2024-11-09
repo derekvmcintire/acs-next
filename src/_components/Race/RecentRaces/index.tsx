@@ -16,11 +16,12 @@ interface ResultPreviewListProps {
 
 type ResultsList = RiderResult[];
 
-const getListOfResultsPreviews = (results: ResultsList[]) => results.map((result, index) => (
-  <div key={`result-${index}`}>
-    <ResultPreview raceResults={result} />
-  </div>
-));
+const getListOfResultsPreviews = (results: ResultsList[]) =>
+  results.map((result, index) => (
+    <div key={`result-${index}`}>
+      <ResultPreview raceResults={result} />
+    </div>
+  ));
 
 export default function ResultPreviewList({ races }: ResultPreviewListProps) {
   const [raceResults, setRaceResults] = React.useState<ResultsList[]>([]);
