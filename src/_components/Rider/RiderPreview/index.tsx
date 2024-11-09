@@ -8,11 +8,14 @@ import RiderDetails from '../RiderDetails';
 import classes from '../rider.module.css';
 
 interface RiderPreviewProps {
-  rider: GetRiderResponse;
+  rider?: GetRiderResponse;
   mini?: boolean;
   label?: string;
 }
 export default function RiderPreview({ rider, mini = false, label }: RiderPreviewProps) {
+  if (!rider) {
+    return <></>;
+  }
   return (
     <Flex
       mb={8}
