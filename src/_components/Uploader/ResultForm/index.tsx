@@ -2,7 +2,7 @@
 
 import { Button, Flex, MultiSelect, Text, Textarea } from '@mantine/core';
 import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { GetCategoriesResponse } from '@/src/_api/get/categories/get-categories-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { processResults } from '@/src/_processers/results';
@@ -17,7 +17,6 @@ const DEFAULT_FORM_VALUES = {
 };
 
 function ResultForm() {
-  const [isSubmitting, setIsSubmitting] = React.useState<boolean>(false);
   const { selectedRace, setSelectedRace, categoryOptions, errors, setErrors, setSuccessMessage } =
     useUploaderContext();
 
@@ -40,33 +39,29 @@ function ResultForm() {
       }, [])
       .sort((a, b) => a.label.localeCompare(b.label));
 
-  const { control, handleSubmit, reset, watch } = useForm({
+  const { control, handleSubmit, reset, watch, formState } = useForm({
     defaultValues: DEFAULT_FORM_VALUES,
   });
 
   const categories = watch('categories');
   const results = watch('results');
 
-  const isSubmitDisabled = !categories.length || !results || isSubmitting;
+  const isSubmitDisabled = !categories.length || !results || formState.isSubmitting;
 
-  const onSubmit = async () => {
+  const onSubmit: SubmitHandler<typeof DEFAULT_FORM_VALUES> = async () => {
     if (isSubmitDisabled) {
       setErrors([...errors, 'Form Validation Failed']);
       return;
     }
 
-    setIsSubmitting(true);
-
     const response = await processResults(selectedRace, results, categories);
 
     if (!response) {
       setErrors([...errors, 'Form Submission Failed']);
-      setIsSubmitting(false);
     } else {
       setSuccessMessage('Successfully Created Results');
       reset();
     }
-    setIsSubmitting(false);
   };
 
   const handleChangeRace = () => {
@@ -96,7 +91,7 @@ function ResultForm() {
             render={({ field }) => (
               <MultiSelect
                 withAsterisk
-                disabled={isSubmitting}
+                disabled={formState.isSubmitting}
                 className={classes.categoryOptions}
                 size="xs"
                 clearable
@@ -117,7 +112,7 @@ function ResultForm() {
             render={({ field }) => (
               <Textarea
                 withAsterisk
-                disabled={isSubmitting}
+                disabled={formState.isSubmitting}
                 className={classes.textArea}
                 autosize
                 label="Results"
