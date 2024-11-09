@@ -14,8 +14,8 @@ export default function ResultsReport() {
   const [races, setRaces] = React.useState<GetRacesResponse[]>([]);
   const [chartData, setChartData] = React.useState<MonthlyRaceData[]>([]);
 
-  const validateRaceData = (data: (PreliminaryRace | null)[]) =>
-    data.filter((result): result is PreliminaryRace => result !== null);
+  const validatePreliminaryResults = (prelimResult: (PreliminaryRace | null)[]) =>
+    prelimResult.filter((result): result is PreliminaryRace => result !== null);
 
   React.useEffect(() => {
     const fetchResults = async () => {
@@ -26,8 +26,8 @@ export default function ResultsReport() {
         })
       );
 
-      const validData = validateRaceData(preliminaryRaceResults);
-      setChartData(groupRacesByMonth(validData));
+      const validatedResults = validatePreliminaryResults(preliminaryRaceResults);
+      setChartData(groupRacesByMonth(validatedResults));
     };
 
     fetchResults();
