@@ -2,18 +2,13 @@
 
 import { ColorSwatch, Flex, Stack, Text } from '@mantine/core';
 import React from 'react';
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Rectangle,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from 'recharts';
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { MonthlyRaceData } from './results-report-types';
 import classes from '../../styles/race-results.module.css';
+
+const RACE_COLOR = '#52739e';
+const RIDER_COLOR = '#FF5F5E';
+const GRID_STROKE_COLOR = '#555';
 
 type ResultsReportPresenterProps = {
   chartData: MonthlyRaceData[];
@@ -23,17 +18,11 @@ export default function ResultsReportChart({ chartData }: ResultsReportPresenter
   return (
     <Stack className={classes.resultsReport}>
       <Flex justify="center">
-        <Text size="xs" span>
-          {'Number of '}
-        </Text>
-        <ColorSwatch color="#B3CDAD" size={16} mr={4} ml={4} />
-        <Text size="xs" span>
-          {'Races and '}
-        </Text>
-        <ColorSwatch color="#FF5F5E" size={16} mr={4} ml={4} />
-        <Text size="xs" span>
-          Racers Over the Last Six Months
-        </Text>
+        <Text size="xs">{'Number of '}</Text>
+        <ColorSwatch color={RACE_COLOR} size={16} mr={4} ml={4} aria-label="Races color swatch" />
+        <Text size="xs">{'Races and '}</Text>
+        <ColorSwatch color={RIDER_COLOR} size={16} mr={4} ml={4} aria-label="Riders color swatch" />
+        <Text size="xs">Riders Over the Last Six Months</Text>
       </Flex>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
@@ -46,7 +35,7 @@ export default function ResultsReportChart({ chartData }: ResultsReportPresenter
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="#555" />
+          <CartesianGrid strokeDasharray="3 3" stroke={GRID_STROKE_COLOR} />
           <XAxis dataKey="name" />
           <YAxis
             scale="log"
@@ -55,18 +44,8 @@ export default function ResultsReportChart({ chartData }: ResultsReportPresenter
             allowDataOverflow
           />
           <Tooltip />
-          <Bar
-            dataKey="numberOfRaces"
-            name="Races"
-            fill="#B3CDAD"
-            activeBar={<Rectangle fill="pink" stroke="blue" />}
-          />
-          <Bar
-            dataKey="numberOfRiders"
-            name="Riders"
-            fill="#FF5F5E"
-            activeBar={<Rectangle fill="gold" stroke="purple" />}
-          />
+          <Bar dataKey="numberOfRaces" name="Races" fill={RACE_COLOR} />
+          <Bar dataKey="numberOfRiders" name="Riders" fill={RIDER_COLOR} />
         </BarChart>
       </ResponsiveContainer>
     </Stack>
