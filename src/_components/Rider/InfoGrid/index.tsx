@@ -4,7 +4,7 @@ import { Flex, Grid } from '@mantine/core';
 import React from 'react';
 import { useRider } from '@/src/_contexts/Rider/RiderContext';
 import RiderPreview from '../RiderPreview';
-import TBD from '../TBD';
+import RiderTeams from '../RiderTeams';
 import TopResults from '../TopResults';
 import classes from '../rider.module.css';
 
@@ -23,7 +23,7 @@ export default function InfoGrid() {
             <section className={classes.topResultsWrap}>
               <TopResults />
             </section>
-            <TBD />
+            <RiderTeams />
           </Flex>
         </Grid.Col>
       </Grid>
