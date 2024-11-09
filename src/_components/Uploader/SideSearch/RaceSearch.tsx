@@ -1,16 +1,15 @@
 'use client';
 
-import { Autocomplete, Container } from '@mantine/core';
+import { Container } from '@mantine/core';
 import React from 'react';
-import { GoSearch } from 'react-icons/go';
 import { getRaces } from '@/src/_api/get/races/get-races';
 import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import useDebounce from '@/src/_hooks/use-debounce';
 import { getFormattedYearString, yearTrunc } from '@/src/_utility/date-helpers';
+import SearchAutoComplete from '../../shared/SearchAutocomplete';
 import SectionLabel from '../../ui/SectionLabel';
-
-const icon = <GoSearch />;
+import classes from './side-search.module.css';
 
 type SearchOption = {
   value: string;
@@ -73,11 +72,10 @@ export default function RaceSearch({ setError }: RaceSearchProps) {
   };
 
   return (
-    <Container mb="36px">
+    <Container mb="36px" className={classes.raceSearchContainer}>
       <SectionLabel text="Select a Race" />
-      <Autocomplete
+      <SearchAutoComplete
         leftSectionPointerEvents="none"
-        leftSection={icon}
         placeholder="Search for a Race"
         data={options}
         limit={15}
