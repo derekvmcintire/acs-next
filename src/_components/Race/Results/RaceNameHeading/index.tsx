@@ -9,9 +9,9 @@ import classes from '../../styles/race-results.module.css';
 
 export default function RaceNameComponent() {
   const { race } = useRaceContext();
-  const raceName = race && race.event ? race.event.name : '';
-  const startDate = race && race.startDate;
-  const location = race && race.location;
+  const raceName = race?.event ? race.event.name : '';
+  const startDate = race?.startDate;
+  const location = race?.location;
 
   return (
     <Container className={classes.raceHeading}>
