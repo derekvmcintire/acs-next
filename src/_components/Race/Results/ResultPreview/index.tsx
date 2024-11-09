@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import React from 'react';
 import LabeledText from '@/src/_components/ui/LabeledText';
 import { RiderResult } from '@/src/_types/extended-types';
-import RemainingTopTen from './map-remaining-top-ten';
+import RemainingTopTen from './RemainingTopTen';
 import classes from '../../styles/race-results.module.css';
 
 interface ResultPreviewProps {
