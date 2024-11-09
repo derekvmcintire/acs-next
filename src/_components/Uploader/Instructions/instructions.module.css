@@ -6,3 +6,7 @@
 .validHeaders {
   cursor: pointer;
 }
+
+.eligibleHeadersText {
+  cursor: pointer;
+}
