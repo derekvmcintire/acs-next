@@ -26,8 +26,8 @@ export default function HistoryTable({ results }: HistoryTableProps) {
   }
 
   const rows = results.map(
-    ({ name, category, startDate, place, racers, type, points, eventId }, i) => (
-      <Table.Tr key={i + place}>
+    ({ name, category, startDate, place, racers, type, points, eventId }) => (
+      <Table.Tr key={`${place}${startDate}${racers}${name}`}>
         <Table.Td>{getFormattedDateString(new Date(String(startDate)))}</Table.Td>
         <Table.Td className={classes.result}>{place || 'DNF'}</Table.Td>
         <Table.Td>{racers}</Table.Td>

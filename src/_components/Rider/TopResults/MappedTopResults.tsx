@@ -18,7 +18,7 @@ export const MappedTopResults = ({ topResults }: MappedTopResultsProps) => {
   return (
     <div className={classes.topResultsList} data-testid={MAPPED_TOP_RESULTS_TEST_ID}>
       {topResults.map((result) => (
-        <div key={`${result.startDate}${result.points}`}>
+        <div key={`${result.id}`}>
           <LabeledText
             size="xs"
             color={getTopResultPlaceColor(result.place, colorScheme)}

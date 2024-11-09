@@ -29,7 +29,7 @@ export default function ResultPreviewList({ races }: ResultPreviewListProps) {
             const response = await getRecentRaceResults(race.id);
 
             if (response && response?.error) {
-              throw new Error('YOU GOT AN ERROR');
+              throw new Error(`Error getting results for race with id: ${race.id}`);
             }
 
             const results = response.results || [];
@@ -65,7 +65,14 @@ export default function ResultPreviewList({ races }: ResultPreviewListProps) {
       {errors && errors.map((error: string) => <div>{`${error}`}</div>)}
       <SectionLabel text="Recent Results" />
       {raceResults &&
-        raceResults.map((result: RiderResult[]) => <ResultPreview raceResults={result} />)}
+        raceResults.map((result: RiderResult[]) => {
+          const key = result[0].place;
+          return (
+            <div key={key}>
+              <ResultPreview raceResults={result} />
+            </div>
+          );
+        })}
     </Container>
   );
 }

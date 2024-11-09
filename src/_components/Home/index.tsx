@@ -3,11 +3,11 @@ import dayjs from 'dayjs';
 import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
 import { GetRankingsResponse } from '@/src/_api/get/rankings/get-rankings-response-type';
 import RecentRaces from '../Race/RecentRaces';
+import ResultsReport from '../Race/Results/ResultsReport';
 import PageLayout from '../shared/PageLayout';
 import SectionLabel from '../ui/SectionLabel';
 import RankPreview from './RankPreview';
 import classes from './styles/home.module.css';
-import ResultsReport from '../Race/Results/ResultsReport';
 
 export const HOME_TEST_ID = 'home';
 

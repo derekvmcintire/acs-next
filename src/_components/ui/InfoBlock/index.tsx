@@ -9,6 +9,7 @@ interface InfoBlockProps extends PropsWithChildren {
   justify?: 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around';
   className?: string;
   title?: string;
+  icon?: React.ReactNode;
 }
 
 export default function InfoBlock({

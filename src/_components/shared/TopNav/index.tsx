@@ -10,7 +10,7 @@ export const TOP_NAV_TEST_ID = 'top-nav';
 export default function TopNav() {
   return (
     <Container data-testid={TOP_NAV_TEST_ID} className={classes.topNavContainer}>
-      <Flex justify="space-between" align="center" pt={10}>
+      <Flex justify="flex-end" align="center" pt={10}>
         <Group mr={20}>
           <Anchor className={classes.topNavAnchor} href="/">
             Home
