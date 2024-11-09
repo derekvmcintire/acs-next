@@ -1,7 +1,7 @@
 'use client';
 
 import { Flex } from '@mantine/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GetRankingsResponse } from '@/src/_api/get/rankings/get-rankings-response-type';
 import { getSingleRider } from '@/src/_api/get/riders/get-rider';
 import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
@@ -18,60 +18,50 @@ interface RankWithRider extends GetRankingsResponse {
 }
 
 export default function RankPreview({ rankings }: RankPreviewProps) {
-  const [ranksWithRiders, setRanksWithRiders] = React.useState<RankWithRider[]>([]);
-  const [errors, setErrors] = React.useState<string[]>([]);
+  const [ranksWithRiders, setRanksWithRiders] = useState<RankWithRider[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
-  React.useEffect(() => {
-    const getRiderData = async () => {
+  useEffect(() => {
+    const fetchRiderData = async () => {
       try {
-        const ranksWithRidersResponse: RankWithRider[] = await Promise.all(
-          rankings.map(async (rank: GetRankingsResponse) => {
+        const results: RankWithRider[] = await Promise.all(
+          rankings.map(async (rank) => {
             const rankWithRider: RankWithRider = { ...rank };
             const response = await getSingleRider(rank.riderId);
 
-            if (response && response?.error) {
-              throw new Error('YOU GOT AN ERROR');
+            if (response?.error) {
+              throw new Error('Error fetching rider data');
             }
 
-            if (response && response.riderInfo) {
+            if (response?.riderInfo) {
               rankWithRider.rider = response.riderInfo;
             }
 
             return rankWithRider;
           })
         );
-
-        setRanksWithRiders(ranksWithRidersResponse);
-      } catch (error) {
-        setErrors((prev) => [...prev, String(error)]);
+        setRanksWithRiders(results);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Unknown error');
       }
     };
 
-    getRiderData();
+    fetchRiderData();
   }, [rankings]);
 
   return (
     <div>
-      {errors && errors.map((error: string) => <div>{error}</div>)}
+      {error && <div>{error}</div>}
 
-      {ranksWithRiders.map(async (rank: RankWithRider, i) => {
-        const { rider } = rank;
-
-        if (!rider) {
-          return <div key={10000000000000} />;
-        }
-
-        return (
-          <Flex mt={16} className={classes.rankPreview}>
-            <RiderPreview
-              mini
-              key={rank.riderId}
-              rider={rider}
-              label={`#${i + 1} Ranked Rider: ${rank.totalPoints} Points`}
-            />
-          </Flex>
-        );
-      })}
+      {ranksWithRiders.map((rank, i) => (
+        <Flex key={rank.riderId} mt={16} className={classes.rankPreview}>
+          <RiderPreview
+            mini
+            rider={rank.rider}
+            label={`#${i + 1} Ranked Rider: ${rank.totalPoints} Points`}
+          />
+        </Flex>
+      ))}
     </div>
   );
 }
