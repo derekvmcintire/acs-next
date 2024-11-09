@@ -35,7 +35,7 @@ describe('WinnerDetails', () => {
 
     expect(screen.getByText(/Career Wins: 10/i)).toBeInTheDocument();
 
-    const stravaAnchor = screen.getByRole('link', { name: /strava profile of john-doe/i });
+    const stravaAnchor = screen.getByRole('link', { name: /strava profile of john doe/i });
     expect(stravaAnchor).toHaveAttribute('href', `${STRAVA_BASE_URL}john-doe`);
     expect(screen.getByTestId('strava-icon')).toBeInTheDocument();
   });
