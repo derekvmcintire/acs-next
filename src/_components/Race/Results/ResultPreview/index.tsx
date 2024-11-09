@@ -21,12 +21,16 @@ export default function ResultPreview({ raceResults }: ResultPreviewProps) {
     <Container className={classes.resultsPreview}>
       <LabeledText isSpan label={dayjs(startDate).format('M/D')} text={name} />
       <Text fs="italic" span>{` - ${location}`}</Text>
-      <Spoiler maxHeight={5} showLabel="Show Results" hideLabel="Hide Results">
+      <Spoiler maxHeight={5} showLabel="Show Top Ten" hideLabel="Hide Top Ten">
         <LabeledText color="orange" label="Winner" text={winnerName} />
         {raceResults.map((result: RiderResult, i) => {
           const riderResult = result.rider;
           const riderName = `${riderResult?.firstName} ${riderResult?.lastName}`;
-          return <LabeledText hasColon={false} label={`${i + 2}.`} text={riderName} />;
+          return (
+            <div key={result.place}>
+              <LabeledText hasColon={false} label={`${i + 2}.`} text={riderName} />
+            </div>
+          );
         })}
       </Spoiler>
     </Container>

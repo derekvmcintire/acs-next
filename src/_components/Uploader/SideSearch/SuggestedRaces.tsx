@@ -37,7 +37,7 @@ export default function SuggestedRaces() {
           <SectionLabel text="Suggested Races" />
           <ScrollArea h={250} w={170}>
             {suggestedRaces.map((race: GetRacesResponse) => (
-              <div>
+              <div key={race.id}>
                 <Button
                   size="xs"
                   variant="transparent"

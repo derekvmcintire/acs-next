@@ -18,7 +18,9 @@ export default function RaceStats({ totalRacers, finishers, countries }: RaceSta
         <LabeledText label="Total Finishers" text={String(finishers)} />
         <LabeledText label="Unique Nationalities" text={String(countries.length)} />
         {countries.map((country: string) => (
-          <Text span size="xs">{`${country}, `}</Text>
+          <span key={country}>
+            <Text span size="xs">{`${country}, `}</Text>
+          </span>
         ))}
       </Container>
     </InfoBlock>
