@@ -12,7 +12,7 @@ export default function SideSearch() {
     <InfoBlock leftHanded className={classes.raceSearchInfoBlock} title="Search for a Race">
       {errorMessage && <div>{errorMessage}</div>}
       <RaceSearch setError={setErrorMessage} />
-      <SuggestedRaces />
+      <SuggestedRaces setError={setErrorMessage} />
     </InfoBlock>
   );
 }
