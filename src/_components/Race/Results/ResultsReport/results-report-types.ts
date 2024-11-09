@@ -6,7 +6,7 @@ export type MonthlyRaceData = {
 };
 
 // temporary data shape used to build MonthlyRaceData
-export type TempRace = {
+export type PreliminaryRace = {
   raceId: number;
   raceStartDate: string;
   numberOfRiders: number;
