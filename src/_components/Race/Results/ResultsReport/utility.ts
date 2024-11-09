@@ -5,7 +5,7 @@ export function groupRacesByMonth(races: TempRace[]): MonthlyRaceData[] {
   const monthMap = races.reduce((acc: Record<string, MonthlyRaceData>, race: TempRace) => {
     // Parse date and get month name and year
     const date = dayjs(race.raceStartDate);
-    const monthName = date.format('MMMM');
+    const monthName = date.format('MMM');
     const yearMonthKey = `${date.year()}-${date.month()}`; // Using month number for sorting
 
     // Initialize the month's data if not already present
