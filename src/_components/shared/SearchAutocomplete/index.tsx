@@ -35,7 +35,6 @@ export default function SearchAutoComplete({
     <Autocomplete
       classNames={{
         input: classes.searchAutocomplete,
-        dropdown: classes.raceSearchAutocomplete,
       }}
       leftSectionPointerEvents={leftSectionPointerEvents}
       leftSection={icon}
