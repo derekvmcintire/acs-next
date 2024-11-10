@@ -38,24 +38,24 @@ export const getRacesRequestUrl = (filters: GetRacesFilters) => {
   return `${url}${queryParams}`;
 };
 
-// @TODO replace with function below
-export const getRaces = async (filters: GetRacesFilters): Promise<IGetRacesResponse> => {
-  const result = await getResponse(
-    getRacesRequestUrl(filters),
-    async (response: Response): Promise<IGetRacesResponse> => {
-      const parsedResponse: GetRacesResponse[] = await response.json();
-      return { races: parsedResponse };
-    }
-  );
+// // @TODO replace with function below
+// export const getRaces = async (filters: GetRacesFilters): Promise<IGetRacesResponse> => {
+//   const result = await getResponse(
+//     getRacesRequestUrl(filters),
+//     async (response: Response): Promise<IGetRacesResponse> => {
+//       const parsedResponse: GetRacesResponse[] = await response.json();
+//       return { races: parsedResponse };
+//     }
+//   );
 
-  if ('error' in result) {
-    throw new Error(String(result.error));
-  }
+//   if ('error' in result) {
+//     throw new Error(String(result.error));
+//   }
 
-  return result;
-};
+//   return result;
+// };
 
-export const getRecentRaces = async (filters: GetRacesFilters): Promise<IGetRacesResponse> => {
+export const fetchRaces = async (filters: GetRacesFilters): Promise<IGetRacesResponse> => {
   try {
     const response = await fetch(getRacesRequestUrl(filters));
 
