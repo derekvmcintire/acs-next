@@ -22,7 +22,10 @@ export default function ResultPreview({ raceResults }: ResultPreviewProps) {
 
   return (
     <Container className={classes.resultsPreview}>
-      <Anchor className={classes.resultPreviewAnchor} href={`${APP_RACE_PATH}/${firstResult?.eventId || 0}`}>
+      <Anchor
+        className={classes.resultPreviewAnchor}
+        href={`${APP_RACE_PATH}/${firstResult?.eventId || 0}`}
+      >
         <LabeledText isSpan label={dayjs(startDate).format('M/D')} text={name} />
         <Text fs="italic" span>{` - ${location}`}</Text>
       </Anchor>

@@ -45,11 +45,10 @@ export default function ResultsReport() {
         direction: 'desc',
       };
 
-      // fetch all races in last four months
-      const recentRacesResponse: IGetRacesResponse = await fetchRaces(filters);
+      const fetchRacesResponse: IGetRacesResponse = await fetchRaces(filters);
 
-      if (recentRacesResponse && recentRacesResponse?.races) {
-        setRaces(recentRacesResponse.races);
+      if (fetchRacesResponse && fetchRacesResponse?.races) {
+        setRaces(fetchRacesResponse.races);
       }
     };
 

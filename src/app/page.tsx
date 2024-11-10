@@ -10,11 +10,11 @@ export default async function HomePage() {
     orderBy: 'startDate',
     direction: 'desc',
   };
-  const recentRaces = await fetchRaces(getRecentRacesFilters);
+  const fetchRacesResponse = await fetchRaces(getRecentRacesFilters);
 
   return (
     <ACSHome
-      recentRaces={recentRaces.races || undefined}
+      recentRaces={fetchRacesResponse.races || undefined}
       rankings={rankingResponse.rankings || []}
     />
   );

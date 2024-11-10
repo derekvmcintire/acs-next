@@ -1,5 +1,4 @@
 import { API_BASE_URL, API_RACES_PATH } from '@/src/_api/constants';
-import { getResponse } from '../../helpers';
 import { IGetRacesResponse } from '../../types';
 import { GetRacesResponse } from './get-races-response-type';
 
@@ -37,23 +36,6 @@ export const getRacesRequestUrl = (filters: GetRacesFilters) => {
 
   return `${url}${queryParams}`;
 };
-
-// // @TODO replace with function below
-// export const getRaces = async (filters: GetRacesFilters): Promise<IGetRacesResponse> => {
-//   const result = await getResponse(
-//     getRacesRequestUrl(filters),
-//     async (response: Response): Promise<IGetRacesResponse> => {
-//       const parsedResponse: GetRacesResponse[] = await response.json();
-//       return { races: parsedResponse };
-//     }
-//   );
-
-//   if ('error' in result) {
-//     throw new Error(String(result.error));
-//   }
-
-//   return result;
-// };
 
 export const fetchRaces = async (filters: GetRacesFilters): Promise<IGetRacesResponse> => {
   try {
