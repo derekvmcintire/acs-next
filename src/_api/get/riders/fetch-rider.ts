@@ -38,9 +38,7 @@ export const getRiderRequestUrl = ({ name, team, country }: GetRidersFilters) =>
     .filter(Boolean) // Remove empty strings
     .join('&');
 
-  const requestURL = `${url}${queryParams}`;
-  console.log('requesting with URL: ', requestURL);
-  return requestURL;
+  return `${url}${queryParams}`;
 };
 
 export const fetchListOfRiders = async (filters: GetRidersFilters) => {
