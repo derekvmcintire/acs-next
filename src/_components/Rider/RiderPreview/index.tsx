@@ -19,8 +19,7 @@ export default function RiderPreview({ rider, mini = false, label }: RiderPrevie
 
   return (
     <Flex
-      mb={8}
-      align="center"
+      align="flex-start"
       justify="center"
       className={mini ? classes.miniRiderPreview : classes.riderPreview}
     >
