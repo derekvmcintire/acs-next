@@ -58,3 +58,5 @@ export const GF_AGE_GROUPS: AgeGroup[] = [
 ];
 
 export const DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';
+
+export const MAX_RACES_TO_PREVIEW = 10;

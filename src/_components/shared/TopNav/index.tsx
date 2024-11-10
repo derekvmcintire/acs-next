@@ -1,6 +1,6 @@
 'use client';
 
-import { Anchor, Container, Divider, Flex, Group, Text, Title } from '@mantine/core';
+import { Anchor, Divider, Flex, Group, Text, Title } from '@mantine/core';
 import { ACS_COLOR_BLUE, ACS_COLOR_ORANGE } from '@/src/global-constants';
 import Search from './Search';
 import classes from './top-nav.module.css';
@@ -9,7 +9,7 @@ export const TOP_NAV_TEST_ID = 'top-nav';
 
 export default function TopNav() {
   return (
-    <Container data-testid={TOP_NAV_TEST_ID} className={classes.topNavContainer}>
+    <div data-testid={TOP_NAV_TEST_ID} className={classes.topNavContainer}>
       <Flex justify="flex-end" align="center" pt={10}>
         <Group mr={20}>
           <Anchor className={classes.topNavAnchor} href="/">
@@ -42,6 +42,6 @@ export default function TopNav() {
           </Title>
         </Group>
       </Flex>
-    </Container>
+    </div>
   );
 }

@@ -34,6 +34,7 @@ export default function ResultPreview({ raceResults }: ResultPreviewProps) {
         showLabel="Show Top Ten"
         hideLabel="Hide Top Ten"
         aria-expanded={false}
+        pt={8}
       >
         <LabeledText color="orange" label="Winner" text={winnerName} />
         <RemainingTopTen results={remainingResults} />
