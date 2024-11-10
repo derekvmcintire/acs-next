@@ -25,7 +25,6 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
   useEffect(() => {
     const fetchRiderData = async () => {
       try {
-        setTimeout(() => {}, 1000);
         const results: RankWithRider[] = await Promise.all(
           rankings.map(async (rank) => {
             const rankWithRider: RankWithRider = { ...rank };
