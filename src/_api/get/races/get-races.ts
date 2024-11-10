@@ -1,4 +1,5 @@
 import { API_BASE_URL, API_RACES_PATH } from '@/src/_api/constants';
+import { getResponse } from '../../helpers';
 import { IGetRacesResponse } from '../../types';
 import { GetRacesResponse } from './get-races-response-type';
 
@@ -38,16 +39,17 @@ export const getRacesRequestUrl = (filters: GetRacesFilters) => {
 };
 
 export const fetchRaces = async (filters: GetRacesFilters): Promise<IGetRacesResponse> => {
-  try {
-    const response = await fetch(getRacesRequestUrl(filters));
-
-    if (!response.ok) {
-      return { races: null, error: `Error ${response.status}: ${response.statusText}` };
+  const result = await getResponse(
+    getRacesRequestUrl(filters),
+    async (response: Response): Promise<IGetRacesResponse> => {
+      const parsedResponse: GetRacesResponse[] = await response.json();
+      return { races: parsedResponse };
     }
+  );
 
-    const parsedResponse: GetRacesResponse[] = await response.json();
-    return { races: parsedResponse, error: null };
-  } catch (error) {
-    return { races: null, error: error instanceof Error ? error.message : 'Unknown error' };
+  if ('error' in result) {
+    return { ...result, races: null };
   }
+
+  return result;
 };
