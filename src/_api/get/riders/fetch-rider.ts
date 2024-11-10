@@ -28,7 +28,7 @@ export interface GetRidersFilters {
 }
 
 export const getRiderRequestUrl = ({ name, team, country }: GetRidersFilters) => {
-  const url = `${API_BASE_URL}${API_RIDER_PATH}?name=${name}`;
+  const url = `${API_BASE_URL}${API_RIDER_PATH}?`;
 
   const queryParams = [
     name ? `name=${encodeURIComponent(name)}` : '',
@@ -38,7 +38,9 @@ export const getRiderRequestUrl = ({ name, team, country }: GetRidersFilters) =>
     .filter(Boolean) // Remove empty strings
     .join('&');
 
-  return `${url}${queryParams}`;
+  const requestURL = `${url}${queryParams}`;
+  console.log('requesting with URL: ', requestURL);
+  return requestURL;
 };
 
 export const fetchListOfRiders = async (filters: GetRidersFilters) => {
