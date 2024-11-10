@@ -3,7 +3,7 @@
 import { Button, Container, ScrollArea, Text } from '@mantine/core';
 import dayjs from 'dayjs';
 import React from 'react';
-import { getRaces } from '@/src/_api/get/races/get-races';
+import { fetchRaces } from '@/src/_api/get/races/get-races';
 import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { DEFAULT_DATE_FORMAT } from '@/src/global-constants';
@@ -19,12 +19,12 @@ export default function SuggestedRaces({ setError }: SuggestedRacesProps) {
   const { setSelectedRace } = useUploaderContext();
 
   React.useEffect(() => {
-    const getRecentRaces = async () => {
+    const fetchSuggestedRaces = async () => {
       try {
         const now = dayjs().format(DEFAULT_DATE_FORMAT);
         const numberOfMonthsBack = 3;
         const fromDate = dayjs().subtract(numberOfMonthsBack, 'month').format(DEFAULT_DATE_FORMAT);
-        const response = await getRaces({ dateRange: { from: fromDate, to: now } });
+        const response = await fetchRaces({ dateRange: { from: fromDate, to: now } });
         const maxNumberOfRaces = 30;
         const races = (response?.races || []).slice(0, maxNumberOfRaces);
         setSuggestedRaces(races);
@@ -33,7 +33,7 @@ export default function SuggestedRaces({ setError }: SuggestedRacesProps) {
       }
     };
 
-    getRecentRaces();
+    fetchSuggestedRaces();
   }, []);
 
   const handleSelectSuggestedRace = (race: GetRacesResponse) => {

@@ -1,4 +1,4 @@
-import { GetRacesFilters, getRecentRaces } from '../_api/get/races/get-races';
+import { fetchRaces, GetRacesFilters } from '../_api/get/races/get-races';
 import { getRankings } from '../_api/get/rankings/get-rankings';
 import ACSHome from '../_components/Home';
 
@@ -10,11 +10,11 @@ export default async function HomePage() {
     orderBy: 'startDate',
     direction: 'desc',
   };
-  const recentRaces = await getRecentRaces(getRecentRacesFilters);
+  const fetchRacesResponse = await fetchRaces(getRecentRacesFilters);
 
   return (
     <ACSHome
-      recentRaces={recentRaces.races || undefined}
+      recentRaces={fetchRacesResponse.races || undefined}
       rankings={rankingResponse.rankings || []}
     />
   );

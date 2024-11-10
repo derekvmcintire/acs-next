@@ -2,7 +2,7 @@
 
 import dayjs from 'dayjs';
 import React from 'react';
-import { GetRacesFilters, getRecentRaces } from '@/src/_api/get/races/get-races';
+import { fetchRaces, GetRacesFilters } from '@/src/_api/get/races/get-races';
 import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
 import { IGetRacesResponse } from '@/src/_api/types';
 import { DEFAULT_DATE_FORMAT } from '@/src/global-constants';
@@ -35,7 +35,7 @@ export default function ResultsReport() {
   }, [races]);
 
   React.useEffect(() => {
-    const fetchRaces = async () => {
+    const fetchRecentRaces = async () => {
       const filters: GetRacesFilters = {
         dateRange: {
           from: dayjs().subtract(5, 'month').format(DEFAULT_DATE_FORMAT),
@@ -45,15 +45,14 @@ export default function ResultsReport() {
         direction: 'desc',
       };
 
-      // fetch all races in last four months
-      const recentRacesResponse: IGetRacesResponse = await getRecentRaces(filters);
+      const fetchRacesResponse: IGetRacesResponse = await fetchRaces(filters);
 
-      if (recentRacesResponse && recentRacesResponse?.races) {
-        setRaces(recentRacesResponse.races);
+      if (fetchRacesResponse && fetchRacesResponse?.races) {
+        setRaces(fetchRacesResponse.races);
       }
     };
 
-    fetchRaces();
+    fetchRecentRaces();
   }, []);
 
   return <ResultsReportChart chartData={chartData} />;

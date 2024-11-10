@@ -1,5 +1,5 @@
 import { Container } from '@mantine/core';
-import { getRaces } from '@/src/_api/get/races/get-races';
+import { fetchRaces } from '@/src/_api/get/races/get-races';
 import { getRaceResults } from '@/src/_api/get/results/get-race-results';
 import { getSingleRider } from '@/src/_api/get/riders/get-rider';
 import { IGetRaceResultsResponse, IGetSingleRiderResponse } from '@/src/_api/types';
@@ -25,15 +25,15 @@ function sortByPlace(results: any[]) {
 export default async function RacePage({ params }: RacePageProps) {
   const { eventId } = params;
   const errors: string[] = [];
-  const raceSearch = await getRaces({ eventId });
-  raceSearch?.error && errors.push(raceSearch.error);
-  const raceInfo = raceSearch?.races && raceSearch.races[0];
+  const fetchRacesResponse = await fetchRaces({ eventId });
+  fetchRacesResponse?.error && errors.push(fetchRacesResponse.error);
+  const race = fetchRacesResponse?.races && fetchRacesResponse.races[0];
 
-  if (!raceInfo) {
+  if (!race) {
     throw new Error('Failed to Get Race Info');
   }
 
-  const raceResults: IGetRaceResultsResponse = await getRaceResults(raceInfo.id);
+  const raceResults: IGetRaceResultsResponse = await getRaceResults(race.id);
   raceResults?.error && errors.push(raceResults.error);
   const results = raceResults?.results || [];
   const sortedResults = sortByPlace(results);
@@ -51,7 +51,7 @@ export default async function RacePage({ params }: RacePageProps) {
   return (
     <Container>
       <NetworkError errors={errors} />
-      <Race race={raceInfo} results={sortedResults} winner={winner} />
+      <Race race={race} results={sortedResults} winner={winner} />
     </Container>
   );
 }
