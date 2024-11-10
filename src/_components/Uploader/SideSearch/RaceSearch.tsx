@@ -2,8 +2,8 @@
 
 import { Container } from '@mantine/core';
 import React from 'react';
-import { fetchRaces } from '@/src/_api/get/races/get-races';
-import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
+import { fetchRaces } from '@/src/_api/get/races/fetch-races';
+import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import useDebounce from '@/src/_hooks/use-debounce';
 import { getFormattedYearString, yearTrunc } from '@/src/_utility/date-helpers';

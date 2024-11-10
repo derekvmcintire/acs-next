@@ -2,8 +2,8 @@
 
 import dayjs from 'dayjs';
 import React from 'react';
-import { fetchRaces, GetRacesFilters } from '@/src/_api/get/races/get-races';
-import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
+import { fetchRaces, GetRacesFilters } from '@/src/_api/get/races/fetch-races';
+import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { IGetRacesResponse } from '@/src/_api/types';
 import { DEFAULT_DATE_FORMAT } from '@/src/global-constants';
 import { fetchResultsForReport } from './fetch-results-for-report';

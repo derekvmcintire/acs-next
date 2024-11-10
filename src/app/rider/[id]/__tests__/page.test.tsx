@@ -1,9 +1,8 @@
 import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
 
-import { getRiderHistoryRequestUrl } from '@/src/_api/get/history/get-history';
-import { getSingleRiderRequestUrl } from '@/src/_api/get/riders/get-rider';
-import { getRidersByTeamRequestUrl } from '@/src/_api/get/riders/get-riders-by-team';
+import { getRiderHistoryRequestUrl } from '@/src/_api/get/history/fetch-history';
+import { getRiderRequestUrl, getSingleRiderRequestUrl } from '@/src/_api/get/riders/fetch-rider';
 import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider';
 import { HISTORY_TEST_ID } from '@/src/_components/Rider/History';
 import { COLOR_SCHEME_TOGGLE_TEST_ID } from '@/src/_components/shared/ColorSchemeToggle';
@@ -27,7 +26,7 @@ const secondMockPackage: mockResponsePackage = {
   mockResponse: mockRider,
 };
 const thirdMockPackage: mockResponsePackage = {
-  expectedUrl: getRidersByTeamRequestUrl(TEAM_B2C2_CONTES),
+  expectedUrl: getRiderRequestUrl({ team: TEAM_B2C2_CONTES }),
   mockResponse: mockTeamMembers,
 };
 const mockResultsPackages = [firstMockPackage, secondMockPackage, thirdMockPackage];

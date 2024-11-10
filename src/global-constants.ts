@@ -1,4 +1,4 @@
-import { GetRiderResponse } from './_api/get/riders/get-riders-response-type';
+import { GetRiderResponse } from './_api/get/riders/fetch-riders-response-type';
 import { AgeGroup } from './_types/base-types';
 
 // External re-direct URLs

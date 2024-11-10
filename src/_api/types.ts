@@ -1,9 +1,9 @@
-import { GetCategoriesResponse } from './get/categories/get-categories-response-type';
-import { GetHistoryResponse } from './get/history/get-history-response-type';
-import { GetRacesResponse } from './get/races/get-races-response-type';
-import { GetRankingsResponse } from './get/rankings/get-rankings-response-type';
-import { GetRaceResultsResponse } from './get/results/get-race-results-response-type';
-import { GetRiderResponse } from './get/riders/get-riders-response-type';
+import { GetCategoriesResponse } from './get/categories/fetch-categories-response-type';
+import { GetHistoryResponse } from './get/history/fetch-history-response-type';
+import { GetRacesResponse } from './get/races/fetch-races-response-type';
+import { GetRankingsResponse } from './get/rankings/fetch-rankings-response-type';
+import { GetRaceResultsResponse } from './get/results/fetch-race-results-response-type';
+import { GetRiderResponse } from './get/riders/fetch-riders-response-type';
 
 export interface INetworkResponse {
   error?: string | null;
@@ -19,10 +19,6 @@ export interface IGetRidersResponse extends INetworkResponse {
 
 export interface IGetHistoryResponse extends INetworkResponse {
   history?: GetHistoryResponse | null;
-}
-
-export interface IGetRidersByTeamResponse extends INetworkResponse {
-  riders?: GetRiderResponse[] | null;
 }
 
 export interface IGetRacesResponse extends INetworkResponse {

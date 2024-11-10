@@ -3,8 +3,8 @@
 import { Button, Container, ScrollArea, Text } from '@mantine/core';
 import dayjs from 'dayjs';
 import React from 'react';
-import { fetchRaces } from '@/src/_api/get/races/get-races';
-import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
+import { fetchRaces } from '@/src/_api/get/races/fetch-races';
+import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { DEFAULT_DATE_FORMAT } from '@/src/global-constants';
 import SectionLabel from '../../ui/SectionLabel';

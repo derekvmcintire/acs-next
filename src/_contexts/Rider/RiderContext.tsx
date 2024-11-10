@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
-import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
+import { GetRiderResponse } from '@/src/_api/get/riders/fetch-riders-response-type';
 import { DEFAULT_RIDER_NOT_FOUND } from '@/src/global-constants';
 
 interface RiderContextType {

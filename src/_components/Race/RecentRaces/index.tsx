@@ -2,9 +2,9 @@
 
 import { Container } from '@mantine/core';
 import React from 'react';
-import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
-import { getRecentRaceResults } from '@/src/_api/get/results/get-race-results';
-import { GetRaceResultsResponse } from '@/src/_api/get/results/get-race-results-response-type';
+import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
+import { fetchRaceResults } from '@/src/_api/get/results/fetch-race-results';
+import { GetRaceResultsResponse } from '@/src/_api/get/results/fetch-race-results-response-type';
 import { RiderResult } from '@/src/_types/extended-types';
 import SectionLabel from '../../ui/SectionLabel';
 import ResultsPreviewList, { ResultsList } from './ResultsPreviewsList';
@@ -28,7 +28,7 @@ export default function ResultPreviewList({ races }: ResultPreviewListProps) {
       await Promise.all(
         races.map(async (race) => {
           try {
-            const response = await getRecentRaceResults(race.id);
+            const response = await fetchRaceResults(race.id);
 
             if (response?.error) {
               errorMessages.push(`Error getting results for race with id: ${race.id}`);

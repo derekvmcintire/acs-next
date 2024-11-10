@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { getRidersByName } from '@/src/_api/get/riders/get-riders-by-name';
-import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
+import { fetchListOfRiders } from '@/src/_api/get/riders/fetch-rider';
+import { GetRiderResponse } from '@/src/_api/get/riders/fetch-riders-response-type';
 import { IGetRidersResponse } from '@/src/_api/types';
 import useDebounce from '@/src/_hooks/use-debounce';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
@@ -25,7 +25,7 @@ export default function Search() {
 
   React.useEffect(() => {
     const search = async () => {
-      const response: IGetRidersResponse = await getRidersByName(debouncedSearchValue);
+      const response: IGetRidersResponse = await fetchListOfRiders({ name: debouncedSearchValue });
       if (response && response?.error) {
         throw new Error(String(response.error));
       } else {

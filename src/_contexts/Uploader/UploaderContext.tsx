@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, ReactNode, useContext, useState } from 'react';
-import { GetCategoriesResponse } from '@/src/_api/get/categories/get-categories-response-type';
+import { GetCategoriesResponse } from '@/src/_api/get/categories/fetch-categories-response-type';
 
 export interface IUploaderContext {
   selectedRace: any;
