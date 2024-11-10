@@ -26,6 +26,7 @@ export default function ProfileImage({ photo, riderId }: ProfileImageProps) {
         data-testid={RACER_PROFILE_IMAGE_TEST_ID}
       >
         <Image
+          h="100%"
           src={photo || PLACEHOLDER_IMG}
           alt="solid grey silhouette of a person on a white background"
         />

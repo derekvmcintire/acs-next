@@ -1,6 +1,6 @@
 'use client';
 
-import { Divider, Flex, Skeleton, Stack } from '@mantine/core';
+import { Divider, Skeleton, Stack } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { GetRankingsResponse } from '@/src/_api/get/rankings/fetch-rankings-response-type';
 import { fetchSingleRider } from '@/src/_api/get/riders/fetch-rider';
@@ -56,26 +56,23 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
     <div>
       {error && <div>{error}</div>}
 
-      {isLoading ? (
-        <Stack mb={24} w="100%">
-          {rankings.map((_, i) => (
-            <Flex key={i} className={classes.rankPreview}>
-              <Skeleton h={154} w="100%" radius="xs" />
-            </Flex>
+      {isLoading
+        ? rankings.map((_, i) => (
+            <Stack key={i} w="100%" className={classes.rankPreview}>
+              <Skeleton h="100%" w="100%" radius="xs" />
+              <Divider />
+            </Stack>
+          ))
+        : ranksWithRiders.map((rank, i) => (
+            <Stack key={rank.riderId} className={classes.rankPreview}>
+              <RiderPreview
+                mini
+                rider={rank.rider}
+                label={`#${i + 1} Ranked Rider: ${rank.totalPoints} Points`}
+              />
+              <Divider />
+            </Stack>
           ))}
-        </Stack>
-      ) : (
-        ranksWithRiders.map((rank, i) => (
-          <Stack w="100%" key={rank.riderId} className={classes.rankPreview}>
-            <RiderPreview
-              mini
-              rider={rank.rider}
-              label={`#${i + 1} Ranked Rider: ${rank.totalPoints} Points`}
-            />
-            <Divider />
-          </Stack>
-        ))
-      )}
     </div>
   );
 }
