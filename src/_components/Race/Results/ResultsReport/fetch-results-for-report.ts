@@ -1,9 +1,9 @@
-import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
-import { getRecentRaceResults } from '@/src/_api/get/results/get-race-results';
+import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
+import { fetchRaceResults } from '@/src/_api/get/results/fetch-race-results';
 
 export const fetchResultsForReport = async (race: GetRacesResponse) => {
   try {
-    const response = await getRecentRaceResults(race.id);
+    const response = await fetchRaceResults(race.id);
 
     if (response?.error) {
       console.error(`Error getting results for race with id: ${race.id}`);

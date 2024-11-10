@@ -1,6 +1,6 @@
 import { Center } from '@mantine/core';
 import React from 'react';
-import { getCategories } from '@/src/_api/get/categories/get-categories';
+import { fetchCategories } from '@/src/_api/get/categories/fetch-categories';
 import PageLayout from '@/src/_components/shared/PageLayout';
 import UploadForm from '@/src/_components/Uploader/UploadForm';
 import {
@@ -11,7 +11,7 @@ import {
 
 async function RaceUpload() {
   const errors: string[] = [];
-  const categoriesResponse = await getCategories();
+  const categoriesResponse = await fetchCategories();
 
   categoriesResponse?.error && errors.push(categoriesResponse.error);
   const categories = categoriesResponse?.categories || [];

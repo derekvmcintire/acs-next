@@ -1,4 +1,4 @@
-import { GetHistoryResponse } from '@/src/_api/get/history/get-history-response-type';
+import { GetHistoryResponse } from '@/src/_api/get/history/fetch-history-response-type';
 import { buildMockRacesForSingleYear } from './generators/results/build-results-history.mjs';
 
 export const FIRST_NAME_OUT_OF_ORDER = 'Ascutney Hillclimb';

@@ -1,5 +1,5 @@
 import WinnerPreview from '.';
-import { mockGetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
+import { mockGetRiderResponse } from '@/src/_api/get/riders/fetch-riders-response-type';
 import { PLACEHOLDER_IMG } from '@/src/_components/Rider/ProfileImage';
 import { defaultRaceContextValue, RaceProvider } from '@/src/_contexts/Race/RaceContext';
 import { render, screen } from '@/test-utils';

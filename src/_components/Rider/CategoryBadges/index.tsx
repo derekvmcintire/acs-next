@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { GetCategoriesResponse } from '@/src/_api/get/categories/get-categories-response-type';
+import { GetCategoriesResponse } from '@/src/_api/get/categories/fetch-categories-response-type';
 import InfoBadge from '@/src/_components/ui/InfoBadge';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import { calculateAgeGroupFromDob } from '../utils';

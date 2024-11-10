@@ -2,9 +2,9 @@
 
 import { Flex, Skeleton, Stack } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
-import { GetRankingsResponse } from '@/src/_api/get/rankings/get-rankings-response-type';
-import { getSingleRider } from '@/src/_api/get/riders/get-rider';
-import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
+import { GetRankingsResponse } from '@/src/_api/get/rankings/fetch-rankings-response-type';
+import { fetchSingleRider } from '@/src/_api/get/riders/fetch-rider';
+import { GetRiderResponse } from '@/src/_api/get/riders/fetch-riders-response-type';
 import RiderPreview from '../../Rider/RiderPreview';
 import classes from '../styles/home.module.css';
 
@@ -28,7 +28,7 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
         const results: RankWithRider[] = await Promise.all(
           rankings.map(async (rank) => {
             const rankWithRider: RankWithRider = { ...rank };
-            const response = await getSingleRider(rank.riderId);
+            const response = await fetchSingleRider(rank.riderId);
 
             if (response?.error) {
               throw new Error('Error fetching rider data');

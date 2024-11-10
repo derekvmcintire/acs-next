@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import { API_BASE_URL, API_RANKINGS_PATH, API_RIDER_PATH } from '@/src/_api/constants';
 import { getResponse } from '../../helpers';
 import { IGetRankingsResponse } from '../../types';
-import { GetRankingsResponse } from './get-rankings-response-type';
+import { GetRankingsResponse } from './fetch-rankings-response-type';
 
 export const getRankingsResultsRequestUrl = (year: number, limit?: number) => {
   const baseUrl = `${API_BASE_URL}/${API_RIDER_PATH}/${API_RANKINGS_PATH}?year=${year}`;
@@ -15,7 +15,7 @@ type GetRankingsParams = {
   limit?: number;
 };
 
-export const getRankings = async ({
+export const fetchRankings = async ({
   year,
   limit,
 }: GetRankingsParams): Promise<IGetRankingsResponse> => {
@@ -26,5 +26,10 @@ export const getRankings = async ({
       return { rankings: parsedResponse };
     }
   );
+
+  if ('error' in result) {
+    return { ...result, rankings: null };
+  }
+
   return result;
 };

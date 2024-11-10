@@ -1,4 +1,4 @@
-import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
+import { GetRiderResponse } from '@/src/_api/get/riders/fetch-riders-response-type';
 
 export const TEAM_B2C2_CONTES = "B2C2 Cycling p/b Conte's Bike Shop";
 export const TEAM_B2C2_JRA = 'B2C2 Cycling p/b JRA';

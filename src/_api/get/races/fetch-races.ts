@@ -1,7 +1,7 @@
 import { API_BASE_URL, API_RACES_PATH } from '@/src/_api/constants';
 import { getResponse } from '../../helpers';
 import { IGetRacesResponse } from '../../types';
-import { GetRacesResponse } from './get-races-response-type';
+import { GetRacesResponse } from './fetch-races-response-type';
 
 export interface GetRacesFilters {
   name?: string;

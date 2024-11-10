@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
 
-import { getRiderHistoryRequestUrl } from '@/src/_api/get/history/get-history';
-import { getSingleRiderRequestUrl } from '@/src/_api/get/riders/get-rider';
+import { getRiderHistoryRequestUrl } from '@/src/_api/get/history/fetch-history';
+import { getSingleRiderRequestUrl } from '@/src/_api/get/riders/fetch-rider';
 import { getRidersByTeamRequestUrl } from '@/src/_api/get/riders/get-riders-by-team';
 import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider';
 import { HISTORY_TEST_ID } from '@/src/_components/Rider/History';

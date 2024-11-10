@@ -1,7 +1,7 @@
 'use client';
 
 import { Anchor, Container, Divider, Flex, Image, Text } from '@mantine/core';
-import { GetRiderResponse } from '@/src/_api/get/riders/get-riders-response-type';
+import { GetRiderResponse } from '@/src/_api/get/riders/fetch-riders-response-type';
 import { APP_BASE_URL, APP_RIDER_PATH } from '@/src/global-constants';
 import { useRider } from '../../../_contexts/Rider/RiderContext';
 import InfoBlock from '../../ui/InfoBlock';

@@ -1,7 +1,7 @@
 import { Center, Container, SimpleGrid, Stack } from '@mantine/core';
 import dayjs from 'dayjs';
-import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
-import { GetRankingsResponse } from '@/src/_api/get/rankings/get-rankings-response-type';
+import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
+import { GetRankingsResponse } from '@/src/_api/get/rankings/fetch-rankings-response-type';
 import RecentRaces from '../Race/RecentRaces';
 import ResultsReport from '../Race/Results/ResultsReport';
 import PageLayout from '../shared/PageLayout';

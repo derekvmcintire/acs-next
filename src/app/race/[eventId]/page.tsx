@@ -1,7 +1,7 @@
 import { Container } from '@mantine/core';
-import { fetchRaces } from '@/src/_api/get/races/get-races';
-import { getRaceResults } from '@/src/_api/get/results/get-race-results';
-import { getSingleRider } from '@/src/_api/get/riders/get-rider';
+import { fetchRaces } from '@/src/_api/get/races/fetch-races';
+import { fetchRaceResults } from '@/src/_api/get/results/fetch-race-results';
+import { fetchSingleRider } from '@/src/_api/get/riders/fetch-rider';
 import { IGetRaceResultsResponse, IGetSingleRiderResponse } from '@/src/_api/types';
 import Race from '@/src/_components/Race';
 import NetworkError from '@/src/_components/ui/NetworkError';
@@ -33,7 +33,7 @@ export default async function RacePage({ params }: RacePageProps) {
     throw new Error('Failed to Get Race Info');
   }
 
-  const raceResults: IGetRaceResultsResponse = await getRaceResults(race.id);
+  const raceResults: IGetRaceResultsResponse = await fetchRaceResults(race.id);
   raceResults?.error && errors.push(raceResults.error);
   const results = raceResults?.results || [];
   const sortedResults = sortByPlace(results);
@@ -43,7 +43,7 @@ export default async function RacePage({ params }: RacePageProps) {
   let winner;
 
   if (winnerRiderId) {
-    const winnerResponse: IGetSingleRiderResponse = await getSingleRider(winnerRiderId);
+    const winnerResponse: IGetSingleRiderResponse = await fetchSingleRider(winnerRiderId);
     winnerResponse?.error && errors.push(winnerResponse.error);
     winner = winnerResponse?.riderInfo || undefined;
   }
