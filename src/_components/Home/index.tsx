@@ -1,4 +1,4 @@
-import { Center, Container, Flex, Stack } from '@mantine/core';
+import { Center, Container, SimpleGrid, Stack } from '@mantine/core';
 import dayjs from 'dayjs';
 import { GetRacesResponse } from '@/src/_api/get/races/get-races-response-type';
 import { GetRankingsResponse } from '@/src/_api/get/rankings/get-rankings-response-type';
@@ -22,10 +22,10 @@ export default function ACSHome({ recentRaces = [], rankings }: ACSHomeProps) {
   return (
     <Center data-testid={HOME_TEST_ID} className={classes.acsHome}>
       <PageLayout>
-        <Flex justify="space-between">
+        <SimpleGrid cols={{ base: 1, sm: 2 }}>
           <Stack className={classes.stackLeft}>
-            <Container>
-              <SectionLabel slim text={`${currentYear} ACS Rankings Top Five`} />
+            <Container w="100%">
+              <SectionLabel text={`${currentYear} ACS Rankings Top Five`} />
               {rankings.length > 0 && <RankPreview rankings={rankings} year={currentYear} />}
             </Container>
           </Stack>
@@ -33,7 +33,7 @@ export default function ACSHome({ recentRaces = [], rankings }: ACSHomeProps) {
             <ResultsReport />
             {recentRaces.length > 0 && <RecentRaces races={recentRaces} />}
           </Stack>
-        </Flex>
+        </SimpleGrid>
       </PageLayout>
     </Center>
   );

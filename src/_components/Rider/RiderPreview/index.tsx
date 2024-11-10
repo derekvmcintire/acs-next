@@ -14,8 +14,9 @@ interface RiderPreviewProps {
 }
 export default function RiderPreview({ rider, mini = false, label }: RiderPreviewProps) {
   if (!rider) {
-    return <></>;
+    return null;
   }
+
   return (
     <Flex
       mb={8}

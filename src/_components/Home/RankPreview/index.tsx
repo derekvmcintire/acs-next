@@ -1,6 +1,6 @@
 'use client';
 
-import { Flex } from '@mantine/core';
+import { Flex, Skeleton, Stack } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { GetRankingsResponse } from '@/src/_api/get/rankings/get-rankings-response-type';
 import { getSingleRider } from '@/src/_api/get/riders/get-rider';
@@ -20,6 +20,7 @@ interface RankWithRider extends GetRankingsResponse {
 export default function RankPreview({ rankings }: RankPreviewProps) {
   const [ranksWithRiders, setRanksWithRiders] = useState<RankWithRider[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchRiderData = async () => {
@@ -43,6 +44,8 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
         setRanksWithRiders(results);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unknown error');
+      } finally {
+        setIsLoading(false); // Data is done loading, hide skeletons
       }
     };
 
@@ -53,15 +56,27 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
     <div>
       {error && <div>{error}</div>}
 
-      {ranksWithRiders.map((rank, i) => (
-        <Flex key={rank.riderId} mt={16} className={classes.rankPreview}>
-          <RiderPreview
-            mini
-            rider={rank.rider}
-            label={`#${i + 1} Ranked Rider: ${rank.totalPoints} Points`}
-          />
-        </Flex>
-      ))}
+      {isLoading ? (
+        // Render skeletons while loading
+        <Stack pt={16} mb={24} w="100%">
+          {rankings.map((_, i) => (
+            <Flex key={i} className={classes.rankPreview}>
+              <Skeleton height={130} width="100%" radius="xs" />
+            </Flex>
+          ))}
+        </Stack>
+      ) : (
+        // Render actual data when loading is complete
+        ranksWithRiders.map((rank, i) => (
+          <Flex w="100%" key={rank.riderId} mt={16} className={classes.rankPreview}>
+            <RiderPreview
+              mini
+              rider={rank.rider}
+              label={`#${i + 1} Ranked Rider: ${rank.totalPoints} Points`}
+            />
+          </Flex>
+        ))
+      )}
     </div>
   );
 }

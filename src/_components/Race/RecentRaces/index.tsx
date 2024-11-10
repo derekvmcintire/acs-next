@@ -17,6 +17,7 @@ interface ResultPreviewListProps {
 export default function ResultPreviewList({ races }: ResultPreviewListProps) {
   const [raceResults, setRaceResults] = React.useState<ResultsList[]>([]);
   const [errors, setErrors] = React.useState<string[]>([]);
+  const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     const fetchTopResults = async () => {
@@ -53,7 +54,9 @@ export default function ResultPreviewList({ races }: ResultPreviewListProps) {
             errorMessages.push(`Unknown Error for race ${race.id}: ${String(error)}`);
           }
         })
-      );
+      ).finally(async () => {
+        setIsLoading(false);
+      });
 
       setRaceResults(fetchedResults);
       setErrors(errorMessages); // Set any accumulated error messages in state
@@ -74,7 +77,7 @@ export default function ResultPreviewList({ races }: ResultPreviewListProps) {
         </div>
       )}
       <SectionLabel text="Recent Results" />
-      <ResultsPreviewList results={raceResults} />
+      <ResultsPreviewList results={raceResults} isLoading={isLoading} />
     </Container>
   );
 }

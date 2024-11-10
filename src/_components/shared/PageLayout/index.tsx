@@ -1,6 +1,6 @@
 'use client';
 
-import { Container } from '@mantine/core';
+import { Stack } from '@mantine/core';
 import React from 'react';
 import { ColorSchemeToggle } from '../ColorSchemeToggle';
 import TopNav from '../TopNav';
@@ -11,10 +11,10 @@ interface PageLayoutProps {
 }
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <Container className={classes.pageLayout}>
+    <Stack className={classes.pageLayout}>
       <TopNav />
       {children}
       <ColorSchemeToggle />
-    </Container>
+    </Stack>
   );
 }
