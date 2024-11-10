@@ -45,7 +45,7 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unknown error');
       } finally {
-        setIsLoading(false); // Data is done loading, hide skeletons
+        setIsLoading(false);
       }
     };
 
@@ -57,16 +57,14 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
       {error && <div>{error}</div>}
 
       {isLoading ? (
-        // Render skeletons while loading
         <Stack pt={16} mb={24} w="100%">
           {rankings.map((_, i) => (
             <Flex key={i} className={classes.rankPreview}>
-              <Skeleton height={130} width="100%" radius="xs" />
+              <Skeleton h={130} w="100%" radius="xs" />
             </Flex>
           ))}
         </Stack>
       ) : (
-        // Render actual data when loading is complete
         ranksWithRiders.map((rank, i) => (
           <Flex w="100%" key={rank.riderId} mt={16} className={classes.rankPreview}>
             <RiderPreview
