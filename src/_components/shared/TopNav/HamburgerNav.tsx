@@ -1,6 +1,6 @@
 'use client';
 
-import { Burger, Popover, ScrollArea, Stack } from '@mantine/core';
+import { Burger, Popover, ScrollArea } from '@mantine/core';
 import React, { useState } from 'react';
 import NavLinks from './NavLinks';
 
@@ -14,9 +14,7 @@ export default function HamburgerNav() {
         </Popover.Target>
         <Popover.Dropdown>
           <ScrollArea w={200} scrollbars="y">
-            <Stack>
-              <NavLinks orientation="vertical" />
-            </Stack>
+            <NavLinks isVertical />
           </ScrollArea>
         </Popover.Dropdown>
       </Popover>

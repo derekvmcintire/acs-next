@@ -16,13 +16,7 @@ export default function TopNav() {
   return (
     <div data-testid={TOP_NAV_TEST_ID} className={classes.topNavContainer}>
       <Flex justify="space-between" align="center" pt={10}>
-        {isMobile ? (
-          <HamburgerNav />
-        ) : (
-          <Flex mr={20}>
-            <NavLinks orientation="horizontal" />
-          </Flex>
-        )}
+        {isMobile ? <HamburgerNav /> : <NavLinks />}
         <Group>
           <Search />
           <Title className={classes.title} ta="right">

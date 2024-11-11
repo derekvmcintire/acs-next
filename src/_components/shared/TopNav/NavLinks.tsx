@@ -1,11 +1,11 @@
 'use client';
 
-import { Anchor, Button, Divider } from '@mantine/core';
+import { Anchor, Button, Divider, Flex, Stack } from '@mantine/core';
 import React from 'react';
 import classes from './top-nav.module.css';
 
 interface NavLinksProps {
-  orientation: 'horizontal' | 'vertical';
+  isVertical?: boolean;
 }
 
 const getNavButton = (text: string) => {
@@ -23,9 +23,9 @@ const getNavButton = (text: string) => {
   );
 };
 
-export default function NavLinks({ orientation }: NavLinksProps) {
+const getNavLinks = ({ isVertical = false }: NavLinksProps) => {
   // Divider orientation is opposite of nav
-  const dividerOrientation = orientation === 'vertical' ? 'horizontal' : 'vertical';
+  const dividerOrientation = isVertical ? 'horizontal' : 'vertical';
   return (
     <>
       <Anchor underline="never" className={classes.topNavAnchor} href="/">
@@ -44,5 +44,13 @@ export default function NavLinks({ orientation }: NavLinksProps) {
         {getNavButton('Results')}
       </Anchor>
     </>
+  );
+};
+
+export default function NavLinks({ isVertical = false }: NavLinksProps) {
+  return isVertical ? (
+    <Stack>{getNavLinks({ isVertical })}</Stack>
+  ) : (
+    <Flex mr={20}>{getNavLinks({ isVertical })}</Flex>
   );
 }
