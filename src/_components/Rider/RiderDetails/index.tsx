@@ -1,7 +1,7 @@
 'use client';
 
-import { Anchor, Container, Text } from '@mantine/core';
 import React from 'react';
+import { Anchor, Container, Text } from '@mantine/core';
 import { FaStrava } from 'react-icons/fa';
 import { GetRiderResponse } from '@/src/_api/get/riders/fetch-riders-response-type';
 import InfoBlock from '@/src/_components/ui/InfoBlock';

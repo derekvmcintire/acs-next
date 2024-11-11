@@ -1,7 +1,7 @@
 'use client';
 
-import { Burger, Popover, ScrollArea } from '@mantine/core';
 import React, { useState } from 'react';
+import { Burger, Popover, ScrollArea } from '@mantine/core';
 import NavLinks from './NavLinks';
 
 export default function HamburgerNav() {

@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
-
 import { getRiderHistoryRequestUrl } from '@/src/_api/get/history/fetch-history';
 import { getRiderRequestUrl, getSingleRiderRequestUrl } from '@/src/_api/get/riders/fetch-rider';
 import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider';

@@ -1,5 +1,5 @@
-import { Center } from '@mantine/core';
 import React from 'react';
+import { Center } from '@mantine/core';
 import { fetchCategories } from '@/src/_api/get/categories/fetch-categories';
 import PageLayout from '@/src/_components/shared/PageLayout';
 import UploadForm from '@/src/_components/Uploader/UploadForm';
@@ -22,13 +22,13 @@ async function RaceUpload() {
   };
 
   return (
-    <PageLayout>
-      <Center>
+    <Center>
+      <PageLayout>
         <UploaderContextProvider initialValue={uploaderContextValue}>
           <UploadForm />
         </UploaderContextProvider>
-      </Center>
-    </PageLayout>
+      </PageLayout>
+    </Center>
   );
 }
 

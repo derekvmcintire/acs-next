@@ -1,7 +1,7 @@
 'use client';
 
-import { Autocomplete } from '@mantine/core';
 import React from 'react';
+import { Autocomplete } from '@mantine/core';
 import { GoSearch } from 'react-icons/go';
 import classes from './search-autocomplete.module.css';
 

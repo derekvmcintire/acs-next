@@ -1,8 +1,8 @@
 'use client';
 
+import React from 'react';
 import { Anchor, Container, Spoiler, Text } from '@mantine/core';
 import dayjs from 'dayjs';
-import React from 'react';
 import LabeledText from '@/src/_components/ui/LabeledText';
 import { RiderResult } from '@/src/_types/extended-types';
 import { APP_RACE_PATH } from '@/src/global-constants';

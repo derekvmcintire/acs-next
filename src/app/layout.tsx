@@ -1,7 +1,6 @@
 import '@mantine/core/styles.css';
-
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import React from 'react';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { WebVitals } from '../_metrics/web-vitals';
 import { theme } from '../../theme';
 

@@ -1,7 +1,7 @@
 'use client';
 
-import { Container, Text } from '@mantine/core';
 import React from 'react';
+import { Container, Text } from '@mantine/core';
 import InfoBlock from '@/src/_components/ui/InfoBlock';
 import LabeledText from '@/src/_components/ui/LabeledText';
 

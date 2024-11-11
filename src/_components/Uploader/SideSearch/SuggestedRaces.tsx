@@ -1,8 +1,8 @@
 'use client';
 
+import React from 'react';
 import { Button, Container, ScrollArea, Text } from '@mantine/core';
 import dayjs from 'dayjs';
-import React from 'react';
 import { fetchRaces } from '@/src/_api/get/races/fetch-races';
 import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';

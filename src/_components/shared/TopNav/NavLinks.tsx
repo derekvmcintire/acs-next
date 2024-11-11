@@ -1,7 +1,7 @@
 'use client';
 
-import { Anchor, Button, Divider, Flex, Stack } from '@mantine/core';
 import React from 'react';
+import { Anchor, Button, Divider, Flex, Stack } from '@mantine/core';
 import classes from './top-nav.module.css';
 
 interface NavLinksProps {

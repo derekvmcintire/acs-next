@@ -1,7 +1,7 @@
 'use client';
 
-import { Skeleton } from '@mantine/core';
 import React from 'react';
+import { Skeleton } from '@mantine/core';
 import { RiderResult } from '@/src/_types/extended-types';
 import { MAX_RACES_TO_PREVIEW } from '@/src/global-constants';
 import ResultPreview from '../Results/ResultPreview';

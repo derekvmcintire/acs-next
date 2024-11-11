@@ -1,7 +1,7 @@
 'use client';
 
-import { Container, Text } from '@mantine/core';
 import React from 'react';
+import { Container, Text } from '@mantine/core';
 import SectionLabel from '@/src/_components/ui/SectionLabel';
 
 export default function WinnerRecentResults() {

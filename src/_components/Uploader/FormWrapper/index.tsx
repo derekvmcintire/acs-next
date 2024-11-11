@@ -1,12 +1,10 @@
 'use client';
 
-import { Center, Container, Flex } from '@mantine/core';
 import React, { PropsWithChildren } from 'react';
+import { Center, Container, Flex } from '@mantine/core';
 import Loader from '@/src/app/loading';
 import classes from './form-wrapper.module.css';
-
 import '@mantine/dates/styles.css';
-
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 
 export default function FormWrapper({ children }: PropsWithChildren) {

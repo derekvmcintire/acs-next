@@ -1,7 +1,7 @@
 'use client';
 
-import { Flex, Grid } from '@mantine/core';
 import React from 'react';
+import { Flex, Grid } from '@mantine/core';
 import { useRider } from '@/src/_contexts/Rider/RiderContext';
 import RiderPreview from '../RiderPreview';
 import RiderTeams from '../RiderTeams';
