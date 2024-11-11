@@ -17,6 +17,31 @@ interface RankWithRider extends GetRankingsResponse {
   rider?: GetRiderResponse;
 }
 
+const getSkeleton = (rankings: GetRankingsResponse[]) => {
+  return rankings.map((_, i) => (
+    <Stack key={i} className={classes.rankPreview}>
+      <Skeleton h="100%" w="100%" radius="xs" />
+      <Divider />
+    </Stack>
+  ));
+};
+
+const getRiderPreviews = (ranksWithRiders: RankWithRider[]) => {
+  return ranksWithRiders.map((rank, i) => {
+    const riderRank = i + 1; // riders are sorted by rank, so adding one to account for zero indexing
+    return (
+      <Stack key={rank.riderId} className={classes.rankPreview}>
+        <RiderPreview
+          mini
+          rider={rank.rider}
+          label={`#${riderRank} Ranked Rider: ${rank.totalPoints} Points`}
+        />
+        <Divider />
+      </Stack>
+    );
+  });
+};
+
 export default function RankPreview({ rankings }: RankPreviewProps) {
   const [ranksWithRiders, setRanksWithRiders] = useState<RankWithRider[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -55,24 +80,7 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
   return (
     <div>
       {error && <div>{error}</div>}
-
-      {isLoading
-        ? rankings.map((_, i) => (
-            <Stack key={i} w="100%" className={classes.rankPreview}>
-              <Skeleton h="100%" w="100%" radius="xs" />
-              <Divider />
-            </Stack>
-          ))
-        : ranksWithRiders.map((rank, i) => (
-            <Stack key={rank.riderId} className={classes.rankPreview}>
-              <RiderPreview
-                mini
-                rider={rank.rider}
-                label={`#${i + 1} Ranked Rider: ${rank.totalPoints} Points`}
-              />
-              <Divider />
-            </Stack>
-          ))}
+      {isLoading ? getSkeleton(rankings) : getRiderPreviews(ranksWithRiders)}
     </div>
   );
 }
