@@ -19,7 +19,7 @@ const RECENT_RACES_ERROR_TEST_ID = 'recent-races-error';
 
 const icon = <IconInfoCircle />;
 
-export default function ResultPreviewList({ races }: ResultPreviewListProps) {
+export default function RecentRaces({ races }: ResultPreviewListProps) {
   const [raceResults, setRaceResults] = React.useState<ResultsList[]>([]);
   const [error, setError] = React.useState<string>('');
 
