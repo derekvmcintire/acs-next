@@ -7,6 +7,7 @@
 
 .topNavAnchor {
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  width: 100%;
 }
 
 .topNavContainer {
