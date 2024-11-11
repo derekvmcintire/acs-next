@@ -3,6 +3,7 @@
 import React from 'react';
 import { Stack } from '@mantine/core';
 import { ColorSchemeToggle } from '../ColorSchemeToggle';
+import ReactQueryProvider from '../ReactQueryProvider';
 import TopNav from '../TopNav';
 import classes from './page-layout.module.css';
 
@@ -13,7 +14,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
   return (
     <Stack className={classes.pageLayout}>
       <TopNav />
-      {children}
+      <ReactQueryProvider>{children}</ReactQueryProvider>
       <ColorSchemeToggle />
     </Stack>
   );
