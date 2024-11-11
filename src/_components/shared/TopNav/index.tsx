@@ -1,33 +1,22 @@
 'use client';
 
-import { Anchor, Divider, Flex, Group, Text, Title } from '@mantine/core';
+import { Flex, Group, Text, Title } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import { ACS_COLOR_BLUE, ACS_COLOR_ORANGE } from '@/src/global-constants';
+import HamburgerNav from './HamburgerNav';
+import NavLinks from './NavLinks';
 import Search from './Search';
 import classes from './top-nav.module.css';
 
 export const TOP_NAV_TEST_ID = 'top-nav';
 
 export default function TopNav() {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   return (
     <div data-testid={TOP_NAV_TEST_ID} className={classes.topNavContainer}>
-      <Flex justify="flex-end" align="center" pt={10}>
-        <Group mr={20}>
-          <Anchor className={classes.topNavAnchor} href="/">
-            Home
-          </Anchor>
-          <Divider orientation="vertical" />
-          <Anchor className={classes.topNavAnchor} href="/results/upload">
-            Upload
-          </Anchor>
-          <Divider size="sm" orientation="vertical" />
-          <Anchor className={classes.topNavAnchor} href="/rider/1">
-            Riders
-          </Anchor>
-          <Divider size="sm" orientation="vertical" />
-          <Anchor className={classes.topNavAnchor} href="/race/1">
-            Results
-          </Anchor>
-        </Group>
+      <Flex justify="space-between" align="center" pt={10}>
+        {isMobile ? <HamburgerNav /> : <NavLinks />}
         <Group>
           <Search />
           <Title className={classes.title} ta="right">
