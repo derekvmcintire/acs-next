@@ -1,6 +1,7 @@
 import '@mantine/core/styles.css';
 import React from 'react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WebVitals } from '../_metrics/web-vitals';
 import { theme } from '../../theme';
 
@@ -8,6 +9,8 @@ export const metadata = {
   title: 'ACS',
   description: 'Welcome to Amature Cycling Stats!',
 };
+
+const queryClient = new QueryClient();
 
 export default function RootLayout({ children }: { children: any }) {
   return (
@@ -23,7 +26,9 @@ export default function RootLayout({ children }: { children: any }) {
       <body>
         <>
           <WebVitals />
-          <MantineProvider theme={theme}>{children}</MantineProvider>
+          <QueryClientProvider client={queryClient}>
+            <MantineProvider theme={theme}>{children}</MantineProvider>
+          </QueryClientProvider>
         </>
       </body>
     </html>
