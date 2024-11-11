@@ -65,7 +65,9 @@ export default function RecentRaces({ races }: ResultPreviewListProps) {
       });
 
       setRaceResults(fetchedResults);
-      setError(`Error fetching race results for id(s): ${errorIds.join(', ')}`);
+      if (errorIds.length > 0) {
+        setError(`Error fetching race results for id(s): ${errorIds.join(', ')}`);
+      }
     };
 
     fetchTopResults();
