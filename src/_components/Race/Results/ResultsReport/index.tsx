@@ -1,7 +1,7 @@
 'use client';
 
-import dayjs from 'dayjs';
 import React from 'react';
+import dayjs from 'dayjs';
 import { fetchRaces, GetRacesFilters } from '@/src/_api/get/races/fetch-races';
 import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { IGetRacesResponse } from '@/src/_api/types';

@@ -1,5 +1,5 @@
-import { Image } from '@mantine/core';
 import React from 'react';
+import { Image } from '@mantine/core';
 import classes from './_styles/page.module.css';
 
 export default function Loader() {

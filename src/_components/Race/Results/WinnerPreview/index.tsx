@@ -1,7 +1,7 @@
 'use client';
 
-import { Container, Flex, Image } from '@mantine/core';
 import React from 'react';
+import { Container, Flex, Image } from '@mantine/core';
 import { PLACEHOLDER_IMG } from '@/src/_components/Rider/ProfileImage';
 import InfoBlock from '@/src/_components/ui/InfoBlock';
 import { useRaceContext } from '@/src/_contexts/Race/RaceContext';

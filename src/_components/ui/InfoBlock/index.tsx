@@ -1,7 +1,7 @@
 'use client';
 
-import { Flex, Text } from '@mantine/core';
 import { PropsWithChildren } from 'react';
+import { Flex, Text } from '@mantine/core';
 import classes from '../styles/info-block.module.css';
 
 interface InfoBlockProps extends PropsWithChildren {

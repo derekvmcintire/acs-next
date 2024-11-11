@@ -1,7 +1,7 @@
 'use client';
 
-import { Container, Divider } from '@mantine/core';
 import React from 'react';
+import { Container, Divider } from '@mantine/core';
 import RaceInstructions from './RaceInstructions';
 import ResultInstructions from './ResultInstructions';
 

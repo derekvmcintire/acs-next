@@ -1,7 +1,7 @@
 'use client';
 
-import { Container } from '@mantine/core';
 import React from 'react';
+import { Container } from '@mantine/core';
 import { fetchRaces } from '@/src/_api/get/races/fetch-races';
 import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';

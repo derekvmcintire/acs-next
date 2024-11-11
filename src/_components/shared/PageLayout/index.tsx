@@ -1,7 +1,7 @@
 'use client';
 
-import { Stack } from '@mantine/core';
 import React from 'react';
+import { Stack } from '@mantine/core';
 import { ColorSchemeToggle } from '../ColorSchemeToggle';
 import TopNav from '../TopNav';
 import classes from './page-layout.module.css';

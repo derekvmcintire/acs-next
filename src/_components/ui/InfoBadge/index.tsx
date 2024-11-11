@@ -1,7 +1,7 @@
 'use client';
 
-import { Badge } from '@mantine/core';
 import React, { PropsWithChildren } from 'react';
+import { Badge } from '@mantine/core';
 import { ACS_COLOR_BLUE } from '@/src/global-constants';
 
 export default function InfoBadge({ children }: PropsWithChildren) {

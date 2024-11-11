@@ -1,7 +1,7 @@
 'use client';
 
-import { Anchor, Container, Table, Text } from '@mantine/core';
 import React from 'react';
+import { Anchor, Container, Table, Text } from '@mantine/core';
 import { RIDER_URL } from '@/src/_components/Rider/PrevAndNextRider';
 import { useRaceContext } from '@/src/_contexts/Race/RaceContext';
 

@@ -1,7 +1,7 @@
 'use client';
 
-import { Alert } from '@mantine/core';
 import React from 'react';
+import { Alert } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 
 interface NetworkErrorProps {

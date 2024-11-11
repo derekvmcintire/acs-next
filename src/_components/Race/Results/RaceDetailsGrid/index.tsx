@@ -1,7 +1,7 @@
 'use client';
 
-import { Container, Flex, Stack } from '@mantine/core';
 import React from 'react';
+import { Container, Flex, Stack } from '@mantine/core';
 import { useRaceContext } from '@/src/_contexts/Race/RaceContext';
 import CourseMap from '../CourseMap';
 import RaceStats from '../RaceStats';

@@ -1,7 +1,7 @@
 'use client';
 
-import { Flex } from '@mantine/core';
 import React from 'react';
+import { Flex } from '@mantine/core';
 import { GetRiderResponse } from '@/src/_api/get/riders/fetch-riders-response-type';
 import ProfileImage from '../ProfileImage';
 import RiderDetails from '../RiderDetails';

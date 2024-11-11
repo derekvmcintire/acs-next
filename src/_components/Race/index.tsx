@@ -1,7 +1,7 @@
 'use client';
 
-import { Center } from '@mantine/core';
 import React from 'react';
+import { Center } from '@mantine/core';
 import { GetRaceResultsResponse } from '@/src/_api/get/results/fetch-race-results-response-type';
 import { GetRiderResponse } from '@/src/_api/get/riders/fetch-riders-response-type';
 import { RaceProvider } from '@/src/_contexts/Race/RaceContext';

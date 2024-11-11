@@ -1,7 +1,7 @@
 'use client';
 
-import { ColorSwatch, Flex, Stack, Text } from '@mantine/core';
 import React from 'react';
+import { ColorSwatch, Flex, Stack, Text } from '@mantine/core';
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { MonthlyRaceData } from './results-report-types';
 import classes from '../../styles/race-results.module.css';

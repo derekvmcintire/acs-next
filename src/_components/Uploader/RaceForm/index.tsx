@@ -1,15 +1,14 @@
-import { Button, Flex, Select, TextInput } from '@mantine/core';
-import { DateInput } from '@mantine/dates';
 import React from 'react';
+import { Alert, Button, Container, Flex, Select, TextInput } from '@mantine/core';
+import { DateInput } from '@mantine/dates';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { GrCircleAlert } from 'react-icons/gr';
 import Instructions from '@/src/_components/Uploader/Instructions';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';
 import { createRaceBeforeResults } from '@/src/_processers/results';
-import classes from './race-form.module.css';
-
 import '@mantine/dates/styles.css';
-
 import FormWrapper from '../FormWrapper';
+import classes from './race-form.module.css';
 
 export interface RaceFormData {
   name: string;
@@ -25,6 +24,23 @@ const DEFAULT_FORM_VALUES: RaceFormData = {
   startDate: undefined,
   endDate: undefined,
   location: '',
+};
+
+const icon = <GrCircleAlert />;
+
+const getErrors = (errors: string[]) => {
+  return errors.map((error, index) => (
+    <Alert
+      key={`error-${index}`}
+      mb={16}
+      variant="outline"
+      color="red"
+      title="Form Error"
+      icon={icon}
+    >
+      {error}
+    </Alert>
+  ));
 };
 
 function RaceForm() {
@@ -162,6 +178,7 @@ function RaceForm() {
           </Button>
         </Flex>
       </form>
+      <Container mt={16}>{errors && getErrors(errors)}</Container>
     </FormWrapper>
   );
 }

@@ -1,7 +1,8 @@
 'use client';
 
-import { Container } from '@mantine/core';
 import React from 'react';
+import { Alert, Container } from '@mantine/core';
+import { IconInfoCircle } from '@tabler/icons-react';
 import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { fetchRaceResults } from '@/src/_api/get/results/fetch-race-results';
 import { GetRaceResultsResponse } from '@/src/_api/get/results/fetch-race-results-response-type';
@@ -14,16 +15,21 @@ interface ResultPreviewListProps {
   races: GetRacesResponse[];
 }
 
+const RECENT_RACES_ERROR_TEST_ID = 'recent-races-error';
+
+const icon = <IconInfoCircle />;
+
 export default function ResultPreviewList({ races }: ResultPreviewListProps) {
   const [raceResults, setRaceResults] = React.useState<ResultsList[]>([]);
-  const [errors, setErrors] = React.useState<string[]>([]);
+  const [error, setError] = React.useState<string>('');
+
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     const fetchTopResults = async () => {
       const NUMBER_OF_RESULTS = 10;
       const fetchedResults: RiderResult[][] = [];
-      const errorMessages: string[] = [];
+      const errorIds: number[] = [];
 
       await Promise.all(
         races.map(async (race) => {
@@ -31,7 +37,7 @@ export default function ResultPreviewList({ races }: ResultPreviewListProps) {
             const response = await fetchRaceResults(race.id);
 
             if (response?.error) {
-              errorMessages.push(`Error getting results for race with id: ${race.id}`);
+              errorIds.push(race.id);
               return; // Skip to the next race if there’s an error
             }
 
@@ -50,8 +56,8 @@ export default function ResultPreviewList({ races }: ResultPreviewListProps) {
                 rider: result.rider,
               }))
             );
-          } catch (error) {
-            errorMessages.push(`Unknown Error for race ${race.id}: ${String(error)}`);
+          } catch {
+            errorIds.push(race.id);
           }
         })
       ).finally(async () => {
@@ -59,7 +65,7 @@ export default function ResultPreviewList({ races }: ResultPreviewListProps) {
       });
 
       setRaceResults(fetchedResults);
-      setErrors(errorMessages); // Set any accumulated error messages in state
+      setError(`Error fetching race results for id(s): ${errorIds.join(', ')}`);
     };
 
     fetchTopResults();
@@ -67,16 +73,14 @@ export default function ResultPreviewList({ races }: ResultPreviewListProps) {
 
   return (
     <Container className={classes.resultsPreviewContainer}>
-      {errors.length > 0 && (
-        <div data-testid="error-messages">
-          {errors.map((error, index) => (
-            <div key={`error-${index}`} style={{ color: 'red' }}>
-              {error}
-            </div>
-          ))}
+      <SectionLabel text="Recent Results" />
+      {error && (
+        <div data-testid={RECENT_RACES_ERROR_TEST_ID}>
+          <Alert mb={16} variant="outline" color="red" title="Error Getting Races" icon={icon}>
+            {error}
+          </Alert>
         </div>
       )}
-      <SectionLabel text="Recent Results" />
       <ResultsPreviewList results={raceResults} isLoading={isLoading} />
     </Container>
   );

@@ -1,12 +1,15 @@
 'use client';
 
-import { Divider, Skeleton, Stack } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
+import { Alert, Divider, Skeleton, Stack } from '@mantine/core';
+import { IconInfoCircle } from '@tabler/icons-react';
 import { GetRankingsResponse } from '@/src/_api/get/rankings/fetch-rankings-response-type';
 import { fetchSingleRider } from '@/src/_api/get/riders/fetch-rider';
 import { GetRiderResponse } from '@/src/_api/get/riders/fetch-riders-response-type';
 import RiderPreview from '../../Rider/RiderPreview';
 import classes from '../styles/home.module.css';
+
+const icon = <IconInfoCircle />;
 
 interface RankPreviewProps {
   rankings: GetRankingsResponse[];
@@ -67,8 +70,8 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
           })
         );
         setRanksWithRiders(results);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'Unknown error');
+      } catch (fetchError) {
+        setError(fetchError instanceof Error ? fetchError.message : 'Unknown error');
       } finally {
         setIsLoading(false);
       }
@@ -79,7 +82,11 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
 
   return (
     <div>
-      {error && <div>{error}</div>}
+      {error && (
+        <Alert mb={16} variant="outline" color="red" title="Error Getting Rankings" icon={icon}>
+          {error}
+        </Alert>
+      )}
       {isLoading ? getSkeleton(rankings) : getRiderPreviews(ranksWithRiders)}
     </div>
   );

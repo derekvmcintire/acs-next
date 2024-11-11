@@ -1,5 +1,5 @@
-import { MantineProvider } from '@mantine/core';
 import React from 'react';
+import { MantineProvider } from '@mantine/core';
 import {
   NEXT_RIDER_ANCHOR_TEST_ID,
   NEXT_RIDER_BUTTON_TEXT,

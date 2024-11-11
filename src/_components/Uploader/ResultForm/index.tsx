@@ -1,7 +1,7 @@
 'use client';
 
-import { Button, Flex, MultiSelect, Text, Textarea } from '@mantine/core';
 import React from 'react';
+import { Button, Flex, MultiSelect, Text, Textarea } from '@mantine/core';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { GetCategoriesResponse } from '@/src/_api/get/categories/fetch-categories-response-type';
 import { useUploaderContext } from '@/src/_contexts/Uploader/UploaderContext';

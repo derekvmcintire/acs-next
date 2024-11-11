@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
-
 import Rider from '.';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
 import { mockRider, mockTeamMembers } from '../../_db/mock-data/mock-racer';
