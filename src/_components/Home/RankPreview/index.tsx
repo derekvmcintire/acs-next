@@ -1,6 +1,6 @@
 'use client';
 
-import { Divider, Flex, Skeleton, Stack } from '@mantine/core';
+import { Divider, Skeleton, Stack } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { GetRankingsResponse } from '@/src/_api/get/rankings/fetch-rankings-response-type';
 import { fetchSingleRider } from '@/src/_api/get/riders/fetch-rider';
@@ -16,6 +16,31 @@ interface RankPreviewProps {
 interface RankWithRider extends GetRankingsResponse {
   rider?: GetRiderResponse;
 }
+
+const getSkeleton = (rankings: GetRankingsResponse[]) => {
+  return rankings.map((_, i) => (
+    <Stack key={i} className={classes.rankPreview}>
+      <Skeleton h="100%" w="100%" radius="xs" />
+      <Divider />
+    </Stack>
+  ));
+};
+
+const getRiderPreviews = (ranksWithRiders: RankWithRider[]) => {
+  return ranksWithRiders.map((rank, i) => {
+    const riderRank = i + 1; // riders are sorted by rank, so adding one to account for zero indexing
+    return (
+      <Stack key={rank.riderId} className={classes.rankPreview}>
+        <RiderPreview
+          mini
+          rider={rank.rider}
+          label={`#${riderRank} Ranked Rider: ${rank.totalPoints} Points`}
+        />
+        <Divider />
+      </Stack>
+    );
+  });
+};
 
 export default function RankPreview({ rankings }: RankPreviewProps) {
   const [ranksWithRiders, setRanksWithRiders] = useState<RankWithRider[]>([]);
@@ -55,27 +80,7 @@ export default function RankPreview({ rankings }: RankPreviewProps) {
   return (
     <div>
       {error && <div>{error}</div>}
-
-      {isLoading ? (
-        <Stack mb={24} w="100%">
-          {rankings.map((_, i) => (
-            <Flex key={i} className={classes.rankPreview}>
-              <Skeleton h={154} w="100%" radius="xs" />
-            </Flex>
-          ))}
-        </Stack>
-      ) : (
-        ranksWithRiders.map((rank, i) => (
-          <Stack w="100%" key={rank.riderId} className={classes.rankPreview}>
-            <RiderPreview
-              mini
-              rider={rank.rider}
-              label={`#${i + 1} Ranked Rider: ${rank.totalPoints} Points`}
-            />
-            <Divider />
-          </Stack>
-        ))
-      )}
+      {isLoading ? getSkeleton(rankings) : getRiderPreviews(ranksWithRiders)}
     </div>
   );
 }
