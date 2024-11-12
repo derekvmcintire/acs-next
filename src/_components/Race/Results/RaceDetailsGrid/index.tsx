@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Container, Flex, Stack } from '@mantine/core';
+import { Flex, SimpleGrid, Stack } from '@mantine/core';
 import { useRaceContext } from '@/src/_contexts/Race/RaceContext';
 import CourseMap from '../CourseMap';
 import RaceStats from '../RaceStats';
@@ -30,15 +30,15 @@ export default function RaceDetailsGrid() {
 
   return (
     <Flex justify="center" className={classes.winnerDetails}>
-      <Container className={classes.raceDetailsLeft}>
-        <Stack>
+      <SimpleGrid cols={{ base: 1, md: 2 }}>
+        <Stack className={classes.raceDetailsLeft}>
           <WinnerPreview />
           <RaceStats totalRacers={totalRacers} finishers={finishers} countries={countries} />
         </Stack>
-      </Container>
-      <Flex justify="center" align="center" className={classes.raceDetailsRight}>
-        <CourseMap />
-      </Flex>
+        <Stack className={classes.raceDetailsRight}>
+          <CourseMap />
+        </Stack>
+      </SimpleGrid>
     </Flex>
   );
 }

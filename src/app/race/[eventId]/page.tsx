@@ -1,4 +1,3 @@
-import { Container } from '@mantine/core';
 import { fetchRaces } from '@/src/_api/get/races/fetch-races';
 import { fetchRaceResults } from '@/src/_api/get/results/fetch-race-results';
 import { fetchSingleRider } from '@/src/_api/get/riders/fetch-rider';
@@ -49,10 +48,10 @@ export default async function RacePage({ params }: RacePageProps) {
   }
 
   return (
-    <Container>
+    <>
       <NetworkError errors={errors} />
       <Race race={race} results={sortedResults} winner={winner} />
-    </Container>
+    </>
   );
 }
 

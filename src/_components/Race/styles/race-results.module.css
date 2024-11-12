@@ -10,12 +10,11 @@
 }
 
 .raceDetailsLeft {
-  width: 40%;
-
+  width: 80%;
 }
 
 .raceDetailsRight {
-  width: 60%;
+  width: 100%;
 }
 
 .riderPhoto {
