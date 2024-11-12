@@ -32,9 +32,10 @@ export default function RaceSearch({ setError }: RaceSearchProps) {
     isError,
     error,
   } = useQuery({
-    queryKey: ['getRaces', debouncedSearchValue], // Query key with search term
+    queryKey: ['getRaces', debouncedSearchValue], // Query key ['uniquename', searchValue]
     queryFn: () => fetchRaces({ name: debouncedSearchValue }), // The query function
     enabled: debouncedSearchValue.length > 0, // Only run query if there's a search term
+    staleTime: 5 * 60 * 1000, // caches data from requests for 5 minutes
   });
 
   const hasAvailableRaces = searchResponse?.races && searchResponse.races.length > 0;
