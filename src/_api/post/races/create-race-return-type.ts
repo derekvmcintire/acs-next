@@ -1,15 +1,7 @@
-import { BaseEvent, PickType } from '@/src/_types/base-types';
+import { GetRacesResponse } from '../../get/races/fetch-races-response-type';
 
-export interface CreateRaceReturn {
-  id: number;
-  eventId: number;
-  raceTypeId: number;
-  startDate: string;
-  endDate: string | null;
-  location: string;
-  event: BaseEvent;
-  raceType: PickType;
-}
+// Create return shape is the same as get response
+export type CreateRaceReturn = GetRacesResponse;
 
 export const mockCreateRaceReturnValue: CreateRaceReturn = {
   id: 503,

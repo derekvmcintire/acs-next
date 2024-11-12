@@ -1,5 +1,3 @@
-import { Dayjs } from 'dayjs';
-
 // Base Types
 export interface IGFCategory extends AgeGroup {
   gender: 'Men' | 'Women' | 'Non Binary';
@@ -47,8 +45,8 @@ export interface BaseEvent {
 
 export interface BaseRace {
   id?: number;
-  startDate: Dayjs | string;
-  endDate?: Dayjs | string | null;
+  startDate: string;
+  endDate?: string | null;
   location?: string;
 }
 

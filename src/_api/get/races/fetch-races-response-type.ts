@@ -4,9 +4,6 @@ export interface GetRacesResponse extends BaseRace {
   id: number;
   eventId: number;
   raceTypeId?: number;
-  startDate: string;
-  endDate: string | null;
-  location: string;
   event: BaseEvent;
   raceType: PickType;
 }

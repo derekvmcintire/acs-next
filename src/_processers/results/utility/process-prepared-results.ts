@@ -1,4 +1,4 @@
-import { CreateRaceReturn } from '@/src/_api/post/races/create-race-return-type';
+import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { createResult } from '@/src/_api/post/results/create-result';
 import { CreateResultRequest } from '@/src/_api/post/results/create-result-request-type';
 import { CreateResultReturn } from '@/src/_api/post/results/create-result-return-type';
@@ -7,7 +7,7 @@ import { createNewRiderIdFromResult, fetchRiderIdFromResult } from './process-ne
 
 export const createResultForRace = async (
   rawResult: PreparedResult,
-  race: CreateRaceReturn,
+  race: GetRacesResponse,
   riderId: number,
   categories: string[]
 ): Promise<CreateResultReturn> => {
@@ -35,7 +35,7 @@ export const createResultForRace = async (
 
 const processResult = async (
   result: PreparedResult,
-  race: CreateRaceReturn,
+  race: GetRacesResponse,
   riderId: number,
   categories: string[]
 ): Promise<CreateResultReturn> => {
@@ -50,7 +50,7 @@ const processResult = async (
 
 export const processPreparedResult = async (
   result: PreparedResult,
-  race: CreateRaceReturn,
+  race: GetRacesResponse,
   categories: string[]
 ): Promise<CreateResultReturn> => {
   const riderId =
