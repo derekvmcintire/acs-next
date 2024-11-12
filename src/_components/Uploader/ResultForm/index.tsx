@@ -54,6 +54,11 @@ function ResultForm() {
       return;
     }
 
+    if (!selectedRace) {
+      setErrors([...errors, 'Can not submit results without a selected race']);
+      return;
+    }
+
     const response = await processResults(selectedRace, results, categories);
 
     if (!response) {
@@ -72,11 +77,14 @@ function ResultForm() {
     <FormWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Instructions isResults />
-        <Flex justify="center">
-          <Text fw="700" className={classes.formSection}>
-            {`*Uploading Results for ${selectedRace.event.name} - ${selectedRace.startDate}*`}
-          </Text>
-        </Flex>
+
+        {selectedRace && (
+          <Flex justify="center">
+            <Text fw="700" className={classes.formSection}>
+              {`*Uploading Results for ${selectedRace.event.name} - ${selectedRace.startDate}*`}
+            </Text>
+          </Flex>
+        )}
         <Flex justify="center" className={classes.formSection}>
           <Button variant="transparent" onClick={handleChangeRace}>
             Create a New Race

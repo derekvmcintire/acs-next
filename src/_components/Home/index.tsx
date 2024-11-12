@@ -24,14 +24,14 @@ export default function ACSHome({ recentRaces = [], rankings }: ACSHomeProps) {
       <PageLayout>
         <SimpleGrid cols={{ base: 1, sm: 2 }}>
           <Stack className={classes.stackLeft}>
+            <ResultsReport />
+            {recentRaces.length > 0 && <RecentRaces races={recentRaces} />}
+          </Stack>
+          <Stack className={classes.stackRight}>
             <Container w="100%">
               <SectionLabel text={`${currentYear} ACS Rankings Top Five`} />
               {rankings.length > 0 && <RankPreview rankings={rankings} year={currentYear} />}
             </Container>
-          </Stack>
-          <Stack className={classes.stackRight}>
-            <ResultsReport />
-            {recentRaces.length > 0 && <RecentRaces races={recentRaces} />}
           </Stack>
         </SimpleGrid>
       </PageLayout>

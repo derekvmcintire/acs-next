@@ -11,12 +11,12 @@
 
 .stackLeft {
   min-width: 325px;
-}
-
-.stackRight {
-  min-width: 325px;
   background-color: light-dark(#d8dfe3, #343637);
   border-radius: 4px;
   margin-top: 16px;
   padding-top: 16px;
+}
+
+.stackRight {
+  min-width: 325px;
 }

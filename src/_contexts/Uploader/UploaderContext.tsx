@@ -2,9 +2,10 @@
 
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 import { GetCategoriesResponse } from '@/src/_api/get/categories/fetch-categories-response-type';
+import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
 
 export interface IUploaderContext {
-  selectedRace: any;
+  selectedRace?: GetRacesResponse;
   setSelectedRace: (selectedRace: any) => void;
   categoryOptions: GetCategoriesResponse[];
   setCategoryOptions: (categoryOptions: GetCategoriesResponse[]) => void;
@@ -17,7 +18,7 @@ export interface IUploaderContext {
 }
 
 export const defaultUploaderContextValue: IUploaderContext = {
-  selectedRace: '',
+  selectedRace: undefined,
   setSelectedRace: () => {},
   categoryOptions: [],
   setCategoryOptions: () => {},
