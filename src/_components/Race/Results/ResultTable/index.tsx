@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Anchor, Container, Table, Text } from '@mantine/core';
+import { Anchor, Flex, Table, Text } from '@mantine/core';
 import { RIDER_URL } from '@/src/_components/Rider/PrevAndNextRider';
 import { useRaceContext } from '@/src/_contexts/Race/RaceContext';
 
@@ -34,7 +34,7 @@ export default function ResultTable() {
   });
 
   return (
-    <Container mt="16">
+    <Flex w="100%" mt={16}>
       <Table striped horizontalSpacing="xs">
         <Table.Thead>
           <Table.Tr>
@@ -47,6 +47,6 @@ export default function ResultTable() {
         </Table.Thead>
         <Table.Tbody>{rows}</Table.Tbody>
       </Table>
-    </Container>
+    </Flex>
   );
 }
