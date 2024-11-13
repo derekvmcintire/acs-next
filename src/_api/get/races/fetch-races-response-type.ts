@@ -27,3 +27,19 @@ export const mockGetRacesResponse: GetRacesResponse[] = [
     },
   },
 ];
+
+export type GroupByOption = 'month' | 'quarter' | 'year';
+
+export type GetTotalsFilters = {
+  startDateRange?: {
+    from: string;
+    to: string;
+  };
+  groupBy?: GroupByOption;
+};
+
+export interface GetRacesTotalsResponse {
+  startDate?: string;
+  totalRaces: number | null;
+  totalRiders: number | null;
+}
