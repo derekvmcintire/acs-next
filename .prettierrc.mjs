@@ -12,6 +12,7 @@ const config = {
     '^@mantinex/(.*)$',
     '^@mantine-tests/(.*)$',
     'dayjs',
+    '^@tanstack/react-query$',
     '<BUILTIN_MODULES>',
     '<THIRD_PARTY_MODULES>',
     '^@docs/(.*)$',
