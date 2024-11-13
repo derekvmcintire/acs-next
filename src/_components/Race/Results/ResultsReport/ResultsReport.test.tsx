@@ -1,21 +1,19 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import dayjs from 'dayjs';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import ResultsReport from '.';
 import { mockGetRacesTotalsResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { render, screen, waitFor } from '@/test-utils';
 import ResultsReportChart from './ResultsReportChart';
 
-// Mock the useQuery hook from react-query and ResultsReportChart component
 jest.mock('@tanstack/react-query', () => ({
   useQuery: jest.fn(),
 }));
 
 jest.mock('./ResultsReportChart', () => jest.fn(() => <div>Mocked ResultsReportChart</div>));
 
-// Utility function to mock useQuery responses
-const mockUseQuery = (overrides: any) => {
+const mockUseQuery = (overrides: Partial<UseQueryResult> = {}) => {
   (useQuery as jest.Mock).mockReturnValue({
     data: null,
     isError: false,
