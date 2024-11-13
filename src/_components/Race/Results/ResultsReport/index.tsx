@@ -7,10 +7,10 @@ import {
   GetRacesTotalsResponse,
   GetTotalsFilters,
 } from '@/src/_api/get/races/fetch-races-response-type';
-import { fetchRacesTotals } from '@/src/_api/get/races/fetch-totals';
 import { DEFAULT_DATE_FORMAT } from '@/src/global-constants';
 import { MonthlyRaceData } from './results-report-types';
 import ResultsReportChart from './ResultsReportChart';
+import { fetchRacesTotals } from '@/src/_api/get/races/fetch-races-totals';
 
 export default function ResultsReport() {
   const [chartData, setChartData] = React.useState<MonthlyRaceData[]>([]);
