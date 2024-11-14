@@ -11,7 +11,7 @@ import classes from './top-nav.module.css';
 export const TOP_NAV_TEST_ID = 'top-nav';
 
 export default function TopNav() {
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 950px)');
 
   return (
     <div data-testid={TOP_NAV_TEST_ID} className={classes.topNavContainer}>

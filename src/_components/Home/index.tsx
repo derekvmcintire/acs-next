@@ -13,7 +13,7 @@ export const HOME_TEST_ID = 'home';
 
 interface ACSHomeProps {
   rankings: GetRankingsResponse[];
-  recentRaces?: GetRecentRaceResultsResponse[];
+  recentRaces: GetRecentRaceResultsResponse[];
 }
 
 const currentYear = dayjs().year();
