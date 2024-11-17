@@ -1,6 +1,6 @@
 import { Center, Container, SimpleGrid, Stack } from '@mantine/core';
 import dayjs from 'dayjs';
-import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
+import { GetRecentRaceResultsResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { GetRankingsResponse } from '@/src/_api/get/rankings/fetch-rankings-response-type';
 import RecentRaces from '../Race/RecentRaces';
 import ResultsReport from '../Race/Results/ResultsReport';
@@ -13,11 +13,12 @@ export const HOME_TEST_ID = 'home';
 
 interface ACSHomeProps {
   rankings: GetRankingsResponse[];
-  recentRaces?: GetRacesResponse[];
+  recentRaces: GetRecentRaceResultsResponse[];
 }
 
 const currentYear = dayjs().year();
 
+// @TODO Context would be useful here to avoid current prop drilling
 export default function ACSHome({ recentRaces = [], rankings }: ACSHomeProps) {
   return (
     <Center data-testid={HOME_TEST_ID} className={classes.acsHome}>

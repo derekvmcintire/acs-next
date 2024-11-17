@@ -1,4 +1,5 @@
 import { BaseEvent, BaseRace, PickType } from '@/src/_types/base-types';
+import { GetRaceResultsResponse } from '../results/fetch-race-results-response-type';
 
 export interface GetRacesResponse extends BaseRace {
   id: number;
@@ -56,3 +57,8 @@ export const mockGetRacesTotalsResponse = [
     totalRiders: 70,
   },
 ];
+
+export interface GetRecentRaceResultsResponse {
+  raceId: number;
+  results: GetRaceResultsResponse[];
+}

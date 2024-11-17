@@ -9,3 +9,4 @@ export const API_CATEGORIES_PATH = '/categories';
 export const API_RACES_PATH = '/races';
 export const API_RANKINGS_PATH = '/rankings';
 export const API_TOTALS_PATH = '/totals';
+export const API_RECENT_PATH = '/recent';

@@ -1,6 +1,10 @@
 import { GetCategoriesResponse } from './get/categories/fetch-categories-response-type';
 import { GetHistoryResponse } from './get/history/fetch-history-response-type';
-import { GetRacesResponse, GetRacesTotalsResponse } from './get/races/fetch-races-response-type';
+import {
+  GetRacesResponse,
+  GetRacesTotalsResponse,
+  GetRecentRaceResultsResponse,
+} from './get/races/fetch-races-response-type';
 import { GetRankingsResponse } from './get/rankings/fetch-rankings-response-type';
 import { GetRaceResultsResponse } from './get/results/fetch-race-results-response-type';
 import { GetRiderResponse } from './get/riders/fetch-riders-response-type';
@@ -39,4 +43,8 @@ export interface IGetRankingsResponse extends INetworkResponse {
 
 export interface IGetRacesTotalsResponse extends INetworkResponse {
   totals: GetRacesTotalsResponse[];
+}
+
+export interface IGetRecentRaceResultsResponse extends INetworkResponse {
+  results: GetRecentRaceResultsResponse[];
 }

@@ -38,7 +38,10 @@ export default function Search() {
         setData(riderNames);
       }
     };
-    search();
+
+    if (debouncedSearchValue) {
+      search();
+    }
   }, [debouncedSearchValue]);
 
   const handleChange = React.useCallback((input: string) => {

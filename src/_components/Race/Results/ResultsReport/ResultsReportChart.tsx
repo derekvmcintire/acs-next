@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ColorSwatch, Flex, Stack, Text } from '@mantine/core';
+import { ColorSwatch, Divider, Flex, Stack, Text } from '@mantine/core';
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { MonthlyRaceData } from './results-report-types';
 import classes from '../../styles/race-results.module.css';
@@ -16,14 +16,8 @@ type ResultsReportPresenterProps = {
 
 export default function ResultsReportChart({ chartData }: ResultsReportPresenterProps) {
   return (
-    <Stack className={classes.resultsReport}>
-      <Flex justify="center">
-        <Text size="xs">{'Number of '}</Text>
-        <ColorSwatch color={RACE_COLOR} size={16} mr={4} ml={4} aria-label="Races color swatch" />
-        <Text size="xs">{'Races and '}</Text>
-        <ColorSwatch color={RIDER_COLOR} size={16} mr={4} ml={4} aria-label="Riders color swatch" />
-        <Text size="xs">Riders Over the Last Six Months</Text>
-      </Flex>
+    <Stack align="center" className={classes.resultsReport}>
+      <Text fw={600}>Totals over the last six months</Text>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
           data={chartData}
@@ -48,6 +42,21 @@ export default function ResultsReportChart({ chartData }: ResultsReportPresenter
           <Bar dataKey="numberOfRiders" name="Riders" fill={RIDER_COLOR} />
         </BarChart>
       </ResponsiveContainer>
+      <Stack>
+        <Flex justify="center">
+          <ColorSwatch color={RACE_COLOR} size={16} mr={4} ml={4} aria-label="Races color swatch" />
+          <Text size="xs">Number of Races</Text>
+          <Divider ml={8} mr={8} orientation="vertical" />
+          <ColorSwatch
+            color={RIDER_COLOR}
+            size={16}
+            mr={4}
+            ml={4}
+            aria-label="Riders color swatch"
+          />
+          <Text size="xs">Number of Riders</Text>
+        </Flex>
+      </Stack>
     </Stack>
   );
 }

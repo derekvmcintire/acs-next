@@ -14,8 +14,6 @@ const getNavButton = (text: string) => {
       c="#FFF"
       size="md"
       variant="subtle"
-      fullWidth
-      ml={8}
       justify="space-between"
       leftSection={text}
       rightSection={<span />}
@@ -31,15 +29,15 @@ const getNavLinks = ({ isVertical = false }: NavLinksProps) => {
       <Anchor underline="never" className={classes.topNavAnchor} href="/">
         {getNavButton('Home')}
       </Anchor>
-      <Divider ml={16} orientation={dividerOrientation} />
+      <Divider ml={8} mr={8} orientation={dividerOrientation} />
       <Anchor underline="never" className={classes.topNavAnchor} href="/results/upload">
         {getNavButton('Upload')}
       </Anchor>
-      <Divider ml={16} size="sm" orientation={dividerOrientation} />
+      <Divider ml={8} mr={8} size="sm" orientation={dividerOrientation} />
       <Anchor underline="never" className={classes.topNavAnchor} href="/rider/1">
         {getNavButton('Riders')}
       </Anchor>
-      <Divider ml={16} size="sm" orientation={dividerOrientation} />
+      <Divider ml={8} mr={8} size="sm" orientation={dividerOrientation} />
       <Anchor underline="never" className={classes.topNavAnchor} href="/race/1">
         {getNavButton('Results')}
       </Anchor>
