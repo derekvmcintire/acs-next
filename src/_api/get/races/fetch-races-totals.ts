@@ -1,5 +1,5 @@
 import { API_BASE_URL, API_RACES_PATH, API_TOTALS_PATH } from '@/src/_api/constants';
-import { getResponse } from '../../helpers';
+import { vFetch } from '../../helpers';
 import { IGetRacesTotalsResponse } from '../../types';
 import { GetRacesTotalsResponse, GetTotalsFilters } from './fetch-races-response-type';
 
@@ -21,17 +21,11 @@ export const getRacesTotalsUrl = (filters: GetTotalsFilters) => {
 export const fetchRacesTotals = async (
   filters: GetTotalsFilters
 ): Promise<IGetRacesTotalsResponse> => {
-  const result = await getResponse(
-    getRacesTotalsUrl(filters),
-    async (response: Response): Promise<IGetRacesTotalsResponse> => {
-      const parsedResponse: GetRacesTotalsResponse[] = await response.json();
-      return { totals: parsedResponse };
-    }
-  );
-
-  if ('error' in result) {
-    return { ...result, totals: [] };
-  }
-
-  return result;
+  return vFetch<GetRacesTotalsResponse[]>(getRacesTotalsUrl(filters))
+    .then((response: GetRacesTotalsResponse[]) => {
+      return { totals: response };
+    })
+    .catch((error: string) => {
+      return { error, totals: [] };
+    });
 };
