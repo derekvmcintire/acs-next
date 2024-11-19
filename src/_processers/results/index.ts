@@ -1,10 +1,9 @@
+import { calculatePoints, parseResults, PreparedResult } from 'cycling-results-parser';
 import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { CreateResultReturn } from '@/src/_api/post/results/create-result-return-type';
 import { RaceFormData } from '@/src/_components/Uploader/RaceForm/index';
-import { parseResults, PreparedResult } from '@/src/_processers/results/utility/parse-results';
 import { createRace } from '../../_api/post/races/create-race';
 import { processPreparedResult } from './utility/process-prepared-results';
-import { calculatePoints } from './utility/ranking-helper';
 
 export type ProcessResultsReturnData = {
   race: GetRacesResponse;
@@ -36,7 +35,7 @@ export const processResults = async (
     parsedResults.map(async (result: PreparedResult) => {
       const position = result?.place || 0;
       if (totalRacers && position) {
-        const points = calculatePoints(totalRacers, Number(position));
+        const points = calculatePoints({ totalRacers, position: Number(position) });
         result.points = points || 0;
       }
       const finalizedResult = await processPreparedResult(result, race, categories);

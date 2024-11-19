@@ -1,9 +1,9 @@
+import { PreparedResult } from 'cycling-results-parser';
 import { fetchListOfRiders } from '@/src/_api/get/riders/fetch-rider';
 import { createRider } from '@/src/_api/post/riders/create-rider';
 import { CreateRiderRequest } from '@/src/_api/post/riders/create-rider-request-type';
 import { IGetRidersResponse } from '@/src/_api/types';
 import { splitName } from './helper-functions';
-import { PreparedResult } from './parse-results';
 
 export const fetchRiderIdFromResult = async (result: PreparedResult): Promise<number | null> => {
   const riderName = result?.name;

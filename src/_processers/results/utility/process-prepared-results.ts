@@ -1,8 +1,8 @@
+import { PreparedResult } from 'cycling-results-parser';
 import { GetRacesResponse } from '@/src/_api/get/races/fetch-races-response-type';
 import { createResult } from '@/src/_api/post/results/create-result';
 import { CreateResultRequest } from '@/src/_api/post/results/create-result-request-type';
 import { CreateResultReturn } from '@/src/_api/post/results/create-result-return-type';
-import { PreparedResult } from './parse-results';
 import { createNewRiderIdFromResult, fetchRiderIdFromResult } from './process-new-rider';
 
 export const createResultForRace = async (
