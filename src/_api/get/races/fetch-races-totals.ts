@@ -1,5 +1,5 @@
+import { simpleTsFetch } from 'simple-fetch-ts';
 import { API_BASE_URL, API_RACES_PATH, API_TOTALS_PATH } from '@/src/_api/constants';
-import { simpleTypedFetch } from '../../helpers';
 import { IGetRacesTotalsResponse } from '../../types';
 import { GetRacesTotalsResponse, GetTotalsFilters } from './fetch-races-response-type';
 
@@ -21,7 +21,7 @@ export const getRacesTotalsUrl = (filters: GetTotalsFilters) => {
 export const fetchRacesTotals = async (
   filters: GetTotalsFilters
 ): Promise<IGetRacesTotalsResponse> => {
-  return simpleTypedFetch<GetRacesTotalsResponse[]>(getRacesTotalsUrl(filters))
+  return simpleTsFetch<GetRacesTotalsResponse[]>(getRacesTotalsUrl(filters))
     .then((response: GetRacesTotalsResponse[]) => {
       return { totals: response };
     })
