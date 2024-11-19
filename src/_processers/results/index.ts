@@ -33,7 +33,6 @@ export const processResults = async (
   const totalRacers = parsedResults.length;
   const finalizedResults = await Promise.all(
     parsedResults.map(async (result: PreparedResult) => {
-      // @TODO figure out how to import types from library here
       const position = result?.place || 0;
       if (totalRacers && position) {
         const points = calculatePoints({ totalRacers, position: Number(position) });
