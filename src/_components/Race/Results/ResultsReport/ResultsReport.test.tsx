@@ -34,7 +34,9 @@ describe('ResultsReport', () => {
 
     render(<ResultsReport />);
 
-    expect(await screen.findByText(/error/i)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/Something went wront, unable to load data/i)
+    ).toBeInTheDocument();
   });
 
   test('renders chart with data when data is successfully fetched', async () => {
