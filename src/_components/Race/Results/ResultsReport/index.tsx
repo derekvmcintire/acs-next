@@ -57,5 +57,13 @@ export default function ResultsReport() {
     }
   }, [isError, error, getTotalsResponse]);
 
-  return <>{errorMessage ? <div>error</div> : <ResultsReportChart chartData={chartData} />}</>;
+  return (
+    <>
+      {errorMessage ? (
+        <div>Something went wront, unable to load data</div>
+      ) : (
+        <ResultsReportChart chartData={chartData} />
+      )}
+    </>
+  );
 }

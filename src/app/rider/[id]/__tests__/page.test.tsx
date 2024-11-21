@@ -2,14 +2,14 @@ import '@testing-library/jest-dom/jest-globals';
 import '@testing-library/jest-dom';
 import { mockMultiGlobalFetch } from 'jest-vest';
 import { getRiderHistoryRequestUrl } from '@/src/_api/get/history/fetch-history';
-import { getRiderRequestUrl, getSingleRiderRequestUrl } from '@/src/_api/get/riders/fetch-rider';
+import { getSingleRiderRequestUrl, ridersRequestUrl } from '@/src/_api/get/riders/fetch-rider';
 import { RIDER_INFO_TEST_ID } from '@/src/_components/Rider';
 import { HISTORY_TEST_ID } from '@/src/_components/Rider/History';
 import { COLOR_SCHEME_TOGGLE_TEST_ID } from '@/src/_components/shared/ColorSchemeToggle';
 import { TOP_NAV_TEST_ID } from '@/src/_components/shared/TopNav';
 import { RIDER_SEARCH_DATA_TEST_ID } from '@/src/_components/shared/TopNav/Search';
 import { mockRacingHistory } from '@/src/_db/mock-data/mock-race-history';
-import { mockRider, mockTeamMembers, TEAM_B2C2_CONTES } from '@/src/_db/mock-data/mock-racer';
+import { mockRider, mockTeamMembers } from '@/src/_db/mock-data/mock-racer';
 import { render, screen } from '@/test-utils';
 import RiderPage from '../page';
 
@@ -36,7 +36,7 @@ beforeEach(() => {
       response: mockRider,
     },
     {
-      url: getRiderRequestUrl({ team: TEAM_B2C2_CONTES }),
+      url: `${ridersRequestUrl}?team=B2C2%20Cycling%20p%2Fb%20Conte's%20Bike%20Shop`, // @TODO find a better way to get the encoded url for testing, at least use a constant
       response: mockTeamMembers,
     },
   ];
