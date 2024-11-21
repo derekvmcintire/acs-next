@@ -10,7 +10,7 @@ export interface GetRankingsResponse {
 export const mockRankingsResponse: GetRankingsResponse = {
   totalPoints: 899,
   riderId: 23,
-  firstName: 'Zoe',
+  firstName: 'Zoea',
   lastName: 'Swiftbottom',
   hometown: 'Oslo',
   country: 'Paraguay',
