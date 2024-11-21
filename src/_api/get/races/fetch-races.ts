@@ -17,7 +17,7 @@ export interface GetRacesFilters {
   orderBy?: 'id' | 'startDate' | 'eventId';
 }
 
-const _getParams = (filters: GetRacesFilters): QueryParams => {
+const _buildParams = (filters: GetRacesFilters): QueryParams => {
   const { name, dateRange, location, id, eventId, limit, orderBy, direction } = filters;
   // params need to be all lower case
   return {
@@ -35,7 +35,7 @@ const _getParams = (filters: GetRacesFilters): QueryParams => {
 
 export const fetchRaces = async (filters: GetRacesFilters): Promise<IGetRacesResponse> => {
   const url = `${API_BASE_URL}${API_RACES_PATH}`;
-  const params = _getParams(filters);
+  const params = _buildParams(filters);
   const response = await simple(url).params(params).fetch<GetRacesResponse[]>();
   return { races: response.data };
 };
