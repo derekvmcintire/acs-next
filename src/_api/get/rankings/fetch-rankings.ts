@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
+import { QueryParams, simple } from 'simple-fetch-ts';
 import { API_BASE_URL, API_RANKINGS_PATH, API_RIDER_PATH } from '@/src/_api/constants';
-import { getResponse } from '../../helpers';
 import { IGetRankingsResponse } from '../../types';
 import { GetRankingsResponse } from './fetch-rankings-response-type';
 
@@ -15,21 +15,13 @@ type GetRankingsParams = {
   limit?: number;
 };
 
+const url = `${API_BASE_URL}/${API_RIDER_PATH}/${API_RANKINGS_PATH}`;
+
 export const fetchRankings = async ({
   year,
   limit,
 }: GetRankingsParams): Promise<IGetRankingsResponse> => {
-  const result = await getResponse(
-    getRankingsResultsRequestUrl(year || dayjs().year(), limit),
-    async (response: Response): Promise<IGetRankingsResponse> => {
-      const parsedResponse: GetRankingsResponse[] = await response.json();
-      return { rankings: parsedResponse };
-    }
-  );
-
-  if ('error' in result) {
-    return { ...result, rankings: null };
-  }
-
-  return result;
+  const params: QueryParams = { year: year || dayjs().year(), limit: limit || '' };
+  const response = await simple(url).params(params).fetch<GetRankingsResponse[]>();
+  return { rankings: response.data };
 };
