@@ -19,6 +19,9 @@ export const fetchRecentRaceResults = async (
   filters: GetRacesFilters
 ): Promise<IGetRecentRaceResultsResponse> => {
   const params = filters as QueryParams;
-  const response = await simple(url).params(params).fetch<GetRecentRaceResultsResponse[]>();
+  const lowerCaseKeys = true;
+  const response = await simple(url)
+    .params(params, lowerCaseKeys)
+    .fetch<GetRecentRaceResultsResponse[]>();
   return { results: response.data };
 };

@@ -15,7 +15,10 @@ export const ridersRequestUrl = `${API_BASE_URL}${API_RIDER_PATH}`;
 
 export const fetchListOfRiders = async (filters: GetRidersFilters): Promise<IGetRidersResponse> => {
   const params = filters as QueryParams;
-  const response = await simple(ridersRequestUrl).params(params).fetch<GetRiderResponse[]>();
+  const lowerCaseKeys = true;
+  const response = await simple(ridersRequestUrl)
+    .params(params, lowerCaseKeys)
+    .fetch<GetRiderResponse[]>();
   return { riders: response.data };
 };
 
