@@ -62,6 +62,7 @@ function RaceForm() {
       return;
     }
 
+    // @TODO handle this function somewehre else
     const response = await createRaceBeforeResults(data);
 
     if (!response) {
